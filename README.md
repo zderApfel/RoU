@@ -18,8 +18,8 @@ Almost every NPC and enemy in the game has a set of attributes, including the pl
 •	**Vigor**: Modifier for resistance to damage and some effects.
 
 •	**Intellect**:
-		For Players: Modifier for many specific things (see “Intellect” for more information). 
-		for Enemies: Modifier for “Intelligent Actions”
+		- For Players: Modifier for many specific things (see “Intellect” for more information)
+		- For Enemies: Modifier for “Intelligent Actions”
 
 •	**Personality**: Modifier for social actions. Also effects the “Taunt” action in combat.
 
@@ -27,7 +27,7 @@ Almost every NPC and enemy in the game has a set of attributes, including the pl
 
 •	**Luck**: Modifier for critical hits and slightly affects all random actions. 
 
-Attributes are listed on a scale of 1-20, where 1 is disabled-level and 20 is nigh-superhuman
+Attributes are listed on a scale of 1-20, where 1 is disabled-level, 10 is average, and 20 is nigh-superhuman. A score cannot go below 1 for any reason, but CAN be brought over 20 by specific means.
 
 ### Phases
 
