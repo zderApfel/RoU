@@ -10,17 +10,24 @@ The player takes the role of a struggling family man who recently lost their job
 ### Attributes
 
 Almost every NPC and enemy in the game has a set of attributes, including the player. These attributes affect various elements of gameplay, and sometimes affect player entities and enemy entities differently.
-•	Strength: Modifier for strength-based actions and melee attacks.
-•	Agility: Modifier for agility-based actions and ranged attacks
-•	Vigor: Modifier for resistance to damage and some effects.
-•	Intellect:
-	Players - Modifier for many specific things (see “Intellect” for more information). 
-	Enemies - Modifier for “Intelligent Actions”
-•	Personality: Modifier for social actions. Also effects the “Taunt” action in combat.
-•	Sanity: Modifier for resistance to mental effects (such as insults)
-•	Luck: Modifier for critical hits and slightly affects all random actions. 
 
-Attributes are listed on a scale of 1-20, where 1 is basically the level of a disabled person and 20 is nigh-superhuman
+•	**Strength**: Modifier for strength-based actions and melee attacks.
+
+•	**Agility**: Modifier for agility-based actions and ranged attacks
+
+•	**Vigor**: Modifier for resistance to damage and some effects.
+
+•	**Intellect**:
+		For Players: Modifier for many specific things (see “Intellect” for more information). 
+		for Enemies: Modifier for “Intelligent Actions”
+
+•	**Personality**: Modifier for social actions. Also effects the “Taunt” action in combat.
+
+•	**Sanity**: Modifier for resistance to mental effects (such as insults)
+
+•	**Luck**: Modifier for critical hits and slightly affects all random actions. 
+
+Attributes are listed on a scale of 1-20, where 1 is disabled-level and 20 is nigh-superhuman
 
 ### Phases
 
