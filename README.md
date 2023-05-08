@@ -18,8 +18,11 @@ Almost every NPC and enemy in the game has a set of attributes, including the pl
 •	**Vigor**: Modifier for resistance to damage and some effects.
 
 •	**Intellect**:
+
 		- For Players: Modifier for many specific things (see “Intellect” for more information)
+
 		- For Enemies: Modifier for “Intelligent Actions”
+
 
 •	**Personality**: Modifier for social actions. Also effects the “Taunt” action in combat.
 
@@ -37,8 +40,11 @@ Gameplay will revolve around two different “phases”: exploration and combat.
 
 In this phase, your character usually has full freedom to move around. In this state, your controls are very basic, with your basic movement keys and then the following actions, bound to their own buttons: 
 	- "Talk”: If an NPC is nearby, you begin a conversation
+
 	- “Inspect”: You investigate the nearby area for anything of interest. Outside of obvious/required things, you can find random loot depending on where you investigate depending on your “INTELLECT” stat
+
 	- "Attack”: If an NPC or object is nearby that can be attacked, you do so. If it’s an NPC, combat starts with you automatically doing a basic attack with your equipped weapon. 
+
 	- “Menu”: Open the pause menu
 
 #### Combat Phase
