@@ -17,11 +17,11 @@ Almost every NPC and enemy in the game has a set of attributes, including the pl
 
 * **Vigor**: Modifier for resistance to damage and some effects.
 
-* **Intellect**:
+* **Intellect**: Different uses depending on the entity
 
- ** For Players: Modifier for many specific things (see “Intellect” for more information)
+    For Players: Modifier for many specific things (see “Intellect” for more information)
 
- ** For Enemies: Modifier for “Intelligent Actions”
+    For Enemies: Modifier for “Intelligent Actions”
 
 
 * **Personality**: Modifier for social actions. Also effects the “Taunt” action in combat.
