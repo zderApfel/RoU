@@ -1,7 +1,5 @@
 # Rage of the Urbanites - A modern TBRPG
 
-##### Table of Contents
-
 # Overview
 
 Rage of the Urbanites will be a turn-based RPG in a modern setting. The story centers around the fictional nation of Dufonta, which is currently under rule of a theocratic fascist party, the “Purity Party”. The Purity Party is a party that focuses on squashing perceived moral decay. This results in strict laws governing personal liberties as they may contradict the party’s religious beliefs. Their initial victory was after the “Worker’s Party of Dufonta” was overthrown in a violent coup de tat that resulted in the execution of almost all the key party members.
