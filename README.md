@@ -32,6 +32,13 @@ Almost every NPC and enemy in the game has a set of attributes, including the pl
 
 Attributes are listed on a scale of 1-20, where 1 is disabled-level, 10 is average, and 20 is nigh-superhuman. A score cannot go below 1 for any reason, but CAN be brought over 20 by specific means.
 
+Attributes can be increased (and sometimes decreased) through the following means:
+
+* Leveling up to level 1, 4, 8, 12, 16, and 20 (Max. 20)
+* Certain gear (No cap)
+* Buffs/debuffs (No cap)
+* Demon Arts (Max. 30)
+
 ## Critical Hits
 
 Weapon attacks have a chance to deal a critical hit when it hits. Critical hits boost the damage of the attack depending on its crit modifier. The chance is dependent on the entity weilding it and the weapon being used. Critical hit chance is also modified by luck: **CRTCHANCE = WPNMOD + (LUCK * .1)**
