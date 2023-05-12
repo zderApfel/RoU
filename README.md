@@ -58,12 +58,12 @@ Weapon attacks have a chance to deal a critical hit when it hits. Critical hits 
 
 ### Status Effects
 
-**Enraged**: Melee damage boosted, accuracy and dodge chance reduced
-**Burned**: Deals tick damage at the start of their turn for a number of turns
-**Paralyzed**: Paralyzes the entity for a number of turns; resisted with Vigor
-**Poisoned**: Works the same as fire
-**Chemical Burns**: Entity takes 0.5x extra damage for a number of turns
-**Confusion**: Entity has a chance to either attack its teammate 
+* **Enraged**: Melee damage boosted, accuracy and dodge chance reduced
+* **Burned**: Deals tick damage at the start of their turn for a number of turns
+* **Paralyzed**: Paralyzes the entity for a number of turns; resisted with Vigor
+* **Poisoned**: Works the same as fire
+* **Chemical Burns**: Entity takes 0.5x extra damage for a number of turns
+* **Confusion**: Entity has a chance to either attack its teammate 
 
 ### Damage types
 
