@@ -34,9 +34,7 @@ Attributes are listed on a scale of 1-20, where 1 is disabled-level, 10 is avera
 
 ## Critical Hits
 
-Weapon attacks have a chance to deal a critical hit when it hits. Critical hits boost the damage of the attack depending on its crit modifier. The chance is dependent on the entity weilding it and the weapon being used. Critical hit chance is also modified by luck:
-
-<p style="text-align: center"><h3>CRTCHANCE = WPNMOD + (LUCK * .1)</h3></p>
+Weapon attacks have a chance to deal a critical hit when it hits. Critical hits boost the damage of the attack depending on its crit modifier. The chance is dependent on the entity weilding it and the weapon being used. Critical hit chance is also modified by luck: **CRTCHANCE = WPNMOD + (LUCK * .1)**
 
 ## Status Effects
 
