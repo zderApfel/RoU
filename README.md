@@ -1,17 +1,15 @@
 # Rage of the Urbanites - A modern TBRPG
 
 ##### Table of Contents
-[Headers](#headers)
-[Emphasis](#emphasis)
 
-## Overview
+# Overview
 
 Rage of the Urbanites will be a turn-based RPG in a modern setting. The story centers around the fictional nation of Dufonta, which is currently under rule of a theocratic fascist party, the “Purity Party”. The Purity Party is a party that focuses on squashing perceived moral decay. This results in strict laws governing personal liberties as they may contradict the party’s religious beliefs. Their initial victory was after the “Worker’s Party of Dufonta” was overthrown in a violent coup de tat that resulted in the execution of almost all the key party members.
 The player takes the role of a struggling family man who recently lost their job. After responding to a cry for help one night, you find yourself part of a campaign far beyond anything you ever saw yourself doing. 
 
-## Gameplay
+# Gameplay
 
-### Attributes
+## Attributes
 
 Almost every NPC and enemy in the game has a set of attributes, including the player. These attributes affect various elements of gameplay, and sometimes affect player entities and enemy entities differently. 
 
@@ -36,13 +34,13 @@ Almost every NPC and enemy in the game has a set of attributes, including the pl
 
 Attributes are listed on a scale of 1-20, where 1 is disabled-level, 10 is average, and 20 is nigh-superhuman. A score cannot go below 1 for any reason, but CAN be brought over 20 by specific means.
 
-### Critical Hits
+## Critical Hits
 
 Weapon attacks have a chance to deal a critical hit when it hits. Critical hits boost the damage of the attack depending on its crit modifier. The chance is dependent on the entity weilding it and the weapon being used. Critical hit chance is also modified by luck:
 
 <p style="text-align: center"><h3>CRTCHANCE = WPNMOD + (LUCK * .1)</h3></p>
 
-### Status Effects
+## Status Effects
 
 **Enraged**: Melee damage boosted, accuracy and dodge chance reduced
 
@@ -56,7 +54,7 @@ Weapon attacks have a chance to deal a critical hit when it hits. Critical hits 
 
 **Confusion**: Entity has a chance to either attack its teammate 
 
-### Damage types
+## Damage types
 
 The different damage types also have their own resistances tied to it.
 
@@ -82,11 +80,11 @@ The different damage types also have their own resistances tied to it.
 
 * **Acid**: STATUS - *Chemical Burns*
 
-### Phases
+# Phases
 
 Gameplay will revolve around two different “phases”: exploration and combat. 
 
-#### Exploration Phase
+## Exploration Phase
 
 In this phase, your character usually has full freedom to move around. In this state, your controls are very basic, with your basic movement keys and then the following actions, bound to their own buttons:
 
@@ -95,7 +93,7 @@ In this phase, your character usually has full freedom to move around. In this s
 * "Attack”: If an NPC or object is nearby that can be attacked, you do so. If it’s an NPC, combat starts with you automatically doing a basic attack with your equipped weapon. 
 * “Menu”: Open the pause menu
 
-#### Combat Phase
+## Combat Phase
 
 In this phase, your party and your opponents are placed on the left and right side of a vertical battlefield. In combat, the following happens in order:
 * Opportunity attacks happen
