@@ -1,5 +1,9 @@
 # Rage of the Urbanites - A modern TBRPG
 
+##### Table of Contents
+[Headers](#headers)
+[Emphasis](#emphasis)
+
 ## Overview
 
 Rage of the Urbanites will be a turn-based RPG in a modern setting. The story centers around the fictional nation of Dufonta, which is currently under rule of a theocratic fascist party, the “Purity Party”. The Purity Party is a party that focuses on squashing perceived moral decay. This results in strict laws governing personal liberties as they may contradict the party’s religious beliefs. Their initial victory was after the “Worker’s Party of Dufonta” was overthrown in a violent coup de tat that resulted in the execution of almost all the key party members.
@@ -9,28 +13,74 @@ The player takes the role of a struggling family man who recently lost their job
 
 ### Attributes
 
-Almost every NPC and enemy in the game has a set of attributes, including the player. These attributes affect various elements of gameplay, and sometimes affect player entities and enemy entities differently.
+Almost every NPC and enemy in the game has a set of attributes, including the player. These attributes affect various elements of gameplay, and sometimes affect player entities and enemy entities differently. 
 
-* **Strength**: Modifier for strength-based actions and melee attacks.
+* **Strength (STR)**: Modifier for strength-based actions and melee attacks.
 
-* **Agility**: Modifier for agility-based actions and ranged attacks
+* **Agility (AGI)**: Modifier for agility-based actions and ranged attacks
 
-* **Vigor**: Modifier for resistance to damage and some effects.
+* **Vigor (VIG)**: Modifier for resistance to damage and some effects.
 
-* **Intellect**: Different uses depending on the entity
+* **Intellect (INT)**: Different uses depending on the entity
 
     For Players: Modifier for many specific things (see “Intellect” for more information)
 
     For Enemies: Modifier for “Intelligent Actions”
 
 
-* **Personality**: Modifier for social actions. Also effects the “Taunt” action in combat.
+* **Personality (PER)**: Modifier for social actions. Also effects the “Taunt” action in combat.
 
-* **Sanity**: Modifier for resistance to mental effects (such as insults)
+* **Sanity (SAN)**: Modifier for resistance to mental effects (such as insults)
 
-* **Luck**: Modifier for critical hits and slightly affects all random actions. 
+* **Luck (LUK)**: Slightly modifies all RNG-based actions.
 
 Attributes are listed on a scale of 1-20, where 1 is disabled-level, 10 is average, and 20 is nigh-superhuman. A score cannot go below 1 for any reason, but CAN be brought over 20 by specific means.
+
+### Critical Hits
+
+Weapon attacks have a chance to deal a critical hit when it hits. Critical hits boost the damage of the attack depending on its crit modifier. The chance is dependent on the entity weilding it and the weapon being used. Critical hit chance is also modified by luck:
+
+<p style="text-align: center"><h3>CRTCHANCE = WPNMOD + (LUCK * .1)</h3></p>
+
+### Status Effects
+
+**Enraged**: Melee damage boosted, accuracy and dodge chance reduced
+
+**Burned**: Deals tick damage at the start of their turn for a number of turns
+
+**Paralyzed**: Paralyzes the entity for a number of turns; resisted with Vigor
+
+**Poisoned**: Works the same as fire
+
+**Chemical Burns**: Entity takes 0.5x extra damage for a number of turns
+
+**Confusion**: Entity has a chance to either attack its teammate 
+
+### Damage types
+
+The different damage types also have their own resistances tied to it.
+
+**Weapon Damage Types - Damage dealt by weapon attacks. Can critical hit**
+
+* **Blunt**: CRTMOD - 1.25x
+
+* **Pierce**: CRTMOD - 2x
+
+* **Slash**: CRTMOD - 1.5x
+
+* **Ballistic**: CRTMOD - 2x
+
+* **Explosive**: CRTMOD - 1.25x
+
+**Elemental Damage Types - Damage dealt by various elements. Can cause status effects**
+
+* **Fire**: STATUS - *Burned*
+
+* **Electric**: STATUS - *Paralyzed*
+
+* **Poison**: STATUS - *Poisoned*
+
+* **Acid**: STATUS - *Chemical Burns*
 
 ### Phases
 
