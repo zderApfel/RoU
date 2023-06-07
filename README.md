@@ -1,3 +1,3 @@
 # Rage of the Urbanites - The ACAB FPS
 
-![image](design_flowchart.png)
+![image](images/design_flowchart.png)
