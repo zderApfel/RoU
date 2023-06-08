@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bj0jo67t2470p"]
+[gd_scene load_steps=7 format=3 uid="uid://bj0jo67t2470p"]
 
-[ext_resource type="Script" path="res://basic_movement.gd" id="1_3i360"]
+[ext_resource type="PackedScene" uid="uid://q87psraq8kl4" path="res://entities/player.tscn" id="1_m0a2e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -22,10 +22,6 @@ size = Vector2(20, 20)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cxeef"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
-
 [node name="test_map" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -44,16 +40,4 @@ mesh = SubResource("PlaneMesh_5212l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_cxeef")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
-script = ExtResource("1_3i360")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971465, 0)
-shape = SubResource("CapsuleShape3D_x8kp5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_c74ax")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62137, -0.249679)
+[node name="Player" parent="." instance=ExtResource("1_m0a2e")]

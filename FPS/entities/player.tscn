@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://q87psraq8kl4"]
+
+[ext_resource type="Script" path="res://scripts/basic_movement.gd" id="1_8rpgu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
+script = ExtResource("1_8rpgu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971465, 0)
+shape = SubResource("CapsuleShape3D_x8kp5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_c74ax")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62137, -0.249679)
