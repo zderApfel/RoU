@@ -1,19 +1,12 @@
-extends Node
+extends StaticBody3D
 @onready
 
-var is_inventory_open
+var INVENTORY = Inventory.INVENTORY
 
-
+# Called when the node enters the scene tree for the first time.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
-	if Input.is_action_just_pressed("inventory"):
-		print(Inventory.INVENTORY)
-	else:
-		pass
-		
 	if Input.is_action_just_pressed("loot"):
-		print("Loot Key")
+		INVENTORY.append(self)
 	else: pass
-

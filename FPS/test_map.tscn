@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj0jo67t2470p"]
+[gd_scene load_steps=8 format=3 uid="uid://bj0jo67t2470p"]
 
 [ext_resource type="PackedScene" uid="uid://q87psraq8kl4" path="res://entities/player.tscn" id="1_m0a2e"]
+[ext_resource type="PackedScene" uid="uid://d1g2tw1dt8yi3" path="res://objects/dingdong.tscn" id="2_pypu5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -41,3 +42,6 @@ mesh = SubResource("PlaneMesh_5212l")
 shape = SubResource("ConcavePolygonShape3D_cxeef")
 
 [node name="Player" parent="." instance=ExtResource("1_m0a2e")]
+
+[node name="dingdong" parent="." instance=ExtResource("2_pypu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2064, 1.17206, 3.38805)
