@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Inventory="*res://scripts/inventory.gd"
-Keybinds="*res://scripts/keybinds.gd"
+GL_Inventory="*res://scripts/GL_Inventory.gd"
+REF_Keybinds="*res://scripts/REF_Keybinds.gd"
 
 [input]
 

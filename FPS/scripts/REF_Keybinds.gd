@@ -3,13 +3,11 @@ extends Node
 
 var is_inventory_open
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
 	if Input.is_action_just_pressed("inventory"):
-		print(Inventory.INVENTORY)
+		print(GL_Inventory.INVENTORY)
 	else:
 		pass
 		
