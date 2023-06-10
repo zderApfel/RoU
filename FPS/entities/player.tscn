@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://q87psraq8kl4"]
+[gd_scene load_steps=6 format=3 uid="uid://fxxfosv6v4dy"]
 
-[ext_resource type="Script" path="res://scripts/basic_movement.gd" id="1_8rpgu"]
+[ext_resource type="Script" path="res://scripts/templates/basic_movement.gd" id="1_8rpgu"]
+[ext_resource type="Script" path="res://scripts/templates/loot_zone.gd" id="2_2yj5i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qyoik"]
+height = 3.58736
+radius = 0.312703
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
@@ -18,4 +23,11 @@ shape = SubResource("CapsuleShape3D_x8kp5")
 mesh = SubResource("CapsuleMesh_c74ax")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62137, -0.249679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62137, -0.305707)
+
+[node name="loot_zone" type="Area3D" parent="Camera3D"]
+script = ExtResource("2_2yj5i")
+
+[node name="loot_zone_hitbox" type="CollisionShape3D" parent="Camera3D/loot_zone"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, -0.606695)
+shape = SubResource("CylinderShape3D_qyoik")

@@ -1,22 +1,18 @@
-class_name Lootable extends Node
-@onready
+class_name Lootable
 
 var DisplayName: String
 var ItemID: String
-var Model: StaticBody3D
 var InventorySprite: Node2D
 var IsStackable: bool
 var MaxStack: int
+var Amount: int
+var IsLootable: bool
 
-func _init(display_name, item_ID, model, inventory_sprite, is_stackable, max_stack):
+func create(display_name: String, item_ID: String, inventory_sprite: Node2D, is_stackable: bool, max_stack: int, amount: int, is_lootable: bool):
 	self.DisplayName = display_name
 	self.ItemID = item_ID
-	self.Model = model
 	self.InventorySprite = inventory_sprite
 	self.IsStackable = is_stackable
 	self.MaxStack = max_stack
-	
-	if !is_stackable:
-		max_stack = 1
-	else:
-		max_stack = self.max_stack
+	self.Amount = amount
+	self.IsLootable = is_lootable
