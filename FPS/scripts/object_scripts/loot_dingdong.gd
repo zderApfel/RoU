@@ -11,7 +11,7 @@ var amount: int
 var is_lootable: bool
 
 func _ready():
-	display_name = "{item_display_name}"
+	display_name = "DingDong"
 	is_stackable = false
 	max_stack = 1
 	amount = 1
