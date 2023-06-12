@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://fxxfosv6v4dy"]
 
 [ext_resource type="Script" path="res://scripts/templates/basic_movement.gd" id="1_8rpgu"]
-[ext_resource type="Script" path="res://scripts/templates/loot_zone.gd" id="2_2yj5i"]
+[ext_resource type="Script" path="res://scripts/templates/interaction_zone.gd" id="2_2yj5i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
 

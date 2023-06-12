@@ -7,7 +7,8 @@ var is_inventory_open
 func _process(_delta):
 	
 	if Input.is_action_just_pressed("inventory"):
-		print(GL_Inventory.INVENTORY)
+		for x in Inventory.INVENTORY:
+			print(x.TRAITS.DISPLAY_NAME)
 	else:
 		pass
 		
