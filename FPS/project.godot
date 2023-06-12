@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Keybinds="*res://scripts/globals/REF_Keybinds.gd"
-Inventory="*res://scripts/globals/Inventory.gd"
+Inventory="*res://scripts/globals/player/Inventory.gd"
 
 [input]
 

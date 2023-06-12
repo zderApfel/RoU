@@ -7,8 +7,8 @@ var is_inventory_open
 func _process(_delta):
 	
 	if Input.is_action_just_pressed("inventory"):
-		for x in Inventory.INVENTORY:
-			print(x.TRAITS.DISPLAY_NAME)
+		for x in Inventory.INVENTORY.EXTRA_SLOTS.BACK_INVENTORY:
+			pass
 	else:
 		pass
 		

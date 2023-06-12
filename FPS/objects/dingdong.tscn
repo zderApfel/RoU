@@ -9,9 +9,9 @@
 [node name="dingdong" type="RigidBody3D"]
 script = ExtResource("1_kx5o7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="dingdong_model" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.192108, 0)
 shape = SubResource("SphereShape3D_bjtcb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="dingdong_model"]
 mesh = SubResource("SphereMesh_qudtq")
