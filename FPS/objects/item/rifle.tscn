@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://5vshl4aikpqu"]
+
+[ext_resource type="Script" path="res://scripts/object_scripts/loot_rifle.gd" id="1_ht5ht"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xvok8"]
+height = 2.02116
+radius = 0.191875
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5rrdc"]
+
+[node name="rifle" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.023996, 0.999712, 0, -0.999712, 0.023996, 0, 1.03633, 0)
+script = ExtResource("1_ht5ht")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_xvok8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.346, 0, 0, 0, 1.026, 0, 0, 0, 0.361, 0, 0, 0)
+mesh = SubResource("CylinderMesh_5rrdc")

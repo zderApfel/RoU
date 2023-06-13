@@ -3,7 +3,7 @@ class_name Item extends Node
 
 var TRAITS: Dictionary
 
-func init(display_name, inventory_sprite, is_stackable, amount, is_lootable, max_stack):
+func init(tag: String, display_name: String, inventory_sprite: Node2D, is_stackable: bool, amount: int, is_lootable: bool, max_stack: int):
 	if is_stackable:
 		pass
 	else:
@@ -11,6 +11,7 @@ func init(display_name, inventory_sprite, is_stackable, amount, is_lootable, max
 	
 	TRAITS = {
 		"NODE": self,
+		"TAG": tag,
 		"DISPLAY_NAME": display_name,
 		"INVENTORY_SPRITE": inventory_sprite,
 		"IS_STACKABLE": is_stackable,

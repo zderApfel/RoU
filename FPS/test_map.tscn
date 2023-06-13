@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj0jo67t2470p"]
+[gd_scene load_steps=10 format=3 uid="uid://bj0jo67t2470p"]
 
 [ext_resource type="PackedScene" uid="uid://fxxfosv6v4dy" path="res://entities/player.tscn" id="1_m0a2e"]
-[ext_resource type="PackedScene" uid="uid://d1g2tw1dt8yi3" path="res://objects/dingdong.tscn" id="2_pypu5"]
+[ext_resource type="PackedScene" uid="uid://d1g2tw1dt8yi3" path="res://objects/item/dingdong.tscn" id="2_pypu5"]
+[ext_resource type="PackedScene" uid="uid://5vshl4aikpqu" path="res://objects/item/rifle.tscn" id="3_huy87"]
+[ext_resource type="PackedScene" uid="uid://dw8xxbfx0rgf5" path="res://objects/item/assault_rifle.tscn" id="4_jaec4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -32,21 +34,30 @@ environment = SubResource("Environment_ivyuy")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Floor" type="MeshInstance3D" parent="."]
+[node name="test_floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.216735, -0.087575, -0.314929)
 mesh = SubResource("PlaneMesh_5212l")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+[node name="StaticBody3D" type="StaticBody3D" parent="test_floor"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_cxeef")
 
 [node name="Player" parent="." instance=ExtResource("1_m0a2e")]
 
-[node name="loot_zone" parent="Player/Camera3D" index="0"]
-monitorable = false
+[node name="assault_rifle" parent="." instance=ExtResource("4_jaec4")]
+transform = Transform3D(1, 0, 0, 0, 0.0191974, 0.999816, 0, -0.999816, 0.0191974, -1.03799, 0.510921, -2.90328)
 
 [node name="dingdong" parent="." instance=ExtResource("2_pypu5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01684, 0.619115, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.730502, 0.335655, -3.83583)
+
+[node name="rifle" parent="." instance=ExtResource("3_huy87")]
+transform = Transform3D(1, 0, 0, 0, 0.023996, 0.999712, 0, -0.999712, 0.023996, 2.30904, 0.526323, -3.36478)
+
+[node name="assault_rifle2" parent="." instance=ExtResource("4_jaec4")]
+transform = Transform3D(1, 0, 0, 0, 0.0191974, 0.999816, 0, -0.999816, 0.0191974, 2.7539, 0.341133, -1.48724)
+
+[node name="rifle2" parent="." instance=ExtResource("3_huy87")]
+transform = Transform3D(1, 0, 0, 0, 0.023996, 0.999712, 0, -0.999712, 0.023996, 1.44207, 0.196969, -1.37492)
 
 [editable path="Player"]

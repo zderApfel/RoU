@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://fxxfosv6v4dy"]
+[gd_scene load_steps=7 format=3 uid="uid://fxxfosv6v4dy"]
 
 [ext_resource type="Script" path="res://scripts/templates/basic_movement.gd" id="1_8rpgu"]
 [ext_resource type="Script" path="res://scripts/templates/interaction_zone.gd" id="2_2yj5i"]
+[ext_resource type="Script" path="res://entities/player_inventory.gd" id="3_ngyh4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_qyoik"]
-height = 3.58736
-radius = 0.312703
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ra1nh"]
+height = 5.50378
+radius = 0.669222
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
@@ -23,11 +24,15 @@ shape = SubResource("CapsuleShape3D_x8kp5")
 mesh = SubResource("CapsuleMesh_c74ax")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62137, -0.305707)
+transform = Transform3D(1, 0, 0, 0, 0.99967, 0.0257059, 0, -0.0257059, 0.99967, 0, 1.62137, -0.305707)
 
-[node name="loot_zone" type="Area3D" parent="Camera3D"]
+[node name="interaction_zone" type="Area3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00672042, 0.063406, 0.136259)
 script = ExtResource("2_2yj5i")
 
-[node name="loot_zone_hitbox" type="CollisionShape3D" parent="Camera3D/loot_zone"]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, -0.606695)
-shape = SubResource("CylinderShape3D_qyoik")
+[node name="interaction_zone_hitbox" type="CollisionShape3D" parent="Camera3D/interaction_zone"]
+transform = Transform3D(0.5, 0, 0, 0, -2.14204e-08, -0.5, 0, 0.5, -2.14204e-08, 0, -0.285093, -0.833419)
+shape = SubResource("CylinderShape3D_ra1nh")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_ngyh4")
