@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://fxxfosv6v4dy"]
+
+[ext_resource type="Script" path="res://node_scripts/player.gd" id="1_qsvjt"]
+[ext_resource type="Script" path="res://node_scripts/player_inventory.gd" id="2_m0ffi"]
+[ext_resource type="Script" path="res://node_scripts/detect_loot.gd" id="3_jp478"]
+[ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/loot_hand.tscn" id="3_uxkw5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
+script = ExtResource("1_qsvjt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971465, 0)
+shape = SubResource("CapsuleShape3D_x8kp5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_c74ax")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_m0ffi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99967, 0.0257059, 0, -0.0257059, 0.99967, 0, 1.62137, -0.305707)
+
+[node name="detect_loot" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0559274, 0.00143814)
+script = ExtResource("3_jp478")
+
+[node name="loot_hand" parent="." instance=ExtResource("3_uxkw5")]
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0

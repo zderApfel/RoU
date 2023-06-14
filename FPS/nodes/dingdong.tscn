@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1g2tw1dt8yi3"]
 
-[ext_resource type="Script" path="res://scripts/object_scripts/loot_dingdong.gd" id="1_kx5o7"]
+[ext_resource type="Script" path="res://node_scripts/dingdong.gd" id="1_pu0jp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bjtcb"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_qudtq"]
 
 [node name="dingdong" type="RigidBody3D"]
-script = ExtResource("1_kx5o7")
+script = ExtResource("1_pu0jp")
 
 [node name="dingdong_model" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.192108, 0)
 shape = SubResource("SphereShape3D_bjtcb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="dingdong_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0)
 mesh = SubResource("SphereMesh_qudtq")

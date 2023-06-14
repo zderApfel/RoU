@@ -1,18 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://dw8xxbfx0rgf5"]
 
-[ext_resource type="Script" path="res://scripts/object_scripts/loot_assrifle.gd" id="1_na7vt"]
+[ext_resource type="Script" path="res://node_scripts/assrifle.gd" id="1_w5aqp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3gapr"]
+height = 2.02555
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ys2gr"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_67x55"]
 
 [node name="assault_rifle" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.0191974, 0.999816, 0, -0.999816, 0.0191974, 0.0155858, 1.63692, 0.0515997)
-script = ExtResource("1_na7vt")
+script = ExtResource("1_w5aqp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.161, 0, 0, 0, 0.44, 0, 0, 0, 0.148, 0, 0, 0)
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_3gapr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_ys2gr")
+transform = Transform3D(1.018, 0, 0, 0, 1.018, 0, 0, 0, 1.018, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_67x55")

@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Fps"
-run/main_scene="res://test_map.tscn"
+run/main_scene="res://scenes/test_map.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Keybinds="*res://scripts/globals/GLOBAL_CONTROL.gd"
+Keybinds="*res://global_scripts/Keybinds.gd"
 
 [input]
 
