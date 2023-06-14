@@ -31,7 +31,16 @@ transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0
 script = ExtResource("3_jp478")
 
 [node name="loot_hand" parent="." instance=ExtResource("3_uxkw5")]
-offset_left = 2.0
-offset_top = -1.0
-offset_right = 2.0
-offset_bottom = -1.0
+offset_left = 17.0
+offset_top = -6.0
+offset_right = 1.0
+offset_bottom = -6.0
+
+[node name="CanvasItem" parent="loot_hand" index="0"]
+visible = true
+
+[node name="Sprite2D" parent="loot_hand/CanvasItem" index="0"]
+position = Vector2(976, 558)
+scale = Vector2(1.10425, 1.02612)
+
+[editable path="loot_hand"]
