@@ -1,7 +1,7 @@
 extends RigidBody3D
 
-@onready var TYPE = "two_hand_firearm"
-@onready var DISPLAY_NAME = "Rifle"
+@onready var TYPE = "{item_type_here}"
+@onready var DISPLAY_NAME = "{item_name_here}"
 @onready var INVENTORY_SPRITE = null
 @onready var IS_STACKABLE = false
 @onready var AMOUNT = 1

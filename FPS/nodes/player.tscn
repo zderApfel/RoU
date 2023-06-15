@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://fxxfosv6v4dy"]
+[gd_scene load_steps=9 format=3 uid="uid://cjmj8lrlk2c0s"]
 
 [ext_resource type="Script" path="res://node_scripts/player.gd" id="1_qsvjt"]
 [ext_resource type="Script" path="res://node_scripts/player_inventory.gd" id="2_m0ffi"]
+[ext_resource type="Script" path="res://nodes/hold_zone.gd" id="2_tqnaj"]
 [ext_resource type="Script" path="res://node_scripts/detect_loot.gd" id="3_jp478"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/loot_hand.tscn" id="3_uxkw5"]
 
@@ -9,15 +10,18 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ni6hf"]
+size = Vector3(0.567958, 0.529676, 1)
+
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
 script = ExtResource("1_qsvjt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971465, 0)
 shape = SubResource("CapsuleShape3D_x8kp5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("CapsuleMesh_c74ax")
 
 [node name="Inventory" type="Node" parent="."]
@@ -42,5 +46,14 @@ visible = true
 [node name="Sprite2D" parent="loot_hand/CanvasItem" index="0"]
 position = Vector2(976, 558)
 scale = Vector2(1.10425, 1.02612)
+
+[node name="hold_zone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.120227, 0.971465, 0)
+monitorable = false
+script = ExtResource("2_tqnaj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hold_zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0604572, 0.214502, -0.690727)
+shape = SubResource("BoxShape3D_ni6hf")
 
 [editable path="loot_hand"]
