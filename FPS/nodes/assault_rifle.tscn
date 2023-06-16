@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw8xxbfx0rgf5"]
+[gd_scene load_steps=6 format=3 uid="uid://dw8xxbfx0rgf5"]
 
 [ext_resource type="Script" path="res://node_scripts/assrifle.gd" id="1_w5aqp"]
 
@@ -7,14 +7,29 @@ height = 2.02555
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_67x55"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_an6hh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4koxh"]
+
 [node name="assault_rifle" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.0191974, 0.999816, 0, -0.999816, 0.0191974, 0.0155858, 1.63692, 0.0515997)
 script = ExtResource("1_w5aqp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 0, 0, 0)
+transform = Transform3D(0.484, 0, 0, 0, 0.484, 0, 0, 0, 0.484, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_3gapr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 transform = Transform3D(1.018, 0, 0, 0, 1.018, 0, 0, 0, 1.018, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_67x55")
+
+[node name="Muzzle" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 3.72529e-09, 0, -3.72529e-09, 1, 0, 0.634412, -0.0121815)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Muzzle"]
+transform = Transform3D(0.135, 0, 0, 0, 0.998907, 0.00155986, 0, -0.0136693, 0.113989, 0, 0, 0)
+shape = SubResource("BoxShape3D_an6hh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Muzzle/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -1.49012e-08, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_4koxh")

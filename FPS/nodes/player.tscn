@@ -1,17 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjmj8lrlk2c0s"]
+[gd_scene load_steps=7 format=3 uid="uid://ca8trdv4b7w5j"]
 
 [ext_resource type="Script" path="res://node_scripts/player.gd" id="1_qsvjt"]
 [ext_resource type="Script" path="res://node_scripts/player_inventory.gd" id="2_m0ffi"]
-[ext_resource type="Script" path="res://nodes/hold_zone.gd" id="2_tqnaj"]
 [ext_resource type="Script" path="res://node_scripts/detect_loot.gd" id="3_jp478"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/loot_hand.tscn" id="3_uxkw5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ni6hf"]
-size = Vector3(0.567958, 0.529676, 1)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
@@ -30,7 +26,7 @@ script = ExtResource("2_m0ffi")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.99967, 0.0257059, 0, -0.0257059, 0.99967, 0, 1.62137, -0.305707)
 
-[node name="detect_loot" type="RayCast3D" parent="Camera3D"]
+[node name="line_of_sight" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0559274, 0.00143814)
 script = ExtResource("3_jp478")
 
@@ -46,14 +42,5 @@ visible = true
 [node name="Sprite2D" parent="loot_hand/CanvasItem" index="0"]
 position = Vector2(976, 558)
 scale = Vector2(1.10425, 1.02612)
-
-[node name="hold_zone" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.120227, 0.971465, 0)
-monitorable = false
-script = ExtResource("2_tqnaj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="hold_zone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0604572, 0.214502, -0.690727)
-shape = SubResource("BoxShape3D_ni6hf")
 
 [editable path="loot_hand"]

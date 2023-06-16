@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+
 @onready var TYPE = "two_hand_firearm"
 @onready var DISPLAY_NAME = "Rifle"
 @onready var INVENTORY_SPRITE = null
@@ -11,7 +12,6 @@ extends RigidBody3D
 
 #Weapon traits
 
-@onready var CURRENT_STATE = false
 @onready var IDLE_ANIMATION = null
 @onready var USE_ANIMATION = null
 @onready var WALK_ANIMATION = null
@@ -26,7 +26,6 @@ extends RigidBody3D
 	IS_LOOTABLE,
 	MAX_STACK,
 	DESCRIPTION,
-	CURRENT_STATE,
 	IDLE_ANIMATION,
 	USE_ANIMATION,
 	WALK_ANIMATION,

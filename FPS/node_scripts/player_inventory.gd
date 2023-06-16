@@ -12,13 +12,13 @@ extends Node
 		"BACK_WEAPON": null,
 		"HOLSTER_WEAPON": null,
 		"SHEATHE_WEAPON": null,
-	}
+	},
+	"HELD_WEAPON": null
 }
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("inventory"):	
-		print(PLAYER_INVENTORY)
+	inputs()
 
 func loot_action(item_to_loot):
 	match item_to_loot.SELF.TAG:
@@ -38,17 +38,41 @@ func loot_action(item_to_loot):
 				else:
 					print("No room!")
 
-func draw_weapon(x):
-	print(x)
-	match x:
-		1:
-			return PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON
-		2:
-			return PLAYER_INVENTORY.WEAPON_SLOTS.BACK_WEAPON
-		3:
-			return PLAYER_INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON
-		4:
-			return PLAYER_INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON
+
+
+func inputs():
+	if Input.is_action_just_released("inventory"):	
+		print(PLAYER_INVENTORY)
+		
+	if Input.is_action_just_released("sling_weapon"):
+		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
+		
+	if Input.is_action_just_released("back_weapon"):
+		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.BACK_WEAPON)
+		
+	if Input.is_action_just_released("holster_weapon"):
+		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
+		
+	if Input.is_action_just_released("sheathe_weapon"):
+		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON)
+	if Input.is_action_just_released("stow_weapon"):
+		stow_weapon()
+
+
+
+
+func draw_weapon(weapon):
+	
+	if weapon != null and weapon != PLAYER_INVENTORY.HELD_WEAPON:
+		PLAYER_INVENTORY.HELD_WEAPON = weapon
+		print(weapon.DISPLAY_NAME+" equipped")
+		
+	elif PLAYER_INVENTORY.HELD_WEAPON != null and weapon == null:
+		print("Empty slot!")
+	
+	elif PLAYER_INVENTORY.HELD_WEAPON == null and weapon == null:
+		print("Empty slot!")
 
 func stow_weapon():
+	PLAYER_INVENTORY.HELD_WEAPON = null
 	print("Weapon stowed")

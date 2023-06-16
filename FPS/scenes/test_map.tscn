@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj0jo67t2470p"]
+[gd_scene load_steps=11 format=3 uid="uid://bj0jo67t2470p"]
 
-[ext_resource type="PackedScene" uid="uid://fxxfosv6v4dy" path="res://nodes/player.tscn" id="1_m0a2e"]
+[ext_resource type="PackedScene" uid="uid://ca8trdv4b7w5j" path="res://nodes/player.tscn" id="1_m0a2e"]
 [ext_resource type="PackedScene" uid="uid://dw8xxbfx0rgf5" path="res://nodes/assault_rifle.tscn" id="3_lws0w"]
 [ext_resource type="PackedScene" uid="uid://d1g2tw1dt8yi3" path="res://nodes/dingdong.tscn" id="4_0g51r"]
-[ext_resource type="PackedScene" uid="uid://5vshl4aikpqu" path="res://nodes/rifle.tscn" id="5_damhi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -35,7 +34,7 @@ data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0,
 environment = SubResource("Environment_ivyuy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 6.23469, 0)
 shadow_enabled = true
 
 [node name="test_floor" type="MeshInstance3D" parent="."]
@@ -65,5 +64,5 @@ transform = Transform3D(1, 0, 0, 0, 0.0191974, 0.999816, 0, -0.999816, 0.0191974
 [node name="dingdong" parent="." instance=ExtResource("4_0g51r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.753245, 0.800844, -4.12296)
 
-[node name="rifle" parent="." instance=ExtResource("5_damhi")]
-transform = Transform3D(1, 0, 0, 0, 0.023996, 0.999712, 0, -0.999712, 0.023996, -1.61559, 1.08372, -2.31754)
+[node name="assault_rifle2" parent="." instance=ExtResource("3_lws0w")]
+transform = Transform3D(1, 0, 0, 0, 0.0191974, 0.999816, 0, -0.999816, 0.0191974, 1.13518, 0.342536, -2.3036)

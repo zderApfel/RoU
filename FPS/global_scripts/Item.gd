@@ -1,5 +1,5 @@
 class_name Item extends Node
-@onready
+
 
 var TRAITS: Dictionary
 
