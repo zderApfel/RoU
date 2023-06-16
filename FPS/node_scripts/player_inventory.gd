@@ -1,6 +1,6 @@
 extends Node
 
-@onready var ITEM_BODY_POSITION = get_tree().get_current_scene().get_node("Player/Body/held_item")
+@onready var HELD_ITEM_BODY_POSITION = get_tree().get_current_scene().get_node("Player/Body/held_item")
 
 @onready var PLAYER_INVENTORY = {
 	"HEAD_SLOT": null, # Item

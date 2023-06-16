@@ -7,12 +7,13 @@ extends RayCast3D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if is_colliding():
-		if get_collider() is Item and get_collider().is_lootable:
+		var x = get_collider()
+		if x is Item and x.is_lootable:
 			LOOT_HAND.visible = true
 			if Input.is_action_just_pressed("loot"):
-				INVENTORY.loot_action(get_collider())
+				INVENTORY.loot_action(x)
+				get_tree().get_current_scene().remove_child(x)
 				LOOT_HAND.visible = false
-				get_collider().queue_free()
 	else:
 		LOOT_HAND.visible = false
 
