@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Keybinds="*res://global_scripts/Keybinds.gd"
+Keybinds="*res://classes/scripts/Keybinds.gd"
 
 [input]
 

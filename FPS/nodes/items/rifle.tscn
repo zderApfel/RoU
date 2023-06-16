@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://coedqhkgybtdg"]
+
+[ext_resource type="PackedScene" uid="uid://ec1b5pfjnrs8" path="res://classes/TwoHandFirearm.tscn" id="1_g12dh"]
+
+[node name="Rifle" instance=ExtResource("1_g12dh")]
+self_reference = "res://nodes/items/rifle.tscn"
+display_name = "Rifle"
+description = "Generic rifle for testing purposes"

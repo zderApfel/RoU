@@ -8,7 +8,6 @@ var VELOCITY_Y = 0
 var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var LOS = $Camera3D/line_of_sight
 @onready var camera:Camera3D = $Camera3D
 
 func _physics_process(delta):
@@ -34,7 +33,4 @@ func _input(event):
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 
 func _process(_delta):
-	pass
-	
-func shoot():
 	pass

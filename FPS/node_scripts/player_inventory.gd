@@ -1,5 +1,7 @@
 extends Node
 
+@onready var ITEM_BODY_POSITION = get_tree().get_current_scene().get_node("Player/Body/held_item")
+
 @onready var PLAYER_INVENTORY = {
 	"HEAD_SLOT": null, # Item
 	"BACKPACK": [],
@@ -21,27 +23,22 @@ func _process(_delta):
 	inputs()
 
 func loot_action(item_to_loot):
-	match item_to_loot.SELF.TAG:
-		"generic":
-			PLAYER_INVENTORY.POCKETS.append(item_to_loot.SELF)
-			item_to_loot.queue_free()
+	match item_to_loot.type:
+		"Item":
+			PLAYER_INVENTORY.POCKETS.append(item_to_loot)
 			
-		"two_hand_firearm":
+		"TwoHandFirearm":
 			if PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON == null:
-				PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON = item_to_loot.SELF
-				item_to_loot.queue_free()
+				PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON = item_to_loot
 				
 			else:
 				if PLAYER_INVENTORY.WEAPON_SLOTS.BACK_WEAPON == null:
-					PLAYER_INVENTORY.WEAPON_SLOTS.BACK_WEAPON = item_to_loot.SELF
-					item_to_loot.queue_free()
+					PLAYER_INVENTORY.WEAPON_SLOTS.BACK_WEAPON = item_to_loot
 				else:
 					print("No room!")
 
-
-
 func inputs():
-	if Input.is_action_just_released("inventory"):	
+	if Input.is_action_just_released("inventory"):
 		print(PLAYER_INVENTORY)
 		
 	if Input.is_action_just_released("sling_weapon"):
@@ -58,21 +55,21 @@ func inputs():
 	if Input.is_action_just_released("stow_weapon"):
 		stow_weapon()
 
-
-
-
 func draw_weapon(weapon):
-	
+	print(PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
 	if weapon != null and weapon != PLAYER_INVENTORY.HELD_WEAPON:
 		PLAYER_INVENTORY.HELD_WEAPON = weapon
-		print(weapon.DISPLAY_NAME+" equipped")
+		equip(weapon)
 		
 	elif PLAYER_INVENTORY.HELD_WEAPON != null and weapon == null:
-		print("Empty slot!")
+		print("Condition 2")
 	
 	elif PLAYER_INVENTORY.HELD_WEAPON == null and weapon == null:
-		print("Empty slot!")
+		print("Condition 3")
 
 func stow_weapon():
 	PLAYER_INVENTORY.HELD_WEAPON = null
 	print("Weapon stowed")
+
+func equip(weapon):
+	print(weapon.display_name+" equipped")
