@@ -1,7 +1,5 @@
 extends Node
 
-@onready var HELD_ITEM_BODY_POSITION = get_tree().get_current_scene().get_node("Player/Body/held_item")
-
 @onready var PLAYER_INVENTORY = {
 	"HEAD_SLOT": null, # Item
 	"BACKPACK": [],
@@ -15,12 +13,14 @@ extends Node
 		"HOLSTER_WEAPON": null,
 		"SHEATHE_WEAPON": null,
 	},
-	"HELD_WEAPON": null
+	"HELD_ITEM": null
 }
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	inputs()
+	use_item()
+	
 
 func loot_action(item_to_loot):
 	match item_to_loot.type:
@@ -54,22 +54,33 @@ func inputs():
 		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON)
 	if Input.is_action_just_released("stow_weapon"):
 		stow_weapon()
+		
+func use_item():
+	if Input.is_action_just_pressed("primary_action"):
+		PLAYER_INVENTORY.HELD_ITEM.primary_action()
+
+	if Input.is_action_just_pressed("secondary_action"):
+		PLAYER_INVENTORY.HELD_ITEM.secondary_action()
+
+'''------------------------------------------------------------------'''
 
 func draw_weapon(weapon):
-	print(PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
-	if weapon != null and weapon != PLAYER_INVENTORY.HELD_WEAPON:
-		PLAYER_INVENTORY.HELD_WEAPON = weapon
+	if weapon != null and weapon != PLAYER_INVENTORY.HELD_ITEM:
+		PLAYER_INVENTORY.HELD_ITEM = weapon
 		equip(weapon)
 		
-	elif PLAYER_INVENTORY.HELD_WEAPON != null and weapon == null:
-		print("Condition 2")
+	elif PLAYER_INVENTORY.HELD_ITEM != null and weapon == null:
+		print("Slot is empty")
 	
-	elif PLAYER_INVENTORY.HELD_WEAPON == null and weapon == null:
-		print("Condition 3")
+	elif PLAYER_INVENTORY.HELD_ITEM == null and weapon == null:
+		print("Slot is empty")
 
 func stow_weapon():
-	PLAYER_INVENTORY.HELD_WEAPON = null
+	PLAYER_INVENTORY.HELD_ITEM = null
 	print("Weapon stowed")
 
 func equip(weapon):
 	print(weapon.display_name+" equipped")
+	
+
+

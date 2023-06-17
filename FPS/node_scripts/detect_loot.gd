@@ -16,6 +16,3 @@ func _process(_delta):
 				LOOT_HAND.visible = false
 	else:
 		LOOT_HAND.visible = false
-
-func get_item_reference(item):
-	return get_node(item.self_reference)

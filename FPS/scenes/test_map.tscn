@@ -57,12 +57,16 @@ transform = Transform3D(1.003, 0, 0, 0, 1.003, 0, 0, 0, 1.003, 0, 0, 0)
 shape = SubResource("BoxShape3D_gdjod")
 
 [node name="Player" parent="." instance=ExtResource("1_m0a2e")]
-
-[node name="Rifle" parent="." instance=ExtResource("2_84bg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0668956, 0.446342, -3.09925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32127, 2.02676)
 
 [node name="Dingdong" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16787, 0.55858, -0.201269)
 
 [node name="Dingdong2" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91225, 0.753004, -2.97937)
+
+[node name="Rifle" parent="." instance=ExtResource("2_84bg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.913529, -3.03886)
+
+[node name="Rifle2" parent="." instance=ExtResource("2_84bg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422843, -2.43134)

@@ -8,6 +8,7 @@ var VELOCITY_Y = 0
 var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+
 @onready var camera:Camera3D = $Camera3D
 
 func _physics_process(delta):

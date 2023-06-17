@@ -20,9 +20,6 @@ shape = SubResource("CapsuleShape3D_x8kp5")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("CapsuleMesh_c74ax")
 
-[node name="held_item" type="Marker3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226417, 0.25468, -0.689181)
-
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("2_m0ffi")
 

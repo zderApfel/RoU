@@ -1,18 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://emk6bv77dgli"]
+[gd_scene load_steps=2 format=3 uid="uid://emk6bv77dgli"]
 
 [ext_resource type="Script" path="res://classes/scripts/Item.gd" id="1_ne6jp"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_bjtcb"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_qudtq"]
-
 [node name="Item" type="RigidBody3D"]
 script = ExtResource("1_ne6jp")
-
-[node name="model" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.192108, 0)
-shape = SubResource("SphereShape3D_bjtcb")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="model"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0)
-mesh = SubResource("SphereMesh_qudtq")

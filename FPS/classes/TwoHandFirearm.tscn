@@ -1,16 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ec1b5pfjnrs8"]
+[gd_scene load_steps=2 format=3 uid="uid://ec1b5pfjnrs8"]
 
 [ext_resource type="Script" path="res://classes/scripts/TwoHandFirearm.gd" id="1_f8r4k"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_r722r"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_pc5oq"]
-
 [node name="Weapon" type="RigidBody3D"]
 script = ExtResource("1_f8r4k")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_r722r")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("BoxMesh_pc5oq")
