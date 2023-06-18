@@ -56,11 +56,12 @@ func inputs():
 		stow_weapon()
 		
 func use_item():
-	if Input.is_action_just_pressed("primary_action"):
-		PLAYER_INVENTORY.HELD_ITEM.primary_action()
+	if PLAYER_INVENTORY.HELD_ITEM != null:
+		if Input.is_action_just_pressed("primary_action"):
+			PLAYER_INVENTORY.HELD_ITEM.primary_action()
 
-	if Input.is_action_just_pressed("secondary_action"):
-		PLAYER_INVENTORY.HELD_ITEM.secondary_action()
+		if Input.is_action_just_pressed("secondary_action"):
+			PLAYER_INVENTORY.HELD_ITEM.secondary_action()
 
 '''------------------------------------------------------------------'''
 

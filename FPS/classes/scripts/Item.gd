@@ -1,8 +1,9 @@
 class_name Item extends Node3D
-@onready var type = "Item"
+
 @onready var equipped: bool = false
+@onready var type = "Generic"
 
-
+@export var item_ID: int = 9999999999
 @export var is_lootable: bool = true
 @export var display_name: String
 @export var description: String
@@ -17,13 +18,9 @@ func _process(_delta):
 func equip():
 	if equipped: #Unequip action
 		equipped = false
-		get_node("model").disabled = false
-		self.freeze = false
 		
 	else: #Equip action
 		equipped = true
-		get_node("model").disabled = true
-		self.freeze = true
 
 func primary_action():
 	if Input.is_action_just_pressed("primary_action"):

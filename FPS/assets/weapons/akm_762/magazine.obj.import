@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chi7tf8vwo7r0"
+path="res://.godot/imported/magazine.obj-f5860d5a1d384a23ace508a164a04fb9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/magazine.obj-f5860d5a1d384a23ace508a164a04fb9.mesh"]
+
+source_file="res://assets/weapons/akm_762/magazine.obj"
+dest_files=["res://.godot/imported/magazine.obj-f5860d5a1d384a23ace508a164a04fb9.mesh", "res://.godot/imported/magazine.obj-f5860d5a1d384a23ace508a164a04fb9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

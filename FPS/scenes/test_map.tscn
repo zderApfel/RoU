@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bj0jo67t2470p"]
 
 [ext_resource type="PackedScene" uid="uid://ca8trdv4b7w5j" path="res://nodes/player.tscn" id="1_m0a2e"]
-[ext_resource type="PackedScene" uid="uid://coedqhkgybtdg" path="res://nodes/items/rifle.tscn" id="2_84bg8"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/dingdong.tscn" id="2_mppmo"]
+[ext_resource type="PackedScene" uid="uid://d07vk82tr60sc" path="res://nodes/items/ak762.tscn" id="3_gt0ee"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -57,7 +57,7 @@ transform = Transform3D(1.003, 0, 0, 0, 1.003, 0, 0, 0, 1.003, 0, 0, 0)
 shape = SubResource("BoxShape3D_gdjod")
 
 [node name="Player" parent="." instance=ExtResource("1_m0a2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32127, 2.02676)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.331875, 2.02676)
 
 [node name="Dingdong" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16787, 0.55858, -0.201269)
@@ -65,8 +65,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16787, 0.55858, -0.201269)
 [node name="Dingdong2" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91225, 0.753004, -2.97937)
 
-[node name="Rifle" parent="." instance=ExtResource("2_84bg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.913529, -3.03886)
-
-[node name="Rifle2" parent="." instance=ExtResource("2_84bg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422843, -2.43134)
+[node name="ak762" parent="." instance=ExtResource("3_gt0ee")]
+transform = Transform3D(0.475317, -0.879815, 0, 0.879815, 0.475317, 0, 0, 0, 1, -3.33917, 0.326241, 0.0362975)

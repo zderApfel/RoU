@@ -1,4 +1,4 @@
-class_name TwoHandFirearm extends Item
+extends TwoHandFirearm
 
 func _ready():
 	type = "TwoHandFirearm"
@@ -13,3 +13,4 @@ func primary_action():
 func secondary_action():
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
+

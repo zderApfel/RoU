@@ -1,7 +1,9 @@
-class_name TwoHandFirearm extends Item
+extends Item
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _ready():
-	type = "TwoHandFirearm"
+	type = "Generic"
 
 func _process(_delta):
 	pass
