@@ -22,7 +22,7 @@ points = PackedVector3Array(-0.122881, -0.425829, -0.621661, 0.0484891, -0.42582
 [node name="ak762" type="RigidBody3D"]
 mass = 3.0
 script = ExtResource("1_yqy7l")
-item_ID = 200
+item_ID = 2
 display_name = "AK-762"
 description = "One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy contstruction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired."
 

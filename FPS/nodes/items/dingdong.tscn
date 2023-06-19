@@ -9,7 +9,7 @@
 
 [node name="Dingdong" instance=ExtResource("1_bvydb")]
 script = ExtResource("2_76cnm")
-item_ID = 101
+item_ID = 1
 display_name = "Dingdong"
 description = "This is just a placeholder item"
 

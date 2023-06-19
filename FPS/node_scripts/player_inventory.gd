@@ -8,6 +8,7 @@ extends Node
 	"ARMOR_SLOT": null, # Item
 	"CHEST_RIG": null, # Item
 	"WEAPON_SLOTS": {
+		"TOOL_SLOT": null,
 		"SLING_WEAPON": null,
 		"BACK_WEAPON": null,
 		"HOLSTER_WEAPON": null,
@@ -26,6 +27,9 @@ func loot_action(item_to_loot):
 	match item_to_loot.type:
 		"Item":
 			PLAYER_INVENTORY.POCKETS.append(item_to_loot)
+
+		"Tool":
+			PLAYER_INVENTORY.WEAPON_SLOTS.TOOL_SLOT.append(item_to_loot)
 			
 		"TwoHandFirearm":
 			if PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON == null:
@@ -41,6 +45,9 @@ func inputs():
 	if Input.is_action_just_released("inventory"):
 		print(PLAYER_INVENTORY)
 		
+	if Input.is_action_just_released("tool"):
+		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.TOOL_SLOT)
+
 	if Input.is_action_just_released("sling_weapon"):
 		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
 		
