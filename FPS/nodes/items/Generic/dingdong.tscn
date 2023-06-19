@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgk5t57hm7b7t"]
 
 [ext_resource type="PackedScene" uid="uid://emk6bv77dgli" path="res://classes/Item.tscn" id="1_bvydb"]
-[ext_resource type="Script" path="res://nodes/items/dingdong.gd" id="2_76cnm"]
+[ext_resource type="Script" path="res://nodes/items/Generic/dingdong.gd" id="2_76cnm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1urh7"]
 

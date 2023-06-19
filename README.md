@@ -47,6 +47,8 @@ What happens after getting knocked out also depends on who got the last hit in, 
 
 ### Detained
 
+When detained, a mercenary is in police custody. Mercenaries stay in this state until they are broken out 
+
 [TBD]
 
 ## Item Quality
@@ -54,15 +56,10 @@ What happens after getting knocked out also depends on who got the last hit in, 
 Quality is tied directed to cost in shops, chance to spawn in loot areas, and signified but a color around it in the inventory. Quality is NOT a signifier of how strong/good the item is.
 
 * Junk [0] | Black/no outline | Anything uncharacterized or is so common it's not meant to be picked up
-
 * Common [1] | Light grey | Most mundane items and common melee weapons are in this category
-
 * Uncommon [2] | Light green | Civilian firearms and unique melee weapons are in this category
-
 * Rare [3] | Cyan | All fully automatic/illegal firearms fit into this catgory, as well as Police-issue items
-
 * Epic [4] | Purple | Military-issue items fit into this category
-
 * Legendary [5] | Yellow | Incredibly unique items are in this category, like easter egg items. Usually these can only be found in specific item pools
 
 ## Item List
@@ -147,8 +144,8 @@ FORMAT: Name | ID* | Quality - Description
 Not all types are available for every caliber. When loot is generated, the type is FMJ by default and then has a chance to be changed to another type depending on where it is being purchased
 
 * Hollow Point (HP) - High BP and HP damage but low AP damage. Typically used by law enforcement, hunters, and personal defense
-* Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board, however it also has a chance to pierce soft targets. Used by military personel and SWAT teams, as well as sport shooters
-* Full Metal Jacket Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage. Used by gun enthusiasts 
+* Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board. Used by military personel and sport shooters
+* Full Metal Jacket Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage. Used mostly by gun enthusiasts
 * Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
 * Sub-Sonic (SP) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
 

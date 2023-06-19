@@ -1,5 +1,8 @@
 class_name TwoHandFirearm extends Item
 
+var ammo: Bullet
+var muzzle: Node3D
+
 func _ready():
 	type = "TwoHandFirearm"
 
