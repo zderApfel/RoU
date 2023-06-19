@@ -103,8 +103,9 @@ FORMAT: Name | ID* | Quality - Description
 
 * Traits:
 
-    +Low recoil
-    -Low HP, BP, and AP damage
+    + Low recoil
+    
+    - Low HP, BP, and AP damage
 
 * Variants
 
@@ -117,27 +118,31 @@ FORMAT: Name | ID* | Quality - Description
 
 * Traits:
 
-    +High power
-    -High Recoil
-    -Low accuracy
+    + High power
+
+    - High Recoil
+    
+    - Low accuracy
 
 * Variants 
 
-    7.62x39mm HP | 10005
-    7.62x39mm FMJ | 10006
+    * 7.62x39mm HP | 10005
+    * 7.62x39mm FMJ | 10006
 
 ##### 5.56x45mm [2]
 
 * Traits:
-    +Manageable recoil
-    +Moderate HP damage
-    -Low AP damage
+    + Manageable recoil
+    
+    + Moderate HP damage
+    
+    - Low AP damage
 
 * Variants
 
-    5.56x45mm HP | 10007
-    5.56x45mm FMJ | 10008
-    5.56x45mm AP | 10009
+    * 5.56x45mm HP | 10007
+    * 5.56x45mm FMJ | 10008
+    * 5.56x45mm AP | 10009
 
 #### Ammo Types
 
