@@ -103,26 +103,26 @@ FORMAT: Name | ID* | Quality - Description
 
 * Traits:
 
-    + Low recoil
+    (+) Low recoil
     
-    - Low HP, BP, and AP damage
+    (-) Low HP, BP, and AP damage
 
 * Variants
 
     * 5.45x39mm HP | 10001
     * 5.45x39mm FMJ | 10002
-    * 5.45x39mm FMJ +p | 10003
+    * 5.45x39mm FMJ (+)p | 10003
     * 5.45x39mm AP | 10004
 
 ##### 7.62x39mm [2]
 
 * Traits:
 
-    + High power
+    (+) High power
 
-    - High Recoil
+    (-) High Recoil
     
-    - Low accuracy
+    (-) Low accuracy
 
 * Variants 
 
@@ -132,11 +132,11 @@ FORMAT: Name | ID* | Quality - Description
 ##### 5.56x45mm [2]
 
 * Traits:
-    + Manageable recoil
+    (+) Manageable recoil
     
-    + Moderate HP damage
+    (+) Moderate HP damage
     
-    - Low AP damage
+    (-) Low AP damage
 
 * Variants
 
@@ -154,12 +154,12 @@ Not all types are available for every caliber. When loot is generated, the type 
 * Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
 * Sub-Sonic (SP) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
 
-### Armor | 9x
+### Armor
 
-### Headgear | 10x
+### Headgear
 
-### Chest Rigs | 11x
+### Chest Rigs
 
-### Backpacks | 12x
+### Backpacks
 
 
