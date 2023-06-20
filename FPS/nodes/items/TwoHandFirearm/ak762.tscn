@@ -31,7 +31,7 @@ description = "One of the USSR's few good contributions. The AK-762 has been the
 legal = false
 
 [node name="ak762" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.701, 0, 0, 0, 0.701, 0, 0, 0, 0.701, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="ak_main_body" type="MeshInstance3D" parent="ak762"]
 mesh = ExtResource("2_8bns0")
@@ -99,5 +99,5 @@ transform = Transform3D(0.221, 0, 0, 0, 0.221, 0, 0, 0, 0.221, -0.25695, 0, 0.60
 shape = SubResource("BoxShape3D_tdg6q")
 
 [node name="hitbox" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.688, 0, 0, 0, 0.688, 0, 0, 0, 0.688, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_upyio")

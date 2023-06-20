@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwtlpbfo3tfb7"
+path="res://.godot/imported/breasts.obj-d6ddb28978ea24444cda66390866be86.mesh"
+
+[deps]
+
+files=["res://.godot/imported/breasts.obj-d6ddb28978ea24444cda66390866be86.mesh"]
+
+source_file="res://assets/entities/humanoid/breasts.obj"
+dest_files=["res://.godot/imported/breasts.obj-d6ddb28978ea24444cda66390866be86.mesh", "res://.godot/imported/breasts.obj-d6ddb28978ea24444cda66390866be86.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

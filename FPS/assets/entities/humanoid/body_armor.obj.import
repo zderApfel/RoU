@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://denbwemi3uhru"
+path="res://.godot/imported/body_armor.obj-1d3718dc162c2ba7abe0a0d94140a71c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/body_armor.obj-1d3718dc162c2ba7abe0a0d94140a71c.mesh"]
+
+source_file="res://assets/entities/humanoid/body_armor.obj"
+dest_files=["res://.godot/imported/body_armor.obj-1d3718dc162c2ba7abe0a0d94140a71c.mesh", "res://.godot/imported/body_armor.obj-1d3718dc162c2ba7abe0a0d94140a71c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

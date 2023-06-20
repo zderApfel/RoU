@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0yxwuqqpy2wu"
+path="res://.godot/imported/torso.obj-2f9753e8a3d396a29d3b0fdfbf5920a6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/torso.obj-2f9753e8a3d396a29d3b0fdfbf5920a6.mesh"]
+
+source_file="res://assets/entities/humanoid/torso.obj"
+dest_files=["res://.godot/imported/torso.obj-2f9753e8a3d396a29d3b0fdfbf5920a6.mesh", "res://.godot/imported/torso.obj-2f9753e8a3d396a29d3b0fdfbf5920a6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
