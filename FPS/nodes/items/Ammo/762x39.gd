@@ -1,7 +1,7 @@
 extends Bullet
 
 func _ready():
-	init_bullet(null, null)
+	pass
 
 func _process(_delta):
 	pass

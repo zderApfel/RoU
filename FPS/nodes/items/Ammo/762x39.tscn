@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdi711t08fsmk"]
 
 [ext_resource type="Script" path="res://nodes/items/Ammo/762x39.gd" id="1_7itjb"]
-[ext_resource type="Script" path="res://nodes/items/Ammo/bullet_hitbox.gd" id="2_ma0s1"]
+[ext_resource type="Script" path="res://classes/scripts/bullet_hitbox.gd" id="2_nidrx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orifq"]
 
@@ -13,8 +13,10 @@ metallic = 1.0
 
 [node name="762x39" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mass = 0.01
 script = ExtResource("1_7itjb")
 MUZZLE_VELOCITY = 50.0
+RECOIL_VARIENCE_MAX = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
@@ -28,7 +30,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_65prf")
 
 [node name="bullet_hitbox" type="Area3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.0583395, -2.5501e-09)
-script = ExtResource("2_ma0s1")
+script = ExtResource("2_nidrx")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="bullet_hitbox"]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)

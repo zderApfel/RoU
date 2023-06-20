@@ -4,11 +4,3 @@
 
 [node name="Weapon" type="RigidBody3D"]
 script = ExtResource("1_f8r4k")
-item_ID = null
-is_lootable = null
-display_name = null
-description = null
-is_stackable = null
-amount = null
-max_stack = null
-legal = null

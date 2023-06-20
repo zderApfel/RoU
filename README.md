@@ -4,15 +4,25 @@ It is 2054.
 
 Due to a catastrophic failure in 2032 to regulate the global temperature via an experimental weather machine, Earth has now entered a new ice age. 
 
-In the early years of the ice age, many nations around the world buckled under the new threat. Most survivors from the Global South (who were able to) had to migrate due to the worsened famine and instability, until they eventually became frozen wastelands devoid of most life. The first world nations survived mostly unscathed. However, the ticking time bomb that was the United States eventually bursted. 
+In the early years of the ice age, many nations around the world buckled under the new threat. Most survivors from the Global South (who were able to) had to migrate due to the worsened famine and instability, until they eventually became frozen wastelands devoid of most life. The first world nations survived mostly unscathed. However, the ticking time bomb that was the United States eventually burst. 
 
-The nation's simmering alt-right plague came to a head when agitators joined forces with militas high-ranking military officers, and other elected officials to forcibly coup the entire American government, instilling a new fascist regime called Neopublicans. Their first act was to rename the nation to the Republic of America, and replaced all state governments with cronies of their own given the power to rule with impunity.
+The nation's simmering alt-right plague came to a head when agitators joined forces with militias and high-ranking military officers, as well as other elected officials to forcibly coup the entire American government, instilling a new fascist regime called Neopublicans. Their first act was to rename the nation to the Republic of America, and replaced all state governments with cronies of their own given the power to rule with impunity.
 
-The police forces, as expected, got worse as a result, with police brutality practically made legal as the ever larger poverty class.
+The police forces, as expected, got worse as a result, with police brutality practically made legal against the ever larger poverty class.
 
 You play as a disillusioned anarchist who recently lost their closest friend to a murder by one of these emboldened police officers. Through events I don't want to spoil, you decide to start a militia of their own and bring the power back to the people. 
 
-Gameplay: The game is going to be a rogue-lite Tarkov-style FPS that takes place across a large procedurally generated city. Each day you can go into the city and get supplies, do favors, and most importantly, find recruits. There's many people looking for work, but you can't disern a snitch and just ask random people. Gain reputation by doing favors and maybe they'll just join you...
+# Gameplay
+
+The game will take place in an open world in which the NPCs, quests, and loot are procedurally generated.
+
+* You will be given free-reign to explore the world at your leisure in what's called the **exploration phase**. During the exploration phase you can meet NPCs, do favors for them, find loot through legal or illegal means, or just kill people. It's really up to you. Keep in mind murder hoboing DOES have consequences...
+
+* In order to complete these raids you need to prepare, which is what the exploration phase is for. 
+
+* Some raids have time frames you need to act within, while others are free to be done whenever you want.
+
+* In order to complete the game, there's a series of scripted missions you have to beat, called "Raids". 
 
 # Mechanics
 

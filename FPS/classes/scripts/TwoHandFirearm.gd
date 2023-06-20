@@ -1,5 +1,8 @@
 class_name TwoHandFirearm extends Item
 
+@export var recoil_variance_min: float
+@export var recoil_variance_max: float
+
 var ammo: String
 var muzzle: Node3D
 var world
