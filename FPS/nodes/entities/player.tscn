@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ca8trdv4b7w5j"]
 
-[ext_resource type="Script" path="res://oddball_scripts/player.gd" id="1_t3ujn"]
+[ext_resource type="Script" path="res://nodes/entities/player.gd" id="1_udxwy"]
 [ext_resource type="Script" path="res://oddball_scripts/player_inventory.gd" id="2_akxxe"]
 [ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="3_cq85c"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/loot_hand.tscn" id="3_uxkw5"]
@@ -11,7 +11,7 @@
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
-script = ExtResource("1_t3ujn")
+script = ExtResource("1_udxwy")
 
 [node name="Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971465, 0)

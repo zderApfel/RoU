@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ufcgeo7oaex5"
-path.s3tc="res://.godot/imported/tac_rig.png-3933b94470539b00e8813d400384d767.s3tc.ctex"
+uid="uid://bpik422jse0aw"
+path.s3tc="res://.godot/imported/arm.png-6e82436de98b915c78c6464e22405454.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/entities/humanoid/tac_rig.png"
-dest_files=["res://.godot/imported/tac_rig.png-3933b94470539b00e8813d400384d767.s3tc.ctex"]
+source_file="res://assets/entities/humanoid/arm.png"
+dest_files=["res://.godot/imported/arm.png-6e82436de98b915c78c6464e22405454.s3tc.ctex"]
 
 [params]
 

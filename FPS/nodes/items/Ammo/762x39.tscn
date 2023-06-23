@@ -14,9 +14,9 @@ metallic = 1.0
 [node name="762x39" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mass = 0.01
+inertia = Vector3(100, 0, 0)
 script = ExtResource("1_7itjb")
 MUZZLE_VELOCITY = 50.0
-RECOIL_VARIENCE_MAX = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)

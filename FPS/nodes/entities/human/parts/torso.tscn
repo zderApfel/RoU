@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://clap5y4ld551a"]
+
+[ext_resource type="ArrayMesh" uid="uid://d0yxwuqqpy2wu" path="res://assets/entities/humanoid/torso.obj" id="1_3ho5k"]
+[ext_resource type="Material" uid="uid://bxqv5i2jqnkvl" path="res://assets/shader_materials/cloth/gray.tres" id="2_ene7r"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e2luc"]
+points = PackedVector3Array(-0.45, -0.461539, -0.0692408, -0.35001, -0.361598, -0.169231, -0.25002, -0.461539, -0.169231, -0.45, -0.461539, 0.0307494, -0.45, 0.438422, -0.0692408, -0.35001, 0.538461, -0.169231, 0.249931, -0.461539, -0.169231, 0.45, -0.461539, 0.0307494, -0.25002, -0.361598, 0.130769, -0.35001, -0.261559, 0.130769, -0.45, 0.438422, 0.0307494, -0.35001, 0.538461, 0.0307494, 0.349922, 0.538461, -0.169231, 0.45, -0.461539, -0.0692408, 0.349922, -0.361598, -0.169231, 0.249931, -0.361598, 0.130769, 0.45, 0.438422, 0.0307494, 0.349922, -0.261559, 0.130769, -0.35001, 0.338383, 0.130769, -0.25002, 0.438422, 0.130769, 0.349922, 0.538461, 0.0307494, 0.45, 0.438422, -0.0692408, 0.249931, 0.438422, 0.130769, 0.349922, 0.338383, 0.130769)
+
+[node name="torso" type="PhysicalBone3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.979875, 0)
+
+[node name="rotate_torso" type="RemoteTransform3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+remote_path = NodePath("../hitbox")
+
+[node name="hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_e2luc")
+disabled = true
+
+[node name="mesh" type="MeshInstance3D" parent="hitbox"]
+transform = Transform3D(0.999996, 0, 0.00272271, 0, 1, 0, -0.00272271, 0, 0.999996, 0, -0.00501883, 0)
+mesh = ExtResource("1_3ho5k")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ene7r")

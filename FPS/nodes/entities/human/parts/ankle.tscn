@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://baqb8ed2ylqem"]
+
+[ext_resource type="ArrayMesh" uid="uid://bmamkn2lts7y8" path="res://assets/entities/humanoid/ankle.obj" id="1_y5eqg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fysmd"]
+points = PackedVector3Array(0.1, -0.1, 0.2, 0.1, 0.4, 0.0999608, -0.1, -0.1, 0.2, 0.1, -0.4, 0.2, -0.1, 0.4, 0.0999608, 0.1, 0.4, -0.10002, -0.1, -0.4, 0.2, 0.1, -0.4, -0.3, -0.1, 0.4, -0.10002, 0.1, -0.2, -0.3, -0.1, -0.4, -0.3, -0.1, -0.2, -0.3)
+
+[node name="ankle" type="PhysicalBone3D"]
+
+[node name="collision_mesh" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_fysmd")
+
+[node name="ankle_mesh" type="MeshInstance3D" parent="collision_mesh"]
+mesh = ExtResource("1_y5eqg")
+skeleton = NodePath("../..")

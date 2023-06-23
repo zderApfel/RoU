@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw8j23kcou23u"]
+
+[ext_resource type="ArrayMesh" uid="uid://dx1wagjxqwkth" path="res://assets/entities/humanoid/thigh.obj" id="1_aqyfk"]
+[ext_resource type="Material" uid="uid://bteouq6btfvds" path="res://assets/shader_materials/cloth/blue.tres" id="2_i7ykb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_unsvw"]
+points = PackedVector3Array(-0.2, -0.100039, -0.1, -0.1, -0.2, -0.1, -0.2, -0.100039, 0.1, -0.2, 0.199961, -0.1, -0.1, -0.2, 0.1, 0.2, -0.2, -0.1, -0.2, 0.199961, 0.1, 0.2, 0.199961, -0.1, 0.2, -0.2, 0.1, 0.2, 0.199961, 0.1)
+
+[node name="thigh" type="PhysicalBone3D"]
+
+[node name="collision_leg" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_unsvw")
+
+[node name="leg_mesh" type="MeshInstance3D" parent="collision_leg"]
+mesh = ExtResource("1_aqyfk")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_i7ykb")
+
+[node name="rotate_thigh" type="RemoteTransform3D" parent="."]
+remote_path = NodePath("../collision_leg")
