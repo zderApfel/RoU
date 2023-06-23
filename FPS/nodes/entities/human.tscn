@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0uumh5q2o12x"]
+
+[ext_resource type="PackedScene" uid="uid://c0j2k3a286wnt" path="res://assets/entities/human.glb" id="1_tq4vs"]
+[ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="2_sko3v"]
+
+[node name="human" instance=ExtResource("1_tq4vs")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 2.12481, 0)
+
+[node name="human2" parent="torso/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_sko3v")

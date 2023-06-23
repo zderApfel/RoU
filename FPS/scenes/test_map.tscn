@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ca8trdv4b7w5j" path="res://nodes/entities/player.tscn" id="1_m0a2e"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
 [ext_resource type="PackedScene" uid="uid://d07vk82tr60sc" path="res://nodes/items/TwoHandFirearm/ak762.tscn" id="3_gt0ee"]
-[ext_resource type="PackedScene" uid="uid://bjjrqy3diohw5" path="res://nodes/entities/human/human.tscn" id="4_p8sfr"]
+[ext_resource type="PackedScene" uid="uid://d0uumh5q2o12x" path="res://nodes/entities/human.tscn" id="4_0jmnn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -93,41 +93,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jmt2q")
 transform = Transform3D(0.081, 0, 0, 0, -3.54062e-09, -0.081, 0, 0.081, -3.54062e-09, 0.0166481, 0, -0.318411)
 shape = SubResource("CapsuleShape3D_7o7lt")
 
-[node name="human" parent="." instance=ExtResource("4_p8sfr")]
-
-[node name="skeleton" parent="human" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00345206, 1.48551, -1.32135)
-
-[node name="left_arm" parent="human/skeleton/torso" index="2"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.429472, 0.483, -0.0670002)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429472, 0.72071, 0.0670002)
-body_offset = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.429472, 0.72071, -0.0670002)
-
-[node name="right_arm" parent="human/skeleton/torso" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429, 0.483, -0.0670002)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, -0.72071, 0.0670002)
-body_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429, 0.72071, -0.0670002)
-
-[node name="left_leg" parent="human/skeleton/torso" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246153, -0.794837, -0.060405)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246153, 0.557127, 0.060405)
-body_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246153, -0.557127, -0.060405)
-
-[node name="right_leg" parent="human/skeleton/torso" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246, -0.66321, -0.0649436)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246, 0.4255, 0.0649436)
-body_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246, -0.4255, -0.0649436)
-
-[node name="head" parent="human/skeleton/torso" index="6"]
-transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999998, -0.0350099, 0.78364, -0.0327449)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03501, -1.02135, 0.032745)
-body_offset = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999998, -0.0350099, 1.02135, -0.0327449)
-
 [node name="Player" parent="." instance=ExtResource("1_m0a2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353857, -0.0875752, 2.55319)
 
-[editable path="human"]
-[editable path="human/skeleton/torso/left_arm/UpperArm"]
-[editable path="human/skeleton/torso/right_arm/UpperArm"]
-[editable path="human/skeleton/torso/left_leg/Thigh"]
-[editable path="human/skeleton/torso/right_leg/Thigh"]
+[node name="human" parent="." instance=ExtResource("4_0jmnn")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0777633, 1.77242, -1.03479)
