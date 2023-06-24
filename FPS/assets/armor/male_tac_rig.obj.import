@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://68fwbvoxda12"
+path="res://.godot/imported/male_tac_rig.obj-707714a6e9ce0f81d8a80320a4fa53dd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/male_tac_rig.obj-707714a6e9ce0f81d8a80320a4fa53dd.mesh"]
+
+source_file="res://assets/armor/male_tac_rig.obj"
+dest_files=["res://.godot/imported/male_tac_rig.obj-707714a6e9ce0f81d8a80320a4fa53dd.mesh", "res://.godot/imported/male_tac_rig.obj-707714a6e9ce0f81d8a80320a4fa53dd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
