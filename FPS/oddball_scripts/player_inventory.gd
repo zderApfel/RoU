@@ -12,7 +12,7 @@ extends Node
 		"SLING_WEAPON": null,
 		"BACK_WEAPON": null,
 		"HOLSTER_WEAPON": null,
-		"SHEATHE_WEAPON": null,
+		"SHEATH_WEAPON": null,
 	},
 	"HELD_ITEM": null
 }
@@ -56,8 +56,8 @@ func inputs():
 	if Input.is_action_just_released("holster_weapon"):
 		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
 		
-	if Input.is_action_just_released("sheathe_weapon"):
-		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON)
+	if Input.is_action_just_released("sheath_weapon"):
+		draw_weapon(PLAYER_INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
 	if Input.is_action_just_released("stow_weapon"):
 		stow_weapon()
 		

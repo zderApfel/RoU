@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://nodes/entities/player.gd" id="1_udxwy"]
 [ext_resource type="Script" path="res://oddball_scripts/player_inventory.gd" id="2_akxxe"]
 [ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="3_cq85c"]
-[ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/loot_hand.tscn" id="3_uxkw5"]
+[ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_uxkw5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
 
@@ -30,17 +30,4 @@ transform = Transform3D(1, 0, 0, 0, 0.99967, 0.0257059, 0, -0.0257059, 0.99967, 
 transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0559274, 0.00143814)
 script = ExtResource("3_cq85c")
 
-[node name="loot_hand" parent="." instance=ExtResource("3_uxkw5")]
-offset_left = 17.0
-offset_top = -6.0
-offset_right = 1.0
-offset_bottom = -6.0
-
-[node name="CanvasItem" parent="loot_hand" index="0"]
-visible = true
-
-[node name="Sprite2D" parent="loot_hand/CanvasItem" index="0"]
-position = Vector2(976, 558)
-scale = Vector2(1.10425, 1.02612)
-
-[editable path="loot_hand"]
+[node name="HUD" parent="." instance=ExtResource("3_uxkw5")]

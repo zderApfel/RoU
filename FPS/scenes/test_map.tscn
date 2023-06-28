@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bj0jo67t2470p"]
+[gd_scene load_steps=15 format=3 uid="uid://bj0jo67t2470p"]
 
 [ext_resource type="PackedScene" uid="uid://ca8trdv4b7w5j" path="res://nodes/entities/player.tscn" id="1_m0a2e"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
 [ext_resource type="PackedScene" uid="uid://d07vk82tr60sc" path="res://nodes/items/TwoHandFirearm/ak762.tscn" id="3_gt0ee"]
-[ext_resource type="PackedScene" uid="uid://cvhf4fktqr2kx" path="res://nodes/entities/human_empty.tscn" id="4_k3kxi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -96,5 +95,5 @@ shape = SubResource("CapsuleShape3D_7o7lt")
 [node name="Player" parent="." instance=ExtResource("1_m0a2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353857, -0.0875752, 2.55319)
 
-[node name="human_empty" parent="." instance=ExtResource("4_k3kxi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61518, -0.087575, -2.3946)
+[editable path="Player"]
+[editable path="Player/HUD"]

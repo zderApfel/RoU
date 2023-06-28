@@ -8,15 +8,16 @@
 [sub_resource type="SphereMesh" id="SphereMesh_jonxk"]
 
 [node name="Dingdong" instance=ExtResource("1_bvydb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262098, 0)
 script = ExtResource("2_76cnm")
 item_ID = 1
 display_name = "Dingdong"
 description = "This is just a placeholder item"
 
 [node name="model2" type="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.192108, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.196517, -0.192108, 0)
 shape = SubResource("SphereShape3D_1urh7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="model2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0)
+transform = Transform3D(1.017, 0, 0, 0, 1.017, 0, 0, 0, 1.017, 0, -1.19209e-07, 0)
 mesh = SubResource("SphereMesh_jonxk")

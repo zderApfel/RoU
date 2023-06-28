@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://3qcdg1nx3nsr"]
+
+[ext_resource type="Texture2D" uid="uid://bfa6hf6rso0qd" path="res://assets/hud/grab_hand.png" id="1_hk4m6"]
+[ext_resource type="Theme" uid="uid://6n1pw0qi5r8u" path="res://assets/hud/default_style.tres" id="2_36s2u"]
+
+[node name="HUD" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="loot_hand" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="loot_hand"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="loot_hand/TextureRect"]
+texture = ExtResource("1_hk4m6")
+
+[node name="loot" type="RichTextLabel" parent="loot_hand/TextureRect"]
+layout_mode = 2
+offset_left = -21.0
+offset_top = 61.0
+offset_right = 19.0
+offset_bottom = 101.0
+theme = ExtResource("2_36s2u")
+text = "Loot"
+scroll_active = false
