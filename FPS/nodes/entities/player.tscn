@@ -17,21 +17,27 @@ script = ExtResource("1_udxwy")
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("2_akxxe")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65502, -0.0466755)
-cull_mask = 524287
-
-[node name="line_of_sight" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0559274, 0.00143814)
-script = ExtResource("3_cq85c")
-
 [node name="HUD" parent="." instance=ExtResource("3_uxkw5")]
 
 [node name="human_empty" parent="." instance=ExtResource("5_ap5eg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.497528, -0.0496599, 0, 0.0496599, 0.497528, 0, 0.646985, 0.167493)
 
-[node name="human_empty2" parent="human_empty/Armature/Skeleton3D" index="0"]
-layers = 524288
+[node name="neck" parent="human_empty/Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.999948, -0.0102335, 4.75836e-08, 0.0102335, 0.999946, -0.00174543, 1.78143e-05, 0.00174534, 0.999998, -0.015707, 0.999856, 0.275815)
+
+[node name="Camera3D" type="Camera3D" parent="human_empty/Armature/Skeleton3D/neck" index="0"]
+transform = Transform3D(-1.99999, -0.00698129, 1.74817e-07, -0.00698129, 1.99999, 0, -1.74812e-07, 0, -2, -0.000904701, 0.78416, 0.429946)
+cull_mask = 524287
+
+[node name="line_of_sight" type="RayCast3D" parent="human_empty/Armature/Skeleton3D/neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0559274, 0.00143814)
+script = ExtResource("3_cq85c")
+
+[node name="waist" type="BoneAttachment3D" parent="human_empty/Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.999877, -0.0157073, -7.10543e-15, 0.0157073, 0.999875, -0.00174533, 2.74144e-05, 0.00174511, 0.999998, -3.55271e-15, 0, 0.27407)
+bone_name = "Bone"
+bone_idx = 0
+override_pose = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.747307, -0.105868)

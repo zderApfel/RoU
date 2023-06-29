@@ -9,7 +9,12 @@ var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
-@onready var camera:Camera3D = $Camera3D
+@onready var neck = $human_empty/Armature/Skeleton3D/neck
+@onready var waist = $human_empty/Armature/Skeleton3D/waist
+@onready var movement_animations = $human_empty/Armature/Skeleton3D/movement
+
+func _ready():
+	movement_animations.active = true
 
 func _physics_process(delta):
 	var horizontal_velocity = Input.get_vector("left","right","forward","backward").normalized() * SPEED
@@ -26,12 +31,23 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("cancel"): 
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
+		
+	update_animation_parameters()
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * LOOK_SENSITIVITY)
-		camera.rotate_x(-event.relative.y * LOOK_SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+		
+		neck.rotate_x(event.relative.y * LOOK_SENSITIVITY)
+		neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-60), deg_to_rad(80))
+		
+func update_animation_parameters():
+	if(velocity == Vector3.ZERO):
+		movement_animations["parameters/conditions/is_idle"] = true
+		#movement_animations["parameters/conditions/is_moving"] = false
+	else:
+		movement_animations["parameters/conditions/is_idle"] = false
+		#movement_animations["parameters/conditions/is_moving"] = true
 
 func _process(_delta):
 	pass
