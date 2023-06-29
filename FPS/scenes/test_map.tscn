@@ -93,7 +93,4 @@ transform = Transform3D(0.081, 0, 0, 0, -3.54062e-09, -0.081, 0, 0.081, -3.54062
 shape = SubResource("CapsuleShape3D_7o7lt")
 
 [node name="Player" parent="." instance=ExtResource("1_m0a2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353857, -0.0875752, 2.55319)
-
-[editable path="Player"]
-[editable path="Player/HUD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.645571, 1.1365, 2.54234)

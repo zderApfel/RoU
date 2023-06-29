@@ -1,7 +1,7 @@
 extends RayCast3D
 
 @onready var LOOT_HAND = get_tree().get_current_scene().get_node("Player/HUD/loot_hand")
-@onready var LOOT_LABEL = get_tree().get_current_scene().get_node("Player/HUD/loot_hand/TextureRect/RichTextLabel")
+@onready var LOOT_LABEL = get_tree().get_current_scene().get_node("Player/HUD/loot_hand/TextureRect/loot")
 @onready var INVENTORY = get_tree().get_current_scene().get_node("Player/Inventory")
 @onready var x #Used as an identifier for the item you're looking at
 
@@ -18,7 +18,7 @@ func _physics_process(_delta):
 
 				var format_string = '''"%s"'''
 				var item = x.display_name
-				LOOT_LABEL.text = format_string % item
+				#LOOT_LABEL.text = format_string % item
 
 				if Input.is_action_just_pressed("loot"):
 					INVENTORY.loot_action(x)

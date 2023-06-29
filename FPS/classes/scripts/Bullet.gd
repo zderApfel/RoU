@@ -1,9 +1,5 @@
 class_name Bullet extends RigidBody3D
 
-@export var HP_DAMAGE: int = 0
-@export var BP_DAMAGE: int = 0
-@export var AP_DAMAGE: int = 0
-@export var HEADSHOT_MULTIPLIER: float = 0.0
 
 @export var MUZZLE_VELOCITY: float = 25.0
 

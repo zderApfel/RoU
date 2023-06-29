@@ -10,6 +10,7 @@ class_name Item extends Node3D
 @export var is_stackable: bool = false
 @export var amount: int = 1
 @export var max_stack: int = 1
+@export var bulk: int = 1
 @export var legal: bool = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

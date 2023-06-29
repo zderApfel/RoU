@@ -4,30 +4,37 @@
 [ext_resource type="Script" path="res://oddball_scripts/player_inventory.gd" id="2_akxxe"]
 [ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="3_cq85c"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_uxkw5"]
+[ext_resource type="PackedScene" uid="uid://spkl88pwe8pm" path="res://nodes/entities/human_empty.tscn" id="5_ap5eg"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x8kp5"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_c74ax"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0yga3"]
+radius = 0.502207
+height = 2.51767
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494062, 0)
 script = ExtResource("1_udxwy")
 
-[node name="Body" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971465, 0)
-shape = SubResource("CapsuleShape3D_x8kp5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
-mesh = SubResource("CapsuleMesh_c74ax")
-
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("2_akxxe")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99967, 0.0257059, 0, -0.0257059, 0.99967, 0, 1.62137, -0.305707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65502, -0.0466755)
+cull_mask = 524287
 
 [node name="line_of_sight" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0559274, 0.00143814)
 script = ExtResource("3_cq85c")
 
 [node name="HUD" parent="." instance=ExtResource("3_uxkw5")]
+
+[node name="human_empty" parent="." instance=ExtResource("5_ap5eg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.497528, -0.0496599, 0, 0.0496599, 0.497528, 0, 0.646985, 0.167493)
+
+[node name="human_empty2" parent="human_empty/Armature/Skeleton3D" index="0"]
+layers = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.747307, -0.105868)
+shape = SubResource("CapsuleShape3D_0yga3")
+
+[editable path="human_empty"]

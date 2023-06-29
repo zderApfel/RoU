@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://m28hxodbhkpk"]
+[gd_scene load_steps=6 format=3 uid="uid://m28hxodbhkpk"]
 
 [ext_resource type="Script" path="res://classes/scripts/Bullet.gd" id="1_aqnj7"]
-[ext_resource type="Script" path="res://classes/scripts/bullet_hitbox.gd" id="2_ptpwa"]
+[ext_resource type="Script" path="res://classes/scripts/Hitbox.gd" id="2_thul1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rlrtl"]
 
@@ -11,27 +11,24 @@
 albedo_color = Color(0.419608, 0.419608, 0, 1)
 metallic = 1.0
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_48542"]
-
 [node name="Bullet" type="RigidBody3D"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 0
 script = ExtResource("1_aqnj7")
 
+[node name="Hitbox" type="Area3D" parent="."]
+script = ExtResource("2_thul1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(-0.023, 0, 0, 0, -0.023, 0, 0, 0, -0.023, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_rlrtl")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.067, 0, 0, 0, 0.067, 0, 0, 0, 0.067, 0, 0, 0)
+transform = Transform3D(-0.023, 0, 0, 0, -0.023, 0, 0, 0, -0.023, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_rlrtl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, -3.80851e-15, 0, 3.80851e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_2lihq")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_srnno")
-
-[node name="bullet_hitbox" type="Area3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.000259492, -0.0831319, 0)
-script = ExtResource("2_ptpwa")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="bullet_hitbox"]
-transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_48542")
-
-[connection signal="body_entered" from="bullet_hitbox" to="bullet_hitbox" method="_on_body_entered"]
