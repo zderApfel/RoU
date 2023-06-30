@@ -1,68 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca8trdv4b7w5j"]
+[gd_scene load_steps=6 format=3 uid="uid://ca8trdv4b7w5j"]
 
-[ext_resource type="Script" path="res://nodes/entities/player.gd" id="1_udxwy"]
+[ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://nodes/entities/human.tscn" id="1_7s71g"]
 [ext_resource type="Script" path="res://oddball_scripts/player_inventory.gd" id="2_akxxe"]
-[ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="3_cq85c"]
+[ext_resource type="Script" path="res://nodes/scripts/player.gd" id="2_uwmmk"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_uxkw5"]
-[ext_resource type="PackedScene" uid="uid://spkl88pwe8pm" path="res://nodes/entities/human_empty.tscn" id="5_ap5eg"]
+[ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="3_w5022"]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_xjqc0"]
+[node name="Player" instance=ExtResource("1_7s71g")]
+input_ray_pickable = false
+script = ExtResource("2_uwmmk")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xt6we"]
-radius = 0.521267
-height = 2.91765
-
-[node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_udxwy")
-
-[node name="Inventory" type="Node" parent="."]
-script = ExtResource("2_akxxe")
-
-[node name="HUD" parent="." instance=ExtResource("3_uxkw5")]
-
-[node name="human_empty" parent="." instance=ExtResource("5_ap5eg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.500001, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="Skeleton3D" parent="human_empty/Armature" index="0"]
-bones/1/rotation = Quaternion(6.56197e-08, -4.23604e-08, 0.706422, 0.70779)
-bones/2/rotation = Quaternion(0.0482619, 0.0641615, 0.507587, 0.857852)
-bones/4/rotation = Quaternion(-1.02365e-10, 3.06011e-08, 0.0101865, 0.999948)
-bones/5/rotation = Quaternion(5.15599e-08, 2.31377e-08, -0.00273714, 0.999996)
-bones/6/rotation = Quaternion(-0.00357385, -1.91365e-05, -0.0017837, 0.999992)
-bones/8/rotation = Quaternion(0.00714755, -0.00334255, -0.458617, 0.888599)
-bones/9/rotation = Quaternion(0.0128255, -0.00362399, -0.249837, 0.968196)
-bones/11/rotation = Quaternion(0.661745, -0.249186, -0.661745, -0.249186)
-bones/12/rotation = Quaternion(-0.342896, 0.0404103, 0.104825, 0.932631)
-bones/13/rotation = Quaternion(-0.0077657, -0.000848047, -0.108569, 0.994058)
-bones/14/rotation = Quaternion(-4.65636e-10, 4.99281e-15, 6.71339e-08, 1)
-bones/15/rotation = Quaternion(0.661745, 0.249186, 0.661745, -0.249186)
-bones/16/rotation = Quaternion(-0.345079, -0.00097592, -0.00253248, 0.93857)
-bones/17/rotation = Quaternion(-0.00781113, -0.00010299, -0.0131735, 0.999883)
-bones/18/rotation = Quaternion(-4.65636e-10, -4.99281e-15, -6.71339e-08, 1)
-
-[node name="neck" parent="human_empty/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.999948, -0.0102335, 4.75836e-08, 0.0102335, 0.999946, -0.00174543, 1.78143e-05, 0.00174534, 0.999998, -0.015707, 0.999856, 0.275815)
-
-[node name="Camera3D" type="Camera3D" parent="human_empty/Armature/Skeleton3D/neck" index="0"]
-transform = Transform3D(-1.99999, -0.00698129, 1.74817e-07, -0.00698129, 1.99999, 0, -1.74812e-07, 0, -2, -0.000904701, 0.78416, 0.429946)
-cull_mask = 524287
-
-[node name="line_of_sight" type="RayCast3D" parent="human_empty/Armature/Skeleton3D/neck/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0.0559274, 0.00143814)
-script = ExtResource("3_cq85c")
-
-[node name="waist" type="BoneAttachment3D" parent="human_empty/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.999877, -0.0157073, -7.10543e-15, 0.0157073, 0.999875, -0.00174533, 2.74144e-05, 0.00174511, 0.999998, -3.55271e-15, 0, 0.27407)
-bone_name = "Bone"
-bone_idx = 0
+[node name="neck" type="BoneAttachment3D" parent="Skeleton3D" index="1"]
+transform = Transform3D(0.999994, 0.00357531, 1.31514e-08, -0.00357531, 0.999994, -1.18125e-07, -1.35736e-08, 1.18077e-07, 1, -0.00189893, 1.31076, 0.28577)
+bone_name = "head"
+bone_idx = 6
 override_pose = true
 
-[node name="movement" parent="human_empty" index="1"]
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_xjqc0")
-parameters/movement/blend_position = 0
+[node name="Camera3D" type="Camera3D" parent="Skeleton3D/neck" index="0"]
+transform = Transform3D(-2, -2.37875e-14, -1.74846e-07, 4.43782e-14, 2, 0, 1.74846e-07, 0, -2, -0.00183614, 0.513547, 0.337818)
 
-[node name="collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0346645, 0, -0.155756)
-shape = SubResource("CapsuleShape3D_xt6we")
+[node name="line_of_sight" type="RayCast3D" parent="Skeleton3D/neck/Camera3D" index="0"]
+transform = Transform3D(1.666, 0, 0, 0, -7.28232e-08, -1.666, 0, 1.666, -7.28232e-08, 0, 0, 0)
+script = ExtResource("3_w5022")
 
-[editable path="human_empty"]
+[node name="Inventory" type="Node" parent="." index="4"]
+script = ExtResource("2_akxxe")
+
+[node name="HUD" parent="." index="5" instance=ExtResource("3_uxkw5")]

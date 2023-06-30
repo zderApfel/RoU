@@ -71,7 +71,6 @@ func store_to_pockets(item):
 func draw_weapon(weapon):
 	if weapon != null and weapon != PLAYER_INVENTORY.HELD_ITEM:
 		PLAYER_INVENTORY.HELD_ITEM = weapon
-		equip(weapon)
 		
 	elif PLAYER_INVENTORY.HELD_ITEM != null and weapon == null:
 		print("Slot is empty")
@@ -79,12 +78,11 @@ func draw_weapon(weapon):
 	elif PLAYER_INVENTORY.HELD_ITEM == null and weapon == null:
 		print("Slot is empty")
 
+
 func stow_weapon():
 	PLAYER_INVENTORY.HELD_ITEM = null
 	print("Weapon stowed")
 
-func equip(weapon):
-	print(weapon.display_name+" equipped")
 
 func loot_action(item_to_loot):
 	match item_to_loot.type:
