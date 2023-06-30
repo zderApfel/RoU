@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0tbn8wj8kaoh"
+path="res://.godot/imported/stock.obj-941a5e7870a15b3f454cc06b5f0c69f1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stock.obj-941a5e7870a15b3f454cc06b5f0c69f1.mesh"]
+
+source_file="res://assets/weapons/ak_762/stock.obj"
+dest_files=["res://.godot/imported/stock.obj-941a5e7870a15b3f454cc06b5f0c69f1.mesh", "res://.godot/imported/stock.obj-941a5e7870a15b3f454cc06b5f0c69f1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

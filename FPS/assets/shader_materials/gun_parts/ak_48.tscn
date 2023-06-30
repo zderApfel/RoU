@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmueqp1865qq"]
+
+[ext_resource type="PackedScene" uid="uid://ec1b5pfjnrs8" path="res://classes/TwoHandFirearm.tscn" id="1_yy6ji"]
+
+[node name="ak48" instance=ExtResource("1_yy6ji")]
+mass = 3.0
+caliber = "545x39"
+max_ammo = 42
+display_name = "AK-48"
+description = "The Russian Federation's rifle of choice for their troops. Part of a long line of derivatives of the original AK-762"
+rarity = 4
+bulk = 4
+legal = false

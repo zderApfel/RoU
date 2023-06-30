@@ -158,8 +158,8 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 #### Assault Rifles
 
 * **AK-762** | [3] - *One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy construction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired.*
-* AK-545 | [3] - *A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge.*
-* AK-48 | [4] - *The Russian Federation's rifle of choice for their troops. Part of a long line of derivatives of the original AK-762*
+* **AK-545** | [3] - *A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge.*
+* **AK-48** | [4] - *The Russian Federation's rifle of choice for their troops. Part of a long line of derivatives of the original AK-762*
 * M4A3 | [4] - *Standard issue rifle of the ROA military, based on the highly customizable and very balanced AR platform*
 * M16 | [5] - *One of the oldest versions of the AR platform that can be found. First developed in the 1950s by the United States*
 

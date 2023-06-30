@@ -1,104 +1,71 @@
-[gd_scene load_steps=15 format=3 uid="uid://d07vk82tr60sc"]
+[gd_scene load_steps=10 format=3 uid="uid://d07vk82tr60sc"]
 
 [ext_resource type="Script" path="res://nodes/items/TwoHandFirearm/ak762.gd" id="1_oyci8"]
-[ext_resource type="ArrayMesh" uid="uid://cw2nvvfhy36na" path="res://assets/weapons/akm_762/main_body.obj" id="2_8bns0"]
-[ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/dark_gunmetal.tres" id="3_tp30v"]
-[ext_resource type="ArrayMesh" uid="uid://cu45y5b6albbh" path="res://assets/weapons/akm_762/bolt.obj" id="4_4rgk3"]
-[ext_resource type="Material" uid="uid://debsyhgim2dlb" path="res://assets/shader_materials/gunmetal.tres" id="5_0lx3r"]
-[ext_resource type="ArrayMesh" uid="uid://d1d5n5ja2aqpb" path="res://assets/weapons/akm_762/furniture.obj" id="5_mq5ey"]
-[ext_resource type="Material" uid="uid://bjhtctcucwlrs" path="res://assets/shader_materials/furtniture_wood.tres" id="6_it88d"]
-[ext_resource type="ArrayMesh" uid="uid://chi7tf8vwo7r0" path="res://assets/weapons/akm_762/magazine.obj" id="7_mr50u"]
-[ext_resource type="ArrayMesh" uid="uid://dlmo8ldvsfdv1" path="res://assets/weapons/akm_762/stock.obj" id="8_0e25v"]
+[ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
+[ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_gked0"]
+[ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_twd5q"]
+[ext_resource type="Material" uid="uid://bjhtctcucwlrs" path="res://assets/shader_materials/gun_parts/ak_wood.tres" id="5_ojn5q"]
+[ext_resource type="ArrayMesh" uid="uid://c0eao4walw2a8" path="res://assets/weapons/ak_762/bolt.obj" id="6_jhuq6"]
+[ext_resource type="ArrayMesh" uid="uid://c0tbn8wj8kaoh" path="res://assets/weapons/ak_762/stock.obj" id="7_aj435"]
+[ext_resource type="ArrayMesh" uid="uid://chryw2vdy3b2f" path="res://assets/weapons/ak_762/magazine_762.obj" id="8_afdxe"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vkpgg"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_486ov"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0kei2"]
-size = Vector3(0.377981, 0.485106, 0.983771)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tdg6q"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_upyio"]
-points = PackedVector3Array(-0.122881, -0.425829, -0.621661, 0.0484891, -0.425829, -0.621661, -0.122881, -0.125728, 1.82103, -0.1872, 0.189164, -0.591617, 0.0484891, 0.302743, 1.73511, 0.219943, -0.125728, -0.535745, 0.0484891, -0.125728, 1.82103, 0.134195, 0.21702, -0.707308, -0.122881, 0.302743, 1.73511, -0.208629, -0.211451, 0.235616, 0.219943, 0.131297, -0.064283, 0.134195, -0.211451, -0.921829, -0.1872, 0.266314, 0.0255257, -0.1872, -0.00371216, -0.784686, 0.0484891, -0.425829, -0.364451, -0.208629, 0.21702, 0.321532, 0.219943, -0.125728, -0.193156, -0.1872, -0.19646, -0.784686, 0.219943, 0.131297, -0.621661, -0.122881, -0.425829, -0.364451, 0.134195, 0.00271348, -0.921829, 0.134195, 0.131297, -0.835913, 0.0484891, 0.00271348, 1.82103, 0.219943, -0.0401479, -0.064283, -0.122881, 0.00271348, 1.82103, 0.134195, -0.211451, 0.235616, -0.18604, 0.110969, -0.7004, 0.1128, 0.242108, 0.0568362, -0.208629, 0.0884362, 0.321532)
+[sub_resource type="BoxShape3D" id="BoxShape3D_hc5dw"]
+size = Vector3(0.402057, 1, 3.45706)
 
 [node name="ak762" type="RigidBody3D"]
 mass = 3.0
 script = ExtResource("1_oyci8")
-item_ID = 2
+caliber = "762x39"
+max_ammo = 30
 display_name = "AK-762"
 description = "One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy contstruction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired."
+rarity = 3
 bulk = 4
 legal = false
 
-[node name="ak762" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.356, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="ak_main_body" type="MeshInstance3D" parent="ak762"]
-mesh = ExtResource("2_8bns0")
+[node name="main_body" type="MeshInstance3D" parent="MeshInstance3D"]
+mesh = ExtResource("2_svnv3")
+surface_material_override/0 = ExtResource("3_gked0")
+
+[node name="furniture" type="MeshInstance3D" parent="MeshInstance3D/main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09892, -0.198964, -0.598529)
+mesh = ExtResource("4_twd5q")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("3_tp30v")
+surface_material_override/0 = ExtResource("5_ojn5q")
 
-[node name="ak_bolt" type="MeshInstance3D" parent="ak762/ak_main_body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184496, -0.305095, -0.00167602)
-mesh = ExtResource("4_4rgk3")
+[node name="aux_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body/furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107473, 0.249536, 0.641284)
+
+[node name="sight_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276418, 0.302626, -1.054)
+
+[node name="muzzle_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0470385, 0.0486072, 1.30323)
+
+[node name="stock_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0486564, 0.00561957, -1.4021)
+skeleton = NodePath("../furniture/aux_slot")
+
+[node name="stock" type="MeshInstance3D" parent="MeshInstance3D/main_body/stock_slot"]
+transform = Transform3D(0.838, 0, 0, 0, 0.954, 0, 0, 0, 1, -0.0440881, -0.104854, -0.456954)
+mesh = ExtResource("7_aj435")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("5_0lx3r")
+surface_material_override/0 = ExtResource("5_ojn5q")
 
-[node name="ak_furn_stock" type="MeshInstance3D" parent="ak762/ak_main_body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0868412, -0.802907, 0.508402)
-mesh = ExtResource("5_mq5ey")
-skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("6_it88d")
+[node name="magazine" type="MeshInstance3D" parent="MeshInstance3D/main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0953422, -0.433517, -0.492559)
+mesh = ExtResource("8_afdxe")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("3_gked0")
 
-[node name="ak_762_magazine" type="MeshInstance3D" parent="ak762/ak_main_body"]
-transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, -0.0847492, -0.914277, -0.00407242)
-mesh = ExtResource("7_mr50u")
-skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("3_tp30v")
+[node name="bolt" type="MeshInstance3D" parent="MeshInstance3D/main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.209162, 0, -0.591787)
+mesh = ExtResource("6_jhuq6")
+skeleton = NodePath("../..")
 
-[node name="optic_slot" type="Area3D" parent="ak762"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195458, -0.383802)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ak762/optic_slot"]
-transform = Transform3D(0.191, 0, 0, 0, 0.191, 0, 0, 0, 0.191, -0.0453304, -0.00385989, 0.0234115)
-shape = SubResource("BoxShape3D_vkpgg")
-disabled = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ak762/optic_slot/CollisionShape3D"]
-visible = false
-mesh = SubResource("BoxMesh_486ov")
-
-[node name="muzzle_slot" type="Area3D" parent="ak762"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ak762/muzzle_slot"]
-transform = Transform3D(0.108, 0, 0, 0, 0.108, 0, 0, 0, 0.108, -0.0264987, -0.0511516, 1.84001)
-shape = SubResource("BoxShape3D_vkpgg")
-disabled = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ak762/muzzle_slot/CollisionShape3D"]
-visible = false
-mesh = SubResource("BoxMesh_486ov")
-
-[node name="stock_slot" type="Area3D" parent="ak762"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0428711, -0.0727539, -0.937043)
-
-[node name="ak_stock_stock" type="MeshInstance3D" parent="ak762/stock_slot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00564079, -0.0890169, -0.40817)
-mesh = ExtResource("8_0e25v")
-skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("6_it88d")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ak762/stock_slot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.142502, -0.467502)
-shape = SubResource("BoxShape3D_0kei2")
-
-[node name="aux_slot" type="Area3D" parent="ak762"]
-transform = Transform3D(0.221, 0, 0, 0, 0.221, 0, 0, 0, 0.221, -0.25695, 0, 0.601564)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ak762/aux_slot"]
-shape = SubResource("BoxShape3D_tdg6q")
-
-[node name="hitbox" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_upyio")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, -1.19209e-07, 0, 1.19209e-07, 0.5, 0, 0, 0, 0.5, -0.000741841, -0.0330657, -0.288515)
+shape = SubResource("BoxShape3D_hc5dw")

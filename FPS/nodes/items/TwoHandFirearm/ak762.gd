@@ -10,7 +10,7 @@ func _process(_delta):
 
 func primary_action():
 	if Input.is_action_just_pressed("primary_action"):
-		var x = load("res://nodes/items/Ammo/762x39.tscn").instantiate()
+		var x = load(ammo).instantiate()
 		
 		muzzle.add_child(x)
 		x.transform = muzzle.transform

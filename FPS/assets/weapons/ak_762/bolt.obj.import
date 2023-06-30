@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0eao4walw2a8"
+path="res://.godot/imported/bolt.obj-16bc55cbd07616aefb0001d4163f680f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bolt.obj-16bc55cbd07616aefb0001d4163f680f.mesh"]
+
+source_file="res://assets/weapons/ak_762/bolt.obj"
+dest_files=["res://.godot/imported/bolt.obj-16bc55cbd07616aefb0001d4163f680f.mesh", "res://.godot/imported/bolt.obj-16bc55cbd07616aefb0001d4163f680f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

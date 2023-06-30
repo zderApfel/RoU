@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cy803bou00cey"
+path="res://.godot/imported/stock.obj-f5c64041266a402555850ade00ae5010.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stock.obj-f5c64041266a402555850ade00ae5010.mesh"]
+
+source_file="res://assets/weapons/ak_545/stock.obj"
+dest_files=["res://.godot/imported/stock.obj-f5c64041266a402555850ade00ae5010.mesh", "res://.godot/imported/stock.obj-f5c64041266a402555850ade00ae5010.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

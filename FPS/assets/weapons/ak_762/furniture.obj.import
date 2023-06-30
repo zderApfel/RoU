@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxjhgcq4togj0"
+path="res://.godot/imported/furniture.obj-e619d699783acc0ba7fdd0817d3d58dd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/furniture.obj-e619d699783acc0ba7fdd0817d3d58dd.mesh"]
+
+source_file="res://assets/weapons/ak_762/furniture.obj"
+dest_files=["res://.godot/imported/furniture.obj-e619d699783acc0ba7fdd0817d3d58dd.mesh", "res://.godot/imported/furniture.obj-e619d699783acc0ba7fdd0817d3d58dd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

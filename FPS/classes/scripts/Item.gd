@@ -3,10 +3,10 @@ class_name Item extends Node3D
 @onready var equipped: bool = false
 @onready var type = "Generic"
 
-@export var item_ID: int = 9999999999
 @export var is_lootable: bool = true
 @export var display_name: String
 @export var description: String
+@export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
 @export var is_stackable: bool = false
 @export var amount: int = 1
 @export var max_stack: int = 1

@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
-const SPEED = 8
+const WALK_SPEED = 5
+const JOG_SPEED = 8
+const SPRINT_SPEED = 12
 const JUMP_VELOCITY = 3.0
 
 var VELOCITY_Y = 0
@@ -12,6 +14,8 @@ var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck = $human_empty/Armature/Skeleton3D/neck
 @onready var waist = $human_empty/Armature/Skeleton3D/waist
 @onready var movement_animations = $human_empty/Armature/Skeleton3D/movement
+
+@onready var CURRENT_SPEED = 8
 
 func _ready():
 	movement_animations.active = true

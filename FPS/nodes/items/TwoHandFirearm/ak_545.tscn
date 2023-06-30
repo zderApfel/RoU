@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgq8bgoudhw6g"]
+
+[ext_resource type="PackedScene" uid="uid://ec1b5pfjnrs8" path="res://classes/TwoHandFirearm.tscn" id="1_adcrw"]
+[ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_qpse2"]
+[ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_s2s1j"]
+[ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_027gi"]
+[ext_resource type="Material" uid="uid://ckanlcygj7jdc" path="res://assets/shader_materials/gun_parts/bakelite.tres" id="5_inva5"]
+[ext_resource type="Material" uid="uid://dq3up0dtuu84c" path="res://assets/shader_materials/gun_parts/ak_wood_2.tres" id="5_mbk2u"]
+[ext_resource type="ArrayMesh" uid="uid://c0tbn8wj8kaoh" path="res://assets/weapons/ak_762/stock.obj" id="6_m8lxs"]
+[ext_resource type="ArrayMesh" uid="uid://clgs3er2hcn0i" path="res://assets/weapons/ak_545/magazine_545.obj" id="6_wy630"]
+[ext_resource type="ArrayMesh" uid="uid://c0eao4walw2a8" path="res://assets/weapons/ak_762/bolt.obj" id="8_pdnqy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4uc4q"]
+size = Vector3(0.402057, 1.08276, 3.45706)
+
+[node name="ak_545" instance=ExtResource("1_adcrw")]
+mass = 3.0
+caliber = "545x39"
+max_ammo = 30
+display_name = "AK-545"
+description = "A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge."
+rarity = 3
+bulk = 4
+legal = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(0.356, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="main_body" type="MeshInstance3D" parent="MeshInstance3D" index="0"]
+mesh = ExtResource("2_qpse2")
+surface_material_override/0 = ExtResource("3_s2s1j")
+
+[node name="furniture" type="MeshInstance3D" parent="MeshInstance3D/main_body" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09892, -0.198964, -0.598529)
+mesh = ExtResource("4_027gi")
+surface_material_override/0 = ExtResource("5_mbk2u")
+
+[node name="aux_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body/furniture" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107473, 0.249536, 0.641284)
+
+[node name="sight_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276418, 0.302626, -1.054)
+
+[node name="muzzle_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0470385, 0.0486072, 1.30323)
+
+[node name="stock_slot" type="MeshInstance3D" parent="MeshInstance3D/main_body" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0486564, 0.00561957, -1.4021)
+skeleton = NodePath("../furniture/aux_slot")
+
+[node name="stock" type="MeshInstance3D" parent="MeshInstance3D/main_body/stock_slot" index="0"]
+transform = Transform3D(0.838, 0, 0, 0, 0.954, 0, 0, 0, 1, -0.0440881, -0.104854, -0.456954)
+mesh = ExtResource("6_m8lxs")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("5_mbk2u")
+
+[node name="magazine" type="MeshInstance3D" parent="MeshInstance3D/main_body" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0953422, -0.433517, -0.492559)
+mesh = ExtResource("6_wy630")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("5_inva5")
+
+[node name="bolt" type="MeshInstance3D" parent="MeshInstance3D/main_body" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.209162, 0, -0.591787)
+mesh = ExtResource("8_pdnqy")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0207099, -0.0947297, -0.253979)
+shape = SubResource("BoxShape3D_4uc4q")
