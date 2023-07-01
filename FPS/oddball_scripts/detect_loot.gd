@@ -1,8 +1,8 @@
 extends RayCast3D
 
-@onready var LOOT_HAND = get_tree().get_current_scene().get_node("Player/HUD/loot_hand")
-@onready var LOOT_LABEL = get_tree().get_current_scene().get_node("Player/HUD/loot_hand/TextureRect/loot")
-@onready var INVENTORY = get_tree().get_current_scene().get_node("Player/Inventory")
+@onready var LOOT_HAND = get_tree().get_current_scene().get_node("player/HUD/loot_hand")
+@onready var LOOT_LABEL = get_tree().get_current_scene().get_node("player/HUD/loot_hand/TextureRect/loot")
+@onready var INVENTORY = get_tree().get_current_scene().get_node("player/Inventory")
 @onready var x #Used as an identifier for the item you're looking at
 
 

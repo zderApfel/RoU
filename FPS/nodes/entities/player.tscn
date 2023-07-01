@@ -1,29 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca8trdv4b7w5j"]
+[gd_scene load_steps=7 format=3 uid="uid://d2asxneyc6ot1"]
 
-[ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://nodes/entities/human.tscn" id="1_7s71g"]
-[ext_resource type="Script" path="res://oddball_scripts/player_inventory.gd" id="2_akxxe"]
-[ext_resource type="Script" path="res://nodes/scripts/player.gd" id="2_uwmmk"]
-[ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_uxkw5"]
-[ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="3_w5022"]
+[ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="1_oipik"]
+[ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://nodes/entities/human.tscn" id="1_we0jm"]
+[ext_resource type="Script" path="res://nodes/scripts/player.gd" id="2_btb2s"]
+[ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_kxo1l"]
+[ext_resource type="Script" path="res://oddball_scripts/player_inventory.gd" id="4_ksdqp"]
 
-[node name="Player" instance=ExtResource("1_7s71g")]
-input_ray_pickable = false
-script = ExtResource("2_uwmmk")
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_mxjyc"]
 
-[node name="neck" type="BoneAttachment3D" parent="Skeleton3D" index="1"]
-transform = Transform3D(0.999994, 0.00357531, 1.31514e-08, -0.00357531, 0.999994, -1.18125e-07, -1.35736e-08, 1.18077e-07, 1, -0.00189893, 1.31076, 0.28577)
-bone_name = "head"
-bone_idx = 6
+[node name="player" instance=ExtResource("1_we0jm")]
+script = ExtResource("2_btb2s")
+
+[node name="Skeleton3D" parent="." index="1"]
+bones/1/position = Vector3(-0.0749063, 1.00897, 0.000308429)
+bones/6/position = Vector3(-0.0367374, 0.212952, 0.00777172)
+
+[node name="neck" parent="Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.0350962, 1.21334, 0.247824)
 override_pose = true
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/neck" index="0"]
-transform = Transform3D(-2, -2.37875e-14, -1.74846e-07, 4.43782e-14, 2, 0, 1.74846e-07, 0, -2, -0.00183614, 0.513547, 0.337818)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74845e-07, 0, -2, -0.00662338, 0.73251, 0.446885)
 
 [node name="line_of_sight" type="RayCast3D" parent="Skeleton3D/neck/Camera3D" index="0"]
-transform = Transform3D(1.666, 0, 0, 0, -7.28232e-08, -1.666, 0, 1.666, -7.28232e-08, 0, 0, 0)
-script = ExtResource("3_w5022")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_oipik")
 
-[node name="Inventory" type="Node" parent="." index="4"]
-script = ExtResource("2_akxxe")
+[node name="movement_tree" parent="." index="3"]
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_mxjyc")
 
-[node name="HUD" parent="." index="5" instance=ExtResource("3_uxkw5")]
+[node name="HUD" parent="." index="4" instance=ExtResource("3_kxo1l")]
+
+[node name="Inventory" type="Node" parent="." index="5"]
+script = ExtResource("4_ksdqp")
+
+[editable path="HUD"]

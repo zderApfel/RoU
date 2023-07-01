@@ -14,6 +14,7 @@ var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck = $Skeleton3D/neck
 @onready var movement_animations = $movement_tree
 
+@onready var animtracker = 0
 @onready var CURRENT_SPEED = 8
 
 func _ready():
@@ -46,8 +47,13 @@ func _input(event):
 		neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-60), deg_to_rad(80))
 		
 func animation_manager():
-	'''This function will adjust the blending variable for the movement_tree once I have the chance to redo this'''
-	pass
+	if velocity != Vector3.ZERO:
+		if animtracker < CURRENT_SPEED:
+			animtracker+=.5
+	else:
+		if animtracker > 0:
+			animtracker-=.5
+	movement_animations["parameters/jog/blend_position"] = animtracker
 
 func _process(_delta):
 	pass

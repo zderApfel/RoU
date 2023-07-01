@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bj0jo67t2470p"]
 
-[ext_resource type="PackedScene" uid="uid://ca8trdv4b7w5j" path="res://nodes/entities/player.tscn" id="1_m0a2e"]
+[ext_resource type="PackedScene" uid="uid://d2asxneyc6ot1" path="res://nodes/entities/player.tscn" id="1_m0a2e"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
 [ext_resource type="PackedScene" uid="uid://d07vk82tr60sc" path="res://nodes/items/TwoHandFirearm/ak762.tscn" id="3_gt0ee"]
 
@@ -94,5 +94,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
-[node name="Player" parent="." instance=ExtResource("1_m0a2e")]
-transform = Transform3D(-0.999942, 0, 0.0107684, 0, 1, 0, -0.0107684, 0, -0.999942, 0.161038, 1.68689, 5.02138)
+[node name="player" parent="." instance=ExtResource("1_m0a2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 2
