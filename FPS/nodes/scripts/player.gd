@@ -15,14 +15,14 @@ var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var movement_animations = $movement_tree
 
 @onready var animtracker = 0
-@onready var CURRENT_SPEED = 8
+@onready var current_speed = 8
 
 func _ready():
 	#movement_animations.active = true
 	pass
 	
 func _physics_process(delta):
-	var horizontal_velocity = Input.get_vector("right", "left", "backward", "forward").normalized() * CURRENT_SPEED
+	var horizontal_velocity = Input.get_vector("right", "left", "backward", "forward").normalized() * current_speed
 	
 	velocity = horizontal_velocity.x * global_transform.basis.x + horizontal_velocity.y * global_transform.basis.z
 	
@@ -48,7 +48,7 @@ func _input(event):
 		
 func animation_manager():
 	if velocity != Vector3.ZERO:
-		if animtracker < CURRENT_SPEED:
+		if animtracker < current_speed:
 			animtracker+=.5
 	else:
 		if animtracker > 0:

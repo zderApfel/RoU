@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2asxneyc6ot1" path="res://nodes/entities/player.tscn" id="1_m0a2e"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
-[ext_resource type="PackedScene" uid="uid://d07vk82tr60sc" path="res://nodes/items/TwoHandFirearm/ak762.tscn" id="3_gt0ee"]
+[ext_resource type="PackedScene" uid="uid://5wdqoodxqi73" path="res://nodes/items/TwoHandFirearm/ak762.tscn" id="3_gt0ee"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -49,9 +49,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16787, 0.55858, -0.201269)
 [node name="Dingdong2" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91225, 0.753004, -2.97937)
 
-[node name="ak762" parent="." instance=ExtResource("3_gt0ee")]
-transform = Transform3D(0.894708, -0.446651, 0, 0.446651, 0.894708, 0, 0, 0, 1, -3.26067, 1.42291, 0)
-
 [node name="bullet_test" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.31349, -2.16401)
 
@@ -80,6 +77,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
+[node name="ak762" parent="." instance=ExtResource("3_gt0ee")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.90886, 0.84321, 3.05261)
+
 [node name="player" parent="." instance=ExtResource("1_m0a2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03611, 0)
-rotation_edit_mode = 2
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.43367, 3.65996)

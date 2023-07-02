@@ -4,3 +4,5 @@
 
 [node name="Weapon" type="RigidBody3D"]
 script = ExtResource("1_f8r4k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

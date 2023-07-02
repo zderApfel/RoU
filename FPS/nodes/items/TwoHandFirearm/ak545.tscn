@@ -17,6 +17,7 @@ size = Vector3(0.402057, 1.08276, 3.45706)
 mass = 3.0
 caliber = "545x39"
 max_ammo = 30
+is_holdable = true
 display_name = "AK-545"
 description = "A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge."
 rarity = 3

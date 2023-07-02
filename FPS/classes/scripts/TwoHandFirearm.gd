@@ -6,15 +6,9 @@ class_name TwoHandFirearm extends Item
 @export var max_ammo: int
 @export var current_ammo: int = 0
 
-
-var ammo: String
-var muzzle: Node3D
-var world
-
-func _ready():
-	var format_string = "res://nodes/items/Ammo/%s"
-	ammo = format_string % caliber
-	type = "TwoHandFirearm"
+@onready var format_string = "res://nodes/items/Ammo/%s.tscn"
+@onready var ammo = format_string % caliber
+@onready var muzzle: Node3D
 
 func _process(_delta):
 	pass

@@ -4,6 +4,7 @@ class_name Item extends Node3D
 @onready var type = "Generic"
 
 @export var is_lootable: bool = true
+@export var is_holdable: bool = false
 @export var display_name: String
 @export var description: String
 @export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
@@ -31,3 +32,6 @@ func primary_action():
 func secondary_action():
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
+
+func _physics_process(delta):
+	equip()

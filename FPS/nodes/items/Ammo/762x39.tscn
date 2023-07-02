@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdi711t08fsmk"]
 
 [ext_resource type="Script" path="res://nodes/items/Ammo/762x39.gd" id="1_7itjb"]
-[ext_resource type="Script" path="res://classes/scripts/bullet_hitbox.gd" id="2_nidrx"]
+[ext_resource type="Script" path="res://nodes/items/Ammo/bullet_hitbox.gd" id="2_7ryfi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orifq"]
 
@@ -30,7 +30,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_65prf")
 
 [node name="bullet_hitbox" type="Area3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.0583395, -2.5501e-09)
-script = ExtResource("2_nidrx")
+script = ExtResource("2_7ryfi")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="bullet_hitbox"]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)

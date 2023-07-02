@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2asxneyc6ot1"]
+[gd_scene load_steps=8 format=3 uid="uid://d2asxneyc6ot1"]
 
 [ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="1_oipik"]
 [ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://nodes/entities/human.tscn" id="1_we0jm"]
 [ext_resource type="Script" path="res://nodes/scripts/player.gd" id="2_btb2s"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_kxo1l"]
-[ext_resource type="Script" path="res://oddball_scripts/player_inventory.gd" id="4_ksdqp"]
+[ext_resource type="PackedScene" uid="uid://cfw0k0lostyyn" path="res://nodes/Inventory.tscn" id="5_8uj76"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hn8et"]
+size = Vector3(0.484665, 2.23589, 0.327528)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_mxjyc"]
 
@@ -13,47 +16,34 @@ script = ExtResource("2_btb2s")
 
 [node name="collision" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.68385e-09, 0, 0.110771)
+shape = SubResource("BoxShape3D_hn8et")
 
 [node name="Skeleton3D" parent="." index="1"]
-bones/0/rotation = Quaternion(-0.00670713, -1.8569e-13, -5.18247e-10, 0.999978)
 bones/1/position = Vector3(-0.0749063, 1.00897, 0.000308429)
-bones/1/rotation = Quaternion(6.56197e-08, -4.23604e-08, 0.706422, 0.70779)
-bones/2/rotation = Quaternion(0.0947309, -0.0652831, 0.461896, 0.879441)
-bones/3/rotation = Quaternion(-0.00627069, 0.000914915, 0.226769, 0.973928)
-bones/4/rotation = Quaternion(-1.02365e-10, 3.06011e-08, 0.0101865, 0.999948)
-bones/5/rotation = Quaternion(5.15599e-08, 2.31377e-08, -0.00273714, 0.999996)
 bones/6/position = Vector3(-0.0367374, 0.212952, 0.00777172)
-bones/6/rotation = Quaternion(2.63096e-08, 1.61695e-08, -0.00178371, 0.999998)
-bones/7/rotation = Quaternion(4.23589e-08, 6.56221e-08, -0.707765, 0.706448)
-bones/8/rotation = Quaternion(0.0296904, 0.00210828, -0.509243, 0.860108)
-bones/9/rotation = Quaternion(-0.0066837, -0.000586584, -0.175441, 0.984467)
-bones/10/rotation = Quaternion(-1.02378e-10, -3.06015e-08, -0.0101865, 0.999948)
-bones/11/rotation = Quaternion(0.661745, -0.249186, -0.661745, -0.249186)
-bones/12/rotation = Quaternion(-0.345081, -3.03257e-07, 1.29874e-07, 0.938573)
-bones/13/rotation = Quaternion(-0.00781181, 8.48098e-08, -8.38537e-08, 0.999969)
-bones/14/rotation = Quaternion(-4.65636e-10, 4.99281e-15, 6.71339e-08, 1)
-bones/15/rotation = Quaternion(0.661745, 0.249186, 0.661745, -0.249186)
-bones/16/rotation = Quaternion(-0.345081, 3.03257e-07, -1.29874e-07, 0.938573)
-bones/17/rotation = Quaternion(-0.00781181, -8.48098e-08, 8.38537e-08, 0.999969)
-bones/18/rotation = Quaternion(-4.65636e-10, -4.99281e-15, -6.71339e-08, 1)
 
 [node name="neck" parent="Skeleton3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.0350962, 1.21334, 0.247824)
 override_pose = true
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/neck" index="0"]
-transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74845e-07, 0, -2, -0.00662338, 0.73251, 0.446885)
+transform = Transform3D(-2, 0, -1.74845e-07, 0, 2, 0, 1.74845e-07, 0, -2, -0.00662338, 0.73251, 0.446885)
 
 [node name="line_of_sight" type="RayCast3D" parent="Skeleton3D/neck/Camera3D" index="0"]
-transform = Transform3D(1.5, 0, 0, 0, -6.55671e-08, -1.5, 0, 1.5, -6.55671e-08, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
 script = ExtResource("1_oipik")
+
+[node name="right_hand" parent="Skeleton3D" index="2"]
+transform = Transform3D(-0.967177, -0.125706, 0.220826, 0.125541, -0.991977, -0.0148389, 0.22092, 0.013371, 0.9752, -1.02739, 0.163564, 0.33146)
+
+[node name="left_hand" parent="Skeleton3D" index="3"]
+transform = Transform3D(-0.967177, -0.125706, 0.220826, 0.125541, -0.991977, -0.0148389, 0.22092, 0.013371, 0.9752, -1.02739, 0.163564, 0.33146)
 
 [node name="movement_tree" parent="." index="3"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_mxjyc")
 
 [node name="HUD" parent="." index="4" instance=ExtResource("3_kxo1l")]
 
-[node name="Inventory" type="Node" parent="." index="5"]
-script = ExtResource("4_ksdqp")
+[node name="Inventory" parent="." index="5" instance=ExtResource("5_8uj76")]
 
 [editable path="HUD"]
