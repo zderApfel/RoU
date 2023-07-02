@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bj0jo67t2470p"]
+[gd_scene load_steps=13 format=3 uid="uid://bj0jo67t2470p"]
 
 [ext_resource type="PackedScene" uid="uid://d2asxneyc6ot1" path="res://nodes/entities/player.tscn" id="1_m0a2e"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
@@ -17,10 +17,6 @@ background_mode = 2
 sky = SubResource("Sky_8x17u")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_6337k"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5e6wb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nk3o7"]
 
@@ -46,16 +42,6 @@ environment = SubResource("Environment_ivyuy")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 6.23469, 0)
 layers = 524289
 shadow_enabled = true
-
-[node name="wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.2857e-08, 0, 0.074, 0, 4.051, 0, -1.438, 0, -3.23464e-09, -4.28144, 0.488839, 0.00561047)
-mesh = SubResource("BoxMesh_6337k")
-
-[node name="RigidBodyShape3D" type="RigidBody3D" parent="wall"]
-transform = Transform3D(1.003, 0, 0, 0, 1.003, 0, 0, 0, 1.003, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall/RigidBodyShape3D"]
-shape = SubResource("BoxShape3D_5e6wb")
 
 [node name="Dingdong" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16787, 0.55858, -0.201269)
@@ -95,5 +81,5 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
 [node name="player" parent="." instance=ExtResource("1_m0a2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03611, 0)
 rotation_edit_mode = 2
