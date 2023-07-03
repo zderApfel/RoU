@@ -34,10 +34,10 @@ transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 
 script = ExtResource("1_oipik")
 
 [node name="right_hand" parent="Skeleton3D" index="2"]
-transform = Transform3D(-0.967177, -0.125706, 0.220826, 0.125541, -0.991977, -0.0148389, 0.22092, 0.013371, 0.9752, -1.02739, 0.163564, 0.33146)
+transform = Transform3D(-0.966341, -0.132417, 0.220565, 0.128295, -0.991188, -0.0329757, 0.222988, -0.00356843, 0.974815, -1.01551, 0.153087, 0.334297)
 
 [node name="left_hand" parent="Skeleton3D" index="3"]
-transform = Transform3D(-0.967177, -0.125706, 0.220826, 0.125541, -0.991977, -0.0148389, 0.22092, 0.013371, 0.9752, -1.02739, 0.163564, 0.33146)
+transform = Transform3D(-0.966341, -0.132417, 0.220565, 0.128295, -0.991188, -0.0329757, 0.222988, -0.00356843, 0.974815, -1.01551, 0.153087, 0.334297)
 
 [node name="movement_tree" parent="." index="3"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_mxjyc")

@@ -99,7 +99,7 @@ func stow_weapon():
 
 
 func loot_action(item_to_loot):
-	print(item_to_loot.ammo)
+	print(item_to_loot.display_name)
 	
 	#if item_to_loot is Tool:
 		#INVENTORY.WEAPON_SLOTS.TOOL_SLOT.append(item_to_loot)

@@ -76,8 +76,8 @@ Rarely, the merc you hired on is particularly good at a certain set of skills, t
     Requires: Agility 16, Strength 14
 * Heavyweight - You resist 50% of BP damage BEFORE all other resistances
     Requires: Strength 16, Health 14
-* Marksperson - No weapon sway when aiming down sights
-    Requires: Shooting 16
+* Packrat - Doubled pocket inventory space
+    Requires: N/A
 * Infiltrator - Doesn't make noise when crouching
     Requires: Agility 15
 * Hacker - Has a chance to bypass an electronic countermeasure without finding the passcode (keypads, computers, etc.)
