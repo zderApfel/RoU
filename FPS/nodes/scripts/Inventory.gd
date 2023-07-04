@@ -19,6 +19,7 @@ extends Node
 @onready var RIGHT_HAND = get_tree().get_current_scene().get_node("player/Skeleton3D/right_hand/hold_area")
 @onready var LEFT_HAND = get_tree().get_current_scene().get_node("player/Skeleton3D/left_hand/hold_area")
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	inputs()
@@ -74,7 +75,9 @@ func store_to_pockets(item):
 func draw_weapon(weapon):
 	
 	
+	
 	if weapon != null and weapon != INVENTORY.HELD_ITEM:
+		weapon.transform = RIGHT_HAND.transform
 		INVENTORY.HELD_ITEM = weapon
 		INVENTORY.HELD_ITEM.freeze = true
 		INVENTORY.HELD_ITEM.is_lootable = false

@@ -21,7 +21,7 @@ is_holdable = true
 display_name = "AK-545"
 description = "A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge."
 rarity = 3
-bulk = 4
+bulk = 9
 legal = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
@@ -66,6 +66,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.209162, 0, -0.591787)
 mesh = ExtResource("8_pdnqy")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0207099, -0.0947297, -0.253979)
 shape = SubResource("BoxShape3D_4uc4q")

@@ -14,6 +14,10 @@ var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck = $Skeleton3D/neck
 @onready var movement_animations = $movement_tree
 
+@onready var movement_blend = movement_animations["parameters/jog/blend_position"]
+
+
+
 @onready var animtracker = 0
 @onready var current_speed = 8
 
@@ -53,7 +57,7 @@ func animation_manager():
 	else:
 		if animtracker > 0:
 			animtracker-=.5
-	movement_animations["parameters/jog/blend_position"] = animtracker
+	movement_blend = animtracker
 
 func _process(_delta):
 	pass

@@ -13,10 +13,10 @@
 radius = 0.128151
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibut6"]
-size = Vector3(0.0867499, 2.80822, 0.700184)
+size = Vector3(0.261141, 2.80822, 0.602893)
 
 [node name="ak762" type="RigidBody3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0132018, -0.240817)
 mass = 3.0
 script = ExtResource("1_oyci8")
 caliber = "762x39"
@@ -25,11 +25,11 @@ is_holdable = true
 display_name = "AK-762"
 description = "One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy contstruction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired."
 rarity = 3
-bulk = 4
+bulk = 9
 legal = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.75, -5.01112e-22, 0, -5.01112e-22, 0.75, -2.5411e-21, 0, -2.5411e-21, 0.75, -1.24978e-07, 0.162749, 0.762365)
+transform = Transform3D(-0.75, -6.55671e-08, 0, -2.86603e-15, 3.27835e-08, 0.75, -6.55671e-08, 0.75, -3.27835e-08, -0.2282, 0.847705, -0.210819)
 
 [node name="main_body" type="MeshInstance3D" parent="MeshInstance3D"]
 mesh = ExtResource("2_svnv3")
@@ -72,17 +72,17 @@ mesh = ExtResource("6_jhuq6")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.648, 0, 0, 0, 0.648, 0, 0, 0, 0.648, 2.46515e-08, -0.328864, -0.28198)
+transform = Transform3D(-0.647855, 0.00038544, -0.0136898, -0.0136952, -0.0182361, 0.647598, -5.83451e-08, 0.647743, 0.0182402, -0.181139, -0.203981, -0.708884)
 shape = SubResource("SphereShape3D_232dl")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0369776, 0.0669349, 0.323217)
+transform = Transform3D(-0.999777, -0.0211262, -0.000594815, -0.0211345, 0.999381, 0.0281421, -8.91547e-08, 0.0281484, -0.999604, -0.190307, 0.316542, -0.251719)
 shape = SubResource("BoxShape3D_ibut6")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.648, 0, 0, 0, 0.648, 0, 0, 0, 0.648, -4.4155e-08, -0.393338, 0.505074)
+transform = Transform3D(-0.647855, 0.00038544, -0.0136898, -0.0136952, -0.0182361, 0.647598, -5.83451e-08, 0.647743, 0.0182402, -0.202121, 0.601656, -0.709824)
 shape = SubResource("SphereShape3D_232dl")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.419904, 0, -3.55271e-15, 0, 0.419904, 0, 3.55271e-15, 0, 0.419904, -1.42581e-07, 0.450905, 1.63093)
+transform = Transform3D(-0.41981, 0.000249766, -0.00887098, -0.00887446, -0.011817, 0.419644, -3.7877e-08, 0.419738, 0.0118197, -0.254681, 1.70963, 0.0959576)
 shape = SubResource("SphereShape3D_232dl")
