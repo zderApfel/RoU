@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2asxneyc6ot1"]
+[gd_scene load_steps=9 format=3 uid="uid://d2asxneyc6ot1"]
 
 [ext_resource type="Script" path="res://oddball_scripts/detect_loot.gd" id="1_oipik"]
 [ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://classes/entities/Human.tscn" id="1_we0jm"]
 [ext_resource type="Script" path="res://nodes/scripts/player.gd" id="2_btb2s"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_kxo1l"]
+[ext_resource type="PackedScene" uid="uid://besyw5mbwv7qv" path="res://nodes/entities/first_person_arms.tscn" id="4_wqrxb"]
 [ext_resource type="PackedScene" uid="uid://cfw0k0lostyyn" path="res://nodes/Inventory.tscn" id="5_8uj76"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hn8et"]
@@ -33,14 +34,17 @@ transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -3.725
 transform = Transform3D(2, -5.68434e-13, 6.09864e-20, 0, -8.74229e-08, -2, 5.68434e-13, 2, -8.7423e-08, 0.00331168, -0.00205714, -0.0262807)
 script = ExtResource("1_oipik")
 
+[node name="first_person_arms" parent="Skeleton3D/neck/Camera3D" index="1" instance=ExtResource("4_wqrxb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.65661e-08, -0.436674, -0.328945)
+
 [node name="right_hand" parent="Skeleton3D" index="2"]
-transform = Transform3D(-0.0399681, -0.999201, -1.62101e-09, 0.999201, -0.0399681, 2.57154e-08, -2.57596e-08, -5.9192e-10, 0.999999, -1.54927, 0.989699, 0.277313)
+transform = Transform3D(-0.962435, -0.15814, 0.220704, 0.154721, -0.987413, -0.0328065, 0.223114, 0.00257341, 0.974788, -1.00653, 0.18399, 0.333497)
 
 [node name="hold_area" parent="Skeleton3D/right_hand" index="0"]
 transform = Transform3D(-0.988494, 0.151261, -4.57753e-10, 0.000792014, 0.00517584, 0.999986, 0.151259, 0.988481, -0.00523608, 0.00826681, 0.14901, 0.301314)
 
 [node name="left_hand" parent="Skeleton3D" index="3"]
-transform = Transform3D(-0.0399681, -0.999201, -1.62101e-09, 0.999201, -0.0399681, 2.57154e-08, -2.57596e-08, -5.9192e-10, 0.999999, -1.54927, 0.989699, 0.277313)
+transform = Transform3D(-0.962435, -0.15814, 0.220704, 0.154721, -0.987413, -0.0328065, 0.223114, 0.00257341, 0.974788, -1.00653, 0.18399, 0.333497)
 
 [node name="movement_tree" parent="." index="3"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_mxjyc")

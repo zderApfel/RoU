@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://besyw5mbwv7qv"]
+
+[ext_resource type="PackedScene" uid="uid://c3m0cpcdivpt5" path="res://nodes/entities/arm.tscn" id="1_co5vc"]
+
+[sub_resource type="Animation" id="Animation_x8iyr"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("left_arm/Armature/Skeleton3D:upperarm")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.91614e-08, -1.91614e-08, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("left_arm/Armature/Skeleton3D:forearm")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -6.64363e-10, 1.27174e-09, -0.00387584, 0.999992)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("left_arm/Armature/Skeleton3D:hand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("right_arm/Armature/Skeleton3D:upperarm")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, -1.91614e-08, -1.91614e-08, 1)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("right_arm/Armature/Skeleton3D:forearm")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -6.64363e-10, 1.27174e-09, -0.00387584, 0.999992)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("right_arm/Armature/Skeleton3D:hand")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992)
+
+[sub_resource type="Animation" id="Animation_ja17j"]
+resource_name = "jog"
+length = 0.7
+loop_mode = 1
+step = 0.05
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("right_arm/Armature/Skeleton3D:upperarm")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.19908, 0.376577, -0.422846, 0.799849, 0.35, 1, 0.11585, -0.21914, -0.452781, 0.856473, 0.7, 1, -0.19908, 0.376577, -0.422846, 0.799849)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("right_arm/Armature/Skeleton3D:forearm")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.667491, -0.086333, -0.26559, 0.690264, 0.35, 1, 0.667491, -0.086333, -0.26559, 0.690264, 0.7, 1, 0.667491, -0.086333, -0.26559, 0.690264)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("right_arm/Armature/Skeleton3D:hand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992, 0.35, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992, 0.7, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left_arm/Armature/Skeleton3D:upperarm")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.201777, 0.336052, -0.473575, 0.788722, 0.35, 1, 0.366453, -0.610314, -0.361523, 0.602104, 0.7, 1, -0.201777, 0.336052, -0.473575, 0.788722)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("left_arm/Armature/Skeleton3D:forearm")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.6811, 0.0564558, -0.24757, 0.68675, 0.35, 1, -0.6811, 0.0564558, -0.24757, 0.68675, 0.7, 1, -0.6811, 0.0564558, -0.24757, 0.68675)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("left_arm/Armature/Skeleton3D:hand")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992, 0.35, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992, 0.7, 1, 5.06396e-10, 3.94848e-08, 0.00387588, 0.999992)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wm5bu"]
+_data = {
+"RESET": SubResource("Animation_x8iyr"),
+"jog": SubResource("Animation_ja17j")
+}
+
+[node name="first_person_arms" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="right_arm" parent="." instance=ExtResource("1_co5vc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.820645, 0, -0.0242732)
+
+[node name="Skeleton3D" parent="right_arm/Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.233143, 2.04891e-08)
+bones/0/position = Vector3(3.72529e-09, -0.0645664, 0)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/position = Vector3(2.45086e-08, 0.532843, -1.38859e-10)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="left_arm" parent="." instance=ExtResource("1_co5vc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8394, 0, 0.0492222)
+
+[node name="Skeleton3D" parent="left_arm/Armature" index="0"]
+bones/0/position = Vector3(3.72529e-09, 0.18365, 0)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/position = Vector3(-1.18935e-10, 0.532843, -9.41962e-16)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wm5bu")
+}
+
+[editable path="right_arm"]
+[editable path="left_arm"]

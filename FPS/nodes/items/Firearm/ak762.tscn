@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5wdqoodxqi73"]
+[gd_scene load_steps=11 format=3 uid="uid://5wdqoodxqi73"]
 
 [ext_resource type="Script" path="res://nodes/items/Firearm/ak762.gd" id="1_oyci8"]
 [ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
@@ -10,7 +10,10 @@
 [ext_resource type="ArrayMesh" uid="uid://chryw2vdy3b2f" path="res://assets/weapons/ak_762/magazine_762.obj" id="8_afdxe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hk7qg"]
-size = Vector3(0.207108, 1, 3.65587)
+size = Vector3(0.367916, 1, 2.1062)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5to3l"]
+size = Vector3(0.174387, 0.400559, 1.05933)
 
 [node name="ak762" type="RigidBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0132018, -0.240817)
@@ -28,6 +31,7 @@ hands = "2"
 pose = "twohand_gun"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 
 [node name="main_body" type="MeshInstance3D" parent="MeshInstance3D"]
 mesh = ExtResource("2_svnv3")
@@ -70,5 +74,9 @@ mesh = ExtResource("6_jhuq6")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0634097, -0.0787505, -0.39207)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.0672953, -0.0787505, -0.918594)
 shape = SubResource("BoxShape3D_hk7qg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137612, 0.123283, 0.411472)
+shape = SubResource("BoxShape3D_5to3l")
