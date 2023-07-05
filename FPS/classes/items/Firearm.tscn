@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://ec1b5pfjnrs8"]
 
-[ext_resource type="Script" path="res://classes/scripts/TwoHandFirearm.gd" id="1_f8r4k"]
+[ext_resource type="Script" path="res://classes/scripts/Firearm.gd" id="1_q173y"]
 
 [node name="Weapon" type="RigidBody3D"]
-script = ExtResource("1_f8r4k")
+script = ExtResource("1_q173y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

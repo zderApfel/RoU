@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://bj0jo67t2470p"]
 
-[ext_resource type="PackedScene" uid="uid://d2asxneyc6ot1" path="res://nodes/entities/player.tscn" id="1_m0a2e"]
+[ext_resource type="PackedScene" uid="uid://d2asxneyc6ot1" path="res://nodes/entities/player.tscn" id="2_0ymu3"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
-[ext_resource type="PackedScene" uid="uid://5wdqoodxqi73" path="res://nodes/items/TwoHandFirearm/ak762.tscn" id="3_gt0ee"]
+[ext_resource type="PackedScene" uid="uid://5wdqoodxqi73" path="res://nodes/items/Firearm/ak762.tscn" id="3_stkoc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -77,8 +77,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
-[node name="player" parent="." instance=ExtResource("1_m0a2e")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.43367, 3.65996)
+[node name="ak762" parent="." instance=ExtResource("3_stkoc")]
+transform = Transform3D(-0.208748, -0.977969, -1.82493e-08, -0.977969, 0.208748, -8.54968e-08, 8.74228e-08, 0, -1, -3.45583, 1.06555, 0.0896209)
 
-[node name="ak762" parent="." instance=ExtResource("3_gt0ee")]
-transform = Transform3D(0.0363472, -0.999339, 3.17757e-09, -0.999339, -0.0363472, -8.7365e-08, 8.74228e-08, 0, -1, -3.34491, 0.671256, 2.21223)
+[node name="player" parent="." instance=ExtResource("2_0ymu3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.91428, 2.25082, 6.2956)

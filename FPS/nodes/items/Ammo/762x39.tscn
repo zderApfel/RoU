@@ -17,6 +17,12 @@ mass = 0.01
 inertia = Vector3(100, 0, 0)
 script = ExtResource("1_7itjb")
 MUZZLE_VELOCITY = 50.0
+is_holdable = true
+display_name = "7.62x39 "
+rarity = 3
+is_stackable = true
+max_stack = 60
+bulk = 0.03
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)

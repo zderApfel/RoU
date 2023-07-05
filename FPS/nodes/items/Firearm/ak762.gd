@@ -1,4 +1,4 @@
-extends TwoHandFirearm
+extends Firearm
 
 func _ready():
 	muzzle = get_tree().get_current_scene().get_node("bullet_test/muzzle")

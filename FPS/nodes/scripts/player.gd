@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends Human
 
 const WALK_SPEED = 5
 const JOG_SPEED = 8
@@ -10,20 +10,17 @@ var VELOCITY_Y = 0
 var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
 @onready var neck = $Skeleton3D/neck
 @onready var movement_animations = $movement_tree
-
-@onready var movement_blend = movement_animations["parameters/jog/blend_position"]
-
-
 
 @onready var animtracker = 0
 @onready var current_speed = 8
 
 func _ready():
-	#movement_animations.active = true
 	pass
+	
+func _process(_delta):
+	movement_animations["parameters/movement/blend_position"] = animtracker
 	
 func _physics_process(delta):
 	var horizontal_velocity = Input.get_vector("right", "left", "backward", "forward").normalized() * current_speed
@@ -57,7 +54,3 @@ func animation_manager():
 	else:
 		if animtracker > 0:
 			animtracker-=.5
-	movement_blend = animtracker
-
-func _process(_delta):
-	pass

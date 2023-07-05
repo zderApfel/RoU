@@ -1,4 +1,4 @@
-class_name TwoHandFirearm extends Item
+class_name Firearm extends Item
 
 @export_enum("762x39","545x39","556x45") var caliber: String
 @export var recoil_variance_min: float

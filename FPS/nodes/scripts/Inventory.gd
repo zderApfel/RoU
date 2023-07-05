@@ -1,11 +1,8 @@
 extends Node
 
 @onready var INVENTORY = {
-	"HEAD_SLOT": null, # Item
 	"BACKPACK_INVENTORY": {"MAX_SLOTS": 0, "OCCUPIED_SLOTS": 0, "ITEMS": []},
 	"POCKET_INVENTORY": {"MAX_SLOTS": 8, "OCCUPIED_SLOTS": 0, "ITEMS": []},
-	"HELMET": null,
-	"ARMOR": null, # Item
 	"WEAPON_SLOTS": {
 		"TOOL": null,
 		"SLING_WEAPON": null,
@@ -13,12 +10,13 @@ extends Node
 		"HOLSTER_WEAPON": null,
 		"SHEATH_WEAPON": null,
 	},
+	"HELMET": null,
+	"ARMOR": null, # Item
+	"BACKPACK": null,
 	"HELD_ITEM": null,
 }
 
-@onready var RIGHT_HAND = get_tree().get_current_scene().get_node("player/Skeleton3D/right_hand/hold_area")
-@onready var LEFT_HAND = get_tree().get_current_scene().get_node("player/Skeleton3D/left_hand/hold_area")
-
+@onready var PLAYER = get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -73,17 +71,10 @@ func store_to_pockets(item):
 			print("Pockets full!")
 
 func draw_weapon(weapon):
-	
-	
-	
 	if weapon != null and weapon != INVENTORY.HELD_ITEM:
-		weapon.transform = RIGHT_HAND.transform
 		INVENTORY.HELD_ITEM = weapon
 		INVENTORY.HELD_ITEM.freeze = true
 		INVENTORY.HELD_ITEM.is_lootable = false
-		
-		
-		if INVENTORY.HELD_ITEM != null: RIGHT_HAND.add_child(INVENTORY.HELD_ITEM)
 		
 		print(INVENTORY.HELD_ITEM.display_name + " drawn")
 		
@@ -96,8 +87,6 @@ func draw_weapon(weapon):
 
 func stow_weapon():
 	INVENTORY.HELD_ITEM = null
-	for y in RIGHT_HAND.get_children():
-		RIGHT_HAND.remove_child(y)
 	print("Weapon stowed")
 
 
@@ -106,7 +95,7 @@ func loot_action(item_to_loot):
 	
 	#if item_to_loot is Tool:
 		#INVENTORY.WEAPON_SLOTS.TOOL_SLOT.append(item_to_loot)
-	if item_to_loot is TwoHandFirearm:
+	if item_to_loot.hands == "2":
 		if INVENTORY.WEAPON_SLOTS.SLING_WEAPON == null:
 			INVENTORY.WEAPON_SLOTS.SLING_WEAPON = item_to_loot
 	

@@ -88,7 +88,6 @@ Rarely, the merc you hired on is particularly good at a certain set of skills, t
 
 The Hideout serves as a hub for you to manage your mercs and plan your next move. 
 
-In some instances, your hideout may be compromised, and law enforcement will close in and attempt to raid you. When this happens, you must fight them off or be [detained](#detained)/killed, the latter of which results in a **Game Over**. Succeeding in fighting them off 
 
 ## Stats
 
@@ -98,7 +97,7 @@ In some instances, your hideout may be compromised, and law enforcement will clo
 
 * Balance Points (BP) - Represents your balance. BP reduces from getting damaged, and once it reaches zero your mercenary ragdolls for a time. Melee attacks have significantly stronger BP damage than bullets do (outside of the high caliber ones), so don't worry about getting cheesed down by a group of gunmen...but also a group of gunmen can kill you fast anyway. BP regenerates quickly after not being damaged for a time.
 
-* Armor Points (AP) - Represents the health of any worn armor. Armor health is depleted by a large amount when pierced by a bullet or hit with a bladed melee weapon. If a bullet is deflected, damage is minimal
+* Armor Points (AP) - Represents the health of any worn armor. Armor health is depleted by a large amount when pierced by a bullet or hit with a bladed melee weapon. If a bullet is deflected, damage is minimal.
 
 ## Attributes
 
@@ -106,7 +105,7 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 * Melee:
     * +1 melee damage
-    * +0.5% crit chance
+    * +0.5% melee crit chance
 
 * Shooting:
     * -2% recoil

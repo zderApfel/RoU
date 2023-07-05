@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmueqp1865qq"]
 
-[ext_resource type="PackedScene" uid="uid://ec1b5pfjnrs8" path="res://classes/TwoHandFirearm.tscn" id="1_yy6ji"]
+[ext_resource type="PackedScene" uid="uid://ec1b5pfjnrs8" path="res://classes/items/Firearm.tscn" id="1_yy6ji"]
 
 [node name="ak48" instance=ExtResource("1_yy6ji")]
 mass = 3.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgk5t57hm7b7t"]
 
-[ext_resource type="PackedScene" uid="uid://emk6bv77dgli" path="res://classes/Item.tscn" id="1_bvydb"]
+[ext_resource type="PackedScene" uid="uid://emk6bv77dgli" path="res://classes/items/Item.tscn" id="1_bvydb"]
 [ext_resource type="Script" path="res://nodes/items/Generic/dingdong.gd" id="2_76cnm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1urh7"]
@@ -10,9 +10,13 @@
 [node name="Dingdong" instance=ExtResource("1_bvydb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262098, 0)
 script = ExtResource("2_76cnm")
-item_ID = 1
+is_holdable = true
 display_name = "Dingdong"
 description = "This is just a placeholder item"
+rarity = 5
+bulk = 2
+hands = "1"
+pose = "onehand_melee"
 
 [node name="model2" type="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.196517, -0.192108, 0)
