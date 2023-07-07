@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bj0jo67t2470p"]
 
+[ext_resource type="PackedScene" uid="uid://d2asxneyc6ot1" path="res://nodes/entities/player/player.tscn" id="2_kii5a"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
-[ext_resource type="PackedScene" uid="uid://5wdqoodxqi73" path="res://nodes/items/Firearm/ak762.tscn" id="3_stkoc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -76,5 +76,5 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
-[node name="ak762" parent="." instance=ExtResource("3_stkoc")]
-transform = Transform3D(-0.208748, -0.977969, -1.82493e-08, -0.977969, 0.208748, -8.54968e-08, 8.74228e-08, 0, -1, -3.45583, 1.06555, 0.0896209)
+[node name="player" parent="." instance=ExtResource("2_kii5a")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.854919, 1.59792, 3.0358)

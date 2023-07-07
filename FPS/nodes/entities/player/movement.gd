@@ -1,6 +1,6 @@
-extends Human
+extends CharacterBody3D
 
-const WALK_SPEED = 5
+const CROUCH_SPEED = 5
 const JOG_SPEED = 8
 const SPRINT_SPEED = 12
 const JUMP_VELOCITY = 3.0
@@ -11,7 +11,7 @@ var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var neck = $Skeleton3D/neck
-@onready var movement_animations = $movement_tree
+@onready var movement_animations = $Skeleton3D/neck/first_person
 
 @onready var animtracker = 0
 @onready var current_speed = 8
@@ -20,7 +20,10 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	movement_animations["parameters/movement/blend_position"] = animtracker
+	var x
+	if movement_animations.get_children() != []:
+		x = $Skeleton3D/neck/first_person/slot/AnimationTree
+		x["parameters/jog/blend_position"] = animtracker
 	
 func _physics_process(delta):
 	var horizontal_velocity = Input.get_vector("right", "left", "backward", "forward").normalized() * current_speed
@@ -46,7 +49,7 @@ func _input(event):
 		
 		neck.rotate_x(event.relative.y * LOOK_SENSITIVITY)
 		neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-60), deg_to_rad(80))
-		
+
 func animation_manager():
 	if velocity != Vector3.ZERO:
 		if animtracker < current_speed:

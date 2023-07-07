@@ -88,7 +88,6 @@ Rarely, the merc you hired on is particularly good at a certain set of skills, t
 
 The Hideout serves as a hub for you to manage your mercs and plan your next move. 
 
-
 ## Stats
 
 * Hit Points (HP) - Represents your health. When reaching zero, a calculation is made to determine if the mercenary dies or is rendered unconscious. (See [Unconscious](#unconscious))
