@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2asxneyc6ot1"]
+[gd_scene load_steps=8 format=3 uid="uid://c3qdtr17vggdq"]
 
 [ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://classes/entities/Human.tscn" id="1_guf5n"]
 [ext_resource type="Script" path="res://nodes/entities/player/detect_loot.gd" id="2_7y63y"]
@@ -18,18 +18,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.68385e-09, 0, 0.110771)
 shape = SubResource("BoxShape3D_hn8et")
 
 [node name="Skeleton3D" parent="." index="1"]
+bones/0/rotation = Quaternion(-0.017147, 2.04727e-16, -1.49904e-09, 0.999853)
 bones/1/position = Vector3(-0.0749063, 1.00897, 0.000308429)
+bones/1/rotation = Quaternion(6.56197e-08, -4.23604e-08, 0.706422, 0.70779)
+bones/2/rotation = Quaternion(0.0915375, -0.0724242, 0.400047, 0.909031)
+bones/3/rotation = Quaternion(-0.00123788, 0.00209211, 0.248385, 0.968658)
+bones/4/rotation = Quaternion(-1.02365e-10, 3.06011e-08, 0.0101865, 0.999948)
+bones/5/rotation = Quaternion(5.15599e-08, 2.31377e-08, -0.00273714, 0.999996)
 bones/6/position = Vector3(-0.0367374, 0.212952, 0.00777172)
+bones/6/rotation = Quaternion(2.63096e-08, 1.61695e-08, -0.00178371, 0.999999)
+bones/7/rotation = Quaternion(4.23589e-08, 6.56221e-08, -0.707765, 0.706448)
+bones/8/rotation = Quaternion(0.0302212, 0.00465738, -0.445637, 0.894691)
+bones/9/rotation = Quaternion(-0.00583872, -0.001312, -0.195466, 0.980692)
+bones/10/rotation = Quaternion(-1.02378e-10, -3.06015e-08, -0.0101865, 0.999948)
+bones/11/rotation = Quaternion(-0.661745, 0.249186, 0.661745, 0.249186)
+bones/12/rotation = Quaternion(-0.345081, -3.03257e-07, 1.29874e-07, 0.938573)
+bones/13/rotation = Quaternion(-0.00781181, 8.48098e-08, -8.38537e-08, 0.999969)
+bones/15/rotation = Quaternion(-0.661745, -0.249186, -0.661745, 0.249186)
+bones/16/rotation = Quaternion(-0.345081, 3.03257e-07, -1.29874e-07, 0.938573)
+bones/17/rotation = Quaternion(-0.00781181, -8.48098e-08, 8.38537e-08, 0.999969)
 
 [node name="human_empty2" parent="Skeleton3D" index="0"]
 visible = false
 
 [node name="neck" parent="Skeleton3D" index="1"]
-transform = Transform3D(0.999959, 0.00904159, 7.79494e-08, -0.00904156, 0.999957, 0.00227306, 2.04741e-05, -0.00227297, 0.999997, -0.0350961, 1.21362, 0.279489)
-override_pose = true
+transform = Transform3D(0.999894, 0.00880802, 0.0115607, -0.00878721, 0.99996, -0.00184915, -0.0115765, 0.00174737, 0.999931, -0.00304203, 0.943644, 0.257396)
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/neck" index="0"]
-transform = Transform3D(-2, -1.38714e-07, 1.06439e-07, 0, 1.21752, 1.58671, -1.74846e-07, 1.58671, -1.21752, -3.72529e-08, 0.673829, 0.44668)
+transform = Transform3D(-2, 6.05905e-09, -1.74681e-07, 6.58656e-09, 2, 7.45058e-09, 1.74507e-07, 0, -2, -0.000634096, 0.750656, 0.451421)
 
 [node name="line_of_sight" type="RayCast3D" parent="Skeleton3D/neck/Camera3D" index="0"]
 transform = Transform3D(2, -5.68434e-13, 6.09864e-20, 0, -8.74229e-08, -2, 5.68434e-13, 2, -8.7423e-08, 0.00331168, -0.00205714, -0.0262807)
@@ -41,13 +57,13 @@ transform = Transform3D(0.5, -6.33918e-10, 7.27596e-12, 2.97632e-10, 0.5, 9.3132
 [node name="slot" parent="Skeleton3D/neck/Camera3D/first_person" index="0" instance=ExtResource("4_ytwui")]
 
 [node name="right_hand" parent="Skeleton3D" index="2"]
-transform = Transform3D(-0.952837, -0.209259, 0.219799, 0.208484, -0.977653, -0.0269837, 0.220534, 0.0201136, 0.975171, -1.04885, 0.20786, 0.330325)
+transform = Transform3D(-0.95034, -0.220599, 0.219516, 0.220408, -0.975071, -0.0256755, 0.219707, 0.0239827, 0.975271, -1.12643, 0.196983, 0.328083)
 
 [node name="hold_area" parent="Skeleton3D/right_hand" index="0"]
 transform = Transform3D(-0.988494, 0.151261, -4.57753e-10, 0.000792014, 0.00517584, 0.999986, 0.151259, 0.988481, -0.00523608, 0.00826681, 0.14901, 0.301314)
 
 [node name="left_hand" parent="Skeleton3D" index="3"]
-transform = Transform3D(-0.952837, -0.209259, 0.219799, 0.208484, -0.977653, -0.0269837, 0.220534, 0.0201136, 0.975171, -1.04885, 0.20786, 0.330325)
+transform = Transform3D(-0.95034, -0.220599, 0.219516, 0.220408, -0.975071, -0.0256755, 0.219707, 0.0239827, 0.975271, -1.12643, 0.196983, 0.328083)
 
 [node name="HUD" parent="." index="4" instance=ExtResource("3_ksnlk")]
 

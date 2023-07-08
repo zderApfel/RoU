@@ -363,6 +363,7 @@ bones/2/rotation = Quaternion(5.06396e-10, 3.94848e-08, 0.00387588, 0.999992)
 bones/2/scale = Vector3(1, 1, 1)
 
 [node name="hand" type="MeshInstance3D" parent="left_arm/Skeleton3D"]
+layers = 524289
 mesh = SubResource("ArrayMesh_bvtuu")
 skin = SubResource("Skin_cu0he")
 surface_material_override/0 = ExtResource("1_17mj0")
@@ -396,18 +397,19 @@ bones/2/rotation = Quaternion(5.06396e-10, 3.94848e-08, 0.00387588, 0.999992)
 bones/2/scale = Vector3(1, 1, 1)
 
 [node name="hand" type="MeshInstance3D" parent="right_arm/Skeleton3D"]
+layers = 524289
 mesh = SubResource("ArrayMesh_bvtuu")
 skin = SubResource("Skin_cu0he")
 surface_material_override/0 = ExtResource("1_17mj0")
 surface_material_override/1 = ExtResource("2_bgiqc")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="arm_movement_tree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_51x5q")
-anim_player = NodePath("../AnimationPlayer")
+anim_player = NodePath("../arm_animations")
 active = true
 parameters/jog/blend_position = Vector2(5.0302, 3.03766)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="arm_animations" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_d48ie"),
 "unarmed": SubResource("AnimationLibrary_s4v75")

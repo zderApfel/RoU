@@ -4,7 +4,6 @@ extends Node
 	"BACKPACK_INVENTORY": {"MAX_SLOTS": 0, "OCCUPIED_SLOTS": 0, "ITEMS": []},
 	"POCKET_INVENTORY": {"MAX_SLOTS": 8, "OCCUPIED_SLOTS": 0, "ITEMS": []},
 	"WEAPON_SLOTS": {
-		"TOOL": null,
 		"SLING_WEAPON": null,
 		"BACK_WEAPON": null,
 		"HOLSTER_WEAPON": null,
@@ -28,9 +27,6 @@ func _process(_delta):
 func inputs():
 	if Input.is_action_just_released("inventory"):
 		print(INVENTORY)
-		
-	if Input.is_action_just_released("tool"):
-		draw_weapon(INVENTORY.WEAPON_SLOTS.TOOL)
 
 	if Input.is_action_just_released("sling_weapon"):
 		draw_weapon(INVENTORY.WEAPON_SLOTS.SLING_WEAPON)

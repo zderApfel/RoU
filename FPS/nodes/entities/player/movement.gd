@@ -21,11 +21,20 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	var x
+	var arms
+	var neck
 	if movement_animations.get_children() != []:
-		x = $Skeleton3D/neck/Camera3D/first_person/slot/AnimationTree
-		x["parameters/jog/blend_position"].x = walktracker
-		x["parameters/jog/blend_position"].y = jumptracker
+		arms = $Skeleton3D/neck/Camera3D/first_person/slot/arm_movement_tree
+		neck = $Skeleton3D/neck/neck_movement_tree
+		
+		arms["parameters/jog/blend_position"].x = walktracker
+		arms["parameters/jog/blend_position"].y = jumptracker
+		
+		
+		neck["parameters/neck_movement/blend_position"].x = walktracker
+		neck["parameters/neck_movement/blend_position"].y = jumptracker
+			
+		
 	
 func _physics_process(delta):
 	var horizontal_velocity = Input.get_vector("right", "left", "backward", "forward").normalized() * current_speed
