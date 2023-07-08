@@ -10,10 +10,11 @@ var VELOCITY_Y = 0
 var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var neck = $Skeleton3D/neck
-@onready var movement_animations = $Skeleton3D/neck/first_person
+@onready var camera = $Skeleton3D/neck/Camera3D
+@onready var movement_animations = $Skeleton3D/neck/Camera3D/first_person
 
-@onready var animtracker = 0
+@onready var walktracker = 0
+@onready var jumptracker = 0
 @onready var current_speed = 8
 
 func _ready():
@@ -22,8 +23,9 @@ func _ready():
 func _process(_delta):
 	var x
 	if movement_animations.get_children() != []:
-		x = $Skeleton3D/neck/first_person/slot/AnimationTree
-		x["parameters/jog/blend_position"] = animtracker
+		x = $Skeleton3D/neck/Camera3D/first_person/slot/AnimationTree
+		x["parameters/jog/blend_position"].x = walktracker
+		x["parameters/jog/blend_position"].y = jumptracker
 	
 func _physics_process(delta):
 	var horizontal_velocity = Input.get_vector("right", "left", "backward", "forward").normalized() * current_speed
@@ -47,13 +49,20 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * LOOK_SENSITIVITY)
 		
-		neck.rotate_x(event.relative.y * LOOK_SENSITIVITY)
-		neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-60), deg_to_rad(80))
+		camera.rotate_x(event.relative.y * LOOK_SENSITIVITY)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
 func animation_manager():
 	if velocity != Vector3.ZERO:
-		if animtracker < current_speed:
-			animtracker+=.5
+		if walktracker < current_speed:
+			walktracker+=.5
 	else:
-		if animtracker > 0:
-			animtracker-=.5
+		if walktracker > 0:
+			walktracker-=.5
+	
+	if velocity.y > 0 or velocity.y < 0:
+		jumptracker += .5
+		jumptracker = clamp(jumptracker,0,3)
+	else:
+		jumptracker -= .5
+		jumptracker = clamp(jumptracker,0,3)

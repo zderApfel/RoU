@@ -77,4 +77,4 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
 [node name="player" parent="." instance=ExtResource("2_kii5a")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.854919, 1.59792, 3.0358)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.08486, 2.21855, 3.05711)

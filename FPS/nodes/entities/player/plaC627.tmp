@@ -29,7 +29,7 @@ transform = Transform3D(0.999959, 0.00904159, 7.79494e-08, -0.00904156, 0.999957
 override_pose = true
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/neck" index="0"]
-transform = Transform3D(-2, -1.38714e-07, 1.06439e-07, 0, 1.21752, 1.58671, -1.74846e-07, 1.58671, -1.21752, -3.72529e-08, 0.673829, 0.44668)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -3.72529e-08, 0.673829, 0.44668)
 
 [node name="line_of_sight" type="RayCast3D" parent="Skeleton3D/neck/Camera3D" index="0"]
 transform = Transform3D(2, -5.68434e-13, 6.09864e-20, 0, -8.74229e-08, -2, 5.68434e-13, 2, -8.7423e-08, 0.00331168, -0.00205714, -0.0262807)
@@ -41,13 +41,13 @@ transform = Transform3D(0.5, -6.33918e-10, 7.27596e-12, 2.97632e-10, 0.5, 9.3132
 [node name="slot" parent="Skeleton3D/neck/Camera3D/first_person" index="0" instance=ExtResource("4_ytwui")]
 
 [node name="right_hand" parent="Skeleton3D" index="2"]
-transform = Transform3D(-0.952837, -0.209259, 0.219799, 0.208484, -0.977653, -0.0269837, 0.220534, 0.0201136, 0.975171, -1.04885, 0.20786, 0.330325)
+transform = Transform3D(-0.966915, -0.12748, 0.220959, 0.122477, -0.991809, -0.0362566, 0.223772, -0.00799468, 0.974608, -0.980774, 0.170807, 0.335026)
 
 [node name="hold_area" parent="Skeleton3D/right_hand" index="0"]
 transform = Transform3D(-0.988494, 0.151261, -4.57753e-10, 0.000792014, 0.00517584, 0.999986, 0.151259, 0.988481, -0.00523608, 0.00826681, 0.14901, 0.301314)
 
 [node name="left_hand" parent="Skeleton3D" index="3"]
-transform = Transform3D(-0.952837, -0.209259, 0.219799, 0.208484, -0.977653, -0.0269837, 0.220534, 0.0201136, 0.975171, -1.04885, 0.20786, 0.330325)
+transform = Transform3D(-0.966915, -0.12748, 0.220959, 0.122477, -0.991809, -0.0362566, 0.223772, -0.00799468, 0.974608, -0.980774, 0.170807, 0.335026)
 
 [node name="HUD" parent="." index="4" instance=ExtResource("3_ksnlk")]
 
