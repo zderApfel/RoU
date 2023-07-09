@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dcda5volpr50g"]
+[gd_scene load_steps=30 format=3 uid="uid://dcda5volpr50g"]
 
 [ext_resource type="Script" path="res://classes/scripts/Human.gd" id="1_61g5r"]
 [ext_resource type="Script" path="res://classes/entities/Vitals.gd" id="2_0wtep"]
@@ -167,6 +167,12 @@ animation = &"neck/jog"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjcgi"]
 animation = &"neck/idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cj2kx"]
+animation = &"neck/sprint"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_grvw4"]
+animation = &"neck/jump"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_e1818"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_tgj1f")
 blend_point_0/pos = Vector2(0, 3)
@@ -176,8 +182,12 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_8yqbp")
 blend_point_2/pos = Vector2(8, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_rjcgi")
 blend_point_3/pos = Vector2(0, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_cj2kx")
+blend_point_4/pos = Vector2(15, 0)
+blend_point_5/node = SubResource("AnimationNodeAnimation_grvw4")
+blend_point_5/pos = Vector2(15, 3)
 min_space = Vector2(0, 0)
-max_space = Vector2(8, 3)
+max_space = Vector2(15, 3)
 snap = Vector2(0.5, 0.5)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_voy1y"]
@@ -282,12 +292,42 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(-0.0357269, 0, 0), Vector3(-0.0698132, 0, 0), Vector3(-0.0349066, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.00304203, 0.992039, 0.2611), Vector3(-0.00304203, 0.992039, 0.2611)]
+}
+
+[sub_resource type="Animation" id="Animation_sellm"]
+resource_name = "sprint"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0349066, 0, -0.0698132), Vector3(-0.0349066, 0, 0.0349066), Vector3(-0.0349066, 0, -0.0698132)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecnis"]
 _data = {
 "idle": SubResource("Animation_gdbhy"),
 "jog": SubResource("Animation_pss0f"),
-"jump": SubResource("Animation_1viq7")
+"jump": SubResource("Animation_1viq7"),
+"sprint": SubResource("Animation_sellm")
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qbyjf"]

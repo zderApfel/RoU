@@ -21,9 +21,11 @@ func _ready():
 	pass
 	
 func _physics_process(delta):
+
 	animation_watcher()
 	move()
 	jump(delta)
+	sprint()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -43,9 +45,8 @@ func animation_watcher():
 		arms = $Skeleton3D/neck/Camera3D/first_person/slot/arm_movement_tree
 		neck = $Skeleton3D/neck/neck_movement_tree
 		
-		arms["parameters/jog/blend_position"].x = jogtracker
-		arms["parameters/jog/blend_position"].y = jumptracker
-		
+		arms["parameters/movement/blend_position"].x = jogtracker
+		arms["parameters/movement/blend_position"].y = jumptracker
 		
 		neck["parameters/neck_movement/blend_position"].x = jogtracker
 		neck["parameters/neck_movement/blend_position"].y = jumptracker
@@ -63,7 +64,11 @@ func engine(x):
 
 func move():
 	var x = engine(current_speed)
-	if Input.is_action_pressed("forward"):
+	if sprint():
+		x
+		current_speed += 1
+		current_speed = clamp(current_speed,0,SPRINT_SPEED)
+	elif Input.is_action_pressed("forward"):
 		x
 		current_speed += 0.5
 		current_speed = clamp(current_speed,0,JOG_SPEED)
@@ -85,7 +90,8 @@ func move():
 		current_speed = clamp(current_speed,0,SPRINT_SPEED)
 
 func sprint():
-	pass
+	if Input.is_action_pressed("sprint") and Input.is_action_pressed("forward"):
+		return true
 
 func jump(delta):
 	if is_on_floor():
@@ -93,11 +99,9 @@ func jump(delta):
 			VELOCITY_Y = JUMP_VELOCITY
 		else:
 			VELOCITY_Y = 0
-
 	else:
 		VELOCITY_Y -= GRAVITY * delta
 		
-	
 	if !is_on_floor():
 		jumptracker += 0.5
 		jumptracker = clamp(jumptracker,0,JUMP_VELOCITY)

@@ -39,7 +39,7 @@ transform = Transform3D(2, -5.68434e-13, 6.09864e-20, 0, -8.74229e-08, -2, 5.684
 script = ExtResource("2_7y63y")
 
 [node name="first_person" type="Node3D" parent="Skeleton3D/neck/Camera3D" index="1"]
-transform = Transform3D(0.5, -6.33918e-10, 7.27596e-12, 2.97632e-10, 0.5, 9.31323e-10, -7.27596e-12, 0, 0.5, 1.08033e-07, -0.663676, -0.620205)
+transform = Transform3D(0.5, -6.33918e-10, 7.27596e-12, 2.97632e-10, 0.5, 9.31323e-10, -7.27596e-12, -2.64698e-23, 0.5, 1.07917e-07, -0.663676, -0.620205)
 
 [node name="slot" parent="Skeleton3D/neck/Camera3D/first_person" index="0" instance=ExtResource("4_ytwui")]
 
