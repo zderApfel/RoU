@@ -20,7 +20,7 @@ func _physics_process(_delta):
 				var item = x.display_name
 				#LOOT_LABEL.text = format_string % item
 
-				if Input.is_action_just_pressed("loot"):
+				if Input.is_action_just_pressed("action"):
 					INVENTORY.loot_action(x)
 					get_tree().get_current_scene().remove_child(x)
 					LOOT_HAND.visible = false

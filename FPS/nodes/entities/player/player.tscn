@@ -20,23 +20,10 @@ shape = SubResource("BoxShape3D_hn8et")
 [node name="Skeleton3D" parent="." index="1"]
 bones/0/rotation = Quaternion(-0.017147, 2.04727e-16, -1.49904e-09, 0.999853)
 bones/1/position = Vector3(-0.0749063, 1.00897, 0.000308429)
-bones/1/rotation = Quaternion(6.56197e-08, -4.23604e-08, 0.706422, 0.70779)
-bones/2/rotation = Quaternion(0.0915375, -0.0724242, 0.400047, 0.909031)
-bones/3/rotation = Quaternion(-0.00123788, 0.00209211, 0.248385, 0.968658)
-bones/4/rotation = Quaternion(-1.02365e-10, 3.06011e-08, 0.0101865, 0.999948)
-bones/5/rotation = Quaternion(5.15599e-08, 2.31377e-08, -0.00273714, 0.999996)
 bones/6/position = Vector3(-0.0367374, 0.212952, 0.00777172)
 bones/6/rotation = Quaternion(2.63096e-08, 1.61695e-08, -0.00178371, 0.999999)
-bones/7/rotation = Quaternion(4.23589e-08, 6.56221e-08, -0.707765, 0.706448)
-bones/8/rotation = Quaternion(0.0302212, 0.00465738, -0.445637, 0.894691)
-bones/9/rotation = Quaternion(-0.00583872, -0.001312, -0.195466, 0.980692)
-bones/10/rotation = Quaternion(-1.02378e-10, -3.06015e-08, -0.0101865, 0.999948)
 bones/11/rotation = Quaternion(-0.661745, 0.249186, 0.661745, 0.249186)
-bones/12/rotation = Quaternion(-0.345081, -3.03257e-07, 1.29874e-07, 0.938573)
-bones/13/rotation = Quaternion(-0.00781181, 8.48098e-08, -8.38537e-08, 0.999969)
 bones/15/rotation = Quaternion(-0.661745, -0.249186, -0.661745, 0.249186)
-bones/16/rotation = Quaternion(-0.345081, 3.03257e-07, -1.29874e-07, 0.938573)
-bones/17/rotation = Quaternion(-0.00781181, -8.48098e-08, 8.38537e-08, 0.999969)
 
 [node name="human_empty2" parent="Skeleton3D" index="0"]
 visible = false
@@ -57,13 +44,13 @@ transform = Transform3D(0.5, -6.33918e-10, 7.27596e-12, 2.97632e-10, 0.5, 9.3132
 [node name="slot" parent="Skeleton3D/neck/Camera3D/first_person" index="0" instance=ExtResource("4_ytwui")]
 
 [node name="right_hand" parent="Skeleton3D" index="2"]
-transform = Transform3D(-0.95034, -0.220599, 0.219516, 0.220408, -0.975071, -0.0256755, 0.219707, 0.0239827, 0.975271, -1.12643, 0.196983, 0.328083)
+transform = Transform3D(-0.950341, -0.220599, 0.219516, 0.220408, -0.97507, -0.0256755, 0.219707, 0.0239827, 0.975271, -1.12643, 0.196984, 0.328083)
 
 [node name="hold_area" parent="Skeleton3D/right_hand" index="0"]
 transform = Transform3D(-0.988494, 0.151261, -4.57753e-10, 0.000792014, 0.00517584, 0.999986, 0.151259, 0.988481, -0.00523608, 0.00826681, 0.14901, 0.301314)
 
 [node name="left_hand" parent="Skeleton3D" index="3"]
-transform = Transform3D(-0.95034, -0.220599, 0.219516, 0.220408, -0.975071, -0.0256755, 0.219707, 0.0239827, 0.975271, -1.12643, 0.196983, 0.328083)
+transform = Transform3D(-0.950341, -0.220599, 0.219516, 0.220408, -0.97507, -0.0256755, 0.219707, 0.0239827, 0.975271, -1.12643, 0.196984, 0.328083)
 
 [node name="HUD" parent="." index="4" instance=ExtResource("3_ksnlk")]
 

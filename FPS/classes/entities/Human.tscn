@@ -223,7 +223,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_gdbhy"]
 resource_name = "idle"
-length = 4.0
+length = 0.001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -232,10 +232,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.00304203, 0.943644, 0.257396), Vector3(-0.00304203, 0.943644, 0.257396)]
+"values": [Vector3(-0.00304203, 0.943644, 0.257396)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -244,10 +244,10 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.0785398, 0, 0.0174533), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_pss0f"]
@@ -264,7 +264,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.020944, 0, 0.0139626), Vector3(0.0401426, 0, -0.0139626), Vector3(0.040853, 0.000753138, 0.014084)]
+"values": [Vector3(0.020944, 0, 0.0139626), Vector3(0.0401426, 0, -0.0139626), Vector3(0.020944, 0, 0.0139626)]
 }
 
 [sub_resource type="Animation" id="Animation_1viq7"]
@@ -280,19 +280,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.0916969, 0.0123853, -0.0088244), Vector3(0.113389, 0.0105765, -0.00884412), Vector3(-0.0916969, 0.0123853, -0.0088244)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.00288019, 0.964601, 0.255467), Vector3(-0.00341781, 0.9114, 0.249414), Vector3(-0.00288019, 0.964601, 0.255467)]
+"values": [Vector3(-0.0357269, 0, 0), Vector3(-0.0698132, 0, 0), Vector3(-0.0349066, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecnis"]
@@ -463,7 +451,7 @@ mesh = SubResource("ArrayMesh_ckhcd")
 skin = SubResource("Skin_fv1ch")
 
 [node name="neck" type="BoneAttachment3D" parent="Skeleton3D"]
-transform = Transform3D(0.999894, 0.00880802, 0.0115607, -0.00878721, 0.999959, -0.00184915, -0.0115765, 0.00174737, 0.999931, -0.00304203, 0.943644, 0.257396)
+transform = Transform3D(0.999894, 0.00880801, 0.0115607, -0.00878721, 0.999959, -0.00184915, -0.0115765, 0.00174737, 0.999931, -0.00304203, 0.943644, 0.257396)
 bone_name = "neck"
 bone_idx = 5
 override_pose = true
@@ -481,7 +469,7 @@ libraries = {
 }
 
 [node name="right_hand" type="BoneAttachment3D" parent="Skeleton3D"]
-transform = Transform3D(-0.95034, -0.220599, 0.219516, 0.215598, -0.975361, -0.0467917, 0.224429, 0.00285916, 0.974486, -1.05152, 0.186775, 0.332142)
+transform = Transform3D(-0.950341, -0.220599, 0.219516, 0.215598, -0.97536, -0.0467918, 0.224429, 0.00285917, 0.974486, -1.05152, 0.186776, 0.332142)
 bone_name = "hand.r"
 bone_idx = 4
 
@@ -489,7 +477,7 @@ bone_idx = 4
 transform = Transform3D(1, 6.98492e-10, 1.49012e-08, -2.39816e-08, 1, 2.79397e-09, 1.49012e-08, 3.72529e-09, 1, 0, 0, 0)
 
 [node name="left_hand" type="BoneAttachment3D" parent="Skeleton3D"]
-transform = Transform3D(-0.95034, -0.220599, 0.219516, 0.215598, -0.975361, -0.0467917, 0.224429, 0.00285916, 0.974486, -1.05152, 0.186775, 0.332142)
+transform = Transform3D(-0.950341, -0.220599, 0.219516, 0.215598, -0.97536, -0.0467918, 0.224429, 0.00285917, 0.974486, -1.05152, 0.186776, 0.332142)
 bone_name = "hand.r"
 bone_idx = 4
 
