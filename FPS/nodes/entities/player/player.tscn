@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3qdtr17vggdq"]
+[gd_scene load_steps=10 format=3 uid="uid://c3qdtr17vggdq"]
 
 [ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://classes/entities/Human.tscn" id="1_guf5n"]
 [ext_resource type="Script" path="res://nodes/entities/player/detect_loot.gd" id="2_7y63y"]
+[ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="3_hk1t3"]
 [ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="3_ksnlk"]
 [ext_resource type="PackedScene" uid="uid://cfw0k0lostyyn" path="res://nodes/Inventory.tscn" id="4_3gwfh"]
-[ext_resource type="PackedScene" uid="uid://c3m0cpcdivpt5" path="res://nodes/entities/fp_arms/unarmed.tscn" id="4_ytwui"]
+[ext_resource type="PackedScene" uid="uid://bdgatw38ncjoo" path="res://nodes/entities/fp_arms/ak.tscn" id="4_ckl84"]
+[ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="4_uimrw"]
 [ext_resource type="Script" path="res://nodes/entities/player/movement.gd" id="5_b6kmu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hn8et"]
@@ -26,13 +28,18 @@ bones/11/rotation = Quaternion(-0.661745, 0.249186, 0.661745, 0.249186)
 bones/15/rotation = Quaternion(-0.661745, -0.249186, -0.661745, 0.249186)
 
 [node name="human_empty2" parent="Skeleton3D" index="0"]
-visible = false
+layers = 3
+cast_shadow = 0
+surface_material_override/0 = ExtResource("3_hk1t3")
+surface_material_override/1 = ExtResource("4_uimrw")
 
 [node name="neck" parent="Skeleton3D" index="1"]
-transform = Transform3D(0.999894, 0.00880802, 0.0115607, -0.00878721, 0.99996, -0.00184915, -0.0115765, 0.00174737, 0.999931, -0.00304203, 0.943644, 0.257396)
+transform = Transform3D(0.999894, 0.00880802, 0.0115607, -0.00878721, 0.99996, -0.00184915, -0.0115765, 0.00174737, 0.99993, -0.00304203, 0.943644, 0.257396)
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/neck" index="0"]
-transform = Transform3D(-2, 6.05905e-09, -1.74681e-07, 6.58656e-09, 2, 7.45058e-09, 1.74507e-07, 0, -2, -0.000634096, 0.750656, 0.451421)
+transform = Transform3D(-2, -5.81713e-05, -1.72975e-07, -5.81712e-05, 2, -0.000529258, 1.88369e-07, -0.000529259, -2, -0.000655932, 0.750776, 0.451222)
+cull_mask = 1048573
+near = 0.33
 
 [node name="line_of_sight" type="RayCast3D" parent="Skeleton3D/neck/Camera3D" index="0"]
 transform = Transform3D(2, -5.68434e-13, 6.09864e-20, 0, -8.74229e-08, -2, 5.68434e-13, 2, -8.7423e-08, 0.00331168, -0.00205714, -0.0262807)
@@ -41,7 +48,10 @@ script = ExtResource("2_7y63y")
 [node name="first_person" type="Node3D" parent="Skeleton3D/neck/Camera3D" index="1"]
 transform = Transform3D(0.5, -6.33918e-10, 7.27596e-12, 2.97632e-10, 0.5, 9.31323e-10, -7.27596e-12, -2.64698e-23, 0.5, 1.07917e-07, -0.663676, -0.620205)
 
-[node name="slot" parent="Skeleton3D/neck/Camera3D/first_person" index="0" instance=ExtResource("4_ytwui")]
+[node name="slot" parent="Skeleton3D/neck/Camera3D/first_person" index="0" instance=ExtResource("4_ckl84")]
+
+[node name="neck_movement_tree" parent="Skeleton3D/neck" index="1"]
+parameters/neck_movement/blend_position = Vector2(0.0266667, 0.0672646)
 
 [node name="right_hand" parent="Skeleton3D" index="2"]
 transform = Transform3D(-0.950341, -0.220599, 0.219516, 0.220408, -0.97507, -0.0256755, 0.219707, 0.0239827, 0.975271, -1.12643, 0.196984, 0.328083)

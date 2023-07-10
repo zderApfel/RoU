@@ -42,11 +42,11 @@ func animation_watcher():
 	var neck
 
 	if movement_animations.get_children() != []:
-		arms = $Skeleton3D/neck/Camera3D/first_person/slot/arm_movement_tree
+		arms = $Skeleton3D/neck/Camera3D/first_person/slot/movement_tree
 		neck = $Skeleton3D/neck/neck_movement_tree
 		
-		arms["parameters/movement/blend_position"].x = jogtracker
-		arms["parameters/movement/blend_position"].y = jumptracker
+		arms["parameters/movement/blend_position"] = jogtracker
+		#arms["parameters/movement/blend_position"].y = jumptracker
 		
 		neck["parameters/neck_movement/blend_position"].x = jogtracker
 		neck["parameters/neck_movement/blend_position"].y = jumptracker
