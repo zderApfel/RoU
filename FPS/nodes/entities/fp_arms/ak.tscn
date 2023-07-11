@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bdgatw38ncjoo"]
+[gd_scene load_steps=27 format=3 uid="uid://bdgatw38ncjoo"]
 
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="1_a1svr"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="2_rkvro"]
@@ -87,6 +87,126 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(1.30702, 0.653267, -2.17438)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ak762/right_arm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.375992, -0.548867, -1.90172)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ak762/MeshInstance3D/main_body/magazine:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.10543e-15, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ak762/left_arm:basis")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Basis(-0.140112, -0.732122, 0.0828656, -0.0396204, -0.0767418, -0.745013, 0.735729, -0.143557, -0.0243394)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ak762/left_arm:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.39547, -0.0866987, -1.30623)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ak762:basis")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Basis(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ak762/MeshInstance3D/main_body/magazine:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0956717, -0.411246, -0.481504)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ak762/MeshInstance3D/main_body/magazine:basis")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Basis(1, 0, 0, 0, 0.999998, -7.10542e-15, 0, 7.10542e-15, 0.999998)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ak762/right_arm:basis")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Basis(0.795811, 0.0403562, -0.0711045, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ak762/MeshInstance3D/main_body/bolt:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.201697, 0.00123575, -0.601331)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ak762/MeshInstance3D/main_body/bolt:basis")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Basis(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_j4716"]
 resource_name = "idle"
@@ -159,7 +279,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.674378, -3.14159, -1.20667e-07), Vector3(-0.624304, -3.14159, -1.11353e-07), Vector3(-0.674378, -3.14159, -1.20667e-07)]
+"values": [Vector3(-0.152786, -3.14159, 1.1574e-06), Vector3(-0.0562696, -3.14159, 1.35607e-06), Vector3(-0.152786, -3.14159, 1.1574e-06)]
 }
 
 [sub_resource type="Animation" id="Animation_221qs"]
@@ -191,12 +311,218 @@ tracks/1/keys = {
 "values": [Vector3(0.932689, -0.62846, -2.17438), Vector3(0.133479, -1.25832, -2.61666), Vector3(0.932689, -0.62846, -2.17438)]
 }
 
+[sub_resource type="Animation" id="Animation_ja8eh"]
+resource_name = "reload"
+length = 2.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ak762/left_arm:basis")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Basis(-0.140112, -0.732122, 0.0828656, -0.0396204, -0.0767418, -0.745013, 0.735729, -0.143557, -0.0243394), Basis(-0.140112, -0.732122, 0.0828656, -0.0396203, -0.0767418, -0.745013, 0.73573, -0.143557, -0.0243395), Basis(0.0495909, -0.725246, 0.184549, -0.2562, -0.19023, -0.678731, 0.703136, -0.0181635, -0.260323), Basis(0.137018, -0.70725, 0.208618, -0.3547, -0.249244, -0.612019, 0.646461, 0.0131472, -0.380019), Basis(0.137018, -0.70725, 0.208618, -0.3547, -0.249244, -0.612019, 0.646461, 0.0131472, -0.380019), Basis(0.137018, -0.70725, 0.208618, -0.204642, -0.240326, -0.680343, 0.708411, 0.0673693, -0.236883), Basis(-0.0843126, -0.734278, 0.127376, -0.281978, -0.0872263, -0.689479, 0.689839, -0.125399, -0.266263), Basis(-0.140112, -0.732122, 0.0828656, -0.0396203, -0.0767418, -0.745013, 0.73573, -0.143557, -0.0243395), Basis(-0.140112, -0.732122, 0.0828656, -0.0396204, -0.0767418, -0.745013, 0.735729, -0.143557, -0.0243394)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ak762/left_arm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.39547, -0.0866987, -1.36704), Vector3(1.39547, -0.13411, -1.85031), Vector3(1.51765, -0.042263, -2.06889), Vector3(2.08994, -0.314642, -2.35879), Vector3(2.05313, -1.31896, -2.87417), Vector3(2.12589, -0.565847, -2.55154), Vector3(1.80975, 0.0409432, -1.97554), Vector3(1.39547, -0.307941, -1.75627), Vector3(1.39547, -0.0866987, -1.36704)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ak762:basis")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25, 0.35, 0.45, 1.85, 1.95, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Basis(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999), Basis(-1, 0, -2.53518e-06, 1.1244e-07, 0.999015, -0.0443517, 2.53269e-06, -0.0443517, -0.999015), Basis(-1, 7.09843e-15, -2.53518e-06, -5.97117e-07, 0.971866, 0.235532, 2.46386e-06, 0.235532, -0.971866), Basis(-1, 7.09843e-15, -2.53518e-06, -9.90086e-07, 0.920586, 0.390538, 2.33385e-06, 0.390538, -0.920586), Basis(-1, 7.09843e-15, -2.53518e-06, -1.5045e-06, 0.804872, 0.593446, 2.0405e-06, 0.593446, -0.804872), Basis(-1, 7.09843e-15, -2.53518e-06, -1.54441e-06, 0.793023, 0.60919, 2.01046e-06, 0.60919, -0.793023), Basis(-1, 7.09843e-15, -2.53518e-06, -1.54441e-06, 0.793023, 0.60919, 2.01046e-06, 0.60919, -0.793023), Basis(-1, 7.09843e-15, -2.53518e-06, -1.58465e-06, 0.780572, 0.625065, 1.97889e-06, 0.625065, -0.780572), Basis(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ak762:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.35, 0.45, 1.85, 1.95, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.30702, 0.653267, -2.17438), Vector3(1.30702, 0.543354, -2.17438), Vector3(1.30702, 1.19922, -2.17438), Vector3(1.30702, 1.19922, -2.17438), Vector3(1.30702, 1.19922, -2.17438), Vector3(1.30702, 1.20736, -2.17438), Vector3(1.30702, 0.653267, -2.17438)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ak762/MeshInstance3D/main_body/magazine:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 1.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0956717, -0.411246, -0.481504), Vector3(-0.0956717, -0.428199, -0.490887), Vector3(0.665319, -0.791055, -0.691736), Vector3(1.58057, -1.61942, -1.15026), Vector3(1.58058, -2.95119, -1.88744), Vector3(1.58057, -1.61942, -1.15026), Vector3(0.665319, -0.791055, -0.691736), Vector3(-0.0956717, -0.428199, -0.490887), Vector3(-0.0956717, -0.411246, -0.481504)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ak762/MeshInstance3D/main_body/magazine:basis")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 1.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Basis(1, 0, 0, 0, 0.999998, -7.10542e-15, 0, 7.10542e-15, 0.999998), Basis(1, 2.70982e-07, 1.45243e-08, -2.70982e-07, 0.99427, 0.106889, 1.45241e-08, -0.106889, 0.99427), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(1, 2.70982e-07, 1.45243e-08, -2.70982e-07, 0.99427, 0.106889, 1.45241e-08, -0.106889, 0.99427), Basis(1, 0, 0, 0, 0.999998, -7.10542e-15, 0, 7.10542e-15, 0.999998)]
+}
+
+[sub_resource type="Animation" id="Animation_dubtl"]
+resource_name = "reload_empty"
+length = 3.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ak762/left_arm:basis")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Basis(-0.140112, -0.732122, 0.0828656, -0.0396204, -0.0767418, -0.745013, 0.735729, -0.143557, -0.0243394), Basis(-0.140112, -0.732122, 0.0828656, -0.0396203, -0.0767418, -0.745013, 0.73573, -0.143557, -0.0243395), Basis(0.0495909, -0.725246, 0.184549, -0.2562, -0.19023, -0.678731, 0.703136, -0.0181635, -0.260323), Basis(0.137018, -0.70725, 0.208618, -0.3547, -0.249244, -0.612019, 0.646461, 0.0131472, -0.380019), Basis(0.137018, -0.70725, 0.208618, -0.3547, -0.249244, -0.612019, 0.646461, 0.0131472, -0.380019), Basis(0.137018, -0.70725, 0.208618, -0.204642, -0.240326, -0.680343, 0.708411, 0.0673693, -0.236883), Basis(-0.0843126, -0.734278, 0.127376, -0.281978, -0.0872263, -0.689479, 0.689839, -0.125399, -0.266263), Basis(-0.140112, -0.732122, 0.0828656, -0.0396203, -0.0767418, -0.745013, 0.73573, -0.143557, -0.0243395), Basis(-0.140112, -0.732122, 0.0828656, -0.0396204, -0.0767418, -0.745013, 0.735729, -0.143557, -0.0243394)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ak762/left_arm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.39547, -0.0866987, -1.36704), Vector3(1.39547, -0.13411, -1.85031), Vector3(1.51765, -0.042263, -2.06889), Vector3(2.08994, -0.314642, -2.35879), Vector3(2.05313, -1.31896, -2.87417), Vector3(2.12589, -0.565847, -2.55154), Vector3(1.80975, 0.0409432, -1.97554), Vector3(1.39547, -0.307941, -1.75627), Vector3(1.39547, -0.0866987, -1.36704)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ak762:basis")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25, 0.35, 0.45, 1.85, 1.95, 2.4, 2.75, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Basis(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999), Basis(-1, 0, -2.53518e-06, 1.1244e-07, 0.999015, -0.0443517, 2.53269e-06, -0.0443517, -0.999015), Basis(-1, 7.09843e-15, -2.53518e-06, -5.97117e-07, 0.971866, 0.235532, 2.46386e-06, 0.235532, -0.971866), Basis(-1, 7.09843e-15, -2.53518e-06, -9.90086e-07, 0.920586, 0.390538, 2.33385e-06, 0.390538, -0.920586), Basis(-1, 7.09843e-15, -2.53518e-06, -1.5045e-06, 0.804872, 0.593446, 2.0405e-06, 0.593446, -0.804872), Basis(-1, 7.09843e-15, -2.53518e-06, -1.54441e-06, 0.793023, 0.60919, 2.01046e-06, 0.60919, -0.793023), Basis(-1, 7.09843e-15, -2.53518e-06, -1.54441e-06, 0.793023, 0.60919, 2.01046e-06, 0.60919, -0.793023), Basis(-1, 7.09843e-15, -2.53518e-06, -1.58465e-06, 0.780572, 0.625065, 1.97889e-06, 0.625065, -0.780572), Basis(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999), Basis(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999), Basis(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ak762:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.35, 0.45, 1.85, 1.95, 2.4, 2.75, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.30702, 0.653267, -2.17438), Vector3(1.30702, 0.543354, -2.17438), Vector3(1.30702, 1.19922, -2.17438), Vector3(1.30702, 1.19922, -2.17438), Vector3(1.30702, 1.19922, -2.17438), Vector3(1.30702, 1.20736, -2.17438), Vector3(1.30702, 0.653267, -2.17438), Vector3(1.30702, 0.653267, -2.17438), Vector3(1.30702, 0.653267, -2.0529)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ak762/MeshInstance3D/main_body/magazine:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 1.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0956717, -0.411246, -0.481504), Vector3(-0.0956717, -0.428199, -0.490887), Vector3(0.665319, -0.791055, -0.691736), Vector3(1.58057, -1.61942, -1.15026), Vector3(1.58058, -2.95119, -1.88744), Vector3(1.58057, -1.61942, -1.15026), Vector3(0.665319, -0.791055, -0.691736), Vector3(-0.0956717, -0.428199, -0.490887), Vector3(-0.0956717, -0.411246, -0.481504)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ak762/MeshInstance3D/main_body/magazine:basis")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.65, 0.85, 1.05, 1.45, 1.65, 1.85, 1.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Basis(1, 0, 0, 0, 0.999998, -7.10542e-15, 0, 7.10542e-15, 0.999998), Basis(1, 2.70982e-07, 1.45243e-08, -2.70982e-07, 0.99427, 0.106889, 1.45241e-08, -0.106889, 0.99427), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032), Basis(1, 2.70982e-07, 1.45243e-08, -2.70982e-07, 0.99427, 0.106889, 1.45241e-08, -0.106889, 0.99427), Basis(1, 0, 0, 0, 0.999998, -7.10542e-15, 0, 7.10542e-15, 0.999998)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ak762/right_arm:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.375992, -0.548867, -1.90172), Vector3(-0.375992, -0.548867, -1.90172), Vector3(-0.375992, -0.783394, -1.91842), Vector3(-0.878567, -0.783394, -1.91842), Vector3(-0.878568, -0.783393, -1.57032), Vector3(-0.845621, -0.577322, -1.23394), Vector3(-0.845621, -0.577322, -1.54645), Vector3(-0.375992, -0.548867, -1.90172)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ak762/right_arm:basis")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Basis(0.795811, 0.0403562, -0.0711045, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765), Basis(0.795811, 0.0403562, -0.0711045, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765), Basis(0.795811, 0.0403562, -0.0711045, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765), Basis(0.795811, 0.0403562, -0.0711045, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765), Basis(0.78337, 0.157695, -0.0382488, -0.0791743, 0.206854, -0.768727, -0.141641, 0.756533, 0.218161), Basis(0.78337, 0.157696, -0.0382491, -0.107285, 0.361862, -0.705368, -0.121741, 0.695835, 0.375488), Basis(0.78337, 0.157696, -0.0382491, -0.107285, 0.361862, -0.705368, -0.121741, 0.695835, 0.375488), Basis(0.795811, 0.0403562, -0.0711045, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ak762/MeshInstance3D/main_body/bolt:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.201697, 0.00123575, -0.601331), Vector3(-0.201697, 0.00123575, -0.601331), Vector3(-0.201696, 0.00123574, -0.899553), Vector3(-0.201697, 0.00123575, -0.601331)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ak762/MeshInstance3D/main_body/bolt:basis")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Basis(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1), Basis(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1), Basis(0.999964, -0.0084822, -6.76891e-10, 0.0084822, 0.999964, 8.02115e-08, -3.18323e-12, -8.02144e-08, 1), Basis(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7kpn8"]
 _data = {
 "RESET": SubResource("Animation_8we0o"),
 "idle": SubResource("Animation_j4716"),
 "jog": SubResource("Animation_d2sda"),
 "jump": SubResource("Animation_7cfrg"),
+"reload": SubResource("Animation_ja8eh"),
+"reload_empty": SubResource("Animation_dubtl"),
 "sprint": SubResource("Animation_221qs")
 }
 
@@ -261,7 +587,7 @@ bind/2/bone = -1
 bind/2/pose = Transform3D(-4.04885e-10, -1, -4.31908e-08, 1, -8.7055e-10, 1.40624e-15, -1.74873e-17, -4.31909e-08, 1, 0.0455762, -0.582218, 2.47877e-09)
 
 [node name="slot" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460912, -0.317623, 0.350117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23035, -0.491684, 0.47107)
 
 [node name="movement_tree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_k3n7r")
@@ -271,12 +597,14 @@ active = true
 parameters/movement/blend_position = Vector2(0, 0)
 
 [node name="animations" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_7kpn8")
 }
 
 [node name="ak762" parent="." instance=ExtResource("3_8akuc")]
-transform = Transform3D(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999, 1.30702, 0.653267, -2.17438)
+transform = Transform3D(-1, 7.09843e-15, -2.53518e-06, -1.54441e-06, 0.793023, 0.60919, 2.01046e-06, 0.60919, -0.793023, 1.30702, 1.19922, -2.17438)
+rotation_edit_mode = 2
 
 [node name="furniture" parent="ak762/MeshInstance3D/main_body" index="0"]
 cast_shadow = 0
@@ -284,11 +612,20 @@ cast_shadow = 0
 [node name="stock" parent="ak762/MeshInstance3D/main_body/stock_slot" index="0"]
 cast_shadow = 0
 
+[node name="magazine" parent="ak762/MeshInstance3D/main_body" index="4"]
+transform = Transform3D(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032, 0.827081, -0.937459, -0.772776)
+rotation_edit_mode = 2
+
 [node name="bolt" parent="ak762/MeshInstance3D/main_body" index="5"]
+rotation_edit_mode = 2
 cast_shadow = 0
 
+[node name="CollisionShape3D" parent="ak762" index="1"]
+disabled = true
+
 [node name="left_arm" type="Node3D" parent="ak762"]
-transform = Transform3D(-0.13943, -0.736243, -0.0317061, -0.0182142, 0.0357018, -0.748928, 0.7367, -0.138461, -0.0245173, 1.35293, -0.297164, -1.8986)
+transform = Transform3D(0.0650428, -0.722066, 0.188803, -0.273609, -0.20066, -0.66694, 0.69312, -0.0126297, -0.281478, 1.6188, -0.0904033, -2.12013)
+rotation_edit_mode = 2
 
 [node name="Skeleton3D" type="Skeleton3D" parent="ak762/left_arm"]
 transform = Transform3D(0.183574, 0.983006, 0, -0.983006, 0.183574, 0, 0, 0, 1, 0, 0, 0)
@@ -303,7 +640,7 @@ bones/1/name = "forearm"
 bones/1/parent = 0
 bones/1/rest = Transform3D(0.99997, 0.00775162, 2.54862e-09, -0.00775162, 0.99997, 1.31886e-09, -2.53832e-09, -1.33857e-09, 1, -1.18935e-10, 0.532843, -1.54004e-16)
 bones/1/enabled = true
-bones/1/position = Vector3(-0.596591, 2.56495, 0.101033)
+bones/1/position = Vector3(-0.877771, 1.85545, 0.125813)
 bones/1/rotation = Quaternion(-0.317921, 0.051853, 0.12363, 0.938591)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "hand"
@@ -323,7 +660,8 @@ surface_material_override/0 = ExtResource("1_a1svr")
 surface_material_override/1 = ExtResource("2_rkvro")
 
 [node name="right_arm" type="Node3D" parent="ak762"]
-transform = Transform3D(0.795811, 0.0403562, -0.0711044, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765, -0.375992, -0.548867, -1.90172)
+transform = Transform3D(0.795811, 0.0403562, -0.0711045, -0.0791743, 0.206854, -0.768728, -0.0203934, 0.77174, 0.209765, -0.375992, -0.548867, -1.90172)
+rotation_edit_mode = 2
 
 [node name="Skeleton3D" type="Skeleton3D" parent="ak762/right_arm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.398243, -0.11561, 0)

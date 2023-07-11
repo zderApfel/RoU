@@ -62,7 +62,6 @@ func engine(x):
 
 func move():
 	var x = engine(current_speed)
-	print(current_speed)
 	if sprint():
 		x
 		if current_speed < SPRINT_SPEED:
@@ -87,6 +86,7 @@ func move():
 		x
 		if current_speed > 0 or current_speed >= SPRINT_SPEED:
 			current_speed -= 0.5
+	current_speed = clamp(current_speed,0,12)
 
 func sprint():
 	if Input.is_action_pressed("sprint") and Input.is_action_pressed("forward"):
