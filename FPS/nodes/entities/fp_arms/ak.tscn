@@ -1,32 +1,63 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdgatw38ncjoo"]
+[gd_scene load_steps=25 format=3 uid="uid://bdgatw38ncjoo"]
 
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="1_a1svr"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="2_rkvro"]
 [ext_resource type="PackedScene" uid="uid://5wdqoodxqi73" path="res://nodes/items/Firearm/ak762.tscn" id="3_8akuc"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8dv26"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w2mxd"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iat1b"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6x63a"]
 animation = &"jog"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_euxxq"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_8dv26")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_iat1b")
-blend_point_1/pos = 8.0
-min_space = 0.0
-max_space = 8.0
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fj572"]
+animation = &"jump"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rcnww"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n6dv6"]
+animation = &"sprint"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_72m25"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_86j50"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iskvp"]
+animation = &"sprint"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6jpgw"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_qlovy"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_w2mxd")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_6x63a")
+blend_point_1/pos = Vector2(8, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_fj572")
+blend_point_2/pos = Vector2(8, 3)
+blend_point_3/node = SubResource("AnimationNodeAnimation_n6dv6")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_72m25")
+blend_point_4/pos = Vector2(-1, 3)
+blend_point_5/node = SubResource("AnimationNodeAnimation_86j50")
+blend_point_5/pos = Vector2(0, 3)
+blend_point_6/node = SubResource("AnimationNodeAnimation_iskvp")
+blend_point_6/pos = Vector2(12, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_6jpgw")
+blend_point_7/pos = Vector2(12, 3)
+min_space = Vector2(0, 0)
+max_space = Vector2(12, 3)
+snap = Vector2(1, 1)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tn276"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k3n7r"]
 states/End/position = Vector2(846, 143)
 states/Start/position = Vector2(195, 143)
-states/movement/node = SubResource("AnimationNodeBlendSpace1D_euxxq")
-states/movement/position = Vector2(512, 143)
-transitions = ["Start", "movement", SubResource("AnimationNodeStateMachineTransition_rcnww")]
+states/movement/node = SubResource("AnimationNodeBlendSpace2D_qlovy")
+states/movement/position = Vector2(523, 143)
+transitions = ["Start", "movement", SubResource("AnimationNodeStateMachineTransition_tn276")]
 graph_offset = Vector2(0, 35.9217)
 
 [sub_resource type="Animation" id="Animation_8we0o"]
@@ -131,12 +162,42 @@ tracks/0/keys = {
 "values": [Vector3(-0.674378, -3.14159, -1.20667e-07), Vector3(-0.624304, -3.14159, -1.11353e-07), Vector3(-0.674378, -3.14159, -1.20667e-07)]
 }
 
+[sub_resource type="Animation" id="Animation_221qs"]
+resource_name = "sprint"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ak762:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.496035, -2.7586, 0.192898), Vector3(0.75654, -2.51106, -0.158144), Vector3(0.496035, -2.7586, 0.192898)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ak762:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.932689, -0.62846, -2.17438), Vector3(0.133479, -1.25832, -2.61666), Vector3(0.932689, -0.62846, -2.17438)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7kpn8"]
 _data = {
 "RESET": SubResource("Animation_8we0o"),
 "idle": SubResource("Animation_j4716"),
 "jog": SubResource("Animation_d2sda"),
-"jump": SubResource("Animation_7cfrg")
+"jump": SubResource("Animation_7cfrg"),
+"sprint": SubResource("Animation_221qs")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ny3pe"]
@@ -207,7 +268,7 @@ tree_root = SubResource("AnimationNodeStateMachine_k3n7r")
 anim_player = NodePath("../animations")
 advance_expression_base_node = NodePath("")
 active = true
-parameters/movement/blend_position = 0
+parameters/movement/blend_position = Vector2(0, 0)
 
 [node name="animations" type="AnimationPlayer" parent="."]
 libraries = {
@@ -215,7 +276,7 @@ libraries = {
 }
 
 [node name="ak762" parent="." instance=ExtResource("3_8akuc")]
-transform = Transform3D(-1, 2.33285e-08, -2.53507e-06, 0, 0.999957, 0.0092019, 2.53518e-06, 0.0092019, -0.999957, 1.30702, 0.721148, -2.17438)
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 0.999999, 0, 2.53518e-06, 0, -0.999999, 1.30702, 0.653267, -2.17438)
 
 [node name="furniture" parent="ak762/MeshInstance3D/main_body" index="0"]
 cast_shadow = 0

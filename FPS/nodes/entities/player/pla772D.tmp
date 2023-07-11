@@ -28,7 +28,6 @@ bones/11/rotation = Quaternion(-0.661745, 0.249186, 0.661745, 0.249186)
 bones/15/rotation = Quaternion(-0.661745, -0.249186, -0.661745, 0.249186)
 
 [node name="human_empty2" parent="Skeleton3D" index="0"]
-visible = false
 layers = 3
 cast_shadow = 0
 surface_material_override/0 = ExtResource("3_hk1t3")
@@ -38,7 +37,7 @@ surface_material_override/1 = ExtResource("4_uimrw")
 transform = Transform3D(0.999894, 0.00880802, 0.0115607, -0.00878721, 0.99996, -0.00184915, -0.0115765, 0.00174737, 0.99993, -0.00304203, 0.943644, 0.257396)
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/neck" index="0"]
-transform = Transform3D(-2, -6.98073e-05, -1.69654e-07, -6.98072e-05, 2, -0.000537257, 1.88406e-07, -0.000537258, -2, -0.00069834, 2.00816, 0.452049)
+transform = Transform3D(-2, -5.81713e-05, -1.72975e-07, -5.81712e-05, 2, -0.000529258, 1.88369e-07, -0.000529259, -2, -0.000655932, 0.750776, 0.451222)
 cull_mask = 1048573
 near = 0.33
 

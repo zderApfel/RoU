@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c3m0cpcdivpt5"]
+[gd_scene load_steps=21 format=3 uid="uid://c3m0cpcdivpt5"]
 
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="1_17mj0"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="2_bgiqc"]
@@ -63,58 +63,38 @@ bind/2/name = &"hand"
 bind/2/bone = -1
 bind/2/pose = Transform3D(-4.04885e-10, -1, -4.31908e-08, 1, -8.7055e-10, 1.40624e-15, -1.74873e-17, -4.31909e-08, 1, 0.0455762, -0.582218, 2.47877e-09)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fecfj"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qbhei"]
 animation = &"unarmed/idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrbst"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uiany"]
 animation = &"unarmed/jog"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mem3k"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wm7r0"]
 animation = &"unarmed/jump"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_okbhm"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ce3a"]
 animation = &"unarmed/jump"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vwcpn"]
-animation = &"unarmed/jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3nfak"]
-animation = &"unarmed/jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6llwb"]
-animation = &"unarmed/sprint"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wnjkc"]
-animation = &"unarmed/jump"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_dns38"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_fecfj")
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vcfop"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_qbhei")
 blend_point_0/pos = Vector2(0, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_nrbst")
+blend_point_1/node = SubResource("AnimationNodeAnimation_uiany")
 blend_point_1/pos = Vector2(8, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_mem3k")
-blend_point_2/pos = Vector2(0, 3)
-blend_point_3/node = SubResource("AnimationNodeAnimation_okbhm")
-blend_point_3/pos = Vector2(8, 3)
-blend_point_4/node = SubResource("AnimationNodeAnimation_vwcpn")
-blend_point_4/pos = Vector2(0, -3)
-blend_point_5/node = SubResource("AnimationNodeAnimation_3nfak")
-blend_point_5/pos = Vector2(8, -3)
-blend_point_6/node = SubResource("AnimationNodeAnimation_6llwb")
-blend_point_6/pos = Vector2(12, 0)
-blend_point_7/node = SubResource("AnimationNodeAnimation_wnjkc")
-blend_point_7/pos = Vector2(12, 3)
+blend_point_2/node = SubResource("AnimationNodeAnimation_wm7r0")
+blend_point_2/pos = Vector2(8, 3)
+blend_point_3/node = SubResource("AnimationNodeAnimation_2ce3a")
+blend_point_3/pos = Vector2(0, 3)
 min_space = Vector2(0, 0)
-max_space = Vector2(12, 3)
+max_space = Vector2(8, 3)
 snap = Vector2(1, 1)
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dldnx"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5k14j"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_51x5q"]
-states/movement/node = SubResource("AnimationNodeBlendSpace2D_dns38")
-states/movement/position = Vector2(533, 100)
-transitions = ["Start", "movement", SubResource("AnimationNodeStateMachineTransition_dldnx")]
+states/movement/node = SubResource("AnimationNodeBlendSpace2D_vcfop")
+states/movement/position = Vector2(572, 100)
+transitions = ["Start", "movement", SubResource("AnimationNodeStateMachineTransition_5k14j")]
 
 [sub_resource type="Animation" id="Animation_odxdv"]
 length = 0.001
@@ -474,7 +454,7 @@ _data = {
 [node name="slot" type="StaticBody3D"]
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.908319, -0.418278, 0, 0.418278, 0.908319, 0, 0, 0, 1, -2.18376, -0.116897, 0)
+transform = Transform3D(0.996697, -0.0812041, 0, 0.0812041, 0.996697, 0, 0, 0, 1, -2.308, -0.15, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="left_arm"]
 transform = Transform3D(0.183574, 0.983006, 0, -0.983006, 0.183574, 0, 0, 0, 1, 0, 0, 0)
@@ -489,7 +469,7 @@ bones/1/name = "forearm"
 bones/1/parent = 0
 bones/1/rest = Transform3D(0.99997, 0.00775162, 2.54862e-09, -0.00775162, 0.99997, 1.31886e-09, -2.53832e-09, -1.33857e-09, 1, -1.18935e-10, 0.532843, -1.54004e-16)
 bones/1/enabled = true
-bones/1/position = Vector3(-0.0277052, 0.805457, 0.000276891)
+bones/1/position = Vector3(-1.18935e-10, 0.532843, -1.54004e-16)
 bones/1/rotation = Quaternion(-6.64361e-10, 1.27174e-09, -0.00387584, 0.999992)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "hand"
@@ -509,7 +489,7 @@ surface_material_override/0 = ExtResource("1_17mj0")
 surface_material_override/1 = ExtResource("2_bgiqc")
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.73009, -0.68335, 0, 0.68335, 0.73009, 0, 0, 0, 1, 2.00367, -0.217092, 0)
+transform = Transform3D(0.263584, -0.964636, 0, 0.964636, 0.263584, 0, 0, 0, 1, 2.50439, -0.445537, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="right_arm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.398243, -0.11561, 0)
@@ -525,14 +505,14 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(0.99997, 0.00775162, 2.54862e-09, -0.00775162, 0.99997, 1.31886e-09, -2.53832e-09, -1.33857e-09, 1, -1.18935e-10, 0.532843, -1.54004e-16)
 bones/1/enabled = true
 bones/1/position = Vector3(0.000474887, 1.00048, 0.000475019)
-bones/1/rotation = Quaternion(0.0212859, 0.0497567, 0.00806114, 0.998502)
+bones/1/rotation = Quaternion(-6.64361e-10, 1.27174e-09, -0.00387584, 0.999992)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "hand"
 bones/2/parent = 1
 bones/2/rest = Transform3D(0.99997, -0.0077517, 7.89729e-08, 0.0077517, 0.99997, -7.06707e-10, -7.89651e-08, 1.31886e-09, 1, 4.65661e-10, 0.48996, 1.66533e-16)
 bones/2/enabled = true
 bones/2/position = Vector3(4.65661e-10, 0.48996, 1.66533e-16)
-bones/2/rotation = Quaternion(5.06395e-10, 3.94848e-08, 0.00387588, 0.999993)
+bones/2/rotation = Quaternion(5.06395e-10, 3.94848e-08, 0.00387588, 0.999992)
 bones/2/scale = Vector3(1, 1, 1)
 
 [node name="hand" type="MeshInstance3D" parent="right_arm/Skeleton3D"]
@@ -547,7 +527,7 @@ surface_material_override/1 = ExtResource("2_bgiqc")
 tree_root = SubResource("AnimationNodeStateMachine_51x5q")
 anim_player = NodePath("../arm_animations")
 active = true
-parameters/movement/blend_position = Vector2(5.33333, 1.74888)
+parameters/movement/blend_position = Vector2(0, 0)
 
 [node name="arm_animations" type="AnimationPlayer" parent="."]
 reset_on_save = false

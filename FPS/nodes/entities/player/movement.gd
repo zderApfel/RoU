@@ -21,11 +21,9 @@ func _ready():
 	pass
 	
 func _physics_process(delta):
-
 	animation_watcher()
 	move()
 	jump(delta)
-	sprint()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -45,8 +43,8 @@ func animation_watcher():
 		arms = $Skeleton3D/neck/Camera3D/first_person/slot/movement_tree
 		neck = $Skeleton3D/neck/neck_movement_tree
 		
-		arms["parameters/movement/blend_position"] = jogtracker
-		#arms["parameters/movement/blend_position"].y = jumptracker
+		arms["parameters/movement/blend_position"].x = jogtracker
+		arms["parameters/movement/blend_position"].y = jumptracker
 		
 		neck["parameters/neck_movement/blend_position"].x = jogtracker
 		neck["parameters/neck_movement/blend_position"].y = jumptracker
@@ -64,30 +62,31 @@ func engine(x):
 
 func move():
 	var x = engine(current_speed)
+	print(current_speed)
 	if sprint():
 		x
-		current_speed += 1
-		current_speed = clamp(current_speed,0,SPRINT_SPEED)
+		if current_speed < SPRINT_SPEED:
+			current_speed += 1
 	elif Input.is_action_pressed("forward"):
 		x
-		current_speed += 0.5
-		current_speed = clamp(current_speed,0,JOG_SPEED)
+		if current_speed < JOG_SPEED:
+			current_speed += 0.5
 	elif Input.is_action_pressed("left") or Input.is_action_pressed('right'):
 		x
-		current_speed += 0.3
-		current_speed = clamp(current_speed,0,JOG_SPEED)
+		if current_speed < JOG_SPEED:
+			current_speed += 0.3
 	elif Input.is_action_pressed("backward"):
 		x
-		current_speed += 0.3
-		current_speed = clamp(current_speed,0,CROUCH_SPEED)
+		if current_speed < CROUCH_SPEED:
+			current_speed += 0.3
 	elif Input.is_action_pressed("forward") and Input.is_action_pressed("backward"):
 		x
-		current_speed += 0.5
-		current_speed = clamp(current_speed,0,JOG_SPEED)
+		if current_speed < JOG_SPEED:
+			current_speed += 0.5
 	else:
 		x
-		current_speed -= 0.5
-		current_speed = clamp(current_speed,0,SPRINT_SPEED)
+		if current_speed > 0 or current_speed >= SPRINT_SPEED:
+			current_speed -= 0.5
 
 func sprint():
 	if Input.is_action_pressed("sprint") and Input.is_action_pressed("forward"):
