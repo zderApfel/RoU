@@ -1,5 +1,12 @@
 extends Node
 
+@onready var PLAYER = get_parent()
+
+@onready var HOLD_SLOT = PLAYER.get_node("Skeleton3D/neck/Camera3D/first_person")
+@onready var UNARMED = load("res://nodes/entities/fp_arms/unarmed.tscn")
+@onready var HELD_ITEM = UNARMED
+#Instantiate when ready to use
+
 @onready var INVENTORY = {
 	"BACKPACK_INVENTORY": {"MAX_SLOTS": 0, "OCCUPIED_SLOTS": 0, "ITEMS": []},
 	"POCKET_INVENTORY": {"MAX_SLOTS": 8, "OCCUPIED_SLOTS": 0, "ITEMS": []},
@@ -12,48 +19,76 @@ extends Node
 	"HELMET": null,
 	"ARMOR": null, # Item
 	"BACKPACK": null,
-	"HELD_ITEM": null,
 }
 
-@onready var PLAYER = get_parent()
-
+@onready var HOTBAR = [
+	{"item": UNARMED, "active": true},
+	{"item": INVENTORY.WEAPON_SLOTS.SLING_WEAPON, "active": false},
+	{"item": INVENTORY.WEAPON_SLOTS.BACK_WEAPON, "active": false},
+	{"item": INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON, "active": false},
+	{"item": INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON, "active": false},
+	{"item": null, "active": false},
+	{"item": null, "active": false},
+	{"item": null, "active": false},
+	{"item": null, "active": false},
+	{"item": null, "active": false}
+]
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	inputs()
-	use_item()
 
 '''-----------------Inputs--------------------------'''
 
 func inputs():
+	
+	
+	if Input.is_action_just_released("hotbar0"):
+		#Load the item in each option
+		Helpers.bool_switch(HOTBAR[0].active)
+		change_item()
+		
+	if Input.is_action_just_released("hotbar1"):
+		Helpers.bool_switch(HOTBAR[1].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar2"):
+		Helpers.bool_switch(HOTBAR[2].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar3"):
+		Helpers.bool_switch(HOTBAR[3].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar4"):
+		Helpers.bool_switch(HOTBAR[4].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar5"):
+		Helpers.bool_switch(HOTBAR[5].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar6"):
+		Helpers.bool_switch(HOTBAR[6].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar7"):
+		Helpers.bool_switch(HOTBAR[7].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar8"):
+		Helpers.bool_switch(HOTBAR[8].active)
+		change_item()
+	
+	if Input.is_action_just_released("hotbar9"):
+		Helpers.bool_switch(HOTBAR[9].active)
+		change_item()
+		
 	if Input.is_action_just_released("inventory"):
 		print(INVENTORY)
 
-	if Input.is_action_just_released("sling_weapon"):
-		draw_weapon(INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
-		
-	if Input.is_action_just_released("back_weapon"):
-		draw_weapon(INVENTORY.WEAPON_SLOTS.BACK_WEAPON)
-		
-	if Input.is_action_just_released("holster_weapon"):
-		draw_weapon(INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
-		
-	if Input.is_action_just_released("sheath_weapon"):
-		#Add a block for adding fists as an option if there's nothing in the sheath
-		
-		draw_weapon(INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
-	if Input.is_action_just_released("stow_weapon"):
-		if INVENTORY.HELD_ITEM != null:
-			stow_weapon()
-
+	
 '''-----------------Inventory Actions--------------------------'''
-
-func use_item():
-	if INVENTORY.HELD_ITEM != null:
-		if Input.is_action_just_pressed("primary_action"):
-			INVENTORY.HELD_ITEM.primary_action()
-
-		if Input.is_action_just_pressed("secondary_action"):
-			INVENTORY.HELD_ITEM.secondary_action()
 
 func store_to_pockets(item):
 		var x = INVENTORY.POCKET_INVENTORY.MAX_SLOTS
@@ -66,31 +101,12 @@ func store_to_pockets(item):
 		else:
 			print("Pockets full!")
 
-func draw_weapon(weapon):
-	if weapon != null and weapon != INVENTORY.HELD_ITEM:
-		INVENTORY.HELD_ITEM = weapon
-		INVENTORY.HELD_ITEM.freeze = true
-		INVENTORY.HELD_ITEM.is_lootable = false
-		
-		print(INVENTORY.HELD_ITEM.display_name + " drawn")
-		
-	elif INVENTORY.HELD_ITEM != null and weapon == null:
-		print("Slot is empty")
+func change_item():
 	
-	elif INVENTORY.HELD_ITEM == null and weapon == null:
-		print("Slot is empty")
-
-
-func stow_weapon():
-	INVENTORY.HELD_ITEM = null
-	print("Weapon stowed")
+	pass
 
 
 func loot_action(item_to_loot):
-	print(item_to_loot.display_name)
-	
-	#if item_to_loot is Tool:
-		#INVENTORY.WEAPON_SLOTS.TOOL_SLOT.append(item_to_loot)
 	if item_to_loot.hands == "2":
 		if INVENTORY.WEAPON_SLOTS.SLING_WEAPON == null:
 			INVENTORY.WEAPON_SLOTS.SLING_WEAPON = item_to_loot

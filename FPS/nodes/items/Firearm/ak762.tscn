@@ -24,6 +24,7 @@ description = "One of the USSR's few good contributions. The AK-762 has been the
 rarity = 3
 bulk = 9
 legal = false
+arm_path = "res://nodes/entities/fp_arms/ak762.tscn"
 hands = "2"
 pose = "twohand_gun"
 

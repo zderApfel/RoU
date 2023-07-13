@@ -52,42 +52,6 @@ Mercenaries do not exist in the world anymore once hired, and are "activated" fr
 
 During exploration or a raid, you can either play as yourself, or you can play as one of your mercenaries.
 
-### Passive Activites
-
-During an exploration phase where they're not doing anything, you can select a passive activity for a merc to do:
-
-* Weightlifting = 3% chance to increase Strength/Health. Requires a 1 day rest period
-* Target Practice = 3% chance to increase Shooting. Costs an amount of money to spend on ammunition
-* Cardio = 3% chance to increase Agility/Health. Requires a 1 day rest period
-* Casino = Chance to win or lose money. Scales with Charisma
-* Casino (cheating) = Higher chance to win money, but loss means getting [detained](#detained). Scales with Agility/Charisma
-* Theft = Chance to steal some extra items, but with a chance to be detained. Scales with Agility/Charisma. Requires a 1 day rest period
-* Scout = Can scout out a raid area for you to provide some basic details. Has a chance to result in death. Scales with Agility/Shooting. Requires a 1 day rest period
-
-### Specializations
-
-Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have a special ability that they can use in the field.
-
-* Surveillance Expert - Nearby hostiles can be seen through walls
-    Requires: N/A
-* Master Thief - Lockpicking is guaranteed, with a 20% chance to not consume the lockpick
-    Requires: Agility 14, Charisma 12 
-* Martial Artist - Can parry melee weapons with your fists
-    Requires: Agility 16, Strength 14
-* Heavyweight - You resist 50% of BP damage BEFORE all other resistances
-    Requires: Strength 16, Health 14
-* Packrat - Doubled pocket inventory space
-    Requires: N/A
-* Infiltrator - Doesn't make noise when crouching
-    Requires: Agility 15
-* Hacker - Has a chance to bypass an electronic countermeasure without finding the passcode (keypads, computers, etc.)
-    Requires: N/A
-    Works only once per device
-
-## Hideout
-
-The Hideout serves as a hub for you to manage your mercs and plan your next move. 
-
 ## Stats
 
 * Hit Points (HP) - Represents your health. When reaching zero, a calculation is made to determine if the mercenary dies or is rendered unconscious. (See [Unconscious](#unconscious))
@@ -127,6 +91,56 @@ In addition, there's a couple additional attributes that apply only to NPCs
 * Reputation: Represents the NPCs opinion of the player character
 * Loyalty: Represents a mercenaries loyalty to the cause
 * Cowardice (hidden): The liklihood that the NPC will flee from combat when damaged or threatened. *HINT: This decreases significantly when an NPC is armed.*
+
+## Legendary Attributes
+
+For any attribute that's at level 20, you can continue training that attribute with a 1% chance to gain a legendary attribute. Only one legendary attribute can be acquired per character, and cannot be removed.
+
+* Melee - You can no longer be handcuffed, you break out of them with ease
+* Shooting - 20% chance not to consume ammo for MOST guns
+* Health - +50 maxiumum health
+* Agility - Can block bullets by blocking with a melee weapon with 2+ parry power at a BP cost
+* Charisma - All social checks automatically succeed
+
+### Passive Activites
+
+During an exploration phase where they're not doing anything, you can select a passive activity for a merc to do:
+
+* Weightlifting = 3% chance to increase Strength/Health. Requires a 1 day rest period
+* Target Practice = 3% chance to increase Shooting. Costs an amount of money to spend on ammunition
+* Cardio = 3% chance to increase Agility/Health. Requires a 1 day rest period
+* Casino = Chance to win or lose money. Scales with Charisma
+* Casino (cheating) = Higher chance to win money, but loss means getting [detained](#detained). Scales with Agility/Charisma
+* Theft = Chance to steal some extra items, but with a chance to be detained. Scales with Agility/Charisma. Requires a 1 day rest period
+* Scout = Can scout out a raid area for you to provide some basic details. Has a chance to result in death. Scales with Agility/Shooting. Requires a 1 day rest period
+
+### Specializations
+
+Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have a special ability that they can use in the field.
+
+* Surveillance Expert - Nearby hostiles can be seen through walls
+    Requires: N/A
+* Master Thief - Lockpicking is double-rolled, with a 20% chance to not consume the lockpick
+    Requires: Agility 14, Charisma 12 
+* Martial Artist - Can parry melee weapons with your fists
+    Requires: Agility 16, Strength 14
+    Doesn't allow blocking bullets with hands with the 
+* Heavyweight - You resist 50% of BP damage BEFORE all other resistances
+    Requires: Strength 16, Health 14
+* Packrat - Doubled pocket inventory space
+    Requires: N/A
+* Infiltrator - Doesn't make noise when jogging
+    Requires: Agility 15
+* Hacker - Has a chance to bypass an electronic countermeasure without finding the passcode (keypads, computers, etc.)
+    Requires: N/A
+    Works only once per device
+    Matches the character's lockpicking chance (stacks with master thief)
+* Silver Tongue - Speech checks are double-rolled
+    Requires: Charisma 16
+
+## Hideout
+
+The Hideout serves as a hub for you to manage your mercs and plan your next move. 
 
 ## States
 

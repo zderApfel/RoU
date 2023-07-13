@@ -15,6 +15,7 @@ display_name = "Dingdong"
 description = "This is just a placeholder item"
 rarity = 5
 bulk = 2
+arm_path = "res://nodes/entities/fp_arms/unarmed.tscn"
 hands = "1"
 pose = "onehand_melee"
 

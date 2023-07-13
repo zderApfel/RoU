@@ -13,8 +13,11 @@ class_name Item extends Node3D
 @export var max_stack: int = 1
 @export var bulk: float = 1
 @export var legal: bool = true
+@export var arm_path: String
 @export_enum("1", "2") var hands: String
 @export_enum("unarmed", "onehand_gun", "twohand_gun", "onehand_melee", "twohand_melee") var pose: String
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

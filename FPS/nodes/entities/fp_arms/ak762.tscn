@@ -282,35 +282,6 @@ tracks/0/keys = {
 "values": [Vector3(-0.152786, -3.14159, 1.1574e-06), Vector3(-0.0562696, -3.14159, 1.35607e-06), Vector3(-0.152786, -3.14159, 1.1574e-06)]
 }
 
-[sub_resource type="Animation" id="Animation_221qs"]
-resource_name = "sprint"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ak762:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.496035, -2.7586, 0.192898), Vector3(0.75654, -2.51106, -0.158144), Vector3(0.496035, -2.7586, 0.192898)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ak762:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.932689, -0.62846, -2.17438), Vector3(0.133479, -1.25832, -2.61666), Vector3(0.932689, -0.62846, -2.17438)]
-}
-
 [sub_resource type="Animation" id="Animation_ja8eh"]
 resource_name = "reload"
 length = 2.4
@@ -515,6 +486,35 @@ tracks/9/keys = {
 "values": [Basis(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1), Basis(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1), Basis(0.999964, -0.0084822, -6.76891e-10, 0.0084822, 0.999964, 8.02115e-08, -3.18323e-12, -8.02144e-08, 1), Basis(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_221qs"]
+resource_name = "sprint"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ak762:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.496035, -2.7586, 0.192898), Vector3(0.75654, -2.51106, -0.158144), Vector3(0.496035, -2.7586, 0.192898)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ak762:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.932689, -0.62846, -2.17438), Vector3(0.133479, -1.25832, -2.61666), Vector3(0.932689, -0.62846, -2.17438)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7kpn8"]
 _data = {
 "RESET": SubResource("Animation_8we0o"),
@@ -603,7 +603,7 @@ libraries = {
 }
 
 [node name="ak762" parent="." instance=ExtResource("3_8akuc")]
-transform = Transform3D(-1, 7.09843e-15, -2.53518e-06, -1.54441e-06, 0.793023, 0.60919, 2.01046e-06, 0.60919, -0.793023, 1.30702, 1.19922, -2.17438)
+transform = Transform3D(-1, 7.9062e-09, -2.53517e-06, 0, 0.999994, 0.00311859, 2.53518e-06, 0.00311859, -0.999994, 1.30702, 0.712387, -2.17438)
 rotation_edit_mode = 2
 
 [node name="furniture" parent="ak762/MeshInstance3D/main_body" index="0"]
@@ -613,7 +613,7 @@ cast_shadow = 0
 cast_shadow = 0
 
 [node name="magazine" parent="ak762/MeshInstance3D/main_body" index="4"]
-transform = Transform3D(0.869874, -0.403561, -0.283649, 0.431569, 0.901127, 0.0414234, 0.238888, -0.158447, 0.958032, 0.827081, -0.937459, -0.772776)
+transform = Transform3D(1, 0, 0, 0, 0.999998, -7.10542e-15, 0, 7.10542e-15, 0.999998, -0.0956717, -0.411246, -0.481504)
 rotation_edit_mode = 2
 
 [node name="bolt" parent="ak762/MeshInstance3D/main_body" index="5"]
@@ -624,7 +624,7 @@ cast_shadow = 0
 disabled = true
 
 [node name="left_arm" type="Node3D" parent="ak762"]
-transform = Transform3D(0.0650428, -0.722066, 0.188803, -0.273609, -0.20066, -0.66694, 0.69312, -0.0126297, -0.281478, 1.6188, -0.0904033, -2.12013)
+transform = Transform3D(-0.140112, -0.732122, 0.0828656, -0.0396204, -0.0767418, -0.745013, 0.735729, -0.143557, -0.0243394, 1.39547, -0.0866987, -1.30623)
 rotation_edit_mode = 2
 
 [node name="Skeleton3D" type="Skeleton3D" parent="ak762/left_arm"]
