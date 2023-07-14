@@ -13,7 +13,6 @@ script = ExtResource("2_76cnm")
 is_holdable = true
 display_name = "Dingdong"
 description = "This is just a placeholder item"
-rarity = 5
 bulk = 2
 arm_path = "res://nodes/entities/fp_arms/unarmed.tscn"
 hands = "1"

@@ -6,3 +6,4 @@ static func bool_switch(x):
 	else:
 		x = true
 	return x
+

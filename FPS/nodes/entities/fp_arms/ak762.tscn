@@ -603,7 +603,7 @@ libraries = {
 }
 
 [node name="ak762" parent="." instance=ExtResource("3_8akuc")]
-transform = Transform3D(-1, 7.9062e-09, -2.53517e-06, 0, 0.999994, 0.00311859, 2.53518e-06, 0.00311859, -0.999994, 1.30702, 0.712387, -2.17438)
+transform = Transform3D(-1, -8.80138e-08, -2.53365e-06, 0, 0.999396, -0.034717, 2.53518e-06, -0.034717, -0.999396, 1.30702, 0.657887, -2.17438)
 rotation_edit_mode = 2
 
 [node name="furniture" parent="ak762/MeshInstance3D/main_body" index="0"]

@@ -2,10 +2,8 @@ extends Node
 
 @onready var PLAYER = get_parent()
 
-@onready var HOLD_SLOT = PLAYER.get_node("Skeleton3D/neck/Camera3D/first_person")
-@onready var UNARMED = load("res://nodes/entities/fp_arms/unarmed.tscn")
-@onready var HELD_ITEM = UNARMED
-#Instantiate when ready to use
+@onready var HOLD_SLOT = PLAYER.get_node("Skeleton3D/neck/Camera3D/first_person/")
+@onready var UNARMED = preload("res://nodes/items/Generic/dingdong.tscn").instantiate()
 
 @onready var INVENTORY = {
 	"BACKPACK_INVENTORY": {"MAX_SLOTS": 0, "OCCUPIED_SLOTS": 0, "ITEMS": []},
@@ -22,18 +20,17 @@ extends Node
 }
 
 @onready var HOTBAR = [
-	{"item": UNARMED, "active": true},
-	{"item": INVENTORY.WEAPON_SLOTS.SLING_WEAPON, "active": false},
-	{"item": INVENTORY.WEAPON_SLOTS.BACK_WEAPON, "active": false},
-	{"item": INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON, "active": false},
-	{"item": INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON, "active": false},
-	{"item": null, "active": false},
-	{"item": null, "active": false},
-	{"item": null, "active": false},
-	{"item": null, "active": false},
-	{"item": null, "active": false}
+	UNARMED, #Slots 0, and 5-9
+	null,
+	null,
+	null,
+	null,
+	null
 ]
-		
+
+func _ready():
+	change_item(UNARMED)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	inputs()
@@ -41,54 +38,59 @@ func _physics_process(_delta):
 '''-----------------Inputs--------------------------'''
 
 func inputs():
-	
-	
+	var z
 	if Input.is_action_just_released("hotbar0"):
-		#Load the item in each option
-		Helpers.bool_switch(HOTBAR[0].active)
-		change_item()
+		z = 0
+		change_item(HOTBAR[z])
 		
 	if Input.is_action_just_released("hotbar1"):
-		Helpers.bool_switch(HOTBAR[1].active)
-		change_item()
+		change_item(INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
 	
 	if Input.is_action_just_released("hotbar2"):
-		Helpers.bool_switch(HOTBAR[2].active)
-		change_item()
+		change_item(INVENTORY.WEAPON_SLOTS.BACK_WEAPON)
 	
 	if Input.is_action_just_released("hotbar3"):
-		Helpers.bool_switch(HOTBAR[3].active)
-		change_item()
+		change_item(INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
 	
 	if Input.is_action_just_released("hotbar4"):
-		Helpers.bool_switch(HOTBAR[4].active)
-		change_item()
+		change_item(INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON)
 	
 	if Input.is_action_just_released("hotbar5"):
-		Helpers.bool_switch(HOTBAR[5].active)
-		change_item()
+		z = 5
+		change_item(HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar6"):
-		Helpers.bool_switch(HOTBAR[6].active)
-		change_item()
+		z = 6
+		change_item(HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar7"):
-		Helpers.bool_switch(HOTBAR[7].active)
-		change_item()
+		z = 7
+		change_item(HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar8"):
-		Helpers.bool_switch(HOTBAR[8].active)
-		change_item()
+		z = 8
+		change_item(HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar9"):
-		Helpers.bool_switch(HOTBAR[9].active)
-		change_item()
+		z = 9
+		change_item(HOTBAR[z])
 		
 	if Input.is_action_just_released("inventory"):
 		print(INVENTORY)
 
 	
 '''-----------------Inventory Actions--------------------------'''
+
+func change_item(x):
+	if x != null:
+		var y = load(x.arm_path).instantiate()
+		
+		if HOLD_SLOT.get_children() != []:
+			HOLD_SLOT.get_children()[0].queue_free()
+
+
+		print(y)
+		HOLD_SLOT.add_child(y)
 
 func store_to_pockets(item):
 		var x = INVENTORY.POCKET_INVENTORY.MAX_SLOTS
@@ -100,10 +102,6 @@ func store_to_pockets(item):
 			INVENTORY.POCKET_INVENTORY.OCCUPIED_SLOTS += z
 		else:
 			print("Pockets full!")
-
-func change_item():
-	
-	pass
 
 
 func loot_action(item_to_loot):

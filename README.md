@@ -138,11 +138,21 @@ Rarely, the merc you hired on is particularly good at a certain set of skills, t
 * Silver Tongue - Speech checks are double-rolled
     Requires: Charisma 16
 
-## Hideout
+## garLOXD
 
-The Hideout serves as a hub for you to manage your mercs and plan your next move. 
+garLOXD is a hacked version of the ROA's nationally enforced FreedomNet, a heavily censored version of today's Internet
 
-## States
+garLOXD is how you manage your mercenaries, inventories, and passive activities
+
+## Buffs/Debuffs
+
+**Bleed (Minor/Major)** - Chance to happen is different depending on remaining HP available.
+    
+* Minor bleeding will reduce you to 20% of HP only
+* Major bleeding will reduce you to 10% of HP only
+* Cured by light/heavy bandage
+
+## Mercenary States
 
 You can get into various states depending on many possible factors. These can be both positive and negative
 
@@ -185,25 +195,27 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 ### TwoHandFirearm
 
-#### Assault Rifles
+#### Intermediate Rifles
 
-* **AK-762** | [3] | 7.62x39 - *One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy construction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired.*
-* **AK-545** | [3] | 5.45x39 - *A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge.*
-* **AK-48** | [4] | 5.45x39 - *The Russian Federation's rifle of choice for their troops. Part of a long line of derivatives of the original AK-762*
-* Mjolnir-556 | [4] | 5.56x45 - *Standard issue rifle of the ROA military, based on the highly customizable and very balanced AR platform*
-* M16 | [5] | 5.56x45 - *One of the oldest versions of the AR platform that can be found. First developed in the 1950s by the United States*
+* **AK-47** | [3] | 7.62x39 - *One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy construction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired.*
+* **AK-74** | [3] | 5.45x39 - *A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge.*
+* AK-48 | [4] | 5.45x39 - *The Russian Federation's rifle of choice for their troops. Part of a long line of derivatives of the original AK-47*
+* Mjolnir-5.56 | [4] | 5.56x45 - *Standard issue rifle of the ROA military, based on the highly customizable and very balanced AR platform*
+* ARM-.22 | [1] | .22lr - *A civilian version of the Mjolnir rifle. Semi-auto only. Compatible with Mjolnir and ARM parts*
+* ARM-5.56 | [4] | 5.56x45 - *A modified version of the ARM-.22 that can fire the much more powerful 5.56x45 round. Semi-auto only*
 
-#### Battle Rifles
+#### Full-Power Rifles
 
-* Klott-H | [4] | .308 - *A criminally under-used battle rifle.*
+* SCAR-H | [4] | .308 - *A criminally under-used battle rifle.*
+
+#### Carbines/SBRs
+
+* DrAKo | [5] | 7.62x39 - *A "pistol" designed in Romania in the mid 20th century to attempt to ride the coattails of the AK, with surprising success*
+
 
 #### Bolt-Action Rifles
 
 * Woodsman-43 | [1] | .308 - *A common hunting rifle with with a modern flair.*
-
-#### Carbines
-
-* DrAKo | [5] | 7.62x39 - *A "pistol" designed by Romania in the mid 20th century to attempt to ride the coattails of the AK, with surprising success*
 
 #### Shotguns
 
@@ -211,21 +223,23 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 #### Submachine Guns
 
-* P-Ump-45 | [3] | .45acp - *Standard-issue police SMG that's used by SWAT teams. Low rate of fire but excellent stopping power*
+* UMP-45 | [3] | .45acp - *Standard-issue police SMG that's used by SWAT teams. Low rate of fire but excellent stopping power*
 
 ### OneHandFirearm
 
 #### Low-Cap Pistols
 
-* PH-1911 | [2] | .45acp - *A relic of the early 20th century. Small magazine but great stopping power*
+* M1911 | [5] | .45acp - *A legendary relic of the early 20th century. Small magazine but great stopping power*
+* M49 | [2] | .45acp - *A modernized version of the M1911. More bells and whistles but missing an aspect of magic*
 
 #### Hi-Cap Pistols
 
-* Kablok84 | [2] | 9x19 - *A reliable polymer pistol used as a sidearm for police forces around the world*
+* G84 | [2] | 9x19 - *A reliable polymer pistol used as a sidearm for police forces around the world*
 
 #### Magnums
 
-* Powerhawk | [4] | .44 Magnum - *An affront to nature designed by a failed ethnostate. Just an abomination all around*
+* Ytho-44 | [2] | .44 Magnum - *A powerful revolver favored by those without wrists or bastard Generals*
+* Deagle | [4] | .44 Magnum - *An affront to nature designed by a failed ethnostate. Just an abomination all around*
 
 ### OneHandMelee
 
@@ -240,13 +254,17 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Lockpick Kit [2] - *A collection of tools for opening locks. Can be used 20 times*
     - Chance to pick lock: 20% * (0.5 * (Agility-10))
     - Illegal
-* Drill [1] - *Can break locks but is loud*
+* Drill [1] - *Can be used to open various things, or break locks...loudly*
 
 ----------------------------------
 
 ### Consumable
 
 ### Ammo
+
+#### Ammo Stats
+
+TBD
 
 #### Intermediate
 
@@ -258,12 +276,14 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
     
     (-) Low HP, BP, and AP damage
 
+
 * Variants
 
-    * 5.45x39mm HP
-    * 5.45x39mm FMJ
-    * 5.45x39mm FMJ (+)p
-    * 5.45x39mm AP
+    * HP
+    * FMJ
+    * FMJ +P
+    * T
+    * AP
 
 ##### 7.62x39mm [2]
 
@@ -277,8 +297,9 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Variants 
 
-    * 7.62x39mm HP
-    * 7.62x39mm FMJ
+    * HP
+    * FMJ
+    * T
 
 ##### 5.56x45mm [2]
 
@@ -291,9 +312,10 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Variants
 
-    * 5.56x45mm HP
-    * 5.56x45mm FMJ
-    * 5.56x45mm AP
+    * HP
+    * FMJ
+    * T
+    * AP
 
 #### Ammo Types
 
@@ -302,14 +324,37 @@ Not all types are available for every caliber. When loot is generated, the type 
 * Hollow Point (HP) - High BP and HP damage but low AP damage. Typically used by law enforcement, hunters, and personal defense
 * Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board. Used by military personel and sport shooters
 * Full Metal Jacket Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage. Used mostly by gun enthusiasts
+* Tracer (T) - Guarantees a green tracer for your bullet. Helps with accuracy. Also has slightly increased HP damage
 * Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
 * Sub-Sonic (SP) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
 
 ### Armor
 
+#### Mechanics
+
+##### Armor Leves
+
+Each set of armor has an armor level. As a rule of thumb, armor is guaranteed to block ~3 rounds of ammo of equal pen rating
+
+Levels:
+
+* TBD
+
+##### Absorbtion
+
+Armor has an "absorbtion" rating which signifies the armor's resistance to being damaged
+
+##### Penetration Chance
+
+Penetration chance follows this formula:
+
+Pen% = 100 + (absorbtion) - percentage_ap_missing
+
+Pen% CAN go over 100.
+
 ### Headgear
 
-### Chest Rigs
+Works the same as armor, except for the head region. Also cannot be repaired in any way
 
 ### Backpacks
 

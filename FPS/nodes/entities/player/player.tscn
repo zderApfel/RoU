@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3qdtr17vggdq"]
+[gd_scene load_steps=9 format=3 uid="uid://c3qdtr17vggdq"]
 
 [ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://classes/entities/Human.tscn" id="1_guf5n"]
 [ext_resource type="Script" path="res://nodes/entities/player/detect_loot.gd" id="2_7y63y"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cfw0k0lostyyn" path="res://nodes/Inventory.tscn" id="4_3gwfh"]
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="4_uimrw"]
 [ext_resource type="Script" path="res://nodes/entities/player/movement.gd" id="5_b6kmu"]
-[ext_resource type="PackedScene" uid="uid://c3m0cpcdivpt5" path="res://nodes/entities/fp_arms/unarmed.tscn" id="6_nrcgp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hn8et"]
 size = Vector3(0.484665, 2.23589, 0.327528)
@@ -48,8 +47,6 @@ script = ExtResource("2_7y63y")
 
 [node name="first_person" type="Node3D" parent="Skeleton3D/neck/Camera3D" index="1"]
 transform = Transform3D(0.5, -6.33918e-10, 7.27596e-12, 2.97632e-10, 0.5, 9.31323e-10, -7.27596e-12, -2.64698e-23, 0.5, 1.07917e-07, -0.663676, -0.620205)
-
-[node name="slot" parent="Skeleton3D/neck/Camera3D/first_person" index="0" instance=ExtResource("6_nrcgp")]
 
 [node name="neck_movement_tree" parent="Skeleton3D/neck" index="1"]
 parameters/neck_movement/blend_position = Vector2(0.0266667, 0.0672646)

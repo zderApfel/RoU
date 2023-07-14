@@ -82,4 +82,4 @@ shape = SubResource("ConvexPolygonShape3D_jabyq")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.3481, 1.25765, -0.206006)
 
 [node name="player" parent="." instance=ExtResource("2_kii5a")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.46319, 2.50727, 3.69778)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.96566, 3.7193, 6.27634)

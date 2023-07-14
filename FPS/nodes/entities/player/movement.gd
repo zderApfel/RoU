@@ -13,41 +13,39 @@ var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera = $Skeleton3D/neck/Camera3D
 @onready var movement_animations = $Skeleton3D/neck/Camera3D/first_person
 
+@onready var held_item
+@onready var arms = $Skeleton3D/neck/Camera3D/first_person/slot
+@onready var neck = $Skeleton3D/neck
+
 @onready var jogtracker = 0
 @onready var jumptracker = 0
 @onready var current_speed = 0
 
-func _ready():
-	pass
-	
+
 func _physics_process(delta):
-	animation_watcher()
 	move()
 	jump(delta)
+	if movement_animations.get_children() != []:
+		held_item = movement_animations.get_children()[0]
+		animation_watcher()
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * LOOK_SENSITIVITY)
 		
 		camera.rotate_x(event.relative.y * LOOK_SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 	if Input.is_action_just_pressed("cancel"): 
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
 
 func animation_watcher():
-	var arms
-	var neck
-
-	if movement_animations.get_children() != []:
-		arms = $Skeleton3D/neck/Camera3D/first_person/slot/movement_tree
-		neck = $Skeleton3D/neck/neck_movement_tree
-		
-		arms["parameters/movement/blend_position"].x = jogtracker
-		arms["parameters/movement/blend_position"].y = jumptracker
-		
-		neck["parameters/neck_movement/blend_position"].x = jogtracker
-		neck["parameters/neck_movement/blend_position"].y = jumptracker
+	
+	#arms["parameters/movement/blend_position"].x = jogtracker
+	#arms["parameters/movement/blend_position"].y = jumptracker
+	
+	#neck["parameters/neck_movement/blend_position"].x = jogtracker
+	#neck["parameters/neck_movement/blend_position"].y = jumptracker
 	
 	jogtracker = current_speed
 
