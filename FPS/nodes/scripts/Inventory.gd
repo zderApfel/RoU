@@ -53,7 +53,7 @@ func inputs():
 		change_item(INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
 	
 	if Input.is_action_just_released("hotbar4"):
-		change_item(INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON)
+		change_item(INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
 	
 	if Input.is_action_just_released("hotbar5"):
 		z = 5

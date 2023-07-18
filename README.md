@@ -12,31 +12,58 @@ The police forces, as expected, got worse as a result, with police brutality pra
 
 You play as a disillusioned anarchist who recently lost their closest friend to a murder by one of these emboldened police officers. Through events I don't want to spoil, you decide to start a militia of their own and bring the power back to the people. 
 
-# Gameplay
+# Raids [CONFIDENTIAL]
 
-When you first start up a new game, you'll be given the option to play the tutorial mission. If you skip it, then you'll be immediately brought to the [Hideout](#hideout).
+## Tutorial Raid 
 
-The game will take place in an open world in which the NPCs, quests, and loot are procedurally generated.
+* Protag Lock
+* An optional (and skippable) mission that you can do at the beginning. This raid entails escaping jail after being arrested during a protest
 
-* You will be given free-reign to explore the world at your leisure in what's called the **exploration phase**. During the exploration phase you can meet NPCs, do favors for them, find loot through legal or illegal means, or just kill people. It's really up to you. Keep in mind murder hoboing DOES have consequences...
+## A New Home 
 
-* In order to complete the game, there's a series of scripted missions you have to beat, called "Raids". 
+* Protag Lock
+* Find an abandoned weather site
+* This site is a dungeon that is inhabited by a cult that believes that the start of the Ice Age was a simulation and the weather sites hold the key to escaping it
+* Once beaten, this site becomes your new hideout
 
-* In order to complete these raids you need to prepare, which is what the exploration phase is for. 
+## Retribution
 
-* Some raids have time frames you need to act within, while others are free to be done whenever you want.
+* *"Get your revenge. Take out the Chief of Police and anybody who tries to stop you"*
 
-# Raids
+## The Showdown 
 
-* Tutorial Raid [Protag Lock] - An optional (and skippable) mission that you can do at the beginning. This raid entails escaping jail after being arrested during a protest.
+* Protag Lock
+* *"This is it. All your work is now finally going to pay off. Take that waste down"*
+* You will be raiding the Presidental Palace
+* This raid has high-tier enemies that can easily cut down the ill-prepared
 
-* A New Home [Protag Lock] - Find an abandoned weather site. This site is a dungeon that is inhabited by a cult that believes that the start of the Ice Age was a simulation and the weather sites hold the key to escaping it. Once beaten, this site becomes your new hideout.
+# Difficulty [CONFIDENTIAL]
 
-* Retribution - Blood for blood. Take out every officer present at the Metro District's police station and burn it down.
+## Casual
 
-* The Showdown [Protag Lock] - The final raid. You will be raiding the Presidental Palace. This raid has high-tier enemies that can easily cut down the ill-prepared. 
+* *"A good challenge for those experienced with FPSs"*
+* Main character respawns
+* "Tired", "Bleeding", and "Poisoned" effects are disabled
+
+## Intermediate
+
+* *""*
+* Main character respawns
+* "Bleeding" effects are disabled
+* Melee attacks require stamina
+
+## Hardcore
+
+* *"The developer-intended way to play. Punishingly difficult to those unfamiilar with the game's mechanics"*
+* Main character death means GAME OVER
+* Some raids now must be completed within a certain time frame, with consequences for failure
+* You regain stamina at a slower rate the less health you have
 
 # Mechanics
+
+## Melee Combat
+
+* Bleed Chance 
 
 ## Mercenaries
 
@@ -69,42 +96,35 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 Melee:
 
 * +1 melee damage
-
 * +0.5% melee crit chance
 
 Shooting:
 
 * -2% recoil
-
 * +0.5% reload speed
 
 Health:
 
 * +2% maximum stamina
-
 * +2% BP damage resistance
 
 Agility:
 
 * +1% movement speed
-
 * +1% melee speed
 
 Charisma:
 
 * +2% discount at vendors
-
 * +1% to dialogue checks
 
 In addition, there's a couple additional attributes that apply only to NPCs
 
 * Reputation: Represents the NPCs opinion of the player character
-
 * Loyalty: Represents a mercenaries loyalty to the cause
+* Cowardice [CONFIDENTIAL]: The liklihood that the NPC will flee from combat when damaged or threatened. *HINT: This decreases significantly when an NPC is armed.*
 
-* Cowardice (hidden): The liklihood that the NPC will flee from combat when damaged or threatened. *HINT: This decreases significantly when an NPC is armed.*
-
-### Legendary Attributes
+### Legendary Attributes [CONFIDENTIAL]
 
 For any attribute that's at level 20, you can continue training that attribute with a 1% chance to gain a legendary attribute. Only one legendary attribute can be acquired per character, and cannot be removed.
 
@@ -114,7 +134,7 @@ For any attribute that's at level 20, you can continue training that attribute w
 
 * Poison Immunity (Health) - Immunity to inhaled and lingering poisons
 
-* Nio (Agility) - Can block bullets by blocking with a melee weapon with 2+ parry power at a BP cost
+* Cracked Egg (Agility) - You gain the ability to double jump
 
 * Silver Tongue (Charisma) - All social checks automatically succeed
 
@@ -122,85 +142,97 @@ For any attribute that's at level 20, you can continue training that attribute w
 
 During an exploration phase where they're not doing anything, you can select a passive activity for a merc to do:
 
-* Weightlifting - 3% chance to increase Strength/Health. Requires a 1 day rest period
+Training - Weightlifting
 
-* Target Practice - 3% chance to increase Shooting. Costs an amount of money to spend on ammunition
+* 3% chance to increase Strength/Health
 
-* Cardio - 3% chance to increase Agility/Health. Requires a 1 day rest period
+Training - Target Practice
 
-* Casino - Chance to win or lose money. Scales with Charisma
-    
-    Chance to win: 40% + (Charisma-10)*2
+* 3% chance to increase Shooting
+* Costs an amount of money to spend on ammunition
 
-* Casino (cheating) - Significantly higher chance to win money, but loss means getting [detained](#detained). Scales with Agility/Charisma
+Training - Cardio
 
-    Chance to win: 60% + (Charisma-10)*2
+* 3% chance to increase Agility/Health
 
-    Chance to be caught if loss: 20% + (Agility-10)*2
+Casino - Charisma
 
-* Theft = Chance to steal some extra items, but with a chance to be detained or killed. Scales with Agility/Charisma. Requires a 1 day rest period. Has its own loot pool and not all items are possible to be found through theft
+* Chance to win or lose money
+* Chance to win: 40% + (Charisma-10)*2
 
-    Chance to succeed: 100 - item_difficulty + ((Agility-10)+(Charisma-10))*2
+Casino - Agility/Charisma
 
-* Scout = Can scout out a raid area for you to provide some basic details. Has a chance to result in death. Scales with Agility/Shooting. Requires a 1 day rest period
+* Significantly higher chance to win money, but loss means getting [detained](#detained) Scales with Agility/Charisma
+* Chance to win: 100 - gambling_difficulty + (Charisma-10)*2
+* Chance to be caught: 30 + gambling_difficulty + (Agility-10)*2
 
-    Chance to succeed: 100 - raid_difficulty + ((Agility-10)+(Shooting-10))*2
+Theft - Agility 
+
+* Chance to steal some extra items, but with a chance to be detained or killed
+* Has its own loot pool and not all items are possible to be found through theft
+* Chance to succeed: 100 - item_difficulty + (Agility-10)*2
+
+Scout - Agility/Shooting
+
+* Can scout out a raid area for you to provide some basic details
+* Has a chance to result in death
+* Chance to succeed: 100 - raid_difficulty + ((Agility-10)+(Shooting-10))
 
 ### Specializations
 
-Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have a special ability that they can use in the field.
+Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have special talents that can benefit
 
-* Surveillance Expert - Nearby hostiles can be seen through walls
-    
-    Requires: N/A
+Master Thief:
 
-* Master Thief - Lockpicking is double-rolled, with a 20% chance to not consume the lockpick
-    
-    Requires: Agility 14, Charisma 12 
+* Active: Lockpicking is doublerolled, with a 20% chance to not consume a lockpick
+* Passive: Never fails at passive theft but can only bring back half as much loot
+* Requires: Agility 14, Charisma 12 
 
-* Martial Artist - Can parry melee weapons with your fists
-    
-    Requires: Agility 16, Strength 14
+Martial Artist: 
 
-    Doesn't allow blocking bullets with hands with the 
+* Active: Can parry melee weapons with your fists
+* Passive: +0.5% chance for all mercenaries to level up fron training activities (Stackable)
+* Requires: Agility 16, Strength 14
 
-* Heavyweight - You resist 50% of BP damage BEFORE all other resistances
-    
-    Requires: Strength 16, Health 14
+Heavyweight:
 
-* Packrat - Doubled pocket inventory space
-    
-    Requires: N/A
+* Active: You resist 50% of BP damage BEFORE all other resistances
+* Passive: None
+* Requires: Strength 16, Health 14
 
-* Infiltrator - Doesn't make noise when jogging
-    
-    Requires: Agility 15
+Packrat:
 
-* Hacker - Has a chance to bypass an electronic countermeasure without finding the passcode (keypads, computers, etc.)
-    
-    Requires: N/A
+* Active: Doubled pocket inventory space
+* Passive: None
+* Requires: N/A
 
-    Works only once per device
+Infiltrator:
 
-    Matches the character's lockpicking chance (stacks with master thief)
+* Active: Doesn't make noise when jogging
+* Passive: Scout/Thief activities are double-rolled, taking the highest
+* Requires: Agility 15
 
-* Smooth Criminal - Speech checks are double-rolled
-    
-    Requires: Charisma 16
+Hacker: 
 
-## Unrest
+* Active: Chance to bypass an electronic countermeasure without inputting a passcode (keycads, computers, etc.)
+* Passive: N/A  
+* Requires: N/A
+* Works only once per device
+* Matches the character's lockpicking chance (stacks with master thief)
+
+Smooth Criminal:
+
+* Active: Speech checks are double-rolled
+* Passive: A random mercenary has a 3% (+0.5% per) chance to gain a point of Charisma every 24 in-game hours
+* Requires: Charisma 16
+
+## Security/Unrest
 
 [TBD]
 
 ## Buffs/Debuffs
 
-**Bleed (Minor/Major)** - Chance to happen is different depending on remaining HP available.
-    
-* Minor bleeding will reduce you to 20% of HP only
-
-* Major bleeding will reduce you to 10% of HP only
-
-* Cured by light/heavy bandage respectively 
+**Tired** - Happens after 8 in game hours. Increases with intensity over time. Can be suppressed with drugs, but Tired V will kill you if not addressed. Reduces Stamina regen
 
 **Poisoning** - There's two types of poisoning, inhaled and lingering. Inhaled poisons damage you for an amount per second while in an area contaminated by it. Lingering poisons can have various effects that last until the end of the raid/mission or if an antidote is taken 
 
@@ -264,7 +296,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Mjolnir-5.56 | [4] | 5.56x45 - *Standard issue rifle of the ROA military, based on the highly customizable and very balanced AR platform*
 
-* ARM-.22 | [1] | .22lr - *A civilian version of the Mjolnir rifle. Semi-auto only. Compatible with Mjolnir and ARM parts*
+* ARM-22 | [1] | .22lr - *A civilian version of the Mjolnir rifle. Semi-auto only. Compatible with Mjolnir and ARM parts*
 
 * ARM-5.56 | [4] | 5.56x45 - *A modified version of the ARM-.22 that can fire the much more powerful 5.56x45 round. Semi-auto only*
 
@@ -326,7 +358,26 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 ### Ammo
 
-#### Ammo Stats
+#### Ammo Variants
+
+Not all variants are available for every caliber. When loot is generated, the type is FMJ by default and then has a chance to be changed to another type depending on its loot pool
+
+* Hollow Point (HP) - High BP and HP damage but low AP damage
+* Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board
+* Full Metal Jacket Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage
+* Tracer (T) - Guarantees a green tracer for your bullet. Helps with accuracy. Also has slightly increased HP damage
+* Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
+* Sub-Sonic (SP) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
+
+There's also a few variants exclusive to shotgun ammo:
+
+* Buckshot (Red) - Standard shotgun ammunition
+* HP Slug (Green) - A singular projectile with very high HP damage, but barely scratches armor
+* Steel Slug (Yellow) - A singular projectile with higher AP damage but lower HP damage
+* Flechette (White) - Similar to buckshot, but with higher AP damage
+
+
+#### Ammo Stats [CONFIDENTIAL]
 
 TBD
 
@@ -376,22 +427,6 @@ Variants:
 * FMJ
 * T
 * AP
-
-#### Ammo Types
-
-Not all types are available for every caliber. When loot is generated, the type is FMJ by default and then has a chance to be changed to another type depending on where it is being purchased
-
-* Hollow Point (HP) - High BP and HP damage but low AP damage. Typically used by law enforcement, hunters, and personal defense
-
-* Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board. Used by military personel and sport shooters
-
-* Full Metal Jacket Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage. Used mostly by gun enthusiasts
-
-* Tracer (T) - Guarantees a green tracer for your bullet. Helps with accuracy. Also has slightly increased HP damage
-
-* Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
-
-* Sub-Sonic (SP) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
 
 ### Armor
 
