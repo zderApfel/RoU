@@ -81,7 +81,7 @@ func inputs():
 	
 '''-----------------Inventory Actions--------------------------'''
 
-func change_item(x):
+func change_item(x): #This is the issue
 	if x != null:
 		var y = load(x.arm_path).instantiate()
 		

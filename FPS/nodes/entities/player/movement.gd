@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const CROUCH_SPEED = 5
+const CROUCH_SPEED = JOG_SPEED*0.5
 const JOG_SPEED = 8
 const SPRINT_SPEED = 12
 const JUMP_VELOCITY = 4
@@ -11,11 +11,9 @@ var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var camera = $Skeleton3D/neck/Camera3D
-@onready var movement_animations = $Skeleton3D/neck/Camera3D/first_person
 
 @onready var held_item
-@onready var arms = $Skeleton3D/neck/Camera3D/first_person/slot
-@onready var neck = $Skeleton3D/neck
+@onready var neck = $Skeleton3D/neck/neck_movement_tree
 
 @onready var jogtracker = 0
 @onready var jumptracker = 0
@@ -25,9 +23,7 @@ var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _physics_process(delta):
 	move()
 	jump(delta)
-	if movement_animations.get_children() != []:
-		held_item = movement_animations.get_children()[0]
-		animation_watcher()
+	animation_watcher()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -41,11 +37,8 @@ func _input(event):
 
 func animation_watcher():
 	
-	#arms["parameters/movement/blend_position"].x = jogtracker
-	#arms["parameters/movement/blend_position"].y = jumptracker
-	
-	#neck["parameters/neck_movement/blend_position"].x = jogtracker
-	#neck["parameters/neck_movement/blend_position"].y = jumptracker
+	neck["parameters/neck_movement/blend_position"].x = jogtracker
+	neck["parameters/neck_movement/blend_position"].y = jumptracker
 	
 	jogtracker = current_speed
 
@@ -70,12 +63,12 @@ func move():
 			current_speed += 0.5
 	elif Input.is_action_pressed("left") or Input.is_action_pressed('right'):
 		x
-		if current_speed < JOG_SPEED:
-			current_speed += 0.3
+		if current_speed < JOG_SPEED*1.5:
+			current_speed += 0.25
 	elif Input.is_action_pressed("backward"):
 		x
 		if current_speed < CROUCH_SPEED:
-			current_speed += 0.3
+			current_speed += 0.25
 	elif Input.is_action_pressed("forward") and Input.is_action_pressed("backward"):
 		x
 		if current_speed < JOG_SPEED:
