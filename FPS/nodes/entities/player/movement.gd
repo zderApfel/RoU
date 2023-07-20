@@ -63,11 +63,11 @@ func move():
 			current_speed += 0.5
 	elif Input.is_action_pressed("left") or Input.is_action_pressed('right'):
 		x
-		if current_speed < JOG_SPEED*1.5:
+		if current_speed < CROUCH_SPEED:
 			current_speed += 0.25
 	elif Input.is_action_pressed("backward"):
 		x
-		if current_speed < CROUCH_SPEED:
+		if current_speed < JOG_SPEED*1.5:
 			current_speed += 0.25
 	elif Input.is_action_pressed("forward") and Input.is_action_pressed("backward"):
 		x

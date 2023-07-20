@@ -454,7 +454,7 @@ _data = {
 [node name="slot" type="StaticBody3D"]
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.996697, -0.081204, 0, 0.081204, 0.996697, 0, 0, 0, 1, -2.308, -0.0969276, -0.0697996)
+transform = Transform3D(0.996697, -0.081204, 0, 0.081204, 0.996697, 0, 0, 0, 1, -2.308, -0.149475, 0.000515807)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="left_arm"]
 transform = Transform3D(0.183574, 0.983006, 0, -0.983006, 0.183574, 0, 0, 0, 1, 0, 0, 0)
@@ -489,7 +489,7 @@ surface_material_override/0 = ExtResource("1_17mj0")
 surface_material_override/1 = ExtResource("2_bgiqc")
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.366049, -0.930595, 0, 0.930595, 0.366049, 0, 0, 0, 1, 2.50439, -0.445537, 0)
+transform = Transform3D(0.263641, -0.96462, 0, 0.96462, 0.263641, 0, 0, 0, 1, 2.50439, -0.445537, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="right_arm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.398243, -0.11561, 0)

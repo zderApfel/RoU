@@ -29,7 +29,7 @@ extends Node
 ]
 
 func _ready():
-	change_item(UNARMED)
+	Helpers.switch_child(HOLD_SLOT,HOTBAR[0])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
@@ -41,57 +41,46 @@ func inputs():
 	var z
 	if Input.is_action_just_released("hotbar0"):
 		z = 0
-		change_item(HOTBAR[z])
+		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 		
 	if Input.is_action_just_released("hotbar1"):
-		change_item(INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
+		Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.SLING_WEAPON)
 	
 	if Input.is_action_just_released("hotbar2"):
-		change_item(INVENTORY.WEAPON_SLOTS.BACK_WEAPON)
+		Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.BACK_WEAPON)
 	
 	if Input.is_action_just_released("hotbar3"):
-		change_item(INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
+		Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
 	
 	if Input.is_action_just_released("hotbar4"):
-		change_item(INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
+		Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
 	
 	if Input.is_action_just_released("hotbar5"):
 		z = 5
-		change_item(HOTBAR[z])
+		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar6"):
 		z = 6
-		change_item(HOTBAR[z])
+		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar7"):
 		z = 7
-		change_item(HOTBAR[z])
+		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar8"):
 		z = 8
-		change_item(HOTBAR[z])
+		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar9"):
 		z = 9
-		change_item(HOTBAR[z])
+		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 		
 	if Input.is_action_just_released("inventory"):
 		print(INVENTORY)
 
 	
 '''-----------------Inventory Actions--------------------------'''
-
-func change_item(x): #This is the issue
-	if x != null:
-		var y = load(x.arm_path).instantiate()
 		
-		if HOLD_SLOT.get_children() != []:
-			HOLD_SLOT.get_children()[0].queue_free()
-
-
-		print(y)
-		HOLD_SLOT.add_child(y)
-
 func store_to_pockets(item):
 		var x = INVENTORY.POCKET_INVENTORY.MAX_SLOTS
 		var y = INVENTORY.POCKET_INVENTORY.OCCUPIED_SLOTS
