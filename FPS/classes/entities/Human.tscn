@@ -36,14 +36,4 @@ script = ExtResource("2_0wtep")
 script = ExtResource("3_iwuqc")
 
 [node name="human_male" parent="." instance=ExtResource("4_fpuv3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.932875, 0)
-
-[node name="Skeleton3D" parent="human_male/Armature" index="0"]
-bones/4/position = Vector3(0.000262901, 0.308443, 2.2491e-09)
-bones/4/rotation = Quaternion(-2.10047e-08, -7.24162e-08, -0.0029437, 0.999996)
-bones/4/scale = Vector3(1, 1, 1)
-bones/10/position = Vector3(-0.000316219, 0.317502, 2.71754e-09)
-bones/10/rotation = Quaternion(-2.10047e-08, 7.24162e-08, 0.0029437, 0.999996)
-bones/10/scale = Vector3(1, 1, 1)
-
-[editable path="human_male"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.897573, 0)
