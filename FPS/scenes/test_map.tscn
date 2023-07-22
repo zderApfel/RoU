@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bj0jo67t2470p"]
+[gd_scene load_steps=13 format=3 uid="uid://bj0jo67t2470p"]
 
 [ext_resource type="Script" path="res://scenes/test_map.gd" id="1_5s2km"]
-[ext_resource type="PackedScene" uid="uid://c3qdtr17vggdq" path="res://nodes/entities/player/player.tscn" id="2_kii5a"]
 [ext_resource type="PackedScene" uid="uid://cgk5t57hm7b7t" path="res://nodes/items/Generic/dingdong.tscn" id="2_mppmo"]
-[ext_resource type="PackedScene" uid="uid://5wdqoodxqi73" path="res://nodes/items/Firearm/ak762.tscn" id="4_f0jmc"]
+[ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://classes/entities/Human.tscn" id="3_e0r0r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s83ws"]
 sky_horizon_color = Color(0.644289, 0.654676, 0.681618, 1)
@@ -45,7 +44,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Dingdong" parent="." instance=ExtResource("2_mppmo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16787, 0.55858, -0.201269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0856182, 0.55858, 1.63576)
 
 [node name="Dingdong2" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91225, 0.753004, -2.97937)
@@ -78,8 +77,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
-[node name="ak762" parent="." instance=ExtResource("4_f0jmc")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.3481, 1.25765, -0.206006)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.993475, 0.114053, 0, -0.114053, 0.993475, -0.577463, 2.6501, 5.76672)
 
-[node name="player" parent="." instance=ExtResource("2_kii5a")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.46319, 2.50727, 3.69778)
+[node name="Human" parent="." instance=ExtResource("3_e0r0r")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0916589, 2.00905, 1.68561)
