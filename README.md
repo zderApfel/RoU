@@ -23,47 +23,88 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 
 * Protag Lock
 * Find an abandoned weather site
-* This site is a dungeon that is inhabited by a cult that believes that the start of the Ice Age was a simulation and the weather sites hold the key to escaping it
+* This site is a dungeon that is inhabited by a cult that believes that the start of the Second Ice Age was a simulation and the weather sites hold the key to escaping it
 * Once beaten, this site becomes your new hideout
 
 ## Retribution
 
-* *"Get your revenge. Take out the Chief of Police and anybody who tries to stop you"*
+* *"Get your revenge. Take down the Chief of Police and anybody who tries to stop you"*
 
 ## The Showdown 
 
 * Protag Lock
 * *"This is it. All your work is now finally going to pay off. Take that waste down"*
-* You will be raiding the Presidental Palace
+* You will be raiding the Presidental Palace and taking down Royland DerSantos
 * This raid has high-tier enemies that can easily cut down the ill-prepared
 
 # Difficulty [CONFIDENTIAL]
 
 ## Casual
 
-* *"A good challenge for those experienced with FPSs"*
+*"An easier experience, but still challenging"*
+
 * Main character respawns
 * "Tired", "Bleeding", and "Poisoned" effects are disabled
+* Health regenerates to 30% over time
+* Extra starting attribute points
 
 ## Intermediate
 
-* *""*
+*"A good challenge for those familiar with FPSs"*
+
 * Main character respawns
 * "Bleeding" effects are disabled
+* Health regnerates to 10% over time
 * Melee attacks require stamina
 
 ## Hardcore
 
-* *"The developer-intended way to play. Punishingly difficult to those unfamiilar with the game's mechanics"*
-* Main character death means GAME OVER
+*"The developer-intended way to play. Punishingly difficult to those unfamiilar with the game's mechanics"*
+
+* Main character death means GAME OVER and save file deletion
 * Some raids now must be completed within a certain time frame, with consequences for failure
+* Health doesn't regenerate
 * You regain stamina at a slower rate the less health you have
+
+## Modifiers
+
+### Melee Only
+
+* Guns and ammunition are removed from all item pools
+* Enemies use melee weapons instead of firearms
+* Throwables are still available
+* Recommended for players who want a less intense experience
 
 # Mechanics
 
-## Melee Combat
+## Combat
 
-* Bleed Chance 
+HP/BP/AP Damage
+* The HP/BP/AP damage done before any resistances
+
+Damage Type
+
+* Bludgeon, Pierce, Slash, Ballistic, Poison, Caustic, Fire, Explosive, Impulse
+* Used for handling resistances/immunities
+
+Bleed Chance
+
+* Chance for an enemy to bleed when struck
+* BLEED = BASE - (HEALTH - 10) * 1
+
+### Melee Exclusive
+
+Block Power
+* This value is directly tied to parry strength 
+
+Crit Chance
+* CRT = BASE + [(LUCK - 10 ) * 0.2] + [(MELEE - 10) * 0.5]
+* Critical hits multiply the damage by the weapon's crit modifier
+
+Crit Modifier
+* Per weapon
+
+### Firearm Exclusive
 
 ## Mercenaries
 
@@ -93,20 +134,21 @@ During exploration or a raid, you can either play as yourself, or you can play a
 
 Attributes are listed on a scale from 10 to 20, with 10 being represented as "average" and the baseline for stat increases/decreases
 
-Melee:
+#### Melee
 
 * +1 melee damage
 * +0.5% melee crit chance
 
-Shooting:
+#### Shooting
 
-* -2% recoil
+* +2% accuracy
 * +0.5% reload speed
 
-Health:
+#### Health
 
 * +2% maximum stamina
 * +2% BP damage resistance
+* (HARDCORE ONLY) 1% bleed resistance
 
 Agility:
 
@@ -117,6 +159,11 @@ Charisma:
 
 * +2% discount at vendors
 * +1% to dialogue checks
+
+Luck [CONFIDENTIAL]:
+
+* 0.2% added to ALL rolls
+* Will be implemented in other specific ways
 
 In addition, there's a couple additional attributes that apply only to NPCs
 

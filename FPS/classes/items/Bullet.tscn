@@ -15,6 +15,10 @@ metallic = 1.0
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 0
 script = ExtResource("1_aqnj7")
+damage_type = 1
+is_stackable = true
+hands = "1"
+pose = "unarmed"
 
 [node name="Hitbox" type="Area3D" parent="."]
 script = ExtResource("2_thul1")

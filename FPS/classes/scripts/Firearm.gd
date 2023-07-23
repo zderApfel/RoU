@@ -1,8 +1,9 @@
 class_name Firearm extends Item
 
 @export_enum("762x39","545x39","556x45") var caliber: String
-@export var recoil_variance_min: float
-@export var recoil_variance_max: float
+@export var accuracy_min: float
+@export var accuracy_max: float
+@export var muzzle_velocity: float = 0.0
 @export var max_ammo: int
 @export var current_ammo: int = 0
 

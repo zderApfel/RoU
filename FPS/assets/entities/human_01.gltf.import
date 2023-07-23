@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c163n2423rni"
-path="res://.godot/imported/arm.gltf-70191577923ddc91af481c1c063f287c.scn"
+uid="uid://biw6mcbuv5elg"
+path="res://.godot/imported/human_01.gltf-982a7ffd6b3175305c557a303ef45a5b.scn"
 
 [deps]
 
-source_file="res://assets/entities/arm.gltf"
-dest_files=["res://.godot/imported/arm.gltf-70191577923ddc91af481c1c063f287c.scn"]
+source_file="res://assets/entities/human_01.gltf"
+dest_files=["res://.godot/imported/human_01.gltf-982a7ffd6b3175305c557a303ef45a5b.scn"]
 
 [params]
 

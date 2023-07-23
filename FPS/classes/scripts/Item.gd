@@ -8,6 +8,7 @@ class_name Item extends Node3D
 @export var display_name: String
 @export var description: String
 @export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
+@export_enum("None", "Ballistic", "Bludgeon", "Pierce", "Slash", "Poison", "Fire", "Caustic", "Fire", "Explosive", "Impulse") var damage_type: int
 @export var is_stackable: bool = false
 @export var amount: int = 1
 @export var max_stack: int = 1

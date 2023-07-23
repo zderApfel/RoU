@@ -44,7 +44,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Dingdong" parent="." instance=ExtResource("2_mppmo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0856182, 0.55858, 1.63576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0856182, 0.55858, -1.2725)
 
 [node name="Dingdong2" parent="." instance=ExtResource("2_mppmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91225, 0.753004, -2.97937)
@@ -78,7 +78,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.993475, 0.114053, 0, -0.114053, 0.993475, -0.577463, 2.6501, 5.76672)
+transform = Transform3D(1, 0, 0, 0, -0.0360685, 0.999349, 0, -0.999349, -0.0360685, -0.577463, 5.7761, 2.25675)
 
 [node name="Human" parent="." instance=ExtResource("3_e0r0r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0916589, 2.00905, 1.68561)
+transform = Transform3D(-1, 0, -8.74228e-08, 2.00507e-08, 0.973343, -0.229353, 8.50924e-08, -0.229353, -0.973343, -0.0916589, 0.364497, 1.68561)
