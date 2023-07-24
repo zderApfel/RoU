@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
-const CROUCH_SPEED = JOG_SPEED*0.5
 const JOG_SPEED = 8
 const SPRINT_SPEED = 12
 const JUMP_VELOCITY = 4
+const CROUCH_SPEED = JOG_SPEED*0.5
 
 var VELOCITY_Y = 0
 

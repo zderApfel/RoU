@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://classes/scripts/Firearm.gd" id="1_q173y"]
 
-[node name="Weapon" type="RigidBody3D"]
+[node name="Firearm" type="RigidBody3D"]
 script = ExtResource("1_q173y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

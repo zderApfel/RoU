@@ -44,7 +44,7 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 *"An easier experience, but still challenging"*
 
 * Main character respawns
-* "Tired", "Bleeding", and "Poisoned" effects are disabled
+* "Tired" and "Poisoned" effects are disabled
 * Health regenerates to 30% over time
 * Extra starting attribute points
 
@@ -53,7 +53,6 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 *"A good challenge for those familiar with FPSs"*
 
 * Main character respawns
-* "Bleeding" effects are disabled
 * Health regnerates to 10% over time
 * Melee attacks require stamina
 
@@ -75,36 +74,57 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 * Throwables are still available
 * Recommended for players who want a less intense experience
 
+### DOOM Mode (?)
+
+* No reloading! All guns have a classic ammo system
+* No aiming down sights (except with scopes)
+
 # Mechanics
 
 ## Combat
 
 HP/BP/AP Damage
+
 * The HP/BP/AP damage done before any resistances
 
-Damage Type
+Damage Types
 
 * Bludgeon, Pierce, Slash, Ballistic, Poison, Caustic, Fire, Explosive, Impulse
 * Used for handling resistances/immunities
 
-Bleed Chance
-
-* Chance for an enemy to bleed when struck
-* BLEED = BASE - (HEALTH - 10) * 1
-
 ### Melee Exclusive
 
-Block Power
-* This value is directly tied to parry strength 
+Block Strength
+
+* This value is equal to parry strength
+* No RNG here, this is skill-based
+* Attempting to block a weapon with higher parry power than the blocker will result in a stagger with BP loss
+
+Parry Strength
+
+* When parrying a melee attack, if the parryer's weapon's parry strength is weaker than the attacker's, then the parry fails, acting as a blocked attack regardless of timing (this will be indicated by its own sound effect, as well as a different one )
+* Equal parry strengths favor the parryer
+* If the attack's parry power is higher by a factor of three, then the parryer loses significant BP
 
 Crit Chance
-* CRT = BASE + [(LUCK - 10 ) * 0.2] + [(MELEE - 10) * 0.5]
+
+* CRT = BASE + [([LUCK](#luck-confidential) - 10) * 0.2] + [(MELEE - 10) * 0.5]
 * Critical hits multiply the damage by the weapon's crit modifier
 
 Crit Modifier
 * Per weapon
 
 ### Firearm Exclusive
+
+Accuracy (min/max)
+
+* The minimum and maximum value for your aim to be offset just before firing a round, changing the direction it fires.
+* This is adjustable from many factors, including ammo choice, Shooting stat, and the weapon itself
+
+Headshot
+
+* Headshots do 2x damage with all ammunition
+* Ammo with the "MelonPopper" trait will make a head explode in one shot, instantly killing
 
 ## Mercenaries
 
@@ -132,7 +152,7 @@ During exploration or a raid, you can either play as yourself, or you can play a
 
 ### Attributes
 
-Attributes are listed on a scale from 10 to 20, with 10 being represented as "average" and the baseline for stat increases/decreases
+Attributes are listed on a scale from 10 to 20, with 10 being represented as "average" and the baseline for stat increases/decreases. Every point under 10 is a -1 to the stat increases, while every point above 10 is a +1 to stat increases
 
 #### Melee
 
@@ -148,32 +168,30 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 * +2% maximum stamina
 * +2% BP damage resistance
-* (HARDCORE ONLY) 1% bleed resistance
 
-Agility:
+#### Agility
 
 * +1% movement speed
 * +1% melee speed
 
-Charisma:
+#### Charisma
 
 * +2% discount at vendors
 * +1% to dialogue checks
 
-Luck [CONFIDENTIAL]:
+#### Luck [CONFIDENTIAL]
 
-* 0.2% added to ALL rolls
-* Will be implemented in other specific ways
+* 0.2% added to the following rolls:
 
-In addition, there's a couple additional attributes that apply only to NPCs
+In addition, there's a few additional attributes that apply only to NPCs
 
 * Reputation: Represents the NPCs opinion of the player character
-* Loyalty: Represents a mercenaries loyalty to the cause
+* Loyalty: Represents a mercenary's loyalty to the cause
 * Cowardice [CONFIDENTIAL]: The liklihood that the NPC will flee from combat when damaged or threatened. *HINT: This decreases significantly when an NPC is armed.*
 
 ### Legendary Attributes [CONFIDENTIAL]
 
-For any attribute that's at level 20, you can continue training that attribute with a 1% chance to gain a legendary attribute. Only one legendary attribute can be acquired per character, and cannot be removed.
+For any attribute that's at level 20, you can continue training that attribute with a 1% chance (No luck scaling) to gain a legendary attribute. Only one legendary attribute can be acquired per character, and cannot be removed.
 
 * Superhuman Strength (Melee) - You can no longer be handcuffed, you break out of them with ease
 
@@ -185,45 +203,47 @@ For any attribute that's at level 20, you can continue training that attribute w
 
 * Silver Tongue (Charisma) - All social checks automatically succeed
 
+(Luck does not have a legendary attribute, as it is hidden and cannot be trained)
+
 ### Passive Activites
 
 During an exploration phase where they're not doing anything, you can select a passive activity for a merc to do:
 
 Training - Weightlifting
 
-* 3% chance to increase Strength/Health
+* 3% chance to increase Strength/Health + (LUCK - 10) * 0.2
 
 Training - Target Practice
 
-* 3% chance to increase Shooting
+* 3% chance to increase Shooting + (LUCK - 10) * 0.2
 * Costs an amount of money to spend on ammunition
 
 Training - Cardio
 
-* 3% chance to increase Agility/Health
+* 3% chance to increase Agility/Health + (LUCK - 10) * 0.2
 
 Casino - Charisma
 
 * Chance to win or lose money
-* Chance to win: 40% + (Charisma-10)*2
+* Chance to win: 40% + (Charisma - 10) * 2 + (LUCK - 10) * 0.2
 
 Casino - Agility/Charisma
 
 * Significantly higher chance to win money, but loss means getting [detained](#detained) Scales with Agility/Charisma
-* Chance to win: 100 - gambling_difficulty + (Charisma-10)*2
-* Chance to be caught: 30 + gambling_difficulty + (Agility-10)*2
+* Chance to win: 100 - gambling_difficulty + (Charisma - 10) * 2 + (LUCK - 10) * 0.2
+* Chance to be caught: 30 + gambling_difficulty + (Agility - 10) * 2 + (LUCK - 10) * 0.2
 
 Theft - Agility 
 
 * Chance to steal some extra items, but with a chance to be detained or killed
 * Has its own loot pool and not all items are possible to be found through theft
-* Chance to succeed: 100 - item_difficulty + (Agility-10)*2
+* Chance to succeed: 100 - item_difficulty + (Agility - 10) * 2 + (LUCK - 10) * 0.2
 
 Scout - Agility/Shooting
 
 * Can scout out a raid area for you to provide some basic details
 * Has a chance to result in death
-* Chance to succeed: 100 - raid_difficulty + ((Agility-10)+(Shooting-10))
+* Chance to succeed: 100 - raid_difficulty + ((Agility - 10) + (Shooting - 10)) + (LUCK - 10) * 0.2
 
 ### Specializations
 
@@ -409,12 +429,12 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 Not all variants are available for every caliber. When loot is generated, the type is FMJ by default and then has a chance to be changed to another type depending on its loot pool
 
+* Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board. Considered the "default"
 * Hollow Point (HP) - High BP and HP damage but low AP damage
-* Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board
 * Full Metal Jacket Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage
 * Tracer (T) - Guarantees a green tracer for your bullet. Helps with accuracy. Also has slightly increased HP damage
 * Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
-* Sub-Sonic (SP) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
+* Sub-Sonic (S) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
 
 There's also a few variants exclusive to shotgun ammo:
 
@@ -504,5 +524,3 @@ Pen% CAN go over 100.
 Works the same as armor, except for the head region. Also cannot be repaired in any way
 
 ### Backpacks
-
-
