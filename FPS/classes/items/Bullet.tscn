@@ -1,22 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://m28hxodbhkpk"]
+[gd_scene load_steps=3 format=3 uid="uid://cfn8l4rjcbss2"]
 
 [ext_resource type="Script" path="res://classes/scripts/Bullet.gd" id="1_aqnj7"]
-[ext_resource type="Script" path="res://classes/scripts/Hitbox.gd" id="2_thul1"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rlrtl"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5u4pg"]
 
-[node name="Bullet" type="RigidBody3D"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-collision_layer = 0
+[node name="Bullet" type="Node3D"]
 script = ExtResource("1_aqnj7")
-damage_type = 1
-is_stackable = true
-hands = "1"
-pose = "unarmed"
 
 [node name="Hitbox" type="Area3D" parent="."]
-script = ExtResource("2_thul1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(-0.023, 0, 0, 0, -0.023, 0, 0, 0, -0.023, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_rlrtl")
+shape = SubResource("CapsuleShape3D_5u4pg")

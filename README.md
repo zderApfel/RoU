@@ -369,16 +369,16 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 #### Full-Power Rifles
 
-* SCAR-H | [4] | .308 - *A criminally under-used battle rifle.*
+* SCAR-H | [4] | .310 - *A criminally under-used battle rifle.*
 
 #### Carbines/SBRs
 
-* DrAKo | [5] | 7.62x39 - *A "pistol" designed in Romania in the mid 20th century to attempt to ride the coattails of the AK, with surprising success*
+* DrAKo | [5] | 7.62x39 - *A "pistol" designed in Romania in the mid 20th century*
 
 
 #### Bolt-Action Rifles
 
-* Woodsman-43 | [1] | .308 - *A common hunting rifle with with a modern flair.*
+* Woodsman-43 | [1] | .308 - *A common hunting rifle with a modern flair.*
 
 #### Shotguns
 
@@ -386,7 +386,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 #### Submachine Guns
 
-* UMP-45 | [3] | .45acp - *Standard-issue police SMG that's used by SWAT teams. Low rate of fire but excellent stopping power*
+* MP5 | [3] | 9x19mm - *Standard-issue police SMG that's used by SWAT teams*
 
 ### OneHandFirearm
 
