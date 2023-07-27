@@ -1,4 +1,4 @@
-extends Node
+class_name Attributes extends Node
 
 ## Scales melee attack damage and critical strike chance
 @export var Melee: int = 10

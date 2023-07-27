@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dcda5volpr50g"]
 
-[ext_resource type="Script" path="res://classes/scripts/Human.gd" id="1_61g5r"]
+[ext_resource type="Script" path="res://classes/entities/scripts/Human.gd" id="1_5yrts"]
 [ext_resource type="PackedScene" uid="uid://db8t4jxxg27k1" path="res://classes/entities/Vitals.tscn" id="4_06wwa"]
 [ext_resource type="PackedScene" uid="uid://biw6mcbuv5elg" path="res://assets/entities/human_01.gltf" id="4_n2tbu"]
+[ext_resource type="Script" path="res://classes/entities/scripts/ragdoll.gd" id="5_0ck81"]
 [ext_resource type="PackedScene" uid="uid://dkkmap1sn41c8" path="res://classes/entities/Attributes.tscn" id="5_5pvjq"]
-[ext_resource type="Script" path="res://classes/entities/ragdoll.gd" id="5_ff7fd"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qbyjf"]
 
@@ -17,7 +17,7 @@ graph_offset = Vector2(-26.1033, 74.068)
 
 [node name="Human" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-script = ExtResource("1_61g5r")
+script = ExtResource("1_5yrts")
 ai_state = "Idle"
 
 [node name="body_animations" type="AnimationPlayer" parent="."]
@@ -30,16 +30,28 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_pl17t")
 anim_player = NodePath("../body_animations")
 
-[node name="human_01" parent="." instance=ExtResource("4_n2tbu")]
-
-[node name="Skeleton3D" parent="human_01/Armature" index="0"]
-script = ExtResource("5_ff7fd")
-
-[node name="human_male" parent="human_01/Armature/Skeleton3D" index="0"]
-visible = false
-
 [node name="Vitals" parent="." instance=ExtResource("4_06wwa")]
 
 [node name="Attributes" parent="." instance=ExtResource("5_5pvjq")]
+
+[node name="human_01" parent="." instance=ExtResource("4_n2tbu")]
+
+[node name="Skeleton3D" parent="human_01/Armature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(-0.00107879, 0.108323, 7.23473e-09)
+bones/2/rotation = Quaternion(-5.61368e-08, 5.7101e-08, -0.0131008, 0.999914)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/enabled = false
+bones/7/enabled = false
+bones/11/enabled = false
+bones/12/position = Vector3(-5.55694e-09, 0.146248, 0.0233806)
+bones/12/rotation = Quaternion(-0.702674, -3.234e-09, -1.39828e-07, 0.711512)
+bones/12/scale = Vector3(1, 1, 1)
+bones/15/enabled = false
+bones/16/position = Vector3(5.76493e-09, 0.146237, 0.0242557)
+bones/16/rotation = Quaternion(-0.702674, 3.23398e-09, 1.39828e-07, 0.711512)
+bones/16/scale = Vector3(1, 1, 1)
+script = ExtResource("5_0ck81")
 
 [editable path="human_01"]

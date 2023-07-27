@@ -442,6 +442,7 @@ There's also a few variants exclusive to shotgun ammo:
 * HP Slug (Green) - A singular projectile with very high HP damage, but barely scratches armor
 * Steel Slug (Yellow) - A singular projectile with higher AP damage but lower HP damage
 * Flechette (White) - Similar to buckshot, but with higher AP damage
+* Rubber Slug (Blue) - Fires a non-lethal rubber slug that knocks down targets
 
 
 #### Ammo Stats [CONFIDENTIAL]
@@ -449,6 +450,20 @@ There's also a few variants exclusive to shotgun ammo:
 TBD
 
 #### Intermediate
+
+##### 7.62x39mm [2]
+
+Traits:
+
+* (+) High power
+* (-) High Recoil
+* (-) Low accuracy
+
+Variants:
+
+* HP
+* FMJ
+* T
 
 ##### 5.45x39mm [3]
 
@@ -465,20 +480,6 @@ Variants:
 * FMJ +P
 * T
 * AP
-
-##### 7.62x39mm [2]
-
-Traits:
-
-* (+) High power
-* (-) High Recoil
-* (-) Low accuracy
-
-Variants:
-
-* HP
-* FMJ
-* T
 
 ##### 5.56x45mm [2]
 

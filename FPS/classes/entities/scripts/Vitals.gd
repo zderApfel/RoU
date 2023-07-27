@@ -1,4 +1,4 @@
-extends Node
+class_name Vitals extends Node
 
 @export var Life: float = 100.0
 @export var Balance: float = 100.0
