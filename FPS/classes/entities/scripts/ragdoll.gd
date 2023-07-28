@@ -4,8 +4,9 @@ extends Skeleton3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	COLLISION = false
 	physical_bones_start_simulation()
-	COLLISION = true
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

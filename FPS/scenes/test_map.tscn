@@ -80,7 +80,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_jabyq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.993101, 0.103789, 0.0545694, -0.101247, 0.993729, -0.0474539, -0.0591524, 0.0416015, 0.997382, -0.251427, 1.34798, 6.27173)
+transform = Transform3D(0.997757, 0.0396213, 0.0539634, -0.0503633, 0.97529, 0.215111, -0.044107, -0.217346, 0.975098, -0.251427, 2.34535, 6.10444)
 
 [node name="Human" parent="." instance=ExtResource("3_e0r0r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.256324, 1.04122, 2.94865)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.256324, 1.00324, 2.94865)
