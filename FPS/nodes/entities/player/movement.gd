@@ -10,10 +10,9 @@ var VELOCITY_Y = 0
 var LOOK_SENSITIVITY = ProjectSettings.get_setting("player/look_sensitivity")
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var camera = $Skeleton3D/neck/Camera3D
+@onready var neck = $human_01/Armature/Skeleton3D/neck_transform
 
 @onready var held_item
-@onready var neck = $Skeleton3D/neck/neck_movement_tree
 
 @onready var jogtracker = 0
 @onready var jumptracker = 0
@@ -29,21 +28,17 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * LOOK_SENSITIVITY)
 		
-		camera.rotate_x(event.relative.y * LOOK_SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(60))
+		neck.rotate_x(-event.relative.y * LOOK_SENSITIVITY)
+		neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 	if Input.is_action_just_pressed("cancel"): 
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
 
 func animation_watcher():
-	
-	neck["parameters/neck_movement/blend_position"].x = jogtracker
-	neck["parameters/neck_movement/blend_position"].y = jumptracker
-	
-	jogtracker = current_speed
+	pass
 
 func engine(x):
-	var horizontal_velocity = Input.get_vector("right", "left", "backward", "forward").normalized() * x
+	var horizontal_velocity = Input.get_vector("left", "right", "forward", "backward").normalized() * x
 	
 	velocity = horizontal_velocity.x * global_transform.basis.x + horizontal_velocity.y * global_transform.basis.z
 	

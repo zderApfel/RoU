@@ -6,6 +6,8 @@
 
 [node name="BulletVariant" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 30
+collision_mask = 30
 script = ExtResource("1_8hat5")
 
 [node name="Hitbox" type="Area3D" parent="."]

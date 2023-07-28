@@ -1,20 +1,115 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwkww7j8dioqm"]
+[gd_scene load_steps=8 format=3 uid="uid://t0g6ei0k5aga"]
 
-[ext_resource type="Script" path="res://nodes/entities/player/movement.gd" id="1_icw1p"]
-[ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://nodes/HUD.tscn" id="2_mv1qr"]
-[ext_resource type="PackedScene" uid="uid://cfw0k0lostyyn" path="res://nodes/Inventory.tscn" id="3_aynls"]
-[ext_resource type="PackedScene" uid="uid://db8t4jxxg27k1" path="res://classes/entities/Vitals.tscn" id="4_a2tnn"]
-[ext_resource type="PackedScene" uid="uid://dkkmap1sn41c8" path="res://classes/entities/Attributes.tscn" id="5_dfnir"]
+[ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://classes/entities/Human.tscn" id="1_vu31v"]
+[ext_resource type="Script" path="res://nodes/entities/player/movement.gd" id="2_sespf"]
+[ext_resource type="PackedScene" uid="uid://3qcdg1nx3nsr" path="res://classes/entities/HUD.tscn" id="3_ek64a"]
+[ext_resource type="Script" path="res://nodes/entities/player/detect_loot.gd" id="3_rmvnw"]
+[ext_resource type="PackedScene" uid="uid://dkkmap1sn41c8" path="res://classes/entities/Attributes.tscn" id="4_64ukg"]
+[ext_resource type="PackedScene" uid="uid://db8t4jxxg27k1" path="res://classes/entities/Vitals.tscn" id="5_qssg7"]
+[ext_resource type="PackedScene" uid="uid://cfw0k0lostyyn" path="res://classes/entities/Inventory.tscn" id="6_mmrfy"]
 
-[node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_icw1p")
+[node name="Player" instance=ExtResource("1_vu31v")]
+script = ExtResource("2_sespf")
 
-[node name="HUD" parent="." instance=ExtResource("2_mv1qr")]
+[node name="Skeleton3D" parent="human_01/Armature" index="0"]
+script = null
 
-[node name="Inventory" parent="." instance=ExtResource("3_aynls")]
+[node name="torso" parent="human_01/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.981408, 0.202671, 0.000196422, -0.00381299, 0.0195153, -1.00009, -0.202416, 0.982024, 0.0197969, 0.00653343, 0.602048, -0.0532978)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20573e-05, 7.15151e-06, 0.360243)
+body_offset = Transform3D(1.00207, -2.0653e-05, 1.08462e-05, 1.19675e-05, 7.78027e-06, -1.00029, 7.17193e-05, 1.00291, -2.83662e-05, 8.17515e-06, 0.360346, 3.04729e-06)
 
-[node name="Vitals" parent="." instance=ExtResource("4_a2tnn")]
+[node name="neck" parent="human_01/Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.99947, -0.0094384, -0.00601958, -0.00614849, -0.00838916, -0.997633, 0.00938828, 0.998469, -0.00852386, 0.00766681, 1.14417, -0.0406092)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50367e-05, -0.0229472, 0.184609)
+body_offset = Transform3D(0.999534, 0.000184386, -0.000138306, -0.000169358, -0.0346996, -0.997082, -0.000198505, 0.997946, -0.0347544, 0.000114761, 0.183274, 0.0293161)
 
-[node name="Attributes" parent="." instance=ExtResource("5_dfnir")]
+[node name="upperarm_r" parent="human_01/Armature/Skeleton3D" index="3"]
+transform = Transform3D(-0.981251, 0.203488, 0.0188995, 0.0233421, 0.0195239, 1.00104, 0.20303, 0.981178, -0.023834, -0.376594, 0.853527, 0.020785)
+joint_offset = Transform3D(0.999999, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 4.4677e-05, 2.16057e-06, 0.110442)
+body_offset = Transform3D(1.00231, -7.64579e-05, -6.92438e-07, 1.70176e-05, -3.38331e-05, -1.00151, 6.76215e-05, 1.00225, -2.92137e-05, -4.47035e-05, 0.110609, 1.05798e-06)
 
-[editable path="HUD"]
+[node name="forearm_r" parent="human_01/Armature/Skeleton3D" index="4"]
+transform = Transform3D(-0.982122, 0.203169, 0.0270181, 0.0311597, 0.0171372, 1.00339, 0.203025, 0.980694, -0.0231876, -0.382438, 0.604153, 0.026671)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70638e-06, -3.84553e-05, 0.135388)
+body_offset = Transform3D(1.00337, 8.22991e-05, -2.37161e-06, -2.50805e-05, 8.08723e-05, -1.00403, 1.96397e-05, 1.00166, 2.58088e-05, 6.04987e-06, 0.135934, 3.50252e-05)
+
+[node name="hand_r" parent="human_01/Armature/Skeleton3D" index="5"]
+transform = Transform3D(0.977063, 0.0188823, 0.202719, -0.0227606, 0.999715, 0.0172371, -0.201918, -0.021453, 0.979032, -0.387477, 0.393942, 0.0313043)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.78902e-06, 0.078091, 6.32903e-05)
+body_offset = Transform3D(-0.997969, 4.80097e-07, 0.000189811, -2.72789e-05, -1.00013, -4.68194e-05, 0.000182539, 1.00117e-05, 0.999947, -6.82473e-06, 0.0781007, -6.40675e-05)
+
+[node name="upperarm_l" parent="human_01/Armature/Skeleton3D" index="6"]
+transform = Transform3D(-0.979692, 0.201039, -0.0336793, -0.028966, 0.0268635, 0.999382, 0.201744, 0.980143, -0.0204564, 0.387476, 0.847305, -0.137514)
+joint_offset = Transform3D(-3.61999e-06, 0, 0.999999, 0, 1, 0, -1, 0, -3.61999e-06, 3.45807e-05, -4.59392e-05, 0.112747)
+body_offset = Transform3D(1.00067, 4.33028e-05, -7.29668e-05, 6.70506e-06, 3.79048e-05, -1.00016, -4.0248e-05, 1.00091, 6.36801e-05, -2.63751e-05, 0.112765, 3.88026e-05)
+
+[node name="forearm_l" parent="human_01/Armature/Skeleton3D" index="7"]
+transform = Transform3D(-0.996005, 0.201815, -0.0357506, -0.031124, 0.0254817, 1.01762, 0.205566, 0.982611, -0.0190093, 0.400597, 0.618299, -0.133516)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00514915, -0.000614774, 0.115803)
+body_offset = Transform3D(1.01747, -0.000178248, 9.34349e-07, -2.60929e-05, -6.36354e-05, -1.01843, 0.000369415, 1.00345, -2.76342e-05, -0.00523934, 0.117937, 0.00061819)
+
+[node name="hand_l" parent="human_01/Armature/Skeleton3D" index="8"]
+transform = Transform3D(0.98175, -0.0338618, 0.201604, 0.0293945, 1.00067, 0.0254654, -0.202428, -0.0189559, 0.981649, 0.404662, 0.366315, -0.12493)
+joint_offset = Transform3D(1, -5.68434e-14, -9.31196e-10, 5.68434e-14, 1, -1.42109e-14, 9.31196e-10, 1.42109e-14, 1, 9.51028e-05, 0.101732, -0.00345052)
+body_offset = Transform3D(-1.00276, -0.0117031, -0.00016661, 0.011712, -1.00136, -7.09686e-05, -0.000205711, -2.51457e-05, 1.00246, 0.00128537, 0.101869, 0.00346158)
+
+[node name="thigh_r" parent="human_01/Armature/Skeleton3D" index="9"]
+transform = Transform3D(-0.190324, -0.981903, -0.00633918, -0.0316949, -0.000272395, 1.00142, -0.981883, 0.19039, -0.0310607, -0.118073, 0.0172248, -0.041796)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000398853, -1.81626e-05, 0.12767)
+body_offset = Transform3D(1.00066, -1.85221e-05, 4.64227e-05, 8.18856e-05, -3.83696e-05, -1.00193, -3.38405e-05, 1.00019, -4.06988e-07, -0.000405043, 0.127916, 1.82316e-05)
+
+[node name="foreleg_r" parent="human_01/Armature/Skeleton3D" index="10"]
+transform = Transform3D(-0.190368, -0.982012, -0.00114143, -0.035612, 0.00575234, 1.00309, -0.982526, 0.190092, -0.0360322, -0.116941, -0.28969, -0.0320088)
+joint_offset = Transform3D(0.999999, 0, 0, 0, -4.37113e-08, -0.999999, 0, 0.999999, -4.37113e-08, -0.000210931, 0.000285911, 0.190307)
+body_offset = Transform3D(1.00143, 0.000107527, 1.41785e-05, 0.000116114, -4.19808e-05, -1.00374, -0.000139132, 1.00026, -5.51809e-07, 0.000208504, 0.191019, -0.000285909)
+
+[node name="ankle_r" parent="human_01/Armature/Skeleton3D" index="11"]
+transform = Transform3D(0.981991, -0.00634246, 0.190155, -0.000424565, 1.00067, 0.0355055, -0.190331, -0.0349145, 0.981636, -0.117977, -0.584914, -0.0237503)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00117039, 0.104617, 0.00276506)
+body_offset = Transform3D(-5.87404e-05, -6.91414e-06, -1.00052, -0.0105381, -1.00124, -4.09298e-05, -1.00021, 0.0105568, 0.000179037, 0.00276728, 0.104759, 6.57216e-05)
+
+[node name="thigh_l" parent="human_01/Armature/Skeleton3D" index="12"]
+transform = Transform3D(0.169601, 0.96282, -0.00013393, -0.169295, 0.0298251, 0.986494, 0.948943, -0.16661, 0.175818, 0.111203, 0.0158421, -0.114354)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149751, -2.50675e-05, 0.130735)
+body_offset = Transform3D(0.978733, -4.72367e-06, 6.14226e-05, 0.000249654, -1.56965e-05, -1.00204, 0.000150785, 0.977584, -1.56499e-05, 0.00145763, 0.131002, 2.67774e-05)
+
+[node name="foreleg_l" parent="human_01/Armature/Skeleton3D" index="13"]
+transform = Transform3D(0.169756, 0.986047, -0.0053638, -0.0072809, 0.0067372, 1.00276, 0.96509, -0.173389, 0.00843865, 0.111549, -0.299121, -0.179341)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92402e-05, 0.000425635, 0.190397)
+body_offset = Transform3D(0.979933, -0.000118271, -3.02959e-05, 3.76366e-05, -1.99317e-05, -1.00281, 0.000117823, 1.0012, -1.63433e-05, 4.42713e-05, 0.190931, -0.000423029)
+
+[node name="ankle_l" parent="human_01/Armature/Skeleton3D" index="14"]
+transform = Transform3D(0.986156, -0.000122756, 0.173095, 0.00142901, 1.00014, -0.0073691, -0.173347, 0.007526, 0.984856, 0.135108, -0.613411, -0.185593)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0223785, 0.123655, -0.000288062)
+body_offset = Transform3D(-1.87904e-05, -2.5467e-06, 0.999978, 0.0105407, -1.00012, -2.33166e-05, 1.00122, 0.0105326, -1.41412e-05, 0.00028795, 0.123905, 0.0211034)
+
+[node name="neck_transform" type="BoneAttachment3D" parent="human_01/Armature/Skeleton3D" index="15"]
+transform = Transform3D(0.999936, 0.00622705, -0.00942606, -0.00597675, 0.999635, 0.026353, 0.00958672, -0.026295, 0.999608, 0.00668714, 0.960188, -0.0650957)
+bone_name = "neck"
+bone_idx = 1
+override_pose = true
+
+[node name="Camera3D" type="Camera3D" parent="human_01/Armature/Skeleton3D/neck_transform" index="0"]
+transform = Transform3D(0.999802, -0.0122155, 0.0157073, 0.012217, 0.999925, -3.72529e-09, -0.0157061, 0.000191906, 0.999876, -0.0659505, 0.363353, -0.152739)
+
+[node name="line_of_sight" type="RayCast3D" parent="human_01/Armature/Skeleton3D/neck_transform/Camera3D" index="0"]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278e-07, -2.5, 0, 2.5, -1.09278e-07, 0, 0, 0)
+script = ExtResource("3_rmvnw")
+
+[node name="body_movement_tree" parent="human_01" index="2"]
+parameters/movement/blend_position = 0.0221811
+
+[node name="collision" parent="." index="1"]
+disabled = false
+
+[node name="HUD" parent="." index="2" instance=ExtResource("3_ek64a")]
+
+[node name="Attributes" parent="." index="3" instance=ExtResource("4_64ukg")]
+
+[node name="Vitals" parent="." index="4" instance=ExtResource("5_qssg7")]
+
+[node name="player_inventory" parent="." index="5" instance=ExtResource("6_mmrfy")]
+script = null
+
+[editable path="human_01"]

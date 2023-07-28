@@ -2,7 +2,7 @@ extends Node
 
 @onready var PLAYER = get_parent()
 
-@onready var HOLD_SLOT = PLAYER.get_node("Skeleton3D/neck/Camera3D/first_person/")
+@onready var HOLD_SLOT = PLAYER.get_node("UPDATE LATER")
 @onready var UNARMED = preload("res://nodes/items/Generic/dingdong.tscn").instantiate()
 
 @onready var INVENTORY = {
