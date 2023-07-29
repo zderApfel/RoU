@@ -14,18 +14,18 @@ size = Vector3(0.345, 0.72, 2.51)
 
 [node name="ak762" type="RigidBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0132018, -0.240817)
+collision_layer = 30
+collision_mask = 30
 mass = 3.0
 script = ExtResource("1_oyci8")
-caliber = "762x39"
 max_ammo = 30
-is_holdable = true
 display_name = "AK-762"
 description = "One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy contstruction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired."
+is_holdable = true
+legal = false
 rarity = 3
 bulk = 9
-legal = false
 arm_path = "res://nodes/entities/fp_arms/ak762.tscn"
-hands = "2"
 pose = "twohand_gun"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

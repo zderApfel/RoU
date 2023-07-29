@@ -94,7 +94,7 @@ func store_to_pockets(item):
 
 
 func loot_action(item_to_loot):
-	if item_to_loot.hands == "2":
+	if item_to_loot.hands == 1:
 		if INVENTORY.WEAPON_SLOTS.SLING_WEAPON == null:
 			INVENTORY.WEAPON_SLOTS.SLING_WEAPON = item_to_loot
 	
