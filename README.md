@@ -181,7 +181,7 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 #### Luck [CONFIDENTIAL]
 
-* 0.2% added to the following rolls:
+* 0.2% added to MOST random rolls
 
 In addition, there's a few additional attributes that apply only to NPCs
 
@@ -355,73 +355,76 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 #### Intermediate Rifles
 
-* **AK-47** | [3] | 7.62x39 - *One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy construction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired.*
-
-* **AK-74** | [3] | 5.45x39 - *A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge.
-
-* AK-48 | [4] | 5.45x39 - *The Russian Federation's rifle of choice for their troops. Part of a long line of derivatives of the original AK-47*
-
-* Mjolnir-5.56 | [4] | 5.56x45 - *Standard issue rifle of the ROA military, based on the highly customizable and very balanced AR platform*
-
-* ARM-22 | [1] | .22lr - *A civilian version of the Mjolnir rifle. Semi-auto only. Compatible with Mjolnir and ARM parts*
-
-* ARM-5.56 | [4] | 5.56x45 - *A modified version of the ARM-.22 that can fire the much more powerful 5.56x45 round. Semi-auto only*
+* **AK-47** | [3] | 7.62x39
+* **AK-74** | [3] | 5.45x39
+* AK-48 | [4] | 5.45x39 - Fictional
+* Mjolnir-5.56 | [4] | 5.56x45 - Fictional
+* ARM-.22 | [1] | .22lr - Fictional
+* ARM-5.56 | [4] | 5.56x45 - Fictional
 
 #### Full-Power Rifles
 
-* SCAR-H | [4] | .310 - *A criminally under-used battle rifle.*
+* SCAR-H | [4] | .310
 
 #### Carbines/SBRs
 
-* DrAKo | [5] | 7.62x39 - *A "pistol" designed in Romania in the mid 20th century*
+* DrAKo | [5] | 7.62x39
 
 
 #### Bolt-Action Rifles
 
-* Woodsman-43 | [1] | .308 - *A common hunting rifle with a modern flair.*
+* Woodsman-43 | [1] | .308 - Fictional
 
 #### Shotguns
 
-* DB Shotgun | [1] | 12 Guage - *A classic beauty. Perfect for hunting and demon-slaying*
+* DB Shotgun | [1] | 12 Guage
 
 #### Submachine Guns
 
-* MP5 | [3] | 9x19mm - *Standard-issue police SMG that's used by SWAT teams*
+* MP5 | [3] | 9x19mm
 
 ### OneHandFirearm
 
 #### Low-Cap Pistols
 
-* M1911 | [5] | .45acp - *A legendary relic of the early 20th century. Small magazine but great stopping power*
-* M49 | [2] | .45acp - *A modernized version of the M1911. More bells and whistles but missing an aspect of magic*
+* M1911 | [5] | .45acp
+* M49 | [2] | .45acp - Fictional
 
 #### Hi-Cap Pistols
 
-* G84 | [2] | 9x19 - *A reliable polymer pistol used as a sidearm for police forces around the world*
+* G84 | [2] | 9x19 - Fictional (based on Glock)
 
 #### Magnums
 
-* Ytho-44 | [2] | .44 Magnum - *A powerful revolver favored by those without wrists or bastard Generals*
-* Deagle | [4] | .44 Magnum - *A beautiful abomination designed by a failed ethnostate. Perfect for when you want your target's head to disappear*
+* Ytho-44 | [2] | .44 Magnum - Fictional
+* Deagle | [4] | .44 Magnum
 
 ### OneHandMelee
 
-* Kitchen Knife | [1] - *Do you like scary movies?*
+* Kitchen Knife | [1]
 
 ### TwoHandMelee
 
-* Baseball Bat | [1] - *Homerun!*
+* Baseball Bat | [1]
 
 ### Tools
 
 * Lockpick Kit [2] - *A collection of tools for opening locks. Can be used 20 times*
-    - Chance to pick lock: 20% * (0.5 * (Agility-10))
+    - Chance to pick lock: 20% * 0.5 * [(Agility-10) + (Luck-10)]
     - Illegal
 * Drill [1] - *Can be used to open various things, or break locks...loudly*
+* Codejammer [3] - *Can be used to manually bypass an electronic lock*
+    - Chance to unlock: 20% * 0.5 * [(Agility-10) + (Luck-10)]
 
 ----------------------------------
 
 ### Consumable
+
+#### Throwables
+
+#### Stims
+
+#### Food and Drink
 
 ### Ammo
 

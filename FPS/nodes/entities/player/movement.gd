@@ -1,21 +1,24 @@
 extends CharacterBody3D
 
-const JOG_SPEED = 8
-const SPRINT_SPEED = 12
-const JUMP_VELOCITY = 4
-const CROUCH_SPEED = JOG_SPEED*0.5
-const SENSITIVITY = 0.01
-
-const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
-
-@onready var gravity = 9.8
-@onready var speed = 8
+@onready var ATTRIBUTES = $Attributes
+@onready var VITALS = $Vitals
+@onready var INVENTORY = $player_inventory
 
 @onready var camera = $pivot/Camera3D
 @onready var head = $pivot
 
+@onready var jog_speed = (8) + ATTRIBUTES.return_modifier(ATTRIBUTES.Agility)
+@onready var sprint_speed
+@onready var crouch_speed
+@onready var speed = jog_speed
+@onready var gravity = 9.8
 @onready var t_bob = 0.0
+
+
+const JUMP_VELOCITY = 4 
+const SENSITIVITY = 0.01
+const BOB_FREQ = 2.0
+const BOB_AMP = 0.08
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -27,6 +30,12 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
 func _physics_process(delta):
+	print(speed)
+	jog_speed = (8) + ATTRIBUTES.return_modifier(ATTRIBUTES.Agility)
+	
+	sprint_speed = jog_speed*1.25
+	crouch_speed = jog_speed*0.5
+	
 	jump(delta)
 	ground_movement(delta)
 	headbob_controller(delta)
@@ -54,6 +63,7 @@ func ground_movement(x):
 		velocity.z = lerp(velocity.z, direction.z * speed, x * 0.5)
 
 	move_and_slide()
+	sprint()
 	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -64,3 +74,9 @@ func _headbob(time) -> Vector3:
 func headbob_controller(x):
 	t_bob += x * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
+	
+func sprint():
+	if Input.is_action_pressed("sprint"):
+		speed = sprint_speed
+	elif Input.is_action_just_released("sprint"):
+		speed = jog_speed
