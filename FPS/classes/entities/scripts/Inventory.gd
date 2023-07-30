@@ -3,7 +3,7 @@ extends Node
 @onready var PLAYER = get_parent()
 
 @onready var HOLD_SLOT = PLAYER.get_node("UPDATE LATER")
-@onready var UNARMED = preload("res://nodes/items/Generic/dingdong.tscn").instantiate()
+@onready var UNARMED: Node3D
 
 @onready var INVENTORY = {
 	"BACKPACK_INVENTORY": {"MAX_SLOTS": 0, "OCCUPIED_SLOTS": 0, "ITEMS": []},
@@ -53,7 +53,10 @@ func inputs():
 		Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
 	
 	if Input.is_action_just_released("hotbar4"):
-		Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
+		if INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON != null:
+			Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
+		else:
+			Helpers.switch_child(HOLD_SLOT, UNARMED)
 	
 	if Input.is_action_just_released("hotbar5"):
 		z = 5

@@ -293,15 +293,48 @@ Smooth Criminal:
 * Passive: A random mercenary has a 3% (+0.5% per) chance to gain a point of Charisma every 24 in-game hours
 * Requires: Charisma 16
 
-## Security/Unrest
+## Crime, Security, and Unrest
 
-[TBD]
+A super-secret extra attribute exists for each mercenary and the player character called **Crimes**
+
+Crimes all have an amount of 
+
+There are three primary classes of crime: misdemeanors, felonies, and affronts
+
+### Misdemeanors
+
+Misdemeanors are minor crimes that only increase [wanted level](#wanted_level) by 1 point. Law enforcement will call backup after a time if they fail to catch you, which will increase your wanted level to 2 points.
+
+### Felonies
+
+Felonies are major crimes that increase the wanted level to 3 points. Law enforcement will call for backup if some of them die, increasing the wanted level up until the max level. Avoiding capture from a felony gives you the outlaw debuff for a time
+
+### Affront
+
+Any crime against the State is automatically classified as an affront, these automatically give your character a permanent [Outlaw](#outlaw) debuff
+
+Affronts are:
+
+* Murder of a law enforcement officer, military personnel, public official, or prison guard. Claims of self defense are not accepted (LEO/MIL/POF/DOC Murder)
+
+### Wanted Level
 
 ## Buffs/Debuffs
 
-**Tired** - Happens after 8 in game hours. Increases with intensity over time. Can be suppressed with drugs, but Tired V will kill you if not addressed. Reduces Stamina regen
+### Tired
 
-**Poisoning** - There's two types of poisoning, inhaled and lingering. Inhaled poisons damage you for an amount per second while in an area contaminated by it. Lingering poisons can have various effects that last until the end of the raid/mission or if an antidote is taken 
+Happens after 8 in game hours. Increases with intensity over time. Can be suppressed with drugs, but Tired V will kill you if not addressed. Reduces Stamina regen
+
+### Poisoning
+
+There's two types of poisoning, inhaled and lingering. 
+
+* Inhaled poisons damage you for an amount per second while in an area contaminated by it.
+* Lingering poisons can have various effects that last until the end of the raid/mission or if an antidote is taken 
+
+### Outlaw
+
+[TDB]
 
 ## Mercenary States
 

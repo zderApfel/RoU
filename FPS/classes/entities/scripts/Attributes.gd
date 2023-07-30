@@ -1,26 +1,26 @@
 class_name Attributes extends Node
 
-## Per point:
+## Per point |
 ## +1 Melee damage
 ## +0.5% melee crit chance
 @export var Melee: int = 10
 
-## Per point:
+## Per point |
 ## +2% accuracy
 ## +0.5% faster reload speed
 @export var Shooting: int = 10
 
-## Per point:
+## Per point |
 ## +2% maximum stamina
 ## +2% BP Damage resistance
 @export var Health: int = 10
 
-## Per point:
+## Per point |
 ## +1% movement speed
 ## +1% melee speed
 @export var Agility: int = 10
 
-## Per point:
+## Per point |
 ## +2% discount at vendors
 ## 1% to dialogue checks
 @export var Charisma: int = 10
@@ -29,6 +29,12 @@ class_name Attributes extends Node
 ## Per point: 
 ## +0.2% to most random rolls
 @export var Luck: int = 10
+
+## PRIVATE |
+##A dictionary of crimes that's tracked per character. 
+##This has various influence to varying degrees depending on 
+##Severity, and amount, etc.
+@export var Crimes: Dictionary = {}
 
 ## NPC ONLY | 
 ## Represents the NPCs opinion of the Player Character

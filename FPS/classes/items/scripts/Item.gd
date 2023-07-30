@@ -1,13 +1,9 @@
 class_name Item extends Node3D
 
 @onready var equipped: bool = false
-@onready var type = "Generic"
 
 ## In-game name of the item
 @export var display_name: String
-
-## In-game description
-@export var description: String
 
 ## If the item is looatable
 @export var is_lootable: bool = true
@@ -36,7 +32,7 @@ class_name Item extends Node3D
 ## A value that represents the space the item takes up in inventory
 @export var bulk: float = 1
 
-## MAY BE DEPRICIATED
+## 
 @export_enum("1", "2") var hands: int
 
 ## MAY BE DEPRICIATED
