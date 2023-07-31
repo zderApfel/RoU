@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdi711t08fsmk"]
 
-[ext_resource type="Script" path="res://nodes/items/Ammo/762x39.gd" id="1_7itjb"]
-[ext_resource type="Script" path="res://nodes/items/Ammo/bullet_hitbox.gd" id="2_7ryfi"]
+[ext_resource type="Script" path="res://nodes/items/Ammo/scripts/762x39.gd" id="1_7itjb"]
+[ext_resource type="Script" path="res://nodes/items/Ammo/scripts/bullet_hitbox.gd" id="2_7ryfi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orifq"]
 

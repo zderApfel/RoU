@@ -1,7 +1,8 @@
-class_name Melee_Weapon extends Item
+class_name MeleeWeapon extends Item
 
-@export var block_parry_strength: String
+@export var block_parry_strength: int
 @export var crit_chance: float
+@export var crit_modifier: float
 
 func _ready():
 	pass

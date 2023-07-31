@@ -30,7 +30,6 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
 func _physics_process(delta):
-	print(speed)
 	jog_speed = (8) + ATTRIBUTES.return_modifier(ATTRIBUTES.Agility)
 	
 	sprint_speed = jog_speed*1.25

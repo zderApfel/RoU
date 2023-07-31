@@ -1,4 +1,4 @@
-class_name MeleeWeapon extends Item
+class_name Fists extends MeleeWeapon
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 

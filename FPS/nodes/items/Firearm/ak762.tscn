@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://5wdqoodxqi73"]
 
-[ext_resource type="Script" path="res://nodes/items/Firearm/ak762.gd" id="1_oyci8"]
+[ext_resource type="Script" path="res://nodes/items/Firearm/scripts/ak762.gd" id="1_oyci8"]
 [ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
 [ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_gked0"]
 [ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_twd5q"]

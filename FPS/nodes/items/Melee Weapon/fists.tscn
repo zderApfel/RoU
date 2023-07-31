@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://yp3kbmhj4ipg"]
+
+[ext_resource type="Script" path="res://nodes/items/Melee Weapon/scripts/fists.gd" id="1_7sajw"]
+[ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_vjey0"]
+[ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_gs4co"]
+[ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_70cc1"]
+
+[node name="fists" type="Node3D"]
+script = ExtResource("1_7sajw")
+
+[node name="right_arm" type="RigidBody3D" parent="."]
+transform = Transform3D(0.708407, -0.583382, 0.397273, 0.0426156, 0.597192, 0.800965, -0.704517, -0.550479, 0.447916, 1.04471, -0.202638, -0.0433824)
+
+[node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
+
+[node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_gs4co")
+surface_material_override/1 = ExtResource("4_70cc1")
+
+[node name="left_arm" type="RigidBody3D" parent="."]
+transform = Transform3D(0.3666, 0.761976, -0.533851, 0.23145, 0.481069, 0.845579, 0.90113, -0.433549, 5.17002e-09, -1.01873, 0, 0)
+
+[node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
+
+[node name="hand" parent="left_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, 4.65886e-09, 2.98023e-08, 1, 2.75609e-08, 1.34279e-08, 2.33419e-08, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_gs4co")
+surface_material_override/1 = ExtResource("4_70cc1")
+
+[editable path="right_arm/arm"]
+[editable path="left_arm/arm"]

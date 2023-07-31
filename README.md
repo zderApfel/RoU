@@ -108,7 +108,7 @@ Parry Strength
 
 Crit Chance
 
-* CRT = BASE + [([LUCK](#luck-confidential) - 10) * 0.2] + [(MELEE - 10) * 0.5]
+* CRT = BASE + [LUCK](#luck-confidential) - 10 * 0.2 + [(MELEE - 10) * 0.5]
 * Critical hits multiply the damage by the weapon's crit modifier
 
 Crit Modifier
@@ -303,11 +303,11 @@ There are three primary classes of crime: misdemeanors, felonies, and affronts
 
 ### Misdemeanors
 
-Misdemeanors are minor crimes that only increase [wanted level](#wanted_level) by 1 point. Law enforcement will call backup after a time if they fail to catch you, which will increase your wanted level to 2 points.
+Misdemeanors are minor crimes that only increase [wanted level](#wanted_level) to 1. Law enforcement will call backup after a time if they fail to catch you, which will increase your wanted level to 2 points.
 
 ### Felonies
 
-Felonies are major crimes that increase the wanted level to 3 points. Law enforcement will call for backup if some of them die, increasing the wanted level up until the max level. Avoiding capture from a felony gives you the outlaw debuff for a time
+Felonies are major crimes that increase the wanted level to 3-5 points. Law enforcement will call for backup if some of them die, increasing the wanted level up until the max level. Avoiding capture from a felony gives you the outlaw debuff for a time
 
 ### Affront
 
