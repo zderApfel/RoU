@@ -6,19 +6,21 @@
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_70cc1"]
 
 [node name="fists" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.427695, 0.393921)
 script = ExtResource("1_7sajw")
 
-[node name="right_arm" type="RigidBody3D" parent="."]
-transform = Transform3D(0.708407, -0.583382, 0.397273, 0.0426156, 0.597192, 0.800965, -0.704517, -0.550479, 0.447916, 1.04471, -0.202638, -0.0433824)
+[node name="right_arm" type="Node3D" parent="."]
+transform = Transform3D(0.705866, -0.608936, 0.361872, 0.0735493, 0.571113, 0.817569, -0.704517, -0.550479, 0.447916, 0.958472, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
 
 [node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, -5.96046e-08, -5.96046e-08, 1, -2.98023e-08, -2.98023e-08, 1.78814e-07, 1, -0.046989, 0.0405364, -0.0240896)
 surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
-[node name="left_arm" type="RigidBody3D" parent="."]
-transform = Transform3D(0.3666, 0.761976, -0.533851, 0.23145, 0.481069, 0.845579, 0.90113, -0.433549, 5.17002e-09, -1.01873, 0, 0)
+[node name="left_arm" type="Node3D" parent="."]
+transform = Transform3D(0.402063, 0.766988, 0.500076, -0.885686, 0.464286, 0, -0.232178, -0.44291, 0.865982, -0.905443, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
 
@@ -26,6 +28,10 @@ transform = Transform3D(0.3666, 0.761976, -0.533851, 0.23145, 0.481069, 0.845579
 transform = Transform3D(1, 2.98023e-08, 4.65886e-09, 2.98023e-08, 1, 2.75609e-08, 1.34279e-08, 2.33419e-08, 1, 0, 0, 0)
 surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
+
+[node name="animations" type="AnimationPlayer" parent="."]
+
+[node name="tree" type="AnimationTree" parent="."]
 
 [editable path="right_arm/arm"]
 [editable path="left_arm/arm"]

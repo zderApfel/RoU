@@ -2,8 +2,8 @@ extends Node
 
 @onready var PLAYER = get_parent()
 
-@onready var HOLD_SLOT = PLAYER.get_node("UPDATE LATER")
-@onready var UNARMED: Node3D
+@onready var HOLD_SLOT = PLAYER.get_node("pivot/Camera3D/hold_slot")
+@onready var UNARMED = Fists.new()
 
 @onready var INVENTORY = {
 	"BACKPACK_INVENTORY": {"MAX_SLOTS": 0, "OCCUPIED_SLOTS": 0, "ITEMS": []},
@@ -15,23 +15,22 @@ extends Node
 		"SHEATH_WEAPON": null,
 	},
 	"HELMET": null,
-	"ARMOR": null, # Item
+	"ARMOR": null, 
 	"BACKPACK": null,
 }
 
 @onready var HOTBAR = [
-	UNARMED, #Slots 0, and 5-9
-	null,
-	null,
-	null,
-	null,
-	null
+	null, #Slot 5
+	null, #Slot 6
+	null, #Slot 7
+	null, #Slot 8
+	null, #Slot 9
+	null #Slot 0
 ]
 
 func _ready():
-	Helpers.switch_child(HOLD_SLOT,HOTBAR[0])
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	inputs()
 
@@ -40,7 +39,7 @@ func _physics_process(_delta):
 func inputs():
 	var z
 	if Input.is_action_just_released("hotbar0"):
-		z = 0
+		z = 5
 		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 		
 	if Input.is_action_just_released("hotbar1"):
@@ -53,29 +52,29 @@ func inputs():
 		Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.HOLSTER_WEAPON)
 	
 	if Input.is_action_just_released("hotbar4"):
-		if INVENTORY.WEAPON_SLOTS.SHEATHE_WEAPON != null:
-			Helpers.switch_child(HOLD_SLOT,INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON)
+		if INVENTORY.WEAPON_SLOTS.SHEATH_WEAPON != null:
+			pass
 		else:
 			Helpers.switch_child(HOLD_SLOT, UNARMED)
 	
 	if Input.is_action_just_released("hotbar5"):
-		z = 5
+		z = 0
 		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar6"):
-		z = 6
+		z = 1
 		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar7"):
-		z = 7
+		z = 2
 		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar8"):
-		z = 8
+		z = 3
 		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 	
 	if Input.is_action_just_released("hotbar9"):
-		z = 9
+		z = 4
 		Helpers.switch_child(HOLD_SLOT,HOTBAR[z])
 		
 	if Input.is_action_just_released("inventory"):
@@ -97,7 +96,7 @@ func store_to_pockets(item):
 
 
 func loot_action(item_to_loot):
-	if item_to_loot.hands == 1:
+	if item_to_loot.hands == 0:
 		if INVENTORY.WEAPON_SLOTS.SLING_WEAPON == null:
 			INVENTORY.WEAPON_SLOTS.SLING_WEAPON = item_to_loot
 	
