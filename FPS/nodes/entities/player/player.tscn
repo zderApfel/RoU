@@ -18,7 +18,7 @@ transform = Transform3D(0.999969, 0, 0, 0, 1.00077, 0, 0, 0, 0.999099, 0.0060582
 script = ExtResource("3_xaqo4")
 
 [node name="Camera3D" type="Camera3D" parent="pivot" index="0"]
-transform = Transform3D(1.00003, 0, 0, 0, 1.00085, 0, 0, 0, 0.99921, 0, 0, 0)
+transform = Transform3D(1.00003, 0, 0, 0, 0.999231, 0, 0, 0, 1.0009, 0, 0, 0)
 cull_mask = 524287
 
 [node name="line_of_sight" type="RayCast3D" parent="pivot/Camera3D" index="0"]
@@ -27,7 +27,7 @@ collision_mask = 14
 script = ExtResource("4_gk0y7")
 
 [node name="hold_slot" type="Node3D" parent="pivot/Camera3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.455713, -1.21497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01916, -0.916762)
 
 [node name="fists" parent="pivot/Camera3D/hold_slot" index="0" instance=ExtResource("5_4bx0o")]
 
@@ -57,14 +57,14 @@ joint_offset = Transform3D(0.999999, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 5.459
 body_offset = Transform3D(1.00335, -0.000143304, -2.15323e-06, 1.5296e-05, -2.24394e-05, -1.00238, 0.00012967, 1.00325, -3.2127e-05, -5.45382e-05, 0.110685, -1.19209e-07)
 
 [node name="forearm_r" parent="human_01/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.982886, 0.202337, 0.00806945, 0.00825559, -0.000278521, 1.00449, 0.202832, 0.981287, -0.00163026, -0.375517, 0.602072, 0.0327147)
+transform = Transform3D(-0.982886, 0.202337, 0.00806945, 0.00825559, -0.00029065, 1.00449, 0.202832, 0.981287, -0.00163026, -0.375517, 0.602072, 0.0327147)
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3124e-05, -2.25569e-05, 0.135871)
-body_offset = Transform3D(1.00363, 0.000157639, 1.11543e-06, -2.94335e-05, 0.000279682, -1.00453, 1.95205e-06, 1.00193, 3.41012e-05, 1.30236e-05, 0.136486, 1.79671e-05)
+body_offset = Transform3D(1.00363, 0.000157535, 1.11543e-06, -2.94335e-05, 0.000291811, -1.00453, 1.95205e-06, 1.00193, 3.41012e-05, 1.30236e-05, 0.136486, 1.79671e-05)
 
 [node name="hand_r" parent="human_01/Armature/Skeleton3D" index="5"]
-transform = Transform3D(0.977715, 3.89376e-06, 0.201901, 2.65901e-05, 1.00032, 5.47725e-05, -0.20152, 9.47595e-06, 0.979539, -0.376572, 0.392259, 0.0328498)
+transform = Transform3D(0.977715, 3.89376e-06, 0.201901, 2.65901e-05, 1.00032, 5.49772e-05, -0.20152, 9.47595e-06, 0.979539, -0.376572, 0.392259, 0.0328498)
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10553e-06, 0.0781211, 6.20414e-05)
-body_offset = Transform3D(-0.998267, -1.90734e-06, 0.000233948, -2.65986e-05, -1.00032, -5.49159e-05, 0.000237823, 9.9242e-06, 1.00013, -5.96046e-06, 0.0781461, -6.28233e-05)
+body_offset = Transform3D(-0.998267, -1.90734e-06, 0.000233948, -2.65986e-05, -1.00032, -5.51205e-05, 0.000237823, 9.9242e-06, 1.00013, -5.96046e-06, 0.0781461, -6.28233e-05)
 
 [node name="upperarm_l" parent="human_01/Armature/Skeleton3D" index="6"]
 transform = Transform3D(-0.981389, 0.197016, 0.000554673, 0.0190705, 0.0927299, 0.996338, 0.196051, 0.97749, -0.0945951, 0.383747, 0.849342, -0.114906)

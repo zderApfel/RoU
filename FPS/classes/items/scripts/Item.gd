@@ -1,7 +1,5 @@
 class_name Item extends Node3D
 
-@onready var equipped: bool = false
-
 ## In-game name of the item
 @export var display_name: String
 
@@ -32,27 +30,14 @@ class_name Item extends Node3D
 ## A value that represents the space the item takes up in inventory
 @export var bulk: float = 1
 
-## 
+## How many hands this weapon requires (used for looting algorithms)
 @export_enum("1", "2") var hands: int
 
-## MAY BE DEPRICIATED
-@export var arm_path: String
-
-## MAY BE DEPRICIATED
-@export_enum("unarmed", "onehand_gun", "twohand_gun", "onehand_melee", "twohand_melee") var pose: String
-
-
+@export var first_person_position: Vector3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	bulk = bulk * amount
-
-func equip():
-	if equipped: #Unequip action
-		equipped = false
-		
-	else: #Equip action
-		equipped = true
 
 func primary_action():
 	if Input.is_action_just_pressed("primary_action"):
@@ -61,6 +46,3 @@ func primary_action():
 func secondary_action():
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
-
-func _physics_process(delta):
-	equip()

@@ -19,7 +19,6 @@ func _physics_process(_delta):
 
 				var format_string = '''"%s"'''
 				var item = x.display_name
-				#LOOT_LABEL.text = format_string % item
 
 				if Input.is_action_just_pressed("action"):
 					INVENTORY.loot_action(x)

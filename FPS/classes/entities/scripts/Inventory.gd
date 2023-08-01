@@ -3,7 +3,7 @@ extends Node
 @onready var PLAYER = get_parent()
 
 @onready var HOLD_SLOT = PLAYER.get_node("pivot/Camera3D/hold_slot")
-@onready var UNARMED = Fists.new()
+@onready var UNARMED = preload("res://nodes/items/Melee Weapon/fists.tscn").instantiate()
 
 @onready var INVENTORY = {
 	"BACKPACK_INVENTORY": {"MAX_SLOTS": 0, "OCCUPIED_SLOTS": 0, "ITEMS": []},
@@ -29,7 +29,7 @@ extends Node
 ]
 
 func _ready():
-	pass
+	Helpers.switch_child(HOLD_SLOT,UNARMED)
 
 func _physics_process(_delta):
 	inputs()
@@ -96,7 +96,7 @@ func store_to_pockets(item):
 
 
 func loot_action(item_to_loot):
-	if item_to_loot.hands == 0:
+	if item_to_loot.hands == 1:
 		if INVENTORY.WEAPON_SLOTS.SLING_WEAPON == null:
 			INVENTORY.WEAPON_SLOTS.SLING_WEAPON = item_to_loot
 	

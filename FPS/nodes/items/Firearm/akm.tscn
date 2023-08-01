@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://5wdqoodxqi73"]
 
-[ext_resource type="Script" path="res://nodes/items/Firearm/scripts/ak762.gd" id="1_oyci8"]
+[ext_resource type="Script" path="res://nodes/items/Firearm/scripts/akm.gd" id="1_oyci8"]
 [ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
 [ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_gked0"]
 [ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_twd5q"]
@@ -12,7 +12,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_sdnx8"]
 size = Vector3(0.345, 0.72, 2.51)
 
-[node name="ak762" type="RigidBody3D"]
+[node name="akm" type="RigidBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0132018, -0.240817)
 collision_layer = 30
 collision_mask = 30
@@ -20,11 +20,11 @@ mass = 3.0
 script = ExtResource("1_oyci8")
 max_ammo = 30
 display_name = "AK-762"
-description = "One of the USSR's few good contributions. The AK-762 has been the strong-arm of underdog revolutionaries since the 1940s, a tradition that continues to this day thanks to its sturdy contstruction, powerful cartridge, and easy maintenance. However, its weight and recoil leave much to be desired."
 is_holdable = true
 legal = false
 rarity = 3
 bulk = 9
+hands = 1
 arm_path = "res://nodes/entities/fp_arms/ak762.tscn"
 pose = "twohand_gun"
 
