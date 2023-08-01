@@ -61,5 +61,8 @@ func sub_attribute(attribute, by) -> int:
 	return clamp(attribute, 1, 20)
 	
 func return_modifier(attribute) -> float:
-	return (attribute-10)/2
+	if attribute == 10:
+		return 0
+	else:
+		return attribute-10
 

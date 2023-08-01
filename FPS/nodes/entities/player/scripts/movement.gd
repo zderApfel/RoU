@@ -7,7 +7,7 @@ extends CharacterBody3D
 @onready var camera = $pivot/Camera3D
 @onready var head = $pivot
 
-@onready var jog_speed = (8) + ATTRIBUTES.return_modifier(ATTRIBUTES.Agility)
+@onready var jog_speed = clamp((6) + ATTRIBUTES.return_modifier(ATTRIBUTES.Agility)*1.005,5,18)
 @onready var sprint_speed
 @onready var crouch_speed
 @onready var speed = jog_speed
@@ -30,7 +30,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
 func _physics_process(delta):
-	jog_speed = (8) + ATTRIBUTES.return_modifier(ATTRIBUTES.Agility)
+	jog_speed = clamp((8) + ATTRIBUTES.return_modifier(ATTRIBUTES.Agility)*1.001,5,999999)
 	
 	sprint_speed = jog_speed*1.25
 	crouch_speed = jog_speed*0.5
