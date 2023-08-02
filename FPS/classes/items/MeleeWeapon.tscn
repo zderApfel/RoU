@@ -2,6 +2,6 @@
 
 [ext_resource type="Script" path="res://classes/items/scripts/MeleeWeapon.gd" id="1_ob4am"]
 
-[node name="Melee_Weapon" type="Node3D"]
+[node name="MeleeWeapon" type="Node3D"]
 script = ExtResource("1_ob4am")
 is_holdable = true

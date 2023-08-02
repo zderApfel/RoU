@@ -25,13 +25,10 @@ legal = false
 rarity = 3
 bulk = 9
 hands = 1
-arm_path = "res://nodes/entities/fp_arms/ak762.tscn"
-pose = "twohand_gun"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 layers = 0
-cast_shadow = 0
 
 [node name="main_body" type="MeshInstance3D" parent="MeshInstance3D"]
 mesh = ExtResource("2_svnv3")

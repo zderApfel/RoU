@@ -257,7 +257,7 @@ Master Thief:
 
 Martial Artist: 
 
-* Active: Can parry melee weapons with your fists
+* Active: Your fists block-parry strength is now 3
 * Passive: +0.5% chance for all mercenaries to level up fron training activities (Stackable)
 * Requires: Agility 16, Strength 14
 

@@ -1,38 +1,129 @@
-[gd_scene load_steps=5 format=3 uid="uid://yp3kbmhj4ipg"]
+[gd_scene load_steps=11 format=3 uid="uid://yp3kbmhj4ipg"]
 
 [ext_resource type="Script" path="res://nodes/items/Melee Weapon/scripts/fists.gd" id="1_7sajw"]
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_vjey0"]
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_gs4co"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_70cc1"]
 
-[node name="fists" type="Node3D"]
+[sub_resource type="Animation" id="Animation_gglua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("right_arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("left_arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_apok5"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("left_arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.572538, -1.13118), Vector3(-0.0753887, 0.574375, -1.17989), Vector3(0, 0.572538, -1.13118)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("right_arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.63324, 0.924414), Vector3(-0.059663, -0.634549, 0.968278), Vector3(0, -0.63324, 0.924414)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p4vvf"]
+_data = {
+"RESET": SubResource("Animation_gglua"),
+"idle": SubResource("Animation_apok5")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_flk72"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_clkg2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qgdvh"]
+states/Start/position = Vector2(233, 98)
+states/idle/node = SubResource("AnimationNodeAnimation_flk72")
+states/idle/position = Vector2(524, 98)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_clkg2")]
+
+[node name="item" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0315069, 0)
 rotation_edit_mode = 2
 script = ExtResource("1_7sajw")
+display_name = "Unarmed"
+is_lootable = false
+is_holdable = true
+damage_type = 2
+bulk = 0.0
+hands = 1
 first_person_position = Vector3(0, -1.01916, -0.916762)
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.705866, -0.608936, 0.361872, 0.0735493, 0.571113, 0.817569, -0.704517, -0.550479, 0.447916, 1.05112, -0.202638, 0.0109913)
+transform = Transform3D(0.485418, -0.643362, -0.591992, 0.815053, 0.577991, 0.0401761, 0.316319, -0.502007, 0.804941, 1.05112, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
 
 [node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
 transform = Transform3D(1, 2.98023e-08, -5.96046e-08, -5.96046e-08, 1, -2.98023e-08, -2.98023e-08, 1.78814e-07, 1, -0.046989, 0.0405364, -0.0240896)
+cast_shadow = 0
 surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.402063, 0.766988, 0.500076, -0.885686, 0.464286, 0, -0.232178, -0.44291, 0.865982, -1.01334, 0, 0)
+transform = Transform3D(0.357618, 0.760414, 0.542107, -0.917204, 0.39517, 0.0507574, -0.175628, -0.515375, 0.838775, -1.01334, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
 
 [node name="hand" parent="left_arm/arm/arm2/Skeleton3D" index="0"]
 transform = Transform3D(1, 2.98023e-08, 4.65886e-09, 2.98023e-08, 1, 2.75609e-08, 1.34279e-08, 2.33419e-08, 1, 0, 0, 0)
+layers = 524289
+cast_shadow = 0
 surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="animations" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_p4vvf")
+}
 
 [node name="tree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_qgdvh")
+anim_player = NodePath("../animations")
+active = true
 
 [editable path="right_arm/arm"]
 [editable path="left_arm/arm"]
