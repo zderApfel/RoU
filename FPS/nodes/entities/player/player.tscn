@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://t0g6ei0k5aga"]
+[gd_scene load_steps=9 format=3 uid="uid://t0g6ei0k5aga"]
 
 [ext_resource type="PackedScene" uid="uid://dcda5volpr50g" path="res://classes/entities/Human.tscn" id="1_vu31v"]
 [ext_resource type="Script" path="res://nodes/entities/player/scripts/movement.gd" id="2_3qh8f"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://nodes/entities/player/scripts/first_person_manager.gd" id="3_xaqo4"]
 [ext_resource type="PackedScene" uid="uid://dkkmap1sn41c8" path="res://classes/entities/Attributes.tscn" id="4_64ukg"]
 [ext_resource type="Script" path="res://nodes/entities/player/scripts/detect_loot.gd" id="4_gk0y7"]
-[ext_resource type="PackedScene" uid="uid://yp3kbmhj4ipg" path="res://nodes/items/Melee Weapon/fists.tscn" id="5_4bx0o"]
 [ext_resource type="PackedScene" uid="uid://db8t4jxxg27k1" path="res://classes/entities/Vitals.tscn" id="5_qssg7"]
 [ext_resource type="PackedScene" uid="uid://cfw0k0lostyyn" path="res://classes/entities/Inventory.tscn" id="6_mmrfy"]
 
@@ -28,15 +27,6 @@ script = ExtResource("4_gk0y7")
 
 [node name="hold_slot" type="Node3D" parent="pivot/Camera3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01916, -0.916762)
-
-[node name="item" parent="pivot/Camera3D/hold_slot" index="0" instance=ExtResource("5_4bx0o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0389542, 0)
-
-[node name="right_arm" parent="pivot/Camera3D/hold_slot/item" index="0"]
-transform = Transform3D(0.485421, -0.643371, -0.591979, 0.805885, 0.59181, 0.0176364, 0.338992, -0.485629, 0.805759, 1.05112, -0.202638, 0.0109913)
-
-[node name="left_arm" parent="pivot/Camera3D/hold_slot/item" index="1"]
-transform = Transform3D(0.357618, 0.760427, 0.542089, -0.910723, 0.412415, 0.0222843, -0.20662, -0.501662, 0.840026, -1.01334, 0, 0)
 
 [node name="Skeleton3D" parent="human_01/Armature" index="0"]
 script = null
@@ -64,14 +54,14 @@ joint_offset = Transform3D(0.999999, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 5.459
 body_offset = Transform3D(1.00335, -0.000143304, -2.15323e-06, 1.5296e-05, -2.24394e-05, -1.00238, 0.00012967, 1.00325, -3.2127e-05, -5.45382e-05, 0.110685, -1.19209e-07)
 
 [node name="forearm_r" parent="human_01/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.982886, 0.202337, 0.00806945, 0.00825559, -0.000321176, 1.00449, 0.202832, 0.981287, -0.00163026, -0.375517, 0.602072, 0.0327147)
+transform = Transform3D(-0.982886, 0.202337, 0.00806945, 0.00825559, -0.000332701, 1.00449, 0.202832, 0.981287, -0.00163026, -0.375517, 0.602072, 0.0327147)
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3124e-05, -2.25569e-05, 0.135871)
-body_offset = Transform3D(1.00363, 0.000157282, 1.11543e-06, -2.94335e-05, 0.000322336, -1.00453, 1.95205e-06, 1.00193, 3.41012e-05, 1.30236e-05, 0.136486, 1.79671e-05)
+body_offset = Transform3D(1.00363, 0.000157192, 1.11543e-06, -2.94335e-05, 0.00033386, -1.00453, 1.95205e-06, 1.00193, 3.41012e-05, 1.30236e-05, 0.136486, 1.79671e-05)
 
 [node name="hand_r" parent="human_01/Armature/Skeleton3D" index="5"]
-transform = Transform3D(0.977715, 3.89376e-06, 0.201901, 2.65901e-05, 1.00032, 5.58208e-05, -0.20152, 9.47595e-06, 0.979539, -0.376572, 0.392259, 0.0328498)
+transform = Transform3D(0.977715, 3.89376e-06, 0.201901, 2.65901e-05, 1.00032, 5.61998e-05, -0.20152, 9.47595e-06, 0.979539, -0.376572, 0.392259, 0.0328498)
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10553e-06, 0.0781211, 6.20414e-05)
-body_offset = Transform3D(-0.998267, -1.90734e-06, 0.000233948, -2.65986e-05, -1.00032, -5.59641e-05, 0.000237823, 9.9242e-06, 1.00013, -5.96046e-06, 0.0781461, -6.28233e-05)
+body_offset = Transform3D(-0.998267, -1.90734e-06, 0.000233948, -2.65986e-05, -1.00032, -5.63432e-05, 0.000237823, 9.9242e-06, 1.00013, -5.96046e-06, 0.0781461, -6.28233e-05)
 
 [node name="upperarm_l" parent="human_01/Armature/Skeleton3D" index="6"]
 transform = Transform3D(-0.981389, 0.197016, 0.000554673, 0.0190705, 0.0927299, 0.996338, 0.196051, 0.97749, -0.0945951, 0.383747, 0.849342, -0.114906)
@@ -140,8 +130,5 @@ visible = false
 
 [node name="player_inventory" parent="." index="6" instance=ExtResource("6_mmrfy")]
 
-[editable path="pivot/Camera3D/hold_slot/item"]
-[editable path="pivot/Camera3D/hold_slot/item/right_arm/arm"]
-[editable path="pivot/Camera3D/hold_slot/item/left_arm/arm"]
 [editable path="human_01"]
 [editable path="HUD"]

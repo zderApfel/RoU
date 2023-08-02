@@ -1,7 +1,7 @@
 class_name AKM extends Firearm
 
 func _ready():
-	muzzle = get_tree().get_current_scene().get_node("bullet_test/muzzle")
+	muzzle = $MeshInstance3D/main_body/muzzle_slot
 
 func _process(_delta):
 	pass

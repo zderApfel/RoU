@@ -79,6 +79,7 @@ func inputs():
 		
 	if Input.is_action_just_released("inventory"):
 		print(INVENTORY)
+	
 
 	
 '''-----------------Inventory Actions--------------------------'''

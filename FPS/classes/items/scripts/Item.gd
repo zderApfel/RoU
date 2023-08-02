@@ -3,6 +3,8 @@ class_name Item extends Node3D
 ## In-game name of the item
 @export var display_name: String
 
+@export var held: bool
+
 ## If the item is looatable
 @export var is_lootable: bool = true
 
@@ -38,6 +40,8 @@ class_name Item extends Node3D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	bulk = bulk * amount
+	when_held()
+
 
 func primary_action():
 	if Input.is_action_just_pressed("primary_action"):
@@ -46,3 +50,12 @@ func primary_action():
 func secondary_action():
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
+
+func when_held():
+	if self.held:
+		$CollisionShape3D.disabled = false
+		self.freeze = true
+	
+	else:
+		$CollisionShape3D.disabled = true
+		self.freeze = false

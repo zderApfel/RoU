@@ -7,7 +7,9 @@ static func bool_switch(x) -> bool:
 		x = true
 	return x
 
-static func switch_child(parent, child):
+static func switch_child(parent, child) -> void:
+	child.held = true
+	child.when_held()
 	
 	if parent.get_children() == null:
 		parent.add_child(child)
@@ -16,9 +18,11 @@ static func switch_child(parent, child):
 		parent.add_child(child)
 	if child != null:
 		parent.position = child.first_person_position
+
 	
 static func delete_children(node) -> Node:
 	for i in node.get_children():
+		if i is RigidBody3D: i.freeze = false
 		node.remove_child(i)
 		i.queue_free()
 	return node

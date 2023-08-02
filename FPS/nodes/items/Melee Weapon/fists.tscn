@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://yp3kbmhj4ipg"]
+[gd_scene load_steps=12 format=3 uid="uid://yp3kbmhj4ipg"]
 
 [ext_resource type="Script" path="res://nodes/items/Melee Weapon/scripts/fists.gd" id="1_7sajw"]
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_vjey0"]
@@ -79,7 +79,10 @@ states/idle/node = SubResource("AnimationNodeAnimation_flk72")
 states/idle/position = Vector2(524, 98)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_clkg2")]
 
-[node name="item" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bdk0"]
+size = Vector3(2.545, 1, 0.435)
+
+[node name="item" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0315069, 0)
 rotation_edit_mode = 2
 script = ExtResource("1_7sajw")
@@ -92,7 +95,7 @@ hands = 1
 first_person_position = Vector3(0, -1.01916, -0.916762)
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.485418, -0.643362, -0.591992, 0.815053, 0.577991, 0.0401761, 0.316319, -0.502007, 0.804941, 1.05112, -0.202638, 0.0109913)
+transform = Transform3D(0.485446, -0.643395, -0.591934, 0.817791, 0.573574, 0.0472332, 0.309128, -0.507008, 0.804601, 1.05112, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
 
@@ -103,7 +106,7 @@ surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.357618, 0.760414, 0.542107, -0.917204, 0.39517, 0.0507574, -0.175628, -0.515375, 0.838775, -1.01334, 0, 0)
+transform = Transform3D(0.357645, 0.760462, 0.542022, -0.919014, 0.389682, 0.0596694, -0.16584, -0.519466, 0.838243, -1.01334, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
 
@@ -124,6 +127,11 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_qgdvh")
 anim_player = NodePath("../animations")
 active = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0944496, -0.179488)
+shape = SubResource("BoxShape3D_2bdk0")
+disabled = true
 
 [editable path="right_arm/arm"]
 [editable path="left_arm/arm"]

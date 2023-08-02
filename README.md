@@ -477,7 +477,7 @@ There's also a few variants exclusive to shotgun ammo:
 * Buckshot (Red) - Standard shotgun ammunition
 * HP Slug (Green) - A singular projectile with very high HP damage, but barely scratches armor
 * Steel Slug (Yellow) - A singular projectile with higher AP damage but lower HP damage
-* Flechette (White) - Similar to buckshot, but with higher AP damage
+* Flechette (White) - Similar to buckshot, but with higher AP damage and less accuracy than buckshot
 * Rubber Slug (Blue) - Fires a non-lethal rubber slug that knocks down targets
 
 
