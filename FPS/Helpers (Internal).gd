@@ -11,13 +11,15 @@ static func switch_child(parent, child) -> void:
 	child.held = true
 	child.when_held()
 	
-	if parent.get_children() == null:
+	if parent.get_children() == null and child != null:
 		parent.add_child(child)
+		parent.position = child.first_person_position
 	else:
 		parent = delete_children(parent)
 		parent.add_child(child)
-	if child != null:
 		parent.position = child.first_person_position
+		
+
 
 	
 static func delete_children(node) -> Node:

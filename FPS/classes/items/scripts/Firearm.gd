@@ -1,7 +1,7 @@
 class_name Firearm extends Item
 
 ## The caliber that the gun fires
-@export_enum("762x39","545x39","556x45", "310", "22lr", "9x19", "45 acp", "44 Magnum", "12 Gauge") var caliber: int
+@export_enum("762x39","545x39","556x45", "310", "FiveSeveN", "22lr", "9x19", "45 acp", "44 Magnum", "12 Gauge") var caliber: int
 
 ## The currently loaded ammo variant
 @export_enum("FMJ", "HP", "FMJ+P", "T", "AP", "S", "Buckshot", "Lead Slug", "Steel Slug", "Flechette", "Rubber Slug") var loaded_type: int

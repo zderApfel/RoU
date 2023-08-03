@@ -386,51 +386,70 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 ### TwoHandFirearm
 
-#### Intermediate Rifles
+#### Assault Rifles
 
-* **AK-47** | [3] | 7.62x39
+* Phantom-9 | [3] 9x19
+* ARM-.22 | [2] | .22lr - Looks like a less advanced and smaller Mjolnir
+* **AKM** | [3] | 7.62x39
+* Mk47 Mutant | [5] | 7.62x39 
 * **AK-74** | [3] | 5.45x39
-* AK-48 | [4] | 5.45x39 - Fictional
-* Mjolnir-5.56 | [4] | 5.56x45 - Fictional
-* ARM-.22 | [1] | .22lr - Fictional
-* ARM-5.56 | [4] | 5.56x45 - Fictional
-
-#### Full-Power Rifles
-
-* SCAR-H | [4] | .310
-
-#### Carbines/SBRs
-
+* AK-48 | [4] | 5.45x39 - Moderninzed version of an AK
+* Mjolnir-5.56 | [4] | 5.56x45 - Like an M4A1 but slightly different
+* ARM-5.56 | [4] | 5.56x45 - Looks like a less advanced Mjolnir
+* SCAR-L | [4] | 5.56x45
+* AKS-74U | [4] | 5.45x39
+* Mini-Mall | [4] | 5.56x45 - A shorter Mjolnir with less range and more recoil
 * DrAKo | [5] | 7.62x39
 
+#### Battle Rifles
 
-#### Bolt-Action Rifles
+* SKS | [2] | 7.62x39
+* End-Leg | [2] | .310
+* M14 | [2] | .310
+* SCAR-H | [4] | .310
+* G3A3 | [4] | .310
+* FAL | [4] | .310
 
-* Woodsman-43 | [1] | .308 - Fictional
+#### Sniper Rifles
+
+* Mosin | [2] | .310
+* M6 Survivor | [2] | .22lr - Based on the M4 Survival rifle
+* Woodsman-43 | [2] | .310 - Modernized hunting rifle
+* SVM | [4] | .310 - Moderninzed SVD
+* AWP | [4] | .310
 
 #### Shotguns
 
-* DB Shotgun | [1] | 12 Guage
+* DB Shotgun | [1]
+* R870 | [2]
+* SPAS | [3]
+* M3020 | [3] | Based on the M1014
+* AA12 | [4]
+* Striker | [5]
+* L1887A | [5] | Lever-action shotgun as seen in Terminator
 
 #### Submachine Guns
 
+* A180 | [3] | .22lr - Based on the American-180 prison-piggie SMG
+* Evo | [3] | 9x19mm
 * MP5 | [3] | 9x19mm
+* P90 | [4] | FiveSeveN
+* Vector | [5] | .45acp
+* MP40 | [5] | 9x19
 
 ### OneHandFirearm
 
-#### Low-Cap Pistols
+#### Pistols
 
-* M1911 | [5] | .45acp
-* M49 | [2] | .45acp - Fictional
-
-#### Hi-Cap Pistols
-
-* G84 | [2] | 9x19 - Fictional (based on Glock)
-
-#### Magnums
-
-* Ytho-44 | [2] | .44 Magnum - Fictional
+* Mk3 Pistol | [2] | .22lr
+* M9 | [2] | 9x19 
+* G84 | [2] | 9x19 - Modernized Glock
+* M49 | [2] | .45acp - Modernized M1911
+* KH45 | [2] | .45acp 
+* Ytho-44 | [2] | .44 Magnum - Standard magnum revolver with some rail systems
+* FiveSeveN | [3] | FiveSeveN
 * Deagle | [4] | .44 Magnum
+* M1911 | [5] | .45acp
 
 ### OneHandMelee
 
@@ -442,18 +461,30 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 ### Tools
 
-* Lockpick Kit [2] - *A collection of tools for opening locks. Can be used 20 times*
-    - Chance to pick lock: 20% * 0.5 * [(Agility-10) + (Luck-10)]
+* Police Scanner [1] - *Alerts you to incoming police presence*
     - Illegal
 * Drill [1] - *Can be used to open various things, or break locks...loudly*
-* Codejammer [3] - *Can be used to manually bypass an electronic lock*
-    - Chance to unlock: 20% * 0.5 * [(Agility-10) + (Luck-10)]
+* Codejammer [2] - *Can be used to bypass electronic locks. Can be used 3 times*
+    - Chance to unlock: 20% * [0.5 * [(Agility-10) + (Luck-10)]]
+* Lockpick Kit [2] - *A collection of tools for opening locks*
+    - Chance to pick lock: 20% * 0.5 * [(Agility-10) + (Luck-10)]
+    - Illegal
+* Advanced Codejammer [3] - *Can be used to bypass electronic locks and computers systems. 20 uses*
+    - Chance to unlock: 40% * [0.5 * [(Agility-10) + (Luck-10)]]
+    - Illegal
+* Personal Radar [4] - *Shows the location of nearby entities. Has different modes to show different entity types*
+* Quantum Codejammer [5] - *Can bypass any electronic lock and access any computer system. Infinite uses*
+    - Chance to unlock: 100%
+    - Illegal
 
 ----------------------------------
 
-### Consumable
+### Consumables
 
 #### Throwables
+
+* Flashbang [3]
+    - Stuns enemies in a radius
 
 #### Stims
 
@@ -467,8 +498,8 @@ Not all variants are available for every caliber. When loot is generated, the ty
 
 * Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board. Considered the "default"
 * Hollow Point (HP) - High BP and HP damage but low AP damage
-* Full Metal Jacket Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage
-* Tracer (T) - Guarantees a green tracer for your bullet. Helps with accuracy. Also has slightly increased HP damage
+* Full Metal Jacket with Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage
+* Tracer (T) - Guarantees a green tracer for your bullet. Can help with shot placement. Also has slightly increased HP damage
 * Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
 * Sub-Sonic (S) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
 
@@ -487,7 +518,7 @@ TBD
 
 #### Intermediate
 
-##### 7.62x39mm [2]
+##### 7.62x39mm
 
 Traits:
 
@@ -501,7 +532,7 @@ Variants:
 * FMJ
 * T
 
-##### 5.45x39mm [3]
+##### 5.45x39mm
 
 Traits:
 
@@ -517,7 +548,7 @@ Variants:
 * T
 * AP
 
-##### 5.56x45mm [2]
+##### 5.56x45mm
 
 Traits:
 
@@ -536,7 +567,7 @@ Variants:
 
 #### Mechanics
 
-##### Armor Leves
+##### Armor Levels
 
 Each set of armor has an armor level. As a rule of thumb, armor is guaranteed to block ~3 rounds of ammo of equal pen rating
 
