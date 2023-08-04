@@ -3,6 +3,9 @@ class_name Item extends Node3D
 ## In-game name of the item
 @export var display_name: String
 
+## Internal reference
+@export var uid: String
+
 @export var held: bool
 
 ## If the item is looatable

@@ -7,10 +7,10 @@ const BOB_AMP = 0.08
 
 @onready var attributes = $Attributes
 @onready var vitals = $Vitals
-@onready var inventory = $player_inventory
+@onready var inventory = $PlayerInventory
 @onready var camera = $pivot/Camera3D
 @onready var head = $pivot
-@onready var held_item = $pivot/Camera3D/hold_slot/item
+
 
 @onready var jog_speed = 6
 @onready var sprint_speed
@@ -19,8 +19,6 @@ const BOB_AMP = 0.08
 @onready var gravity = 9.8
 @onready var t_bob = 0.0
 @onready var h_bob = 0.0
-
-@onready var fp_animations = $pivot/Camera3D/hold_slot/item/tree
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -78,8 +76,8 @@ func headbob_controller(x):
 	t_bob += x * velocity.length() * float(is_on_floor())
 	h_bob += x * velocity.length()
 	camera.transform.origin = _headbob(t_bob)
-	if held_item != null:
-		held_item.transform.origin = _headbob(h_bob)
+#	if held_item != null:
+#		held_item.transform.origin = _headbob(h_bob)
 	
 func sprint():
 	if Input.is_action_pressed("sprint"):

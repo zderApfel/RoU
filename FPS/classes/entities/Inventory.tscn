@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://classes/entities/scripts/Inventory.gd" id="1_a38pj"]
 
-[node name="player_inventory" type="Node"]
+[node name="Inventory" type="Node"]
 script = ExtResource("1_a38pj")

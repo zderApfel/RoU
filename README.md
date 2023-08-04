@@ -485,6 +485,10 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Flashbang [3]
     - Stuns enemies in a radius
+    - Illegal
+* Frag Grenade [4]
+    - You know what it does
+    - Illegal
 
 #### Stims
 

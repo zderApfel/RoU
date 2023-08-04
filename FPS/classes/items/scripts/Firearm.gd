@@ -26,6 +26,9 @@ class_name Firearm extends Item
 @onready var ammo = format_string % caliber
 @onready var muzzle: Node3D
 
+func ready():
+	muzzle = $main_body/muzzle_slot
+
 func _process(_delta):
 	pass
 
