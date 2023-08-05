@@ -87,6 +87,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0315069, 0)
 rotation_edit_mode = 2
 script = ExtResource("1_7sajw")
 display_name = "Unarmed"
+uid = "uid://yp3kbmhj4ipg"
 is_lootable = false
 is_holdable = true
 damage_type = 2
@@ -95,7 +96,7 @@ hands = 1
 first_person_position = Vector3(0, -1.01916, -0.916762)
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.485463, -0.643424, -0.591889, 0.801997, 0.597267, 0.00852283, 0.348032, -0.478831, 0.805974, 1.05112, -0.202638, 0.0109913)
+transform = Transform3D(0.485459, -0.643412, -0.591905, 0.818772, 0.571955, 0.0498017, 0.3065, -0.508812, 0.804467, 1.05112, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
 
@@ -106,7 +107,7 @@ surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.357661, 0.760501, 0.541956, -0.907802, 0.419261, 0.0107692, -0.219031, -0.49584, 0.840338, -1.01334, 0, 0)
+transform = Transform3D(0.357656, 0.760486, 0.54198, -0.919648, 0.387672, 0.0629127, -0.162267, -0.520931, 0.838033, -1.01334, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
 

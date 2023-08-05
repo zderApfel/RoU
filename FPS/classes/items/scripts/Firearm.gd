@@ -1,10 +1,10 @@
 class_name Firearm extends Item
 
 ## The caliber that the gun fires
-@export_enum("762x39","545x39","556x45", "310", "FiveSeveN", "22lr", "9x19", "45 acp", "44 Magnum", "12 Gauge") var caliber: int
+@export_enum("N/A", "7.62 SOVIET", "7.62 RIMMED", "5.45x39", "5.56x45", ".308 WINAR", ".300 Blackout", "5.7x28", ".22lr", "9x19", ".45 acp", ".44 Magnum", ".50 AE", "12 Gauge") var caliber: int
 
 ## The currently loaded ammo variant
-@export_enum("FMJ", "HP", "FMJ+P", "T", "AP", "S", "Buckshot", "Lead Slug", "Steel Slug", "Flechette", "Rubber Slug") var loaded_type: int
+@export_enum("FMJ", "HP", "FMJ+P", "T", "AP", "Buckshot", "Lead Slug", "Steel Slug", "Flechette", "Rubber Slug") var loaded_type: int
 
 ## Lowest random value to affect accuracy by
 @export var accuracy_min: float

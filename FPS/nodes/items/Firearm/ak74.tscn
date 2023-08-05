@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgq8bgoudhw6g"]
+[gd_scene load_steps=12 format=3 uid="uid://bgq8bgoudhw6g"]
 
 [ext_resource type="PackedScene" uid="uid://ec1b5pfjnrs8" path="res://classes/items/Firearm.tscn" id="1_adcrw"]
+[ext_resource type="Script" path="res://nodes/items/Firearm/ak74.gd" id="2_5c2dt"]
 [ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_qpse2"]
 [ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_s2s1j"]
 [ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_027gi"]
@@ -13,18 +14,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_4uc4q"]
 size = Vector3(0.402057, 1.08276, 3.45706)
 
-[node name="ak_545" instance=ExtResource("1_adcrw")]
+[node name="item" instance=ExtResource("1_adcrw")]
 mass = 3.0
-caliber = "545x39"
-max_ammo = 30
-is_holdable = true
-display_name = "AK-545"
-description = "A newer version of the AK that was made during the Cold War that used a newer, smaller cartridge."
-rarity = 3
-bulk = 9
-legal = false
-hands = "2"
-pose = "twohand_gun"
+script = ExtResource("2_5c2dt")
+caliber = 3
+display_name = "AK-74"
+uid = "uid://bgq8bgoudhw6g"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(0.356, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

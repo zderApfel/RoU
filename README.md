@@ -126,15 +126,31 @@ Headshot
 * Headshots do 2x damage with all ammunition
 * Ammo with the "MelonPopper" trait will make a head explode in one shot, instantly killing
 
+## garBLOXD
+
+garBLOXD is the hacked version of the Freedomnet operating system, which has its own hacked servers to bypass national surveillance
+
+However, no security is perfect, and sometimes operatives from law enforcement or even the military get into this network. There's ways to catch them, but this requires vigilance...
+
+There's several applications you can go to on the garBLOXD network for various tasks such as meeting people, purchasing goods, getting information, and more
+
+All online networks are simulated with new content loading every 8 in-game hours
+
+### The Hub
+
+A forum for people to post their thoughts. You cannot post or comment, but what people post can offer insight into the world including helpful hints
+
+[CONFIDENTAL] If I can figure out how to make it online, I will do it
+
+### P0yntea Dr3amz
+
+A drug network. Purchase stims
+
+### The Big Blick Emporium
+
+Network for guns as well as 3D print schematics
+
 ## Mercenaries
-
-The core mechanic of this game is recruiting mercenaries to fight by your side when the need arises. 
-
-However, a large majority of people are not terribly comfortable with, and may be hostile to, the idea of revolting. That means you must build a [reputation](#reputation) with them. The higher their reputation, the more likely they will accept your offer. 
-
-Once recruited, mercenaries will have a [loyalty](#loyalty) stat that's equal to their reputation stat when brought onto the team.
-
-Mercenaries do not exist in the world anymore once hired, and are "activated" from the Hideout between explorations/raids or put into different support slots
 
 ### Activating a Merc
 
@@ -390,8 +406,8 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Phantom-9 | [3] 9x19
 * ARM-.22 | [2] | .22lr - Looks like a less advanced and smaller Mjolnir
-* **AKM** | [3] | 7.62x39
-* Mk47 Mutant | [5] | 7.62x39 
+* **AKM** | [3] | 7.62 SOVIET
+* Mk47 Mutant | [5] | 7.62 SOVIET
 * **AK-74** | [3] | 5.45x39
 * AK-48 | [4] | 5.45x39 - Moderninzed version of an AK
 * Mjolnir-5.56 | [4] | 5.56x45 - Like an M4A1 but slightly different
@@ -399,24 +415,26 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * SCAR-L | [4] | 5.56x45
 * AKS-74U | [4] | 5.45x39
 * Mini-Mall | [4] | 5.56x45 - A shorter Mjolnir with less range and more recoil
-* DrAKo | [5] | 7.62x39
+* DrAKo | [5] | 7.62 SOVIET
+* Honey Badger | [5] | .300 Blackout
+* MPL | [5] | .300 Blackout - A prototype assault rifle based on the Sig Sauer MCX
 
 #### Battle Rifles
 
-* SKS | [2] | 7.62x39
-* End-Leg | [2] | .310
-* M14 | [2] | .310
-* SCAR-H | [4] | .310
-* G3A3 | [4] | .310
-* FAL | [4] | .310
+* SKS | [2] | 7.62 SOVIET
+* M14 | [2] | .308 WINAR
+* SCAR-H | [4] | .308 WINAR
+* G3A3 | [4] | .308 WINAR
+* FAL | [4] | .308 WINAR
+* M1 Garand | [5] | 30-06
 
 #### Sniper Rifles
 
-* Mosin | [2] | .310
+* Mosin | [2] | 7.62 RIMMED
 * M6 Survivor | [2] | .22lr - Based on the M4 Survival rifle
 * Woodsman-43 | [2] | .310 - Modernized hunting rifle
-* SVM | [4] | .310 - Moderninzed SVD
-* AWP | [4] | .310
+* SVM | [4] | 7.62 RIMMED - Moderninzed SVD
+* AWP | [4] | .308 WINAR
 
 #### Shotguns
 
@@ -433,22 +451,22 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * A180 | [3] | .22lr - Based on the American-180 prison-piggie SMG
 * Evo | [3] | 9x19mm
 * MP5 | [3] | 9x19mm
-* P90 | [4] | FiveSeveN
+* P90 | [4] | 5.7x28mm
 * Vector | [5] | .45acp
-* MP40 | [5] | 9x19
+* MP40 | [5] | 9x19mm
 
 ### OneHandFirearm
 
 #### Pistols
 
 * Mk3 Pistol | [2] | .22lr
-* M9 | [2] | 9x19 
-* G84 | [2] | 9x19 - Modernized Glock
+* M24 | [2] | 9x19mm | Modernized M9
+* G84 | [2] | 9x19mm - Modernized Glock
 * M49 | [2] | .45acp - Modernized M1911
-* KH45 | [2] | .45acp 
+* KH45 | [2] | .45acp - Renamed HK .45
 * Ytho-44 | [2] | .44 Magnum - Standard magnum revolver with some rail systems
-* FiveSeveN | [3] | FiveSeveN
-* Deagle | [4] | .44 Magnum
+* FiveSeveN | [3] | 5.7x28mm
+* Deagle | [4] | .50 AE
 * M1911 | [5] | .45acp
 
 ### OneHandMelee
@@ -505,7 +523,6 @@ Not all variants are available for every caliber. When loot is generated, the ty
 * Full Metal Jacket with Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage
 * Tracer (T) - Guarantees a green tracer for your bullet. Can help with shot placement. Also has slightly increased HP damage
 * Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
-* Sub-Sonic (S) - Exotic cartridge with extremely low sound when firing, at the expense of slow muzzle velocity. This is an exceedingly rare type of ammo that is usually only afforded to elite military units
 
 There's also a few variants exclusive to shotgun ammo:
 
