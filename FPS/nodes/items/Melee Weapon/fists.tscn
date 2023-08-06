@@ -83,7 +83,6 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 size = Vector3(2.545, 1, 0.435)
 
 [node name="item" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0315069, 0)
 rotation_edit_mode = 2
 script = ExtResource("1_7sajw")
 display_name = "Unarmed"
@@ -93,20 +92,21 @@ is_holdable = true
 type = 1
 bulk = 0.0
 hands = 1
+first_person_position = Vector3(0, -0.78, -0.41)
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.485422, -0.643368, -0.591982, 0.81561, 0.577105, 0.0415962, 0.314875, -0.503018, 0.804876, 1.05112, -0.202638, 0.0109913)
+transform = Transform3D(0.485429, -0.643375, -0.591968, 0.816321, 0.575965, 0.0434202, 0.313018, -0.504313, 0.80479, 1.05112, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
 
 [node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
-transform = Transform3D(1, 2.98023e-08, -5.96046e-08, -5.96046e-08, 1, -2.98023e-08, -2.98023e-08, 1.78814e-07, 1, -0.046989, 0.0405364, -0.0240896)
+transform = Transform3D(1, 2.98023e-08, -5.96046e-08, -5.96046e-08, 1, -2.98023e-08, -2.98023e-08, 1.78814e-07, 1, 0, 0, 0)
 cast_shadow = 0
 surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.357621, 0.760421, 0.542093, -0.917578, 0.394067, 0.0525509, -0.173661, -0.516205, 0.838673, -1.01334, 0, 0)
+transform = Transform3D(0.357628, 0.760432, 0.542073, -0.91805, 0.39265, 0.0548544, -0.171132, -0.517267, 0.838538, -1.01334, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
 

@@ -4,7 +4,7 @@ func _ready():
 	pass
 
 func _process(_delta):
-	when_held(true)
+	pass
 
 func primary_action():
 	var x = load(ammo).instantiate()

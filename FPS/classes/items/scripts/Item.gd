@@ -6,8 +6,6 @@ class_name Item extends Node3D
 ## Internal reference
 @export var uid: String
 
-@export var held: bool
-
 ## If the item is looatable
 @export var is_lootable: bool = true
 
@@ -55,10 +53,19 @@ func secondary_action():
 		print("Secondary Action")
 
 func when_held(x: bool):
-	if x:
-		$CollisionShape3D.disabled = false
+	if x == true:
+		$CollisionShape3D.disabled = true
 		self.freeze = true
+		self.is_lootable = false
 	
 	else:
-		$CollisionShape3D.disabled = true
+		$CollisionShape3D.disabled = false
 		self.freeze = false
+		self.is_lootable = true
+
+func dupe_self() -> Item:
+	var x = self.duplicate()
+	return x
+
+func reposition():
+	self.position = self.first_person_position

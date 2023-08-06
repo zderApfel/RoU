@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://emk6bv77dgli"]
+[gd_scene load_steps=5 format=3 uid="uid://emk6bv77dgli"]
 
 [ext_resource type="Script" path="res://classes/items/scripts/Item.gd" id="1_ne6jp"]
+[ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_hgnth"]
+[ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_ntyua"]
+[ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_au0w0"]
 
 [node name="Item" type="RigidBody3D"]
 collision_layer = 30
@@ -12,3 +15,29 @@ script = ExtResource("1_ne6jp")
 [node name="animations" type="AnimationPlayer" parent="."]
 
 [node name="tree" type="AnimationTree" parent="."]
+
+[node name="right_arm" type="Node3D" parent="."]
+transform = Transform3D(0.485405, -0.643351, -0.592014, 0.808661, 0.587773, 0.0242957, 0.33234, -0.490532, 0.80556, 1.05112, -0.202638, 0.0109913)
+
+[node name="arm" parent="right_arm" instance=ExtResource("2_hgnth")]
+
+[node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, -5.96046e-08, -5.96046e-08, 1, -2.98023e-08, -2.98023e-08, 1.78814e-07, 1, 0, 0, 0)
+cast_shadow = 0
+surface_material_override/0 = ExtResource("3_ntyua")
+surface_material_override/1 = ExtResource("4_au0w0")
+
+[node name="left_arm" type="Node3D" parent="."]
+transform = Transform3D(0.357604, 0.760395, 0.54214, -0.912749, 0.407366, 0.0306976, -0.197507, -0.505814, 0.839726, -1.01334, 0, 0)
+
+[node name="arm" parent="left_arm" instance=ExtResource("2_hgnth")]
+
+[node name="hand" parent="left_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, 4.65886e-09, 2.98023e-08, 1, 2.75609e-08, 1.34279e-08, 2.33419e-08, 1, 0, 0, 0)
+layers = 524289
+cast_shadow = 0
+surface_material_override/0 = ExtResource("3_ntyua")
+surface_material_override/1 = ExtResource("4_au0w0")
+
+[editable path="right_arm/arm"]
+[editable path="left_arm/arm"]

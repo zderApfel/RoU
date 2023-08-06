@@ -146,7 +146,7 @@ A forum for people to post their thoughts. You cannot post or comment, but what 
 
 A drug network. Purchase stims
 
-### The Big Blick Emporium
+### The Dig Blick Emporium
 
 Network for guns as well as 3D print schematics
 
@@ -213,7 +213,7 @@ For any attribute that's at level 20, you can continue training that attribute w
 
 * Terra Shooter (Shooting) - 20% chance not to consume ammo for MOST guns
 
-* Poison Immunity (Health) - Immunity to inhaled and lingering poisons
+* Untappable Reserves (Health) - Infinite Stamina
 
 * Cracked Egg (Agility) - You gain the ability to double jump
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5wdqoodxqi73"]
+[gd_scene load_steps=13 format=3 uid="uid://5wdqoodxqi73"]
 
 [ext_resource type="Script" path="res://nodes/items/Firearm/scripts/akm.gd" id="1_oyci8"]
 [ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
@@ -8,12 +8,15 @@
 [ext_resource type="ArrayMesh" uid="uid://c0eao4walw2a8" path="res://assets/weapons/ak_762/bolt.obj" id="6_jhuq6"]
 [ext_resource type="ArrayMesh" uid="uid://c0tbn8wj8kaoh" path="res://assets/weapons/ak_762/stock.obj" id="7_aj435"]
 [ext_resource type="PackedScene" uid="uid://dhyyk3bfdyjxp" path="res://nodes/items/Magazines/akm_magazine.tscn" id="8_6vpoh"]
+[ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="9_y5chg"]
+[ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="10_6304o"]
+[ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="11_drghn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sdnx8"]
-size = Vector3(0.242787, 0.538392, 2.70685)
+size = Vector3(0.242787, 0.651492, 2.70685)
 
 [node name="item" type="RigidBody3D"]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.0132018, -0.240817)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 collision_layer = 14
 collision_mask = 14
 script = ExtResource("1_oyci8")
@@ -26,6 +29,7 @@ legal = false
 type = 2
 rarity = 3
 hands = 1
+first_person_position = Vector3(0.44, -0.38, -1.635)
 
 [node name="main_body" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
@@ -58,15 +62,44 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("5_ojn5q")
 
 [node name="bolt" type="MeshInstance3D" parent="main_body"]
-transform = Transform3D(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13347e-12, -8.02144e-08, 1, -0.201697, 0.00123575, -0.601331)
+transform = Transform3D(0.999964, -0.0084822, -6.77261e-10, 0.0084822, 0.999964, 8.02115e-08, -3.13349e-12, -8.02144e-08, 1, -0.201697, 0.00123575, -0.601331)
 mesh = ExtResource("6_jhuq6")
 skeleton = NodePath("")
 
-[node name="Magazine" parent="." instance=ExtResource("8_6vpoh")]
-uid = "uid://dhyyk3bfdyjxp"
+[node name="Magazine" parent="main_body" instance=ExtResource("8_6vpoh")]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, -0.0939827, -0.426727, -0.500568)
 legal = false
 bulk = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -0.0369109, -0.0289502, -0.387657)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0327795, -0.0860461, -0.379131)
 shape = SubResource("BoxShape3D_sdnx8")
+
+[node name="right_arm" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74228e-08, 0, -0.999999, 0, 0, 0)
+visible = false
+
+[node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]
+visible = false
+
+[node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, -5.96046e-08, -5.96046e-08, 1, -2.98023e-08, -2.98023e-08, 1.78814e-07, 1, 0, 0, 0)
+cast_shadow = 0
+surface_material_override/0 = ExtResource("10_6304o")
+surface_material_override/1 = ExtResource("11_drghn")
+
+[node name="left_arm" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 0.999998, 0, 8.74228e-08, 0, -0.999999, 0, 0, 0)
+visible = false
+
+[node name="arm" parent="left_arm" instance=ExtResource("9_y5chg")]
+
+[node name="hand" parent="left_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, 4.65886e-09, 2.98023e-08, 1, 2.75609e-08, 1.34279e-08, 2.33419e-08, 1, 0, 0, 0)
+layers = 524289
+cast_shadow = 0
+surface_material_override/0 = ExtResource("10_6304o")
+surface_material_override/1 = ExtResource("11_drghn")
+
+[editable path="right_arm/arm"]
+[editable path="left_arm/arm"]
