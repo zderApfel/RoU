@@ -1,23 +1,17 @@
 class_name Bullet extends Item
 
 
-@export var HP_DAMAGE: float
-@export var BP_DAMAGE: float
-@export var AP_DAMAGE: float
+@export var hp_damage: float
+@export var bp_damage: float
+@export var ap_damage: float
 
-## Base chance to pierce armor
-@export var AP_CHANCE: float
-
-## Modifier for the bullet's accuracy leaving the muzzle
-@export var ACCURACY_MOD: float
-
-## Modifier for the bullet's speed
-@export var VELOCITY_MOD: float = 0.0
+## The item's damage type (if applicable)
+@export_enum("None", "Ballistic", "Bludgeon", "Pierce", "Slash", "Poison", "Fire", "Caustic", "Fire", "Explosive", "Impulse") var damage_type: int = 1
 
 ## Bullets with this trait make heads explode with a headshot
-@export var MELONPOPPER: bool = false
+@export var melonpopper: bool = false
 
-@onready var VELOCITY = Vector3.ZERO
+@onready var velocity = Vector3.ZERO
 
 func _ready():
 	pass

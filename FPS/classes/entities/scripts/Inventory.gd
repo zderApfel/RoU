@@ -28,21 +28,19 @@ func inputs():
 		print(head)
 		print(armor)
 		print(backpack)
+	if Input.is_action_just_pressed("sling_weapon"):
+		pass
 
 '''-----------------Inventory Actions--------------------------'''
 
 func loot_action(item_to_loot) -> void:
 	print("Attempting to loot "+item_to_loot.display_name)
 	
-	match item_to_loot.get_class():
-		"Firearm":
+	match item_to_loot.type:
+		1: # Melee Weapon
+			pass
+		2: # Firearm
 			store_to(sling, item_to_loot)
-		"MeleeWeapon":
-			pass
-		"Bullet":
-			pass
-		"Tool":
-			pass
 		_:
 			store_to(pockets, item_to_loot)
 
@@ -54,7 +52,7 @@ func store_to(slot, item) -> void:
 		pockets:
 			store_to_pockets(z)
 		sheath:
-			if sheath.get_children() != []:
+			if sheath == null:
 				sheath = z
 			else:
 				store_to_pockets(z)

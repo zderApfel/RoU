@@ -4,8 +4,6 @@ extends RayCast3D
 @onready var LOOT_LABEL = get_tree().get_current_scene().get_node("Player/HUD/loot_hand/TextureRect/loot")
 @onready var INVENTORY = get_tree().get_current_scene().get_node("Player/PlayerInventory")
 
-
-
 func _physics_process(_delta):
 	if is_colliding() and get_collider() is Item and get_collider().is_lootable:
 		HAND.visible = true

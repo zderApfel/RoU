@@ -20,11 +20,11 @@ class_name Item extends Node3D
 ## If this is false, you will incite frightened/hostile response from most people when held
 @export var legal: bool = true
 
+## The Item's Type
+@export_enum("Generic", "Melee Weapon", "Firearm", "Bullet", "Tool", "Armor", "Helmet", "Backpack") var type: int
+
 ## The item's rarity for loot pools
 @export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
-
-## The item's damage type (if applicable)
-@export_enum("None", "Ballistic", "Bludgeon", "Pierce", "Slash", "Poison", "Fire", "Caustic", "Fire", "Explosive", "Impulse") var damage_type: int
 
 ## How many of this item there are in any instance
 @export var amount: int = 1
@@ -43,19 +43,19 @@ class_name Item extends Node3D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	bulk = bulk * amount
-	when_held()
+	primary_action()
 
 
 func primary_action():
-	if Input.is_action_just_pressed("primary_action"):
+	if Input.is_action_just_pressed("action"):
 		print("Primary Action")
 
 func secondary_action():
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
 
-func when_held():
-	if self.held:
+func when_held(x: bool):
+	if x:
 		$CollisionShape3D.disabled = false
 		self.freeze = true
 	

@@ -20,6 +20,7 @@ script = ExtResource("2_5c2dt")
 caliber = 3
 display_name = "AK-74"
 uid = "uid://bgq8bgoudhw6g"
+type = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(0.356, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
