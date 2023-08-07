@@ -2,8 +2,7 @@ extends CharacterBody3D
 
 const JUMP_VELOCITY = 4 
 const SENSITIVITY = 0.01
-const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
+const BOB_AMP = 0.06
 
 @onready var attributes = $Attributes
 @onready var vitals = $Vitals
@@ -16,9 +15,9 @@ const BOB_AMP = 0.08
 @onready var sprint_speed
 @onready var crouch_speed
 @onready var speed = jog_speed
-@onready var gravity = 9.8
+@onready var gravity = 12
 @onready var t_bob = 0.0
-@onready var h_bob = 0.0
+@onready var BOB_FREQ = 2.2
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,7 +30,6 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	jog_speed = clamp((6) + attributes.return_modifier(attributes.Agility)*1.01,4,12)
-	
 	sprint_speed = jog_speed*1.25
 	crouch_speed = jog_speed*0.5
 	
@@ -73,16 +71,17 @@ func _headbob(time) -> Vector3:
 	return pos
 	
 func headbob_controller(x):
+	var z = $pivot/Camera3D/hold_slot
+	
 	t_bob += x * velocity.length() * float(is_on_floor())
-	h_bob += x * velocity.length()
-	camera.transform.origin = _headbob(t_bob)
-#	if held_item != null:
-#		held_item.transform.origin = _headbob(h_bob)
+	if z != null:
+		z.transform.origin = _headbob(t_bob)
 	
 func sprint():
 	if Input.is_action_pressed("sprint"):
 		speed = sprint_speed
 	elif Input.is_action_just_released("sprint"):
 		speed = jog_speed
+		
 		
 

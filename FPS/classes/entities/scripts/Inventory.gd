@@ -88,7 +88,7 @@ func switch_item(parent, new_child):
 		active_slot.item = x
 	
 	if parent.get_children() != [] and new_child.item != null:
-		parent = Helpers.familcide(parent)
+		parent = Helpers.familicide(parent)
 		
 		new_child.item.when_held(true)
 		
