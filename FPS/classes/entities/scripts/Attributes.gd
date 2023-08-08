@@ -33,8 +33,8 @@ class_name Attributes extends Node
 ## PRIVATE |
 ##A dictionary of crimes that's tracked per character. 
 ##This has various influence to varying degrees depending on 
-##Severity, and amount, etc.
-@export var Crimes: Dictionary = {}
+##Severity, amount, etc.
+@export var Crimes: Array = []
 
 ## NPC ONLY | 
 ## Represents the NPCs opinion of the Player Character

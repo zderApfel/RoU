@@ -20,11 +20,11 @@ func _ready():
 func _process(_delta):
 	pass
 
-func primary_action():
+func primary_action(triangle):
 	if Input.is_action_just_pressed("primary_action"):
 		print("Primary Action")
 
-func secondary_action():
+func secondary_action(triangle):
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
 

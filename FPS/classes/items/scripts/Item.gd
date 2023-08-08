@@ -3,8 +3,8 @@ class_name Item extends Node3D
 ## In-game name of the item
 @export var display_name: String
 
-## Internal reference
-@export var uid: String
+## Internal reference (Depreciated)
+#@export var uid: String
 
 ## If the item is looatable
 @export var is_lootable: bool = true
@@ -38,27 +38,34 @@ class_name Item extends Node3D
 
 @export var first_person_position: Vector3
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	bulk = bulk * amount
-	primary_action()
+func _physics_process(delta):
+	primary_action(delta)
+	secondary_action(delta)
 
 
-func primary_action():
+func primary_action(triangle):
 	if Input.is_action_just_pressed("action"):
 		print("Primary Action")
 
-func secondary_action():
+func secondary_action(triangle):
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
 
 func when_held(x: bool):
 	if x == true:
+		if self.hands == 0:
+			$right_arm.visible = true
+		elif self.hands == 1:
+			$right_arm.visible = true
+			$left_arm.visible = true
+			
 		$CollisionShape3D.disabled = true
 		self.freeze = true
 		self.is_lootable = false
 	
 	else:
+		$right_arm.visible = false
+		$left_arm.visible = false
 		$CollisionShape3D.disabled = false
 		self.freeze = false
 		self.is_lootable = true

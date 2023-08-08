@@ -3,6 +3,7 @@ extends CharacterBody3D
 const JUMP_VELOCITY = 4 
 const SENSITIVITY = 0.01
 const BOB_AMP = 0.06
+const BOB_FREQ = 2.2
 
 @onready var attributes = $Attributes
 @onready var vitals = $Vitals
@@ -11,13 +12,12 @@ const BOB_AMP = 0.06
 @onready var head = $pivot
 
 
-@onready var jog_speed = 6
+@onready var jog_speed = 6 + attributes.return_modifier(attributes.Agility)*.2
 @onready var sprint_speed
 @onready var crouch_speed
 @onready var speed = jog_speed
 @onready var gravity = 12
 @onready var t_bob = 0.0
-@onready var BOB_FREQ = 2.2
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -26,10 +26,10 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(75))
 
 func _physics_process(delta):
-	jog_speed = clamp((6) + attributes.return_modifier(attributes.Agility)*1.01,4,12)
+	jog_speed = 6 + attributes.return_modifier(attributes.Agility)*.2
 	sprint_speed = jog_speed*1.25
 	crouch_speed = jog_speed*0.5
 	
@@ -82,6 +82,7 @@ func sprint():
 		speed = sprint_speed
 	elif Input.is_action_just_released("sprint"):
 		speed = jog_speed
-		
-		
+
+func recoil(min, max):
+	head.rotation += head.rotation*1.01
 

@@ -19,13 +19,6 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 * Protag Lock
 * An optional (and skippable) mission that you can do at the beginning. This raid entails escaping jail after being arrested during a protest
 
-## A New Home 
-
-* Protag Lock
-* Find an abandoned weather site
-* This site is a dungeon that is inhabited by a cult that believes that the start of the Second Ice Age was a simulation and the weather sites hold the key to escaping it
-* Once beaten, this site becomes your new hideout
-
 ## Retribution
 
 * *"Get your revenge. Take down the Chief of Police and anybody who tries to stop you"*
@@ -64,6 +57,129 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 * Some raids now must be completed within a certain time frame, with consequences for failure
 * Health doesn't regenerate
 * You regain stamina at a slower rate the less health you have
+
+## Starter Classes
+
+At character creation you have a choice to make regarding your starting stats and equipment
+
+### Veteran
+
+*You're a veteran who fought against the coup of 2035. Your combat skills are still fresh through your rigorous training for a day like this. This is your time to shine*
+
+**-Attributes-**
+
+* Strength = 14
+* Shooting = 15
+* Health = 13
+* Agility = 11
+* Charisma = 8
+* Luck = 5
+
+*Luck is a hidden attribute
+
+**-Equipment-**
+
+* Mjolnir-556 + 5 extra magazines
+* M9 + 3 extra magazines
+* Bayonet
+* Lvl. 2 Armor
+
+### Hunter
+
+*Leaving the hustle and corruption of the city, you turned to nature to sustain yourself. Not much to eat nowadays but you manage*
+
+**-Attributes-**
+
+* Strength = 12
+* Shooting = 13
+* Health = 15
+* Agility = 13
+* Charisma = 6
+* Luck = 8
+
+**-Equipment-**
+
+* DB Shotgun + 20 extra shells
+* Woodsman-43 + 30 extra rounds
+* Machete
+* -25% starting money
+
+### Athlete
+
+*Your body is a carefully oiled machine. You've outran the cops before, but now they don't feel like running*
+
+**-Attributes-**
+
+* Strength = 15
+* Shooting = 9
+* Health = 14
+* Agility = 14
+* Charisma = 10
+* Luck = 11
+
+**-Equipment-**
+
+* Mk2 Pistol + 3 extra magazines
+* Baseball Bat
+* +100% Bonus starting money
+
+### Con Artist
+
+*Your scams and exploits would make Ponzi blush. Your skills in deception could prove very useful*
+
+**-Attributes-**
+
+* Strength = 10
+* Shooting = 7
+* Health = 11
+* Agility = 8
+* Charisma = 15
+* Luck = 12
+
+**-Equipment-**
+
+* M19 + 4 extra magazines
+* Lockpick kit
+* Lvl. 1 Armor
+* +50% starting money
+
+### Brute
+
+*Doctors could never figure out what made you so strong and sturdy, use this to your advantage*
+
+**-Attributes-**
+
+* Strength = 16
+* Shooting = 11
+* Health = 15
+* Agility = 10
+* Charisma = 3
+* Luck = 10
+
+**-Equipment-**
+
+* R870 + 42 shells
+* Lvl. 3 Armor
+* Crowbar
+* Brass Knuckles
+
+### Larper
+
+*You have the anger, you have the drive, and you have the spirit...but that's about all*
+
+**-Attributes-**
+
+* Strength = 6
+* Shooting = 3
+* Health = 8
+* Agility = 7
+* Charisma = 2
+* Luck = 16
+
+**-Equipment-**
+
+* Katana
+* -75% less starting money
 
 ## Modifiers
 
@@ -162,9 +278,9 @@ During exploration or a raid, you can either play as yourself, or you can play a
 
 * Stamina - Depletes when sprinting, jumping, or melee attacking. Regeneration scales with Health
 
-* Balance Points (BP) - Represents your balance. BP reduces from getting damaged, and once it reaches zero your mercenary ragdolls for a time. Melee attacks have significantly stronger BP damage than bullets do (outside of the high caliber ones), so don't worry about getting cheesed down by a group of gunmen...but also a group of gunmen can kill you fast anyway. BP regenerates quickly after not being damaged for a time.
+* Balance Points (BP) - Represents your balance. BP reduces from getting damaged. On reaching zero, you fall to the ground, becoming helpless for a time. Melee attacks have significantly stronger BP damage than bullets do (outside of the high caliber ones), so don't worry about getting cheesed down by a group of gunmen...but also a group of gunmen can kill you fast anyway. BP regenerates quickly after not being damaged for a time.
 
-* Armor Points (AP) - Represents the health of any worn armor. Armor health is depleted by a large amount when pierced by a bullet or hit with a bladed melee weapon. If a bullet is deflected, damage is minimal.
+* Armor Points (AP) - Represents the health of any worn armor. Armor health is depleted by a large amount when pierced by a bullet. If a bullet is deflected, damage is minimal.
 
 ### Attributes
 
@@ -172,7 +288,7 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 #### Melee
 
-* +1 melee damage
+* +0.5 melee damage
 * +0.5% melee crit chance
 
 #### Shooting
@@ -187,7 +303,7 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 #### Agility
 
-* +1% movement speed
+* +0.2 movement speed
 * +1% melee speed
 
 #### Charisma
@@ -404,17 +520,17 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 #### Assault Rifles
 
-* Phantom-9 | [3] 9x19
-* ARM-.22 | [2] | .22lr - Looks like a less advanced and smaller Mjolnir
-* **AKM** | [3] | 7.62 SOVIET
-* Mk47 Mutant | [5] | 7.62 SOVIET
-* **AK-74** | [3] | 5.45x39
-* AK-48 | [4] | 5.45x39 - Moderninzed version of an AK
-* Mjolnir-5.56 | [4] | 5.56x45 - Like an M4A1 but slightly different
-* ARM-5.56 | [4] | 5.56x45 - Looks like a less advanced Mjolnir
-* SCAR-L | [4] | 5.56x45
-* AKS-74U | [4] | 5.45x39
-* Mini-Mall | [4] | 5.56x45 - A shorter Mjolnir with less range and more recoil
+* Phantom-9 | [3] 9mm LE
+* ARM-.22 | [2] | .22 LR - Looks like a less advanced and smaller Mjolnir
+* **AKM** | [3] | 7.62 SOV
+* **AK-74** | [3] | 5.45 RU
+* AK-48 | [4] | 5.45 RU - Moderninzed version of an AK
+* Mjolnir-5.56 | [4] | 5.56 NATO - Like an M4A1 but slightly different
+* ARM-5.56 | [4] | 5.56 NATO - Looks like a less advanced Mjolnir
+* SCAR-L | [4] | 5.56 NATO
+* AKS-74U | [4] | 5.45 RU
+* Mini-Mall | [4] | 5.56 NATO - A shorter Mjolnir with less range and more recoil
+* Mjol-Mutant | [5] | 7.62 SOV - A mix of a Mjolnir and the AKM
 * DrAKo | [5] | 7.62 SOVIET
 * Honey Badger | [5] | .300 Blackout
 * MPL | [5] | .300 Blackout - A prototype assault rifle based on the Sig Sauer MCX
@@ -422,65 +538,81 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 #### Battle Rifles
 
 * SKS | [2] | 7.62 SOVIET
-* M14 | [2] | .308 WINAR
-* SCAR-H | [4] | .308 WINAR
-* G3A3 | [4] | .308 WINAR
-* FAL | [4] | .308 WINAR
-* M1 Garand | [5] | 30-06
+* M14 | [2] | 7.62 NATO
+* SCAR-H | [4] | 7.62 NATO
+* G3A3 | [4] | 7.62 NATO
+* FAL | [4] | 7.62 NATO
+* M1 Garand | [5] | .30-06
 
 #### Sniper Rifles
 
 * Mosin | [2] | 7.62 RIMMED
-* M6 Survivor | [2] | .22lr - Based on the M4 Survival rifle
-* Woodsman-43 | [2] | .310 - Modernized hunting rifle
+* M6 Survivor | [2] | .22 LR - Based on the M4 Survival rifle
+* Woodsman-43 | [2] | .30-06 - Modernized hunting rifle
 * SVM | [4] | 7.62 RIMMED - Moderninzed SVD
-* AWP | [4] | .308 WINAR
+* AWP | [4] | 7.62 NATO
 
 #### Shotguns
 
 * DB Shotgun | [1]
+* Wordington-970 | [1]
 * R870 | [2]
 * SPAS | [3]
 * M3020 | [3] | Based on the M1014
-* AA12 | [4]
+* Saiga12g | [4]
 * Striker | [5]
 * L1887A | [5] | Lever-action shotgun as seen in Terminator
 
 #### Submachine Guns
 
-* A180 | [3] | .22lr - Based on the American-180 prison-piggie SMG
-* Evo | [3] | 9x19mm
-* MP5 | [3] | 9x19mm
-* P90 | [4] | 5.7x28mm
+* Uzi | [2] | 9mm LE
+* A180 | [3] | .22 LR - Based on the American-180 prison-piggie SMG
+* Evo | [3] | 9mm LE
+* MP5 | [3] | 9mm LE
+* P90 | [4] | Five Seven
 * Vector | [5] | .45acp
-* MP40 | [5] | 9x19mm
+* MP40 | [5] | 9mm LE
+* Thompson | [5] | .45acp
 
 ### OneHandFirearm
 
 #### Pistols
 
-* Mk3 Pistol | [2] | .22lr
-* M24 | [2] | 9x19mm | Modernized M9
-* G84 | [2] | 9x19mm - Modernized Glock
+* Mk3 Pistol | [2] | .22 LR
+* M19 | [2] | 9mm LE | Modernized M9
+* G84 | [2] | 9mm LE - Modernized Glock
 * M49 | [2] | .45acp - Modernized M1911
 * KH45 | [2] | .45acp - Renamed HK .45
 * Ytho-44 | [2] | .44 Magnum - Standard magnum revolver with some rail systems
-* FiveSeveN | [3] | 5.7x28mm
+* FiveSeveN | [3] | Five Seven
 * Deagle | [4] | .50 AE
 * M1911 | [5] | .45acp
+
+#### Machine Pistols
+
+* MAC10 | [2] | 9mm LE
+* GA94 | [3] | 9mm LE
 
 ### OneHandMelee
 
 * Kitchen Knife | [1]
+* Crowbar [1]
+    - Works as a tool in some instances
+* Machete | [2]
+* Bayonet | [4]
 
 ### TwoHandMelee
 
-* Baseball Bat | [1]
+* Baseball Bat | [2]
+* Brass Knuckles | [3]
+    - Illegal
+* Katana | [5]
 
 ### Tools
 
 * Police Scanner [1] - *Alerts you to incoming police presence*
     - Illegal
+* Sling Shround [1] - *Weapons stored on your sling are concealed, at the cost of 100% increased weapon switch speed for the sling weapon*
 * Drill [1] - *Can be used to open various things, or break locks...loudly*
 * Codejammer [2] - *Can be used to bypass electronic locks. Can be used 3 times*
     - Chance to unlock: 20% * [0.5 * [(Agility-10) + (Luck-10)]]
@@ -501,16 +633,15 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 #### Throwables
 
-* Flashbang [3]
+* Concussion Grenade [3]
     - Stuns enemies in a radius
     - Illegal
 * Frag Grenade [4]
-    - You know what it does
+    - Illegal
+* Molotov Cocktail [2]
     - Illegal
 
 #### Stims
-
-#### Food and Drink
 
 ### Ammo
 
@@ -539,7 +670,7 @@ TBD
 
 #### Intermediate
 
-##### 7.62x39mm
+##### 7.62 NATO
 
 Traits:
 
@@ -553,7 +684,7 @@ Variants:
 * FMJ
 * T
 
-##### 5.45x39mm
+##### 5.45 RU
 
 Traits:
 
@@ -569,7 +700,7 @@ Variants:
 * T
 * AP
 
-##### 5.56x45mm
+##### 5.56 NATO
 
 Traits:
 
@@ -610,6 +741,6 @@ Pen% CAN go over 100.
 
 ### Headgear
 
-Works the same as armor, except for the head region. Also cannot be repaired in any way
+
 
 ### Backpacks

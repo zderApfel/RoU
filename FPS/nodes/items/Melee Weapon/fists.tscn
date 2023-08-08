@@ -95,7 +95,7 @@ hands = 1
 first_person_position = Vector3(0, -0.78, -0.41)
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.485429, -0.643375, -0.591968, 0.816321, 0.575965, 0.0434202, 0.313018, -0.504313, 0.80479, 1.05112, -0.202638, 0.0109913)
+transform = Transform3D(0.485404, -0.643348, -0.592018, 0.809251, 0.5869, 0.0257276, 0.330904, -0.491579, 0.805513, 1.05112, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
 
@@ -106,7 +106,7 @@ surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.357628, 0.760432, 0.542073, -0.91805, 0.39265, 0.0548544, -0.171132, -0.517267, 0.838538, -1.01334, 0, 0)
+transform = Transform3D(0.357602, 0.760392, 0.542146, -0.913172, 0.406275, 0.0325066, -0.195543, -0.506696, 0.839655, -1.01334, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
 

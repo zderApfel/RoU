@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdi711t08fsmk"]
+[gd_scene load_steps=5 format=3 uid="uid://bdi711t08fsmk"]
 
 [ext_resource type="Script" path="res://nodes/items/Ammo/scripts/762x39.gd" id="1_7itjb"]
-[ext_resource type="Script" path="res://nodes/items/Ammo/scripts/bullet_hitbox.gd" id="2_7ryfi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orifq"]
 
@@ -16,11 +15,10 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 mass = 0.01
 inertia = Vector3(100, 0, 0)
 script = ExtResource("1_7itjb")
-MUZZLE_VELOCITY = 50.0
-is_holdable = true
 display_name = "7.62x39 "
-rarity = 3
+is_holdable = true
 is_stackable = true
+rarity = 3
 max_stack = 60
 bulk = 0.03
 
@@ -36,7 +34,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_65prf")
 
 [node name="bullet_hitbox" type="Area3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.0583395, -2.5501e-09)
-script = ExtResource("2_7ryfi")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="bullet_hitbox"]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
