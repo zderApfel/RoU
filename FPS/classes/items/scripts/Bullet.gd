@@ -19,3 +19,8 @@ func _ready():
 
 func _physics_process(delta):
 	pass
+
+
+func _on_hitbox_body_entered(body):
+	print("Bullet destroyed")
+	self.queue_free()

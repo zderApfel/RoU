@@ -80,4 +80,5 @@ func dupe_self() -> Item:
 	return x
 
 func reposition():
+	self.rotation = Vector3.ZERO
 	self.position = self.first_person_position

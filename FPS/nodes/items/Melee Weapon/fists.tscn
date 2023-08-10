@@ -86,7 +86,6 @@ size = Vector3(2.545, 1, 0.435)
 rotation_edit_mode = 2
 script = ExtResource("1_7sajw")
 display_name = "Unarmed"
-uid = "uid://yp3kbmhj4ipg"
 is_lootable = false
 is_holdable = true
 type = 1
@@ -95,7 +94,7 @@ hands = 1
 first_person_position = Vector3(0, -0.78, -0.41)
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.485404, -0.643348, -0.592018, 0.809251, 0.5869, 0.0257276, 0.330904, -0.491579, 0.805513, 1.05112, -0.202638, 0.0109913)
+transform = Transform3D(0.485402, -0.643345, -0.592023, 0.811164, 0.584028, 0.0304174, 0.32619, -0.494992, 0.805346, 1.05112, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_vjey0")]
 
@@ -106,7 +105,7 @@ surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.357602, 0.760392, 0.542146, -0.913172, 0.406275, 0.0325066, -0.195543, -0.506696, 0.839655, -1.01334, 0, 0)
+transform = Transform3D(0.357601, 0.760387, 0.542153, -0.914529, 0.402689, 0.0384311, -0.189097, -0.509557, 0.8394, -1.01334, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_vjey0")]
 
@@ -118,7 +117,6 @@ surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="animations" type="AnimationPlayer" parent="."]
-reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_p4vvf")
 }

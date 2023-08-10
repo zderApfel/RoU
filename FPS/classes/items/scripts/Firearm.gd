@@ -6,20 +6,18 @@ class_name Firearm extends Item
 ## The UID for the ammo used by this gun. Used for technical reference
 @export var ammo: String
 
-## Lowest random value to affect accuracy by
-@export var recoil_horizontal: float
-
-## Highest random value to affect accuracy by
-@export var recoil_vertical: float
+## How much recoil this gun has when firing
+@export var recoil: float
 
 ## Speed of the bullet after coming out of the gun
 @export var muzzle_velocity: float = 0.0
 
-@onready var muzzle: Node
+@onready var bullet: Bullet
+@onready var muzzle = $muzzle
 
 
 func ready():
-	pass
+	print(muzzle)
 
 func _physics_process(delta):
 	if is_held: self.primary_action(delta)
@@ -34,5 +32,11 @@ func secondary_action(triangle):
 		print("Secondary Action")
 
 func shoot():
+	bullet = load(ammo).instantiate()
+	bullet = bullet.duplicate()
+	
+	get_parent().add_child(bullet)
+	bullet.global_position = muzzle.global_position
+	
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("shoot")

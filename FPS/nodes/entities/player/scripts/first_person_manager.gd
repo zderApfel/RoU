@@ -10,6 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
 	var x = $Camera3D/hold_slot.get_children()
 	var item
 	
@@ -18,25 +19,13 @@ func _physics_process(delta):
 		recoil(item, self, delta)
 
 func recoil(item, camera, triangle):
-	var coin = RNG.coinflip()
-	var x_value: float = item.recoil_vertical ## VERTICAL
-	var y_value: float = item.recoil_horizontal ## HORIZONTAL
-	var old_rotation: Vector3 = camera.rotation
-	var new_rotation: Vector3
-	
-	x_value = item.recoil_vertical + camera.rotation.x
-	y_value = item.recoil_horizontal + camera.rotation.y
+	var x_value = $Camera3D.rotation.x + deg_to_rad(item.recoil)
+	gun_shoots.emit(x_value, camera, triangle)
 
-	if coin == true:
-		y_value = y_value *-1
-		print("right")
-	else:
-		print("left")
-	new_rotation = Vector3(x_value,y_value,old_rotation.z)
-	gun_shoots.emit(x_value, y_value, camera, triangle)
+func _on_gun_shoots(x_value, camera, triangle):
+	if x_value < 1.308997 and x_value > -1.396263:
+		
+		$Camera3D.rotation.x = x_value
+		await get_tree().create_timer(.01).timeout
+		$Camera3D.rotation.x -= x_value*.02
 
-
-func _on_gun_shoots(x_value, y_value, camera, triangle):
-	camera.rotation.x = clamp(lerp(camera.rotation.x, x_value, 0.5*triangle), -80, 75)
-	camera.rotation.y = lerp(camera.rotation.y, y_value, 0.5*triangle)
-	
