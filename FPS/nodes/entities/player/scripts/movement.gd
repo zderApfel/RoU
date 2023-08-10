@@ -11,7 +11,6 @@ const BOB_FREQ = 2.2
 @onready var camera = $pivot/Camera3D
 @onready var head = $pivot
 
-
 @onready var jog_speed = 6 + attributes.return_modifier(attributes.Agility)*.2
 @onready var sprint_speed
 @onready var crouch_speed
@@ -40,8 +39,7 @@ func _physics_process(delta):
 func jump(x):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
-	
+
 	if not is_on_floor():
 		velocity.y -= gravity * x
 	
@@ -82,7 +80,3 @@ func sprint():
 		speed = sprint_speed
 	elif Input.is_action_just_released("sprint"):
 		speed = jog_speed
-
-func recoil(min, max):
-	head.rotation += head.rotation*1.01
-

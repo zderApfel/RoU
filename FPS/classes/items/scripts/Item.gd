@@ -6,7 +6,10 @@ class_name Item extends Node3D
 ## Internal reference (Depreciated)
 #@export var uid: String
 
-## If the item is looatable
+## If the item is held, used for stopping it from doing actions when existing in the world
+@export var is_held: bool = false
+
+## If the item is lootable
 @export var is_lootable: bool = true
 
 ## If the item can be physically held by the character
@@ -39,13 +42,13 @@ class_name Item extends Node3D
 @export var first_person_position: Vector3
 
 func _physics_process(delta):
-	primary_action(delta)
-	secondary_action(delta)
+	if self.is_held: primary_action(delta)
+	if self.is_held: secondary_action(delta)
 
 
 func primary_action(triangle):
-	if Input.is_action_just_pressed("action"):
-		print("Primary Action")
+	if Input.is_action_just_pressed("primary_action"):
+		pass
 
 func secondary_action(triangle):
 	if Input.is_action_just_pressed("secondary_action"):
@@ -62,6 +65,7 @@ func when_held(x: bool):
 		$CollisionShape3D.disabled = true
 		self.freeze = true
 		self.is_lootable = false
+		self.is_held = true
 	
 	else:
 		$right_arm.visible = false
@@ -69,6 +73,7 @@ func when_held(x: bool):
 		$CollisionShape3D.disabled = false
 		self.freeze = false
 		self.is_lootable = true
+		self.is_held = false
 
 func dupe_self() -> Item:
 	var x = self.duplicate()
