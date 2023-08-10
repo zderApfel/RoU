@@ -26,7 +26,6 @@ func _ready():
 		unarmed.item.reposition()
 		
 		active_slot = unarmed
-		print(active_slot.item.position)
 
 func _physics_process(delta):
 	inputs()

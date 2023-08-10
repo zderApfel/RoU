@@ -17,7 +17,6 @@ script = ExtResource("1_ne6jp")
 [node name="tree" type="AnimationTree" parent="."]
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(0.485405, -0.643351, -0.592014, 0.808661, 0.587773, 0.0242957, 0.33234, -0.490532, 0.80556, 1.05112, -0.202638, 0.0109913)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_hgnth")]
 
@@ -28,7 +27,6 @@ surface_material_override/0 = ExtResource("3_ntyua")
 surface_material_override/1 = ExtResource("4_au0w0")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(0.357604, 0.760395, 0.54214, -0.912749, 0.407366, 0.0306976, -0.197507, -0.505814, 0.839726, -1.01334, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_hgnth")]
 
