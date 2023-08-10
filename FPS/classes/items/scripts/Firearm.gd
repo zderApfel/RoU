@@ -17,7 +17,7 @@ class_name Firearm extends Item
 
 
 func ready():
-	print(muzzle)
+	pass
 
 func _physics_process(delta):
 	if is_held: self.primary_action(delta)
@@ -34,9 +34,11 @@ func secondary_action(triangle):
 func shoot():
 	bullet = load(ammo).instantiate()
 	bullet = bullet.duplicate()
-	
-	get_parent().add_child(bullet)
-	bullet.global_position = muzzle.global_position
+	bullet.transform = muzzle.global_transform
+
+	Helpers.get_world(self).add_child(bullet)
+	bullet.is_flying = true
+	bullet.muzzle_velocity = muzzle_velocity
 	
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("shoot")
