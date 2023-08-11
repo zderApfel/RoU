@@ -11,6 +11,12 @@ signal fire
 ## How much recoil this gun has when firing
 @export var recoil: float
 
+## Maxmimum ammo in a magazine
+@export var max_ammo: int
+
+## Current ammo in the gun
+@export var current_ammo: int
+
 ## Speed of the bullet after coming out of the gun
 @export var muzzle_velocity: float = 0.0
 
@@ -22,7 +28,9 @@ func ready():
 	pass
 
 func _physics_process(delta):
-	if is_held: self.primary_action(delta)
+	current_ammo = clamp(current_ammo,0,max_ammo)
+	if is_held: 
+		self.primary_action(delta)
 	if is_held: self.secondary_action(delta)
 
 func primary_action(triangle):
@@ -42,6 +50,11 @@ func shoot():
 	Helpers.get_world(self).add_child(bullet)
 	bullet.is_flying = true
 	bullet.muzzle_velocity = muzzle_velocity
+	bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
+	current_ammo -= 1
+	print(current_ammo)
+	print("---")
+	print(max_ammo)
 	
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("shoot")

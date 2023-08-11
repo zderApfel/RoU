@@ -23,18 +23,19 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if is_flying:
-		fly(delta)
+	muzzle_velocity -= muzzle_velocity*0.02
+	muzzle_velocity = clamp(muzzle_velocity, 0, 9999999)
+		
+	fly(delta)
 
 func fly(triangle):
 	velocity = -transform.basis.z * muzzle_velocity
 	transform.origin += velocity * triangle
 	
-	await get_tree().create_timer(20).timeout
-	print("Bullet destroyed by time")
+	await get_tree().create_timer(5).timeout
+	print("BULLET DESTROYED")
 	self.queue_free()
-
 
 func _on_body_entered(body):
-	print("Bullet destroyed by an object")
-	self.queue_free()
+	print("BULLET COLLIDED")
+	velocity = Vector3.ZERO

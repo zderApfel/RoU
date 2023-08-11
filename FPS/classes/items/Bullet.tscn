@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfn8l4rjcbss2"]
+[gd_scene load_steps=4 format=3 uid="uid://cfn8l4rjcbss2"]
 
 [ext_resource type="Script" path="res://classes/items/scripts/Bullet.gd" id="1_aqnj7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kxu3u"]
-radius = 0.0355997
+radius = 0.1
 
-[node name="Bullet" type="Area3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_gy5lc"]
+
+[node name="Bullet" type="RigidBody3D"]
 collision_mask = 31
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_aqnj7")
 type = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_kxu3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_gy5lc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
