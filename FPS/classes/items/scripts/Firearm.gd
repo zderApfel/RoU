@@ -1,5 +1,7 @@
 class_name Firearm extends Item
 
+signal fire
+
 ## The caliber that the gun fires. Non-technical
 @export_enum("N/A", "7.62 SOVIET", "7.62 RIMMED", "5.45 RU", "5.56 NATO", "7.62 NATO", ".300 Blackout", ".22 LR", "9mm LE", ".45acp", "Five Seven", ".44 Magnum", ".50 AE", "12 Gauge") var caliber: int
 
@@ -25,7 +27,7 @@ func _physics_process(delta):
 
 func primary_action(triangle):
 	if Input.is_action_just_pressed("primary_action"):
-		shoot()
+		pass #NOT FOR SHOOTING. First person script handles that
 
 func secondary_action(triangle):
 	if Input.is_action_just_pressed("secondary_action"):
@@ -34,6 +36,7 @@ func secondary_action(triangle):
 func shoot():
 	bullet = load(ammo).instantiate()
 	bullet = bullet.duplicate()
+	
 	bullet.transform = muzzle.global_transform
 
 	Helpers.get_world(self).add_child(bullet)

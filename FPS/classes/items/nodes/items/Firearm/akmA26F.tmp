@@ -1,0 +1,259 @@
+[gd_scene load_steps=17 format=3 uid="uid://5wdqoodxqi73"]
+
+[ext_resource type="Script" path="res://nodes/items/Firearm/scripts/akm.gd" id="1_oyci8"]
+[ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
+[ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_gked0"]
+[ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_twd5q"]
+[ext_resource type="Material" uid="uid://bjhtctcucwlrs" path="res://assets/shader_materials/gun_parts/ak_wood.tres" id="5_ojn5q"]
+[ext_resource type="ArrayMesh" uid="uid://c0eao4walw2a8" path="res://assets/weapons/ak_762/bolt.obj" id="6_jhuq6"]
+[ext_resource type="ArrayMesh" uid="uid://c0tbn8wj8kaoh" path="res://assets/weapons/ak_762/stock.obj" id="7_aj435"]
+[ext_resource type="ArrayMesh" uid="uid://chryw2vdy3b2f" path="res://assets/weapons/ak_762/magazine_762.obj" id="8_lfm7s"]
+[ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="9_y5chg"]
+[ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="10_6304o"]
+[ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="11_drghn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdnx8"]
+size = Vector3(0.242787, 0.651492, 2.70685)
+
+[sub_resource type="Animation" id="Animation_j1wv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0.0174533)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("main_body/bolt:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.201697, 0.00123575, -0.582493)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("main_body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("right_arm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0566547, -0.518436, -1.64182)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("left_arm:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.408289, -0.504158, -0.758264)]
+}
+
+[sub_resource type="Animation" id="Animation_olgqd"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0211359, -3.14159, -1.84804e-09), Vector3(0.0330216, -3.14159, 6.32999e-09), Vector3(-0.0211359, -3.14159, -1.84804e-09)]
+}
+
+[sub_resource type="Animation" id="Animation_axik0"]
+resource_name = "shoot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_body/bolt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 0.028164, 1),
+"update": 0,
+"values": [Vector3(-0.201697, 0.00480939, -0.596397), Vector3(-0.201697, 0.00788355, -0.896972), Vector3(-0.201697, 0.00480939, -0.596397)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("main_body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 0.028164, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(5.67676e-09, -9.90883e-11, -0.0649445), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("right_arm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 0.028164, 1),
+"update": 0,
+"values": [Vector3(-0.0566547, -0.518436, -1.64182), Vector3(-0.0566547, -0.518436, -1.70676), Vector3(-0.0566547, -0.518436, -1.64182)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left_arm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 0.028164, 1),
+"update": 0,
+"values": [Vector3(0.408289, -0.504158, -0.758264), Vector3(0.408289, -0.504158, -0.823209), Vector3(0.408289, -0.504158, -0.758264)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lg2rx"]
+_data = {
+"RESET": SubResource("Animation_j1wv5"),
+"idle": SubResource("Animation_olgqd"),
+"shoot": SubResource("Animation_axik0")
+}
+
+[node name="item" type="RigidBody3D"]
+transform = Transform3D(-0.999848, 0.0174524, 2.53518e-06, 0.0174524, 0.999848, 0, -2.5348e-06, 4.4245e-08, -1, 0, 0, 0)
+collision_layer = 14
+collision_mask = 14
+mass = 3.0
+script = ExtResource("1_oyci8")
+caliber = 1
+ammo = "uid://dsqw8maitle3i"
+accuracy_min = null
+accuracy_max = null
+muzzle_velocity = 715.0
+display_name = "AKM"
+uid = "uid://5wdqoodxqi73"
+is_lootable = null
+is_holdable = true
+is_stackable = null
+legal = false
+type = 2
+rarity = 3
+amount = null
+max_stack = null
+bulk = null
+hands = 1
+first_person_position = Vector3(0.44, -0.38, -1.635)
+
+[node name="main_body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, -9.31323e-10, 7.10543e-15, 9.31322e-10, 0.75, -1.11022e-16, 5.68434e-14, -5.55112e-16, 0.75, 0, 0, 0)
+mesh = ExtResource("2_svnv3")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_gked0")
+
+[node name="furniture" type="MeshInstance3D" parent="main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09892, -0.198964, -0.598529)
+mesh = ExtResource("4_twd5q")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_ojn5q")
+
+[node name="aux_slot" type="Node3D" parent="main_body/furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107473, 0.249536, 0.641284)
+
+[node name="sight_slot" type="Node3D" parent="main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276418, 0.302626, -1.054)
+
+[node name="muzzle_slot" type="Marker3D" parent="main_body"]
+transform = Transform3D(1, 1.86253e-09, 0, -1.86276e-09, 1, 0, 0, -3.55271e-15, 1, -0.0470385, 0.0486072, 1.30323)
+
+[node name="muzzle" type="Marker3D" parent="main_body/muzzle_slot"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0)
+
+[node name="stock_slot" type="Node3D" parent="main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0486564, 0.00561957, -1.4021)
+
+[node name="stock" type="MeshInstance3D" parent="main_body/stock_slot"]
+transform = Transform3D(0.838, 0, 0, 0, 0.954, 0, 0, 0, 1, -0.0440881, -0.104854, -0.456954)
+mesh = ExtResource("7_aj435")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_ojn5q")
+
+[node name="bolt" type="MeshInstance3D" parent="main_body"]
+transform = Transform3D(0.999963, -0.00848221, -6.77232e-10, 0.00848221, 0.999963, 7.63684e-08, 2.91109e-11, -8.56816e-08, 0.999999, -0.201697, 0.00123575, -0.582493)
+mesh = ExtResource("6_jhuq6")
+skeleton = NodePath("")
+
+[node name="magazine" type="MeshInstance3D" parent="main_body"]
+transform = Transform3D(1, -1.51461e-28, 0, 0, 1, -7.10543e-15, 0, 7.10543e-15, 1, -0.0939827, -0.426727, -0.503454)
+mesh = ExtResource("8_lfm7s")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_gked0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0327795, -0.0860461, -0.379131)
+shape = SubResource("BoxShape3D_sdnx8")
+
+[node name="right_arm" type="Node3D" parent="."]
+transform = Transform3D(1, 8.3289e-08, -5.686e-08, -8.19564e-08, 0.33086, -0.943678, -5.97865e-08, 0.943679, 0.33086, -0.0566547, -0.518436, -1.64182)
+
+[node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]
+
+[node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, -5.96046e-08, -5.96046e-08, 1, -2.98023e-08, -2.98023e-08, 1.78814e-07, 1, 0, 0, 0)
+cast_shadow = 0
+surface_material_override/0 = ExtResource("10_6304o")
+surface_material_override/1 = ExtResource("11_drghn")
+
+[node name="left_arm" type="Node3D" parent="."]
+transform = Transform3D(0.900981, -0.411573, 0.137262, 0.315321, 0.403872, -0.858754, 0.298005, 0.817001, 0.49366, 0.408289, -0.504158, -0.758264)
+
+[node name="arm" parent="left_arm" instance=ExtResource("9_y5chg")]
+
+[node name="hand" parent="left_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, 4.65886e-09, 2.98023e-08, 1, 2.75609e-08, 1.34279e-08, 2.33419e-08, 1, 0, 0, 0)
+layers = 524289
+cast_shadow = 0
+surface_material_override/0 = ExtResource("10_6304o")
+surface_material_override/1 = ExtResource("11_drghn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lg2rx")
+}
+
+[editable path="right_arm/arm"]
+[editable path="left_arm/arm"]

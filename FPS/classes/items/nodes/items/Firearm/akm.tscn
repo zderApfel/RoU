@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://5wdqoodxqi73"]
 
-[ext_resource type="Script" path="res://nodes/items/Firearm/scripts/akm.gd" id="1_oyci8"]
+[ext_resource type="Script" path="res://classes/items/nodes/items/Firearm/scripts/akm.gd" id="1_oyci8"]
 [ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
 [ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_gked0"]
 [ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_twd5q"]
@@ -132,8 +132,8 @@ collision_mask = 14
 mass = 3.0
 script = ExtResource("1_oyci8")
 caliber = 1
-ammo = "uid://8j8q5x1p4f2w"
-recoil = 5.0
+ammo = "uid://356us8s223ep"
+recoil = 4.2
 muzzle_velocity = 715.0
 display_name = "AKM"
 is_holdable = true
@@ -205,7 +205,7 @@ surface_material_override/0 = ExtResource("10_6304o")
 surface_material_override/1 = ExtResource("11_drghn")
 
 [node name="muzzle" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172398, 0.253445, -2.02445)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172398, 0.0375813, -2.10709)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

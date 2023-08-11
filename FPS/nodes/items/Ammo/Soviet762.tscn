@@ -1,28 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://chmk3jvu4r2ax"]
+[gd_scene load_steps=2 format=3 uid="uid://8j8q5x1p4f2w"]
 
-[ext_resource type="Script" path="res://classes/items/scripts/Bullet.gd" id="1_u87il"]
+[ext_resource type="PackedScene" uid="uid://cfn8l4rjcbss2" path="res://classes/items/Bullet.tscn" id="1_ie2hc"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_a40t0"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apb8j"]
-
-[node name="Soviet762" type="RigidBody3D"]
-mass = 0.01
-script = ExtResource("1_u87il")
-display_name = "7.62 SOVIET"
-is_holdable = true
-is_stackable = true
-type = 3
-
-[node name="Hitbox" type="Area3D" parent="."]
-collision_layer = 30
-collision_mask = 30
-input_ray_pickable = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Hitbox"]
-mesh = SubResource("CapsuleMesh_a40t0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-shape = SubResource("CapsuleShape3D_apb8j")
-
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered" flags=18]
+[node name="Bullet" instance=ExtResource("1_ie2hc")]

@@ -1,25 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfn8l4rjcbss2"]
+[gd_scene load_steps=3 format=3 uid="uid://cfn8l4rjcbss2"]
 
 [ext_resource type="Script" path="res://classes/items/scripts/Bullet.gd" id="1_aqnj7"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_a40t0"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_kxu3u"]
+radius = 0.0355997
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apb8j"]
-
-[node name="Bullet" type="RigidBody3D"]
+[node name="Bullet" type="Area3D"]
+collision_mask = 31
 script = ExtResource("1_aqnj7")
 type = 3
 
-[node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0034906, -0.999994, 0, 0.999994, -0.0034906, 0, 0, 0)
-collision_layer = 30
-collision_mask = 30
-input_ray_pickable = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_kxu3u")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Hitbox"]
-mesh = SubResource("CapsuleMesh_a40t0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-shape = SubResource("CapsuleShape3D_apb8j")
-
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

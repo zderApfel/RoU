@@ -29,7 +29,12 @@ func _physics_process(delta):
 func fly(triangle):
 	velocity = -transform.basis.z * muzzle_velocity
 	transform.origin += velocity * triangle
+	
+	await get_tree().create_timer(20).timeout
+	print("Bullet destroyed by time")
+	self.queue_free()
 
-func _on_hitbox_body_entered(body):
-	print("Bullet destroyed")
+
+func _on_body_entered(body):
+	print("Bullet destroyed by an object")
 	self.queue_free()
