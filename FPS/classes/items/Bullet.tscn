@@ -19,6 +19,7 @@ shape = SubResource("SphereShape3D_kxu3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_gy5lc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
