@@ -63,14 +63,15 @@ func when_held(x: bool):
 			$left_arm.visible = true
 			
 		$CollisionShape3D.disabled = true
+		#$AnimationTree.active = true
 		self.freeze = true
 		self.is_lootable = false
 		self.is_held = true
-	
 	else:
 		$right_arm.visible = false
 		$left_arm.visible = false
 		$CollisionShape3D.disabled = false
+		#$AnimationTree.active = false
 		self.freeze = false
 		self.is_lootable = true
 		self.is_held = false

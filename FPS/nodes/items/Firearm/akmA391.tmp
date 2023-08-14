@@ -1,6 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://ec1b5pfjnrs8"]
+[gd_scene load_steps=31 format=3 uid="uid://5wdqoodxqi73"]
 
-[ext_resource type="Script" path="res://classes/items/scripts/Firearm.gd" id="1_q173y"]
+[ext_resource type="Script" path="res://nodes/items/Firearm/scripts/akm.gd" id="1_oyci8"]
+[ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
+[ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_gked0"]
+[ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_twd5q"]
+[ext_resource type="Material" uid="uid://bjhtctcucwlrs" path="res://assets/shader_materials/gun_parts/ak_wood.tres" id="5_ojn5q"]
+[ext_resource type="ArrayMesh" uid="uid://c0eao4walw2a8" path="res://assets/weapons/ak_762/bolt.obj" id="6_jhuq6"]
+[ext_resource type="ArrayMesh" uid="uid://c0tbn8wj8kaoh" path="res://assets/weapons/ak_762/stock.obj" id="7_aj435"]
+[ext_resource type="ArrayMesh" uid="uid://chryw2vdy3b2f" path="res://assets/weapons/ak_762/magazine_762.obj" id="8_lfm7s"]
+[ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="9_y5chg"]
+[ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="10_6304o"]
+[ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="11_drghn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdnx8"]
+size = Vector3(0.218334, 0.63516, 2.52476)
 
 [sub_resource type="Animation" id="Animation_4kl5d"]
 resource_name = "RESET"
@@ -149,6 +162,78 @@ tracks/11/keys = {
 "update": 1,
 "values": [31]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnimationTree:parameters/conditions/shooting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnimationTree:parameters/conditions/reloading")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("AnimationTree:parameters/conditions/empty_reload")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AnimationTree:parameters/conditions/shoot_to_idle")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("AnimationTree:parameters/conditions/reload_to_idle")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("AnimationTree:parameters/conditions/reload_to_idle_2")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_a2ijg"]
 resource_name = "idle"
@@ -266,6 +351,30 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 31]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationTree:parameters/conditions/reloading")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationTree:parameters/conditions/reload_to_idle")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_gcpho"]
@@ -391,6 +500,30 @@ tracks/9/keys = {
 "update": 1,
 "values": [30]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationTree:parameters/conditions/empty_reload")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnimationTree:parameters/conditions/reload_to_idle_2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_b2021"]
 resource_name = "shoot"
@@ -406,6 +539,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.707106, 0.297301, 0.870552),
 "update": 0,
 "values": [Vector3(0.174533, 0.0314159, 0), Vector3(-0.0872665, -0.0314159, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationTree:parameters/conditions/shooting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationTree:parameters/conditions/shoot_to_idle")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3t572"]
@@ -438,13 +595,25 @@ advance_condition = &"reloading"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ipanx"]
 advance_mode = 2
-advance_condition = &"reloading_empty"
+advance_condition = &"empty_reload"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kirpj"]
 advance_mode = 2
 advance_condition = &"shooting"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_le1gj"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kew7a"]
+advance_mode = 2
+advance_condition = &"reload_to_idle_2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wwnim"]
+advance_mode = 2
+advance_condition = &"shoot_to_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ct817"]
+advance_mode = 2
+advance_condition = &"reload_to_idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kok8o"]
 states/idle/node = SubResource("AnimationNodeAnimation_cs333")
 states/idle/position = Vector2(361, 100)
 states/reload/node = SubResource("AnimationNodeAnimation_2nk2d")
@@ -453,17 +622,93 @@ states/reload_empty/node = SubResource("AnimationNodeAnimation_3gqrv")
 states/reload_empty/position = Vector2(611, 235)
 states/shoot/node = SubResource("AnimationNodeAnimation_vq7v8")
 states/shoot/position = Vector2(611, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kldhg"), "idle", "reload", SubResource("AnimationNodeStateMachineTransition_vuaej"), "idle", "reload_empty", SubResource("AnimationNodeStateMachineTransition_ipanx"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_kirpj")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kldhg"), "idle", "reload", SubResource("AnimationNodeStateMachineTransition_vuaej"), "idle", "reload_empty", SubResource("AnimationNodeStateMachineTransition_ipanx"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_kirpj"), "reload_empty", "idle", SubResource("AnimationNodeStateMachineTransition_kew7a"), "shoot", "idle", SubResource("AnimationNodeStateMachineTransition_wwnim"), "reload", "idle", SubResource("AnimationNodeStateMachineTransition_ct817")]
 graph_offset = Vector2(0, -84.216)
 
 [node name="item" type="RigidBody3D"]
-collision_layer = 30
-collision_mask = 30
-script = ExtResource("1_q173y")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0317551)
+collision_layer = 14
+collision_mask = 14
+mass = 3.0
+script = ExtResource("1_oyci8")
+caliber = 1
+is_automatic = true
+ammo = "uid://8j8q5x1p4f2w"
+recoil = 5.0
+max_ammo = 31
+current_ammo = 30
+muzzle_velocity = 715.0
+display_name = "AKM"
 is_holdable = true
-current_ammo = 31
+legal = false
+type = 2
+rarity = 3
+hands = 1
+first_person_position = Vector3(0.395, -0.455, -0.595)
+
+[node name="main_body" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.750001, 1.14095e-11, -1.90115e-06, 2.97979e-08, 0.749908, -0.0117506, 1.90092e-06, -0.0117507, -0.749907, 0.127186, 0, -1.11426)
+mesh = ExtResource("2_svnv3")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_gked0")
+
+[node name="furniture" type="MeshInstance3D" parent="main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09892, -0.198964, -0.598529)
+mesh = ExtResource("4_twd5q")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_ojn5q")
+
+[node name="stock_slot" type="Marker3D" parent="main_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0486564, 0.00561957, -1.4021)
+
+[node name="stock" type="MeshInstance3D" parent="main_body/stock_slot"]
+transform = Transform3D(0.838, 0, 0, 0, 0.954, 0, 0, 0, 1, -0.0440881, -0.104854, -0.456954)
+mesh = ExtResource("7_aj435")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_ojn5q")
+
+[node name="bolt" type="MeshInstance3D" parent="main_body"]
+transform = Transform3D(0.999963, -0.00848221, -7.5588e-10, 0.00848221, 0.999963, 8.56783e-08, 2.91108e-11, -8.56816e-08, 0.999999, -0.201697, 0.00123575, -0.582493)
+mesh = ExtResource("6_jhuq6")
+skeleton = NodePath("")
+
+[node name="magazine" type="MeshInstance3D" parent="main_body"]
+transform = Transform3D(1, 2.01948e-28, 2.84217e-14, 0, 1, -7.10543e-15, -2.84217e-14, 7.10543e-15, 1, -0.0939827, -0.426727, -0.503454)
+mesh = ExtResource("8_lfm7s")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_gked0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 1.12152e-13, 2.38419e-07, 1.05471e-13, 1, -1.61559e-27, -2.38419e-07, -9.80465e-21, 1, 0.160855, -0.136959, -0.728701)
+shape = SubResource("BoxShape3D_sdnx8")
+
+[node name="right_arm" type="Node3D" parent="."]
+transform = Transform3D(-1, -2.26114e-06, -8.75483e-07, 4.0774e-08, 0.345334, -0.938476, 2.42437e-06, -0.938477, -0.345334, 0.183841, -0.518436, 0.527565)
+visible = false
+
+[node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]
+
+[node name="hand" parent="right_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 5.96046e-08, 2.98023e-08, -5.96046e-08, 1, -1.78814e-07, -2.98023e-08, 1.78814e-07, 1, 0, 0, 0)
+cast_shadow = 0
+surface_material_override/0 = ExtResource("10_6304o")
+surface_material_override/1 = ExtResource("11_drghn")
+
+[node name="left_arm" type="Node3D" parent="."]
+transform = Transform3D(-0.891776, 0.416479, -0.176865, 0.381221, 0.481006, -0.789496, -0.243736, -0.771477, -0.58772, -0.281103, -0.605588, -0.435742)
+visible = false
+
+[node name="arm" parent="left_arm" instance=ExtResource("9_y5chg")]
+
+[node name="hand" parent="left_arm/arm/arm2/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.98023e-08, 4.65886e-09, 2.98023e-08, 1, 2.75609e-08, 1.34279e-08, 2.33419e-08, 1, 0, 0, 0)
+layers = 524289
+cast_shadow = 0
+surface_material_override/0 = ExtResource("10_6304o")
+surface_material_override/1 = ExtResource("11_drghn")
+
+[node name="muzzle" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172398, 0.253445, -2.02445)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -472,9 +717,14 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_le1gj")
+tree_root = SubResource("AnimationNodeStateMachine_kok8o")
 anim_player = NodePath("../AnimationPlayer")
-active = true
+parameters/conditions/empty_reload = false
+parameters/conditions/reload_to_idle = false
+parameters/conditions/reload_to_idle_2 = false
 parameters/conditions/reloading = false
-parameters/conditions/reloading_empty = false
+parameters/conditions/shoot_to_idle = false
 parameters/conditions/shooting = false
+
+[editable path="right_arm/arm"]
+[editable path="left_arm/arm"]
