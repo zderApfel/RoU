@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ec1b5pfjnrs8"]
+[gd_scene load_steps=8 format=3 uid="uid://ec1b5pfjnrs8"]
 
 [ext_resource type="Script" path="res://classes/items/scripts/Firearm.gd" id="1_q173y"]
 
@@ -164,19 +164,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.0234572, -3.14159, 5.94792e-08), Vector3(-0.0143815, -3.14159, -3.64359e-08), Vector3(0.0234572, -3.14159, 5.94792e-08)]
+"values": [Vector3(0, -3.14159, 0), Vector3(-0.0226893, -3.14159, 0), Vector3(0, -3.14159, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("right_arm:rotation")
+tracks/1/path = NodePath("main_body:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1.22599, -3.14159, 1.75917e-07), Vector3(1.18815, -3.14159, -1.05097e-07), Vector3(1.22599, -3.14159, 1.75917e-07)]
+"values": [Vector3(0.127186, 0, -1.11426), Vector3(0.127186, 0.0169972, -1.07853), Vector3(0.127186, 0, -1.11426)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -188,7 +188,43 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.917455, -2.84649, 0.673741), Vector3(0.881176, -2.86004, 0.656448), Vector3(0.917455, -2.84649, 0.673741)]
+"values": [Vector3(0.894982, -2.85508, 0.662836), Vector3(0.873763, -2.8626, 0.653109), Vector3(0.894982, -2.85508, 0.662836)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left_arm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.281103, -0.605588, -0.435742), Vector3(-0.281103, -0.603434, -0.413559), Vector3(-0.281103, -0.605588, -0.435742)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("right_arm:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.183841, -0.518436, 0.527565), Vector3(0.183841, -0.537587, 0.551438), Vector3(0.183841, -0.518436, 0.527565)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("right_arm:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.20253, -3.14159, 0), Vector3(1.18043, -3.14159, -1.47199e-07), Vector3(1.20253, -3.14159, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hvq2u"]
@@ -266,6 +302,54 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 31]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("main_body:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.127186, 0, -1.11426)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("main_body:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("right_arm:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.20253, -3.14159, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("right_arm:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.183841, -0.518436, 0.527565)]
 }
 
 [sub_resource type="Animation" id="Animation_gcpho"]
@@ -391,6 +475,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [30]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("main_body:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_b2021"]
 resource_name = "shoot"
@@ -398,14 +494,88 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("main_body:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(0.707106, 0.297301, 0.870552),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.174533, 0.0314159, 0), Vector3(-0.0872665, -0.0314159, 0), Vector3(0, 0, 0)]
+"values": [Vector3(-0.121231, -3.06117, -3.08856e-07), Vector3(0.0819154, -3.10132, 0.00573462), Vector3(0, -3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("main_body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0687661, 0.0907861, -0.889386), Vector3(0.097976, -0.0657078, -1.10388), Vector3(0.127186, 0, -1.11426)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("right_arm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.0813, -3.06117, -6.52065e-07), Vector3(1.28439, -3.08238, 0.0202324), Vector3(1.20253, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("right_arm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.251134, -0.622397, 0.668075), Vector3(0.217488, -0.447854, 0.567063), Vector3(0.183841, -0.518436, 0.527565)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("left_arm:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.289976, -0.592413, -0.258224), Vector3(-0.28554, -0.610463, -0.36408), Vector3(-0.281103, -0.605588, -0.435742)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("left_arm:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.778072, -2.81035, 0.614834), Vector3(0.971138, -2.77234, 0.715485), Vector3(0.894982, -2.85508, 0.662836)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_idle"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3t572"]
@@ -417,51 +587,12 @@ _data = {
 "shoot": SubResource("Animation_b2021")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cs333"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2nk2d"]
-animation = &"reload"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3gqrv"]
-animation = &"reload_empty"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vq7v8"]
-animation = &"shoot"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kldhg"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vuaej"]
-advance_mode = 2
-advance_condition = &"reloading"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ipanx"]
-advance_mode = 2
-advance_condition = &"reloading_empty"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kirpj"]
-advance_mode = 2
-advance_condition = &"shooting"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_le1gj"]
-states/idle/node = SubResource("AnimationNodeAnimation_cs333")
-states/idle/position = Vector2(361, 100)
-states/reload/node = SubResource("AnimationNodeAnimation_2nk2d")
-states/reload/position = Vector2(611, -43)
-states/reload_empty/node = SubResource("AnimationNodeAnimation_3gqrv")
-states/reload_empty/position = Vector2(611, 235)
-states/shoot/node = SubResource("AnimationNodeAnimation_vq7v8")
-states/shoot/position = Vector2(611, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kldhg"), "idle", "reload", SubResource("AnimationNodeStateMachineTransition_vuaej"), "idle", "reload_empty", SubResource("AnimationNodeStateMachineTransition_ipanx"), "idle", "shoot", SubResource("AnimationNodeStateMachineTransition_kirpj")]
-graph_offset = Vector2(0, -84.216)
-
 [node name="item" type="RigidBody3D"]
 collision_layer = 30
 collision_mask = 30
 script = ExtResource("1_q173y")
-is_holdable = true
 current_ammo = 31
+is_holdable = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 
@@ -470,11 +601,3 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_3t572")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_le1gj")
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/conditions/reloading = false
-parameters/conditions/reloading_empty = false
-parameters/conditions/shooting = false

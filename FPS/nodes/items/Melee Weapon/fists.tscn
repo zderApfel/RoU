@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://yp3kbmhj4ipg"]
+[gd_scene load_steps=9 format=3 uid="uid://yp3kbmhj4ipg"]
 
 [ext_resource type="Script" path="res://nodes/items/Melee Weapon/scripts/fists.gd" id="1_7sajw"]
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_vjey0"]
@@ -70,17 +70,6 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bdk0"]
 size = Vector3(2.545, 1, 0.435)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8dtjq"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jpr3e"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3b07t"]
-states/idle/node = SubResource("AnimationNodeAnimation_8dtjq")
-states/idle/position = Vector2(392, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_jpr3e")]
-
 [node name="item" type="RigidBody3D"]
 rotation_edit_mode = 2
 script = ExtResource("1_7sajw")
@@ -124,10 +113,6 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0944496, -0.179488)
 shape = SubResource("BoxShape3D_2bdk0")
 disabled = true
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_3b07t")
-anim_player = NodePath("../AnimationPlayer")
 
 [editable path="right_arm/arm"]
 [editable path="left_arm/arm"]

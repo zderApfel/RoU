@@ -63,7 +63,7 @@ func when_held(x: bool):
 			$left_arm.visible = true
 			
 		$CollisionShape3D.disabled = true
-		#$AnimationTree.active = true
+		to_idle()
 		self.freeze = true
 		self.is_lootable = false
 		self.is_held = true
@@ -71,7 +71,7 @@ func when_held(x: bool):
 		$right_arm.visible = false
 		$left_arm.visible = false
 		$CollisionShape3D.disabled = false
-		#$AnimationTree.active = false
+		$AnimationPlayer.play("RESET")
 		self.freeze = false
 		self.is_lootable = true
 		self.is_held = false
@@ -83,3 +83,6 @@ func dupe_self() -> Item:
 func reposition():
 	self.rotation = Vector3.ZERO
 	self.position = self.first_person_position
+
+func to_idle():
+	$AnimationPlayer.play("idle")

@@ -37,7 +37,7 @@ func _physics_process(delta):
 
 func primary_action(triangle) -> void:
 	if Input.is_action_just_pressed("primary_action") and current_ammo > 0:
-		$AnimationPlayer.stop()
+		$AnimationPlayer.play("RESET")
 		$AnimationPlayer.play("shoot")
 		shoot()
 
@@ -48,11 +48,14 @@ func secondary_action(triangle) -> void:
 func reload() -> void:
 	if Input.is_action_just_pressed("reload") and current_ammo != max_ammo:
 		if current_ammo == 0:
-			$AnimationPlayer.stop()
 			$AnimationPlayer.play("reload_empty")
+			await $AnimationPlayer.animation_finished
+			to_idle()
 		else:
-			$AnimationPlayer.stop()
 			$AnimationPlayer.play("reload")
+			await $AnimationPlayer.animation_finished
+			to_idle()
+			
 		print("Reloading weapon...")
 
 func shoot() -> void:
