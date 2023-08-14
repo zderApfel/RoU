@@ -411,14 +411,74 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("main_body:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(0.707106, 0.297301, 0.870552),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.174533, 0.0314159, 0), Vector3(-0.0872665, -0.0314159, 0), Vector3(0, 0, 0)]
+"values": [Vector3(-0.121231, -3.06117, -3.08856e-07), Vector3(0.0819154, -3.10132, 0.00573462), Vector3(0, -3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("main_body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0687661, 0.0907861, -0.889386), Vector3(0.097976, -0.0657078, -1.10388), Vector3(0.127186, 0, -1.11426)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("right_arm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.0813, -3.06117, -6.52065e-07), Vector3(1.28439, -3.08238, 0.0202324), Vector3(1.20253, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("right_arm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.251134, -0.622397, 0.668075), Vector3(0.217488, -0.447854, 0.567063), Vector3(0.183841, -0.518436, 0.527565)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("left_arm:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.289976, -0.592413, -0.258224), Vector3(-0.28554, -0.610463, -0.36408), Vector3(-0.281103, -0.605588, -0.435742)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("left_arm:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.778072, -2.81035, 0.614834), Vector3(0.971138, -2.77234, 0.715485), Vector3(0.894982, -2.85508, 0.662836)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3t572"]
@@ -480,7 +540,7 @@ is_automatic = true
 ammo = "uid://8j8q5x1p4f2w"
 recoil = 5.0
 max_ammo = 31
-current_ammo = 30
+current_ammo = 31
 muzzle_velocity = 715.0
 display_name = "AKM"
 is_holdable = true
@@ -491,7 +551,7 @@ hands = 1
 first_person_position = Vector3(0.395, -0.455, -0.595)
 
 [node name="main_body" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.750001, 1.14095e-11, -1.90115e-06, 2.97979e-08, 0.749908, -0.0117506, 1.90092e-06, -0.0117507, -0.749907, 0.127186, 0, -1.11426)
+transform = Transform3D(-0.750001, 0, -1.90138e-06, 0, 0.75, 0, 1.90139e-06, 0, -0.749999, 0.127186, 0, -1.11426)
 mesh = ExtResource("2_svnv3")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_gked0")
@@ -527,8 +587,7 @@ transform = Transform3D(1, 1.12152e-13, 2.38419e-07, 1.05471e-13, 1, -1.61559e-2
 shape = SubResource("BoxShape3D_sdnx8")
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(-1, -2.3652e-06, -9.12658e-07, 0, 0.359998, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
-visible = false
+transform = Transform3D(-1, -2.3652e-06, -9.12659e-07, 0, 0.359997, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
 
 [node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]
 
@@ -540,7 +599,6 @@ surface_material_override/1 = ExtResource("11_drghn")
 
 [node name="left_arm" type="Node3D" parent="."]
 transform = Transform3D(-0.891798, 0.416468, -0.176781, 0.384925, 0.493076, -0.780198, -0.237761, -0.763825, -0.600033, -0.281103, -0.605588, -0.435742)
-visible = false
 
 [node name="arm" parent="left_arm" instance=ExtResource("9_y5chg")]
 
@@ -564,10 +622,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_kok8o")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/empty_reload = false
-parameters/conditions/reload_to_idle = true
-parameters/conditions/reload_to_idle_2 = true
 parameters/conditions/reloading = false
-parameters/conditions/shoot_to_idle = true
 parameters/conditions/shooting = false
 
 [editable path="right_arm/arm"]
