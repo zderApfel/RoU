@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://classes/entities/scripts/Human.gd" id="1_5yrts"]
 [ext_resource type="PackedScene" uid="uid://biw6mcbuv5elg" path="res://assets/entities/human_01.gltf" id="4_n2tbu"]
-[ext_resource type="Script" path="res://classes/entities/scripts/ragdoll.gd" id="5_0ck81"]
+[ext_resource type="Script" path="res://classes/technical/scripts/ragdoll.gd" id="5_0ck81"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xw07n"]
 size = Vector3(0.498143, 0.766833, 0.281407)

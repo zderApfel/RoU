@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkkmap1sn41c8"]
 
-[ext_resource type="Script" path="res://classes/entities/scripts/Attributes.gd" id="1_317or"]
+[ext_resource type="Script" path="res://classes/technical/scripts/Attributes.gd" id="1_317or"]
 
 [node name="Attributes" type="Node"]
 script = ExtResource("1_317or")

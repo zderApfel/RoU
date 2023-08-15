@@ -4,3 +4,4 @@
 
 [node name="Tool" type="Node3D"]
 script = ExtResource("1_p0fnb")
+is_holdable = true

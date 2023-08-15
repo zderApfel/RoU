@@ -46,6 +46,7 @@ func secondary_action(triangle) -> void:
 
 func reload() -> void:
 	if Input.is_action_just_pressed("reload") and current_ammo != max_ammo:
+		print("Reloading weapon...")
 		if current_ammo == 0:
 			$AnimationPlayer.play("reload_empty")
 			await $AnimationPlayer.animation_finished
@@ -55,7 +56,6 @@ func reload() -> void:
 			await $AnimationPlayer.animation_finished
 			to_idle()
 			
-		print("Reloading weapon...")
 
 func shoot() -> void:
 	bullet = load(ammo).instantiate()

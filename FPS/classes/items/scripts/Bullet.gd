@@ -33,9 +33,10 @@ func fly(triangle):
 	transform.origin += velocity * triangle
 	
 	await get_tree().create_timer(5).timeout
-	print("BULLET DESTROYED")
 	self.queue_free()
 
 func _on_body_entered(body):
 	print("BULLET COLLIDED")
+	print(body)
+	
 	velocity = Vector3.ZERO

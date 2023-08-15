@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://5wdqoodxqi73"]
 
-[ext_resource type="Script" path="res://nodes/items/Firearm/scripts/akm.gd" id="1_oyci8"]
+[ext_resource type="Script" path="res://classes/items/scripts/Firearm.gd" id="1_n7p8w"]
 [ext_resource type="ArrayMesh" uid="uid://dpdtw6ddaa55g" path="res://assets/weapons/ak_762/main_body.obj" id="2_svnv3"]
 [ext_resource type="Material" uid="uid://ccqn3khgwhrke" path="res://assets/shader_materials/gun_parts/dark_gunmetal.tres" id="3_gked0"]
 [ext_resource type="ArrayMesh" uid="uid://bxjhgcq4togj0" path="res://assets/weapons/ak_762/furniture.obj" id="4_twd5q"]
@@ -604,28 +604,24 @@ _data = {
 }
 
 [node name="item" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0317551)
 collision_layer = 14
 collision_mask = 14
 mass = 3.0
-script = ExtResource("1_oyci8")
+script = ExtResource("1_n7p8w")
 caliber = 1
 is_automatic = true
 ammo = "uid://8j8q5x1p4f2w"
 recoil = 5.0
 max_ammo = 31
-current_ammo = 31
 muzzle_velocity = 715.0
 display_name = "AKM"
 is_holdable = true
-legal = false
 type = 2
-rarity = 3
 hands = 1
-first_person_position = Vector3(0.395, -0.455, -0.595)
+first_person_position = Vector3(0.335, -0.4, -0.485)
 
 [node name="main_body" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.747577, 0.00728629, -0.0598096, -2.29942e-07, 0.744495, 0.0907006, 0.060252, 0.0904076, -0.742088, 0.0687661, 0.0907861, -0.889386)
+transform = Transform3D(-0.750001, 0, -1.90138e-06, 0, 0.75, 0, 1.90139e-06, 0, -0.749999, 0.127186, 0, -1.11426)
 mesh = ExtResource("2_svnv3")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_gked0")
@@ -661,7 +657,7 @@ transform = Transform3D(1, 1.12152e-13, 2.38419e-07, 1.05471e-13, 1, -1.61559e-2
 shape = SubResource("BoxShape3D_sdnx8")
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(-0.996768, -0.0709025, -0.0377723, -3.06589e-07, 0.47018, -0.882567, 0.0803365, -0.879715, -0.46866, 0.251134, -0.622397, 0.668075)
+transform = Transform3D(-1, -2.3652e-06, -9.12659e-07, 0, 0.359998, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
 visible = false
 
 [node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]
@@ -673,7 +669,7 @@ surface_material_override/0 = ExtResource("10_6304o")
 surface_material_override/1 = ExtResource("11_drghn")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(-0.904137, 0.358996, -0.231643, 0.410853, 0.581829, -0.701907, -0.117206, -0.729791, -0.673548, -0.289976, -0.592413, -0.258224)
+transform = Transform3D(-0.891798, 0.416468, -0.176781, 0.384925, 0.493076, -0.780197, -0.237761, -0.763825, -0.600033, -0.281103, -0.605588, -0.435742)
 visible = false
 
 [node name="arm" parent="left_arm" instance=ExtResource("9_y5chg")]
