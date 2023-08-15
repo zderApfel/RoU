@@ -39,7 +39,6 @@ func primary_action(triangle) -> void:
 	if Input.is_action_just_pressed("primary_action") and current_ammo > 0:
 		$AnimationPlayer.play("RESET")
 		$AnimationPlayer.play("shoot")
-		shoot()
 
 func secondary_action(triangle) -> void:
 	if Input.is_action_just_pressed("secondary_action"):
