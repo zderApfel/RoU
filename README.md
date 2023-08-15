@@ -205,7 +205,7 @@ HP/BP/AP Damage
 
 Damage Types
 
-* Bludgeon, Pierce, Slash, Ballistic, Poison, Caustic, Fire, Explosive, Impulse
+* Bludgeon, Pierce, Slash, Ballistic, Poison, Shock, Fire, Explosive, Impulse
 * Used for handling resistances/immunities
 
 ### Melee Exclusive

@@ -83,6 +83,7 @@ func dupe_self() -> Item:
 func reposition():
 	self.rotation = Vector3.ZERO
 	self.position = self.first_person_position
+	self.scale = Vector3(0.75, 0.75, 0.75)
 
 func to_idle():
 	$AnimationPlayer.play("idle")

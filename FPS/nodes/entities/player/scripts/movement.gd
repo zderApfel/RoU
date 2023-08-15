@@ -72,6 +72,7 @@ func headbob_controller(x):
 	var z = $pivot/Camera3D/hold_slot
 	
 	t_bob += x * velocity.length() * float(is_on_floor())
+	if velocity.y > 0: t_bob += x * velocity.length() * 0.25
 	if z != null:
 		z.transform.origin = _headbob(t_bob)
 	
