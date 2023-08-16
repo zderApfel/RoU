@@ -1,25 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfn8l4rjcbss2"]
+[gd_scene load_steps=5 format=3 uid="uid://cfn8l4rjcbss2"]
 
 [ext_resource type="Script" path="res://classes/items/scripts/Bullet.gd" id="1_aqnj7"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kxu3u"]
-radius = 0.1
+[sub_resource type="CylinderMesh" id="CylinderMesh_sdon1"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_gy5lc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnnpp"]
+albedo_color = Color(0.921569, 0.529412, 0.509804, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hjgs0"]
+height = 0.764163
+radius = 0.109092
 
 [node name="Bullet" type="RigidBody3D"]
-collision_mask = 31
+collision_layer = 270
+collision_mask = 270
+continuous_cd = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_aqnj7")
 type = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_kxu3u")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-visible = false
-mesh = SubResource("SphereMesh_gy5lc")
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_sdon1")
+surface_material_override/0 = SubResource("StandardMaterial3D_tnnpp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_hjgs0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

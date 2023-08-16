@@ -69,7 +69,3 @@ func shoot() -> void:
 	bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
 	
 	current_ammo -= 1
-	
-	print(current_ammo)
-	print("---")
-	print(max_ammo)
