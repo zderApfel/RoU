@@ -4,9 +4,6 @@ class_name BulletVariant extends Bullet
 @export var bp_damage_modifier: float
 @export var ap_damage_modifier: float
 
-## Modifier to the bullet's velocity
-@export var velocity_mod: float
-
 ## Modifier to the gun's accuracy
 @export var recoil_mod: float
 

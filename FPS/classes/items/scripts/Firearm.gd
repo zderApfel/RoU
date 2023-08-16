@@ -6,6 +6,8 @@ class_name Firearm extends Item
 ## If the gun can switch from semi to fully automatic
 @export var is_automatic: bool = false
 
+@export var safety: bool = false
+
 ## The UID for the ammo used by this gun. Used for technical reference
 @export var ammo: String
 
@@ -18,12 +20,8 @@ class_name Firearm extends Item
 ## Current ammo in the gun
 @export var current_ammo: int
 
-## Speed of the bullet after coming out of the gun
-@export var muzzle_velocity: float = 0.0
-
 @onready var bullet: Bullet
-@onready var muzzle = $muzzle
-
+@onready var muzzle = $muzzle/RayCast3D
 
 func ready():
 	pass
@@ -36,9 +34,8 @@ func _physics_process(delta):
 	if is_held: self.reload()
 
 func primary_action(triangle) -> void:
-	if Input.is_action_just_pressed("primary_action") and current_ammo > 0:
-		$AnimationPlayer.play("RESET")
-		$AnimationPlayer.play("shoot")
+	if Input.is_action_just_pressed("primary_action") and current_ammo > 0 and !safety:
+		shoot()
 
 func secondary_action(triangle) -> void:
 	if Input.is_action_just_pressed("secondary_action"):
@@ -61,11 +58,10 @@ func shoot() -> void:
 	bullet = load(ammo).instantiate()
 	bullet = bullet.duplicate()
 	
-	Helpers.get_world(self).add_child(bullet)
+	if muzzle.is_colliding():
+		print("I think I hit something...")
 	
-	bullet.transform = muzzle.global_transform
-	bullet.is_flying = true
-	bullet.muzzle_velocity = muzzle_velocity
-	bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
+	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.play("shoot")
 	
 	current_ammo -= 1
