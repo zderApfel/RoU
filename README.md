@@ -56,7 +56,7 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 * Main character death means GAME OVER and save file deletion
 * Some raids now must be completed within a certain time frame, with consequences for failure
 * Health doesn't regenerate
-* You regain stamina at a slower rate the less health you have
+* You regain stamina and BP at a slower rate the less health you have
 
 ## Starter Classes
 
@@ -64,7 +64,7 @@ At character creation you have a choice to make regarding your starting stats an
 
 ### Veteran
 
-*You're a veteran who fought against the coup of 2035. Your combat skills are still fresh through your rigorous training for a day like this. This is your time to shine*
+*You're a veteran who valiently fought against the coup of 2035. Your combat skills are still fresh through your rigorous training for a day like this. This is your time to shine*
 
 **-Attributes-**
 
@@ -80,7 +80,7 @@ At character creation you have a choice to make regarding your starting stats an
 **-Equipment-**
 
 * Mjolnir-556 + 5 extra magazines
-* M9 + 3 extra magazines
+* M19 + 3 extra magazines
 * Bayonet
 * Lvl. 2 Armor
 
@@ -205,7 +205,7 @@ HP/BP/AP Damage
 
 Damage Types
 
-* Bludgeon, Pierce, Slash, Ballistic, Poison, Shock, Fire, Explosive, Impulse
+* Bludgeon, Pierce, Slash, Poison, Shock, Fire, Explosive, Impulse, Frost
 * Used for handling resistances/immunities
 
 ### Melee Exclusive
@@ -274,11 +274,11 @@ During exploration or a raid, you can either play as yourself, or you can play a
 
 ### Stats
 
-* Hit Points (HP) - Represents your health. When reaching zero, a calculation is made to determine if the mercenary dies or is rendered unconscious. (See [Unconscious](#unconscious))
+* Hit Points (HP) - Represents your health. When it's at zero, you die
 
-* Stamina - Depletes when sprinting, jumping, or melee attacking. Regeneration scales with Health
+* Stamina - Depletes when sprinting, jumping, or melee attacking. Regenerates automatically at a speed dependent on Health stat. In hardcore mode, the regeneration rate is reduced with the amount of HP missing
 
-* Balance Points (BP) - Represents your balance. BP reduces from getting damaged. On reaching zero, you fall to the ground, becoming helpless for a time. Melee attacks have significantly stronger BP damage than bullets do (outside of the high caliber ones), so don't worry about getting cheesed down by a group of gunmen...but also a group of gunmen can kill you fast anyway. BP regenerates quickly after not being damaged for a time.
+* Balance Points (BP) - Represents your mental balance. BP reduces from getting damaged. If this reaches zero before HP does, you are knocked out. (See [Unconscious](#unconscious)). BP regenerates slowly when out of combat. In hardcore mode, the regeneration rate is reduced with the amount of HP missing
 
 * Armor Points (AP) - Represents the health of any worn armor. Armor health is depleted by a large amount when pierced by a bullet. If a bullet is deflected, damage is minimal.
 
@@ -293,12 +293,12 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 #### Shooting
 
-* +2% accuracy
+* -2% recoil
 * +0.5% reload speed
 
 #### Health
 
-* +2% maximum stamina
+* +2% stamina recharge speed
 * +2% BP damage resistance
 
 #### Agility
@@ -325,7 +325,7 @@ In addition, there's a few additional attributes that apply only to NPCs
 
 For any attribute that's at level 20, you can continue training that attribute with a 1% chance (No luck scaling) to gain a legendary attribute. Only one legendary attribute can be acquired per character, and cannot be removed.
 
-* Superhuman Strength (Melee) - You can no longer be handcuffed, you break out of them with ease
+* Hand-to-Hand Expert (Melee) - All attacks can be parried
 
 * Terra Shooter (Shooting) - 20% chance not to consume ammo for MOST guns
 
@@ -341,80 +341,58 @@ For any attribute that's at level 20, you can continue training that attribute w
 
 During an exploration phase where they're not doing anything, you can select a passive activity for a merc to do:
 
-Training - Weightlifting
+* Training - CQC Training (to increase Melee)
 
-* 3% chance to increase Strength/Health + (LUCK - 10) * 0.2
+* Training - Target Practice (to increase Shooting; costs an amount of money to spend on ammunition)
 
-Training - Target Practice
+* Training - Weightlifting (to increase Health)
 
-* 3% chance to increase Shooting + (LUCK - 10) * 0.2
-* Costs an amount of money to spend on ammunition
+* Training - Cardio (to increase Agility)
 
-Training - Cardio
+* Leisure - Club Life (to increase Charisma; chance to decrease Health)
 
-* 3% chance to increase Agility/Health + (LUCK - 10) * 0.2
+* Leisure - Casino (chance to win or lose money; scales with Charisma)
 
-Casino - Charisma
+* Crime - Casino (higher chance to win money, but runs with risk of detainment; scales with Charisma/Agility)
 
-* Chance to win or lose money
-* Chance to win: 40% + (Charisma - 10) * 2 + (LUCK - 10) * 0.2
+* Crime - Armed Robbery (chance to get money; scales with Charisma/Shooting)
 
-Casino - Agility/Charisma
+* Crime - Burglary (chance to steal loot, with risk of detainment or death; scales with agility/shooting)
 
-* Significantly higher chance to win money, but loss means getting [detained](#detained) Scales with Agility/Charisma
-* Chance to win: 100 - gambling_difficulty + (Charisma - 10) * 2 + (LUCK - 10) * 0.2
-* Chance to be caught: 30 + gambling_difficulty + (Agility - 10) * 2 + (LUCK - 10) * 0.2
 
-Theft - Agility 
-
-* Chance to steal some extra items, but with a chance to be detained or killed
-* Has its own loot pool and not all items are possible to be found through theft
-* Chance to succeed: 100 - item_difficulty + (Agility - 10) * 2 + (LUCK - 10) * 0.2
-
-Scout - Agility/Shooting
-
-* Can scout out a raid area for you to provide some basic details
-* Has a chance to result in death
-* Chance to succeed: 100 - raid_difficulty + ((Agility - 10) + (Shooting - 10)) + (LUCK - 10) * 0.2
 
 ### Specializations
 
-Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have special talents that can benefit
+Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have special talents that benefit various aspects of gameplay when controlled
 
 Master Thief:
 
-* Active: Lockpicking is doublerolled, with a 20% chance to not consume a lockpick
-* Passive: Never fails at passive theft but can only bring back half as much loot
+* Lockpicking is doublerolled, with a 20% chance to not consume a lockpick
 * Requires: Agility 14, Charisma 12 
 
 Martial Artist: 
 
-* Active: Your fists block-parry strength is now 3
-* Passive: +0.5% chance for all mercenaries to level up fron training activities (Stackable)
+* Active: Your fists attack 50% faster and do 100% more damage
 * Requires: Agility 16, Strength 14
 
 Heavyweight:
 
 * Active: You resist 50% of BP damage BEFORE all other resistances
-* Passive: None
 * Requires: Strength 16, Health 14
 
 Packrat:
 
 * Active: Doubled pocket inventory space
-* Passive: None
 * Requires: N/A
 
 Infiltrator:
 
 * Active: Doesn't make noise when jogging
-* Passive: Scout/Thief activities are double-rolled, taking the highest
 * Requires: Agility 15
 
 Hacker: 
 
-* Active: Chance to bypass an electronic countermeasure without inputting a passcode (keycads, computers, etc.)
-* Passive: N/A  
+* Active: Chance to bypass an electronic countermeasure without inputting a passcode (keycads, computers, etc.) or having a jammer
 * Requires: N/A
 * Works only once per device
 * Matches the character's lockpicking chance (stacks with master thief)
@@ -422,34 +400,35 @@ Hacker:
 Smooth Criminal:
 
 * Active: Speech checks are double-rolled
-* Passive: A random mercenary has a 3% (+0.5% per) chance to gain a point of Charisma every 24 in-game hours
 * Requires: Charisma 16
 
-## Crime, Security, and Unrest
+## Crime, Security, and Chaos
 
-A super-secret extra attribute exists for each mercenary and the player character called **Crimes**
+**Crime** is any action considered illegal in the Republic of America (For a list of crimes possible to do in the game, check the following sections)
 
-Crimes all have an amount of 
+If a civilian witnesses you commit a crime and succeeds in reporting you to police, your wanted level will be set to a value dependent on the crime reported.
 
-There are three primary classes of crime: misdemeanors, felonies, and affronts
+When your wanted level is above 0, police-type enemies will converge on the area and search for you. After a certain amount of time they will give up, except with a wanted level of 5, which will cause a constant police search for you
+
+**Security** is an area-specific stat that signifies the amount of security in the city. This increases from player actions and will result in more law enforcement being present. Some areas do not have a security stat
+
+[CONFIDENTIAL] **Chaos** happens when, after a time of security being at its maximum, the area splits up into factions and it becomes essentially a war zone. Businesses are closed, and a large majority of civilians are hostile. This state is irreversable for the area. Wanted level doesn't exist in a Chaos area
 
 ### Misdemeanors
 
-Misdemeanors are minor crimes that only increase [wanted level](#wanted_level) to 1. Law enforcement will call backup after a time if they fail to catch you, which will increase your wanted level to 2 points.
+Misdemeanors are minor crimes that only increase [wanted level](#wanted_level) to 1. Law enforcement will call backup after a time if they fail to catch you during a chase, at which will increase your wanted level to 2 points.
 
 ### Felonies
 
-Felonies are major crimes that increase the wanted level to 3-5 points. Law enforcement will call for backup if some of them die, increasing the wanted level up until the max level. Avoiding capture from a felony gives you the outlaw debuff for a time
+Felonies are major crimes that increase the wanted level to 3-5 points. Law enforcement will call for backup if some of them die, increasing the wanted level up until the max level. Avoiding capture from a felony gives you the [outlaw](#outlaw) debuff for a time
 
 ### Affront
 
-Any crime against the State is automatically classified as an affront, these automatically give your character a permanent [Outlaw](#outlaw) debuff
+Any crime against the State is automatically classified as an affront, these automatically give your character a permanent outlaw debuff
 
 Affronts are:
 
 * Murder of a law enforcement officer, military personnel, public official, or prison guard. Claims of self defense are not accepted (LEO/MIL/POF/DOC Murder)
-
-### Wanted Level
 
 ## Buffs/Debuffs
 
@@ -459,10 +438,7 @@ Happens after 8 in game hours. Increases with intensity over time. Can be suppre
 
 ### Poisoning
 
-There's two types of poisoning, inhaled and lingering. 
-
-* Inhaled poisons damage you for an amount per second while in an area contaminated by it.
-* Lingering poisons can have various effects that last until the end of the raid/mission or if an antidote is taken 
+Poisoning can cause various effects, and lasts until you rest or complete a raid
 
 ### Outlaw
 
@@ -478,7 +454,7 @@ A placeholder state for when your mercenary's gone unconscious mid-raid. You'll 
 
 ### Unconscious
 
-Happens when your mercenary's HP reaches zero with blunt damage.
+Happens when your mercenary's BP reaches zero and they are knocked unconscious
 
 What happens after getting knocked out also depends on who got the last hit in, unless law enforcement are in active pursuit of you, in which case the police condition applies.
 
@@ -516,9 +492,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * **Dingdong** | N/A - *This is just a placeholder item*
 
-### TwoHandFirearm
-
-#### Assault Rifles
+### Assault Rifles
 
 * Phantom-9 | [3] 9mm LE
 * ARM-.22 | [2] | .22 LR - Looks like a less advanced and smaller Mjolnir
@@ -535,7 +509,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Honey Badger | [5] | .300 Blackout
 * MPL | [5] | .300 Blackout - A prototype assault rifle based on the Sig Sauer MCX
 
-#### Battle Rifles
+### Battle Rifles
 
 * SKS | [2] | 7.62 SOVIET
 * M14 | [2] | 7.62 NATO
@@ -544,7 +518,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * FAL | [4] | 7.62 NATO
 * M1 Garand | [5] | .30-06
 
-#### Sniper Rifles
+### Sniper Rifles
 
 * Mosin | [2] | 7.62 RIMMED
 * M6 Survivor | [2] | .22 LR - Based on the M4 Survival rifle
@@ -552,7 +526,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * SVM | [4] | 7.62 RIMMED - Moderninzed SVD
 * AWP | [4] | 7.62 NATO
 
-#### Shotguns
+### Shotguns
 
 * DB Shotgun | [1]
 * Wordington-970 | [1]
@@ -563,7 +537,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Striker | [5]
 * L1887A | [5] | Lever-action shotgun as seen in Terminator
 
-#### Submachine Guns
+### Submachine Guns
 
 * Uzi | [2] | 9mm LE
 * A180 | [3] | .22 LR - Based on the American-180 prison-piggie SMG
@@ -574,10 +548,10 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * MP40 | [5] | 9mm LE
 * Thompson | [5] | .45acp
 
-### OneHandFirearm
 
-#### Pistols
+### Pistols
 
+* .44 Western | [2] | .44 Magnum
 * Mk3 Pistol | [2] | .22 LR
 * M19 | [2] | 9mm LE | Modernized M9
 * G84 | [2] | 9mm LE - Modernized Glock
@@ -588,24 +562,43 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Deagle | [4] | .50 AE
 * M1911 | [5] | .45acp
 
-#### Machine Pistols
+### Machine Pistols
 
 * MAC10 | [2] | 9mm LE
-* GA94 | [3] | 9mm LE
+* GA94 | [3] | 9mm LE - Automatic glock
+
+### Unique
+
+Unique firearms don't fit the other categories and typically have their own unique ammo types
+
+* Paintball Gun | [1] | .68 PB - Decent BP damage but miniscule HP damage
+* Composite Bow | [2] | Arrow - Arrows have a chance to slow enemies
+* Crossbow | [2] | Arrow - More range and velocity than a composite bow
+* Riot Shotgun | [3] | 12g Pepperball - Doesn't inflict HP damage
+* Taser | [3] | Shock Cartridge - Small amount of HP damage, extremely large amount of BP damage
+* Frostcore Repeater | [4] | 11mm NITRO - Bullets slow enemies
+* Musket | [5] | .80 LEAD - The classic
 
 ### OneHandMelee
 
 * Kitchen Knife | [1]
-* Crowbar [1]
+* Screwdriver | [1]
+* Crowbar | [1]
     - Works as a tool in some instances
 * Machete | [2]
+* Tonfa | [3]
+    - Illegal
 * Bayonet | [4]
+* Masterful Sword | [5]
 
 ### TwoHandMelee
 
+* Shovel | [1]
 * Baseball Bat | [2]
+* Sledgehammer | [2]
 * Brass Knuckles | [3]
     - Illegal
+* Hammer and Sickle | [4]
 * Katana | [5]
 
 ### Tools
@@ -633,13 +626,20 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 #### Throwables
 
+* Rotten Egg [1]
+    - Chance to poison enemy hit with it
+* Snowball [1]
+* Molotov Cocktail [2]
+    - Illegal
 * Concussion Grenade [3]
     - Stuns enemies in a radius
     - Illegal
 * Frag Grenade [4]
     - Illegal
-* Molotov Cocktail [2]
+* Blizzard Grenade [5]
+    - Chance to freeze enemies in an area, enemies not frozen are slowed instead
     - Illegal
+
 
 #### Stims
 
@@ -661,7 +661,6 @@ There's also a few variants exclusive to shotgun ammo:
 * HP Slug (Green) - A singular projectile with very high HP damage, but barely scratches armor
 * Steel Slug (Yellow) - A singular projectile with higher AP damage but lower HP damage
 * Flechette (White) - Similar to buckshot, but with higher AP damage and less accuracy than buckshot
-* Rubber Slug (Blue) - Fires a non-lethal rubber slug that knocks down targets
 
 
 #### Ammo Stats [CONFIDENTIAL]

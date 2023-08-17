@@ -1,7 +1,7 @@
 class_name Firearm extends Item
 
 ## The caliber that the gun fires. Non-technical
-@export_enum("N/A", "7.62 SOVIET", "7.62 RIMMED", "5.45 RU", "5.56 NATO", "7.62 NATO", ".300 Blackout", ".22 LR", "9mm LE", ".45acp", "Five Seven", ".44 Magnum", ".50 AE", "12 Gauge") var caliber: int
+@export_enum("N/A", "7.62 SOVIET", "7.62 RIMMED", "5.45 RU", "5.56 NATO", "7.62 NATO", ".300 Blackout", ".22 LR", "9mm LE", ".45acp", "Five Seven", ".44 Magnum", ".50 AE", "12 Gauge", ".68 PB", "Arrow", "Pepperball", "Shock Cartridge", "11mm NITRO", ".80 LEAD") var caliber: int
 
 ## If the gun can switch from semi to fully automatic
 @export var is_automatic: bool = false
