@@ -15,7 +15,7 @@ func _physics_process(delta):
 	var item
 	
 	if x != []: item = x[0] 
-	if Input.is_action_just_pressed("primary_action") and item.type == 2 and !item.safety:
+	if Input.is_action_just_pressed("primary_action") and item.type == 2:
 		recoil(item, self, delta)
 
 func recoil(item, camera, triangle):

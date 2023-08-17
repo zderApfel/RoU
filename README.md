@@ -359,8 +359,6 @@ During an exploration phase where they're not doing anything, you can select a p
 
 * Crime - Burglary (chance to steal loot, with risk of detainment or death; scales with agility/shooting)
 
-
-
 ### Specializations
 
 Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have special talents that benefit various aspects of gameplay when controlled

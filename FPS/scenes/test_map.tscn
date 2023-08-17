@@ -165,6 +165,14 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0037
 [node name="item" parent="." instance=ExtResource("3_t5846")]
 transform = Transform3D(0.830907, -0.556412, 0, 0.556412, 0.830907, 0, 0, 0, 1, -3.01397, 2.03151, 0.61581)
 current_ammo = 10
+is_held = false
+is_lootable = true
+is_stackable = false
+legal = true
+rarity = 0
+amount = 1
+max_stack = 1
+bulk = 1.0
 
 [node name="Human" parent="." instance=ExtResource("4_87ppg")]
 transform = Transform3D(0.257925, 0, 0.966165, 0, 1, 0, -0.966165, 0, 0.257925, -4.94039, 1.10565, 0)
@@ -229,7 +237,7 @@ body_offset = Transform3D(-6.38142e-05, -1.19293e-05, -1.00083, -0.010544, -1.00
 
 [node name="thigh_l" parent="Human/human_01/Armature/Skeleton3D" index="12"]
 transform = Transform3D(0.172444, 0.963225, 1.00397e-06, 0.0495284, -0.00860086, 1.00118, 0.97879, -0.169116, -0.05092, 0.111184, 0.0142347, -0.0846848)
-joint_offset = Transform3D(1, 2.42144e-08, 1.49012e-08, -2.42144e-08, 1, 2.77556e-17, -1.49012e-08, -3.88579e-16, 1, -0.00147732, -2.33608e-05, 0.130749)
+joint_offset = Transform3D(1, 2.42144e-08, 1.49012e-08, -2.42144e-08, 1, 2.77554e-17, -1.49012e-08, -3.88579e-16, 1, -0.00147732, -2.33608e-05, 0.130749)
 joint_rotation = Vector3(-2.77554e-17, 1.49012e-08, -2.42144e-08)
 body_offset = Transform3D(0.995098, -1.17198e-05, 7.6462e-05, 0.000328449, -1.36644e-05, -1.00247, 0.000162818, 0.977996, -1.26092e-05, 0.00146008, 0.131072, 2.47359e-05)
 

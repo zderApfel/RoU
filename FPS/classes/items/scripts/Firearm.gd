@@ -1,12 +1,10 @@
 class_name Firearm extends Item
 
 ## The caliber that the gun fires. Non-technical
-@export_enum("N/A", "7.62 SOVIET", "7.62 RIMMED", "5.45 RU", "5.56 NATO", "7.62 NATO", ".300 Blackout", ".22 LR", "9mm LE", ".45acp", "Five Seven", ".44 Magnum", ".50 AE", "12 Gauge", ".68 PB", "Arrow", "Pepperball", "Shock Cartridge", "11mm NITRO", ".80 LEAD") var caliber: int
+@export_enum("N/A", "7.62 SOVIET", "7.62 RIMMED", "5.45 RU", "5.56 NATO", "7.62 NATO", ".300 Blackout", ".22 LR", "9mm LE", ".45acp", "Five Seven", ".44 Magnum", ".50 AE", "12 Gauge") var caliber: int
 
 ## If the gun can switch from semi to fully automatic
 @export var is_automatic: bool = false
-
-@export var safety: bool = false
 
 ## The UID for the ammo used by this gun. Used for technical reference
 @export var ammo: String
@@ -20,8 +18,11 @@ class_name Firearm extends Item
 ## Current ammo in the gun
 @export var current_ammo: int
 
+## Speed of the bullet after coming out of the gun
+@export var muzzle_velocity: float = 0.0
+
 @onready var bullet: Bullet
-@onready var muzzle = $muzzle/RayCast3D
+@onready var muzzle = $RayCast3D/muzzle
 
 func ready():
 	pass
@@ -34,7 +35,7 @@ func _physics_process(delta):
 	if is_held: self.reload()
 
 func primary_action(triangle) -> void:
-	if Input.is_action_just_pressed("primary_action") and current_ammo > 0 and !safety:
+	if Input.is_action_just_pressed("primary_action") and current_ammo > 0:
 		shoot()
 
 func secondary_action(triangle) -> void:
@@ -53,15 +54,23 @@ func reload() -> void:
 			await $AnimationPlayer.animation_finished
 			to_idle()
 			
-
 func shoot() -> void:
 	bullet = load(ammo).instantiate()
 	bullet = bullet.duplicate()
 	
-	if muzzle.is_colliding():
-		print("I think I hit something...")
-	
 	$AnimationPlayer.play("RESET")
 	$AnimationPlayer.play("shoot")
 	
+	if $RayCast3D.is_colliding() == true:
+		print("CQB Hit")
+		
+	else:	
+		Helpers.get_world(self).add_child(bullet)
+		
+		bullet.transform = muzzle.global_transform
+		bullet.is_flying = true
+		bullet.is_lootable = false
+		bullet.muzzle_velocity = muzzle_velocity
+		bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
+
 	current_ammo -= 1

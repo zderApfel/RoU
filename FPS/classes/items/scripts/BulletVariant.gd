@@ -6,7 +6,3 @@ class_name BulletVariant extends Bullet
 
 ## Modifier to the gun's accuracy
 @export var recoil_mod: float
-
-func _on_body_entered(body):
-	print("Bullet collided")
-	self.queue_free()

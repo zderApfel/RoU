@@ -22,6 +22,7 @@ type = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.195, 0, 0, 0, -8.52372e-09, -0.195, 0, 0.195, -8.52372e-09, 0, 0.0138419, 0)
+layers = 524289
 mesh = SubResource("CylinderMesh_sdon1")
 surface_material_override/0 = SubResource("StandardMaterial3D_tnnpp")
 
@@ -29,4 +30,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tnnpp")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0137494, 0)
 shape = SubResource("CylinderShape3D_hjgs0")
 
-[connection signal="body_entered" from="." to="." method="strike"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

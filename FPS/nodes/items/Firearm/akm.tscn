@@ -611,6 +611,7 @@ ammo = "uid://csqf6jqtmwwpb"
 recoil = 5.0
 max_ammo = 31
 current_ammo = 31
+muzzle_velocity = 240.0
 display_name = "AKM"
 is_holdable = true
 type = 2
@@ -678,20 +679,20 @@ cast_shadow = 0
 surface_material_override/0 = ExtResource("10_6304o")
 surface_material_override/1 = ExtResource("11_drghn")
 
-[node name="muzzle" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163023, 0.247635, -2.01577)
-
-[node name="RayCast3D" type="RayCast3D" parent="muzzle"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-target_position = Vector3(0, -100, 0)
-collision_mask = 256
-hit_from_inside = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_3t572")
 }
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 2.23517e-08, 4.47035e-08, 1.49012e-08, 2.98023e-08, -1, -7.45058e-09, 1, 0, 0.163023, 0.247635, -2.01577)
+target_position = Vector3(0, -8, 0)
+collision_mask = 256
+hit_from_inside = true
+
+[node name="muzzle" type="Marker3D" parent="RayCast3D"]
+transform = Transform3D(1, 9.77024e-16, 0, 0, -4.37114e-08, 1, -2.22044e-16, -1, -4.37114e-08, 1.78814e-07, -8.15104, -2.38419e-07)
 
 [editable path="right_arm/arm"]
 [editable path="left_arm/arm"]
