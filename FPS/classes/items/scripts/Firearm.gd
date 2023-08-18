@@ -60,17 +60,13 @@ func shoot() -> void:
 	
 	$AnimationPlayer.play("RESET")
 	$AnimationPlayer.play("shoot")
+		
+	Helpers.get_world(self).add_child(bullet)
 	
-	if $RayCast3D.is_colliding() == true:
-		print("CQB Hit")
-		
-	else:	
-		Helpers.get_world(self).add_child(bullet)
-		
-		bullet.transform = muzzle.global_transform
-		bullet.is_flying = true
-		bullet.is_lootable = false
-		bullet.muzzle_velocity = muzzle_velocity
-		bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
+	bullet.transform = muzzle.global_transform
+	bullet.is_flying = true
+	bullet.is_lootable = false
+	bullet.muzzle_velocity = muzzle_velocity
+	bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
 
 	current_ammo -= 1

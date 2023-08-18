@@ -1,11 +1,13 @@
 class_name Bullet extends Item
 
+signal when_hit(hp, bp, ap, object)
+
 @export var description: String
 @export var hp_damage: float
 @export var bp_damage: float
 @export var ap_damage: float
 ## The item's damage type (if applicable)
-@export_enum("Ballistic") var damage_type: int
+@export_enum("Pierce", "Shock", "Frost", "Impulse") var damage_type: int
 ## If the bullet is flying
 @export var is_flying: bool = false
 ## Bullets with this trait make heads explode with a headshot
@@ -17,7 +19,10 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	muzzle_velocity -= muzzle_velocity*0.02
+	if $RayCast3D.is_colliding():
+		impact($RayCast3D.get_collider())
+	
+	muzzle_velocity -= muzzle_velocity*0.015
 	muzzle_velocity = clamp(muzzle_velocity, 0, 9999999)
 
 	fly(delta)
@@ -33,14 +38,20 @@ func fly(triangle):
 
 	
 func dropoff(triangle):
+	hp_damage = clamp(hp_damage*0.015, 0, 999999)
+	bp_damage = clamp(bp_damage*0.015, 0, 999999)
+	ap_damage = clamp(ap_damage*0.015, 0, 999999)
 
-	hp_damage = clamp(hp_damage*0.01, 0, 999999)
-
-	bp_damage = clamp(bp_damage*0.01, 0, 999999)
-
-	ap_damage = clamp(ap_damage*0.01, 0, 999999)
-
+func impact(body):
+	if "vitals" in body:
+		body.vitals.hurt(body.vitals.Life, hp_damage)
+		body.vitals.hurt(body.vitals.Balance, bp_damage)
+		body.vitals.hurt(body.vitals.Armor, ap_damage)
+		print("Struck a human")
+		self.queue_free()
+	else: 
+		print("Struck an inanimate object")
+		self.queue_free()
 
 func _on_body_entered(body):
-	print("Collidied")
-	self.queue_free()
+	impact(body)

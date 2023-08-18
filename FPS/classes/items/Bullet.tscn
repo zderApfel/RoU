@@ -13,7 +13,7 @@ radius = 0.109092
 
 [node name="Bullet" type="RigidBody3D"]
 collision_layer = 270
-collision_mask = 270
+collision_mask = 262
 continuous_cd = true
 max_contacts_reported = 1
 contact_monitor = true
@@ -29,5 +29,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tnnpp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0137494, 0)
 shape = SubResource("CylinderShape3D_hjgs0")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -3, 0)
+collision_mask = 262
+hit_from_inside = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
