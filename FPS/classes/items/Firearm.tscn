@@ -601,8 +601,3 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_3t572")
 }
-
-[node name="wall_stopper" type="RayCast3D" parent="."]
-transform = Transform3D(-1.33333, -1.16562e-07, 5.09518e-15, 0, -5.82819e-08, -1.33334, 1.16564e-07, -1.33333, 5.82819e-08, -0.0477565, 0.0515304, 1.3107)
-target_position = Vector3(0, -0.5, 0)
-collision_mask = 2

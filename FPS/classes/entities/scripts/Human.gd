@@ -12,11 +12,3 @@ func _ready():
 func _process(delta):
 	pass
 
-func heal(type, by):
-	type += by
-	return clamp(type, 0.0, 100.0)
-	
-func hurt(type, by):
-	type -= by
-	return clamp(type, 0.0, 100.0)
-

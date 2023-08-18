@@ -4,12 +4,24 @@ class_name Vitals extends Node
 @export var Balance: float = 100.0
 @export var Armor: float = 0.0
 
-'''-----------------------------------------'''
+@export var Stamina: float = 100.0
 
-func heal(type, by):
-	type += by
-	return clamp(type, 0.0, 100.0)
+func _process(delta):
+	Life = clamp(Life,0,100)
+	Balance = clamp(Balance,0,100)
+	Armor = clamp(Armor,0,100)
+	Stamina = clamp(Stamina,0,100)
+
+'''-----------------------------------------'''
+func heal(by) -> void:
+	Life += by[0]
+	Balance += by[1]
+	Armor += by[2]
 	
-func hurt(type, by):
-	type -= by
-	return clamp(type, 0.0, 100.0)
+func hurt(by) -> void:
+	Life -= by[0]
+	Balance -= by[1]
+	Armor -= by[2]
+	
+	
+	

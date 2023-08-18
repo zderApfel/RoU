@@ -615,6 +615,8 @@ muzzle_velocity = 240.0
 display_name = "AKM"
 is_holdable = true
 type = 2
+rarity = 3
+bulk = 8.0
 hands = 1
 first_person_position = Vector3(0.335, -0.4, -0.485)
 

@@ -1,17 +1,19 @@
 class_name Bullet extends Item
 
-signal when_hit(hp, bp, ap, object)
-
 @export var description: String
-@export var hp_damage: float
-@export var bp_damage: float
-@export var ap_damage: float
+
+## HP, BP, AP
+@export var damage: Array = [0.0, 0.0, 0.0]
+
 ## The item's damage type (if applicable)
 @export_enum("Pierce", "Shock", "Frost", "Impulse") var damage_type: int
+
 ## If the bullet is flying
 @export var is_flying: bool = false
+
 ## Bullets with this trait make heads explode with a headshot
 @export var melonpopper: bool = false
+
 @onready var muzzle_velocity: float
 @onready var velocity: Vector3
 
@@ -38,15 +40,12 @@ func fly(triangle):
 
 	
 func dropoff(triangle):
-	hp_damage = clamp(hp_damage*0.015, 0, 999999)
-	bp_damage = clamp(bp_damage*0.015, 0, 999999)
-	ap_damage = clamp(ap_damage*0.015, 0, 999999)
+	damage[0] = clamp(damage[0]*0.015, 0, 999999)
+	damage[1] = clamp(damage[1]*0.015, 0, 999999)
 
 func impact(body):
 	if "vitals" in body:
-		body.vitals.hurt(body.vitals.Life, hp_damage)
-		body.vitals.hurt(body.vitals.Balance, bp_damage)
-		body.vitals.hurt(body.vitals.Armor, ap_damage)
+		body.vitals.hurt(damage)
 		print("Struck a human")
 		self.queue_free()
 	else: 
