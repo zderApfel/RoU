@@ -26,11 +26,12 @@ func _physics_process(delta):
 	
 	muzzle_velocity -= muzzle_velocity*0.015
 	muzzle_velocity = clamp(muzzle_velocity, 0, 9999999)
+	damage[0] = clamp(damage[0]*1.015, 0, 999999)
+	damage[1] = clamp(damage[1]*1.015, 0, 999999)
 
 	fly(delta)
 
 func fly(triangle):
-	dropoff(triangle)
 
 	velocity = -transform.basis.z * muzzle_velocity
 	transform.origin += velocity * triangle
@@ -39,10 +40,6 @@ func fly(triangle):
 	self.queue_free()
 
 	
-func dropoff(triangle):
-	damage[0] = clamp(damage[0]*0.015, 0, 999999)
-	damage[1] = clamp(damage[1]*0.015, 0, 999999)
-
 func impact(body):
 	if "vitals" in body:
 		body.vitals.hurt(damage)

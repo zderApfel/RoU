@@ -69,5 +69,6 @@ func shoot() -> void:
 		bullet.is_lootable = false
 		bullet.muzzle_velocity = muzzle_velocity
 		bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
+		print(bullet.damage)
 
 		current_ammo -= 1
