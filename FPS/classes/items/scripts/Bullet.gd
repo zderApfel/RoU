@@ -2,9 +2,6 @@ class_name Bullet extends Item
 
 @export var description: String
 
-## HP, BP, AP
-@export var damage: Array = [0.0, 0.0, 0.0]
-
 ## The item's damage type (if applicable)
 @export_enum("Pierce", "Shock", "Frost", "Impulse") var damage_type: int
 

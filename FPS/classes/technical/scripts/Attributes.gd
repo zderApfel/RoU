@@ -31,12 +31,6 @@ class_name Attributes extends Node
 ## +0.2% to most random rolls
 @export var Luck: int = 10
 
-## PRIVATE: 
-##A dictionary of crimes that's tracked per character. 
-##This has various influence to varying degrees depending on 
-##Severity, amount, etc.
-@export var Crimes: Array = []
-
 ## NPC ONLY:  
 ## Represents the NPCs opinion of the Player Character
 @export var Reputation: int = 0
@@ -49,6 +43,12 @@ class_name Attributes extends Node
 ## NPC ONLY: 
 ## The liklihood for an NPC to flee instead of initiating combat 
 @export var Cowardice: int = 0
+
+## PRIVATE: 
+## A dictionary of crimes that's tracked per character. 
+## This has various influence to varying degrees depending on 
+## Severity, amount, etc.
+@export var Crimes: Array = []
 
 
 '''-----------------------------------------'''

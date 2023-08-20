@@ -3,20 +3,13 @@ class_name Item extends Node3D
 ## In-game name of the item
 @export var display_name: String
 
-## Internal reference (Depreciated)
-#@export var uid: String
-
-## If the item is held, used for stopping it from doing actions when existing in the world
-@export var is_held: bool = false
+## The three damage values that this item does when attacking
+## Leave this zero for non-offensive items
+## In order: Health Points, Balance Points, Armor Points
+@export var damage: Array = [0.0, 0.0, 0.0]
 
 ## If the item is lootable
 @export var is_lootable: bool = true
-
-## If the item can be physically held by the character
-@export var is_holdable: bool = false
-
-## If the item can stack (be be combined with other identical items)
-@export var is_stackable: bool = false
 
 ## If this is false, you will incite frightened/hostile response from most people when held
 @export var legal: bool = true
@@ -27,10 +20,10 @@ class_name Item extends Node3D
 ## The item's rarity for loot pools
 @export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
 
-## How many of this item there are in any instance
+## How many of this item there are in the given instance
 @export var amount: int = 1
 
-## How many you can stack together
+## How many you can stack together, restricts the amount value
 @export var max_stack: int = 1
 
 ## A value that represents the space the item takes up in inventory
@@ -39,7 +32,11 @@ class_name Item extends Node3D
 ## How many hands this weapon requires (used for looting algorithms)
 @export_enum("1", "2") var hands: int
 
+## Where the weapon's first person viewmodel should be positioned
 @export var first_person_position: Vector3
+
+## DO NOT EDIT
+@export var is_held: bool = false
 
 func _physics_process(delta):
 	if self.is_held: primary_action(delta)

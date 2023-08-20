@@ -614,6 +614,7 @@ current_ammo = 31
 muzzle_velocity = 240.0
 display_name = "AKM"
 is_holdable = true
+is_stackable = null
 type = 2
 rarity = 3
 bulk = 8.0

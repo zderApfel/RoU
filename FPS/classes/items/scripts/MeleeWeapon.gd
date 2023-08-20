@@ -1,9 +1,5 @@
 class_name MeleeWeapon extends Item
 
-@export var HP_DAMAGE: float
-@export var BP_DAMAGE: float
-@export var AP_DAMAGE: float
-
 ## The strength of the weapon's block-parry.
 ## In a block-parry contest, the higher block-parry wins.
 ## A lost parry results in severe BP loss and a small amount of HP loss.
