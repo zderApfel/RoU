@@ -71,7 +71,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Strength = 14
 * Shooting = 15
 * Health = 13
-* Agility = 11
+* Mind = 11
 * Charisma = 8
 * Luck = 5
 
@@ -93,7 +93,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Strength = 12
 * Shooting = 13
 * Health = 15
-* Agility = 13
+* Mind = 13
 * Charisma = 6
 * Luck = 8
 
@@ -113,7 +113,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Strength = 15
 * Shooting = 9
 * Health = 14
-* Agility = 14
+* Mind = 8
 * Charisma = 10
 * Luck = 11
 
@@ -132,7 +132,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Strength = 10
 * Shooting = 7
 * Health = 11
-* Agility = 8
+* Mind = 13
 * Charisma = 15
 * Luck = 12
 
@@ -152,7 +152,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Strength = 16
 * Shooting = 11
 * Health = 15
-* Agility = 10
+* Mind = 6
 * Charisma = 3
 * Luck = 10
 
@@ -172,7 +172,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Strength = 6
 * Shooting = 3
 * Health = 8
-* Agility = 7
+* Mind = 8
 * Charisma = 2
 * Luck = 16
 
@@ -278,7 +278,7 @@ During exploration or a raid, you can either play as yourself, or you can play a
 
 * Stamina - Depletes when sprinting, jumping, or melee attacking. Regenerates automatically at a speed dependent on Health stat. In hardcore mode, the regeneration rate is reduced with the amount of HP missing
 
-* Balance Points (BP) - Represents your mental balance. BP reduces from getting damaged. If this reaches zero before HP does, you are knocked out. (See [Unconscious](#unconscious)). BP regenerates slowly when out of combat. In hardcore mode, the regeneration rate is reduced with the amount of HP missing
+* Balance Points (BP) - Represents your mental balance. BP reduces from getting damaged. If this reaches zero, you are rendered helpless for a time. The amount of time helpless scales with ones [Health](#health) and [Mind](#mind)
 
 * Armor Points (AP) - Represents the health of any worn armor. Armor health is depleted by a large amount when pierced by a bullet. If a bullet is deflected, damage is minimal.
 
@@ -301,15 +301,15 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 * +2% stamina recharge speed
 * +2% BP damage resistance
 
-#### Agility
+#### Mind
 
-* +0.2 movement speed
-* +1% melee speed
+* +1% chance to hack/lockpick
+* +1% to dialogue checks to recall or know information
 
 #### Charisma
 
 * +2% discount at vendors
-* +1% to dialogue checks
+* +1% to dialogue checks to pursuade, intimidate, or lie. 
 
 #### Luck [CONFIDENTIAL]
 
@@ -331,7 +331,7 @@ For any attribute that's at level 20, you can continue training that attribute w
 
 * Untappable Reserves (Health) - Infinite Stamina
 
-* Cracked Egg (Agility) - You gain the ability to double jump
+* Cracked Egg (Mind) - You gain the ability to double jump
 
 * Silver Tongue (Charisma) - All social checks automatically succeed
 
@@ -347,31 +347,31 @@ During an exploration phase where they're not doing anything, you can select a p
 
 * Training - Weightlifting (to increase Health)
 
-* Training - Cardio (to increase Agility)
+* Training - Cardio (to increase Mind)
 
 * Leisure - Club Life (to increase Charisma; chance to decrease Health)
 
 * Leisure - Casino (chance to win or lose money; scales with Charisma)
 
-* Crime - Casino (higher chance to win money, but runs with risk of detainment; scales with Charisma/Agility)
+* Crime - Casino (higher chance to win money, but runs with risk of detainment; scales with Charisma/Mind)
 
 * Crime - Armed Robbery (chance to get money; scales with Charisma/Shooting)
 
-* Crime - Burglary (chance to steal loot, with risk of detainment or death; scales with agility/shooting)
+* Crime - Burglary (chance to steal loot, with risk of detainment or death; scales with Mind/Shooting)
 
 ### Specializations
 
-Rarely, the merc you hired on is particularly good at a certain set of skills, this means they have special talents that benefit various aspects of gameplay when controlled
+Rarely, the merc you hired on is particularly good at a certain set of skills. These skills give then extra abilities in the field. These specializations can also be trained, and there's no limit to how many you can have
 
 Master Thief:
 
 * Lockpicking is doublerolled, with a 20% chance to not consume a lockpick
-* Requires: Agility 14, Charisma 12 
+* Requires: Mind 14, Charisma 12 
 
 Martial Artist: 
 
 * Active: Your fists attack 50% faster and do 100% more damage
-* Requires: Agility 16, Strength 14
+* Requires: Mind 16, Strength 16, Health 14
 
 Heavyweight:
 
@@ -381,24 +381,24 @@ Heavyweight:
 Packrat:
 
 * Active: Doubled pocket inventory space
-* Requires: N/A
+* Requires: Luck 12
 
 Infiltrator:
 
 * Active: Doesn't make noise when jogging
-* Requires: Agility 15
+* Requires: Mind 15
 
 Hacker: 
 
 * Active: Chance to bypass an electronic countermeasure without inputting a passcode (keycads, computers, etc.) or having a jammer
-* Requires: N/A
+* Requires: Mind 15
 * Works only once per device
 * Matches the character's lockpicking chance (stacks with master thief)
 
 Smooth Criminal:
 
 * Active: Speech checks are double-rolled
-* Requires: Charisma 16
+* Requires: Charisma 16, Mind 14
 
 ## Crime, Security, and Chaos
 
@@ -606,12 +606,12 @@ Unique firearms don't fit the other categories and typically have their own uniq
 * Sling Shround [1] - *Weapons stored on your sling are concealed, at the cost of 100% increased weapon switch speed for the sling weapon*
 * Drill [1] - *Can be used to open various things, or break locks...loudly*
 * Codejammer [2] - *Can be used to bypass electronic locks. Can be used 3 times*
-    - Chance to unlock: 20% * [0.5 * [(Agility-10) + (Luck-10)]]
+    - Chance to unlock: 20% * [0.5 * [(Mind-10) + (Luck-10)]]
 * Lockpick Kit [2] - *A collection of tools for opening locks*
-    - Chance to pick lock: 20% * 0.5 * [(Agility-10) + (Luck-10)]
+    - Chance to pick lock: 20% * 0.5 * [(Mind-10) + (Luck-10)]
     - Illegal
 * Advanced Codejammer [3] - *Can be used to bypass electronic locks and computers systems. 20 uses*
-    - Chance to unlock: 40% * [0.5 * [(Agility-10) + (Luck-10)]]
+    - Chance to unlock: 40% * [0.5 * [(Mind-10) + (Luck-10)]]
     - Illegal
 * Personal Radar [4] - *Shows the location of nearby entities. Has different modes to show different entity types*
 * Quantum Codejammer [5] - *Can bypass any electronic lock and access any computer system. Infinite uses*

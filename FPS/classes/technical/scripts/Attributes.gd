@@ -16,9 +16,8 @@ class_name Attributes extends Node
 @export var Health: int = 10
 
 ## Per point |
-## +1% movement speed
-## +1% melee speed
-@export var Agility: int = 10
+## +1% locking/hacking chance
+@export var Mind: int = 10
 
 ## Per point |
 ## +2% discount at vendors

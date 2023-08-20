@@ -5,13 +5,12 @@ const SENSITIVITY = 0.01
 const BOB_AMP = 0.06
 const BOB_FREQ = 2.2
 
-@onready var attributes = $Attributes
 @onready var vitals = $Vitals
 @onready var inventory = $PlayerInventory
 @onready var camera = $pivot/Camera3D
 @onready var head = $pivot
 
-@onready var jog_speed = 6 + attributes.return_modifier(attributes.Agility)*.2
+@onready var jog_speed = 6
 @onready var sprint_speed
 @onready var crouch_speed
 @onready var speed = jog_speed
@@ -28,7 +27,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(75))
 
 func _physics_process(delta):
-	jog_speed = 6 + attributes.return_modifier(attributes.Agility)*.2
+	jog_speed = 6
 	sprint_speed = jog_speed*1.25
 	crouch_speed = jog_speed*0.5
 	
