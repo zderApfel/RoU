@@ -1,50 +1,52 @@
 class_name Attributes extends Node
 
-## Per point |
-## +1 Melee damage
-## +0.5% melee crit chance
-@export var Melee: int = 10
 
-## Per point |
-## +2% accuracy
+## Per point: 
+## -1% recoil; 
 ## +0.5% faster reload speed
 @export var Shooting: int = 10
 
-## Per point |
-## +2% maximum stamina
-## +2% BP Damage resistance
-@export var Health: int = 10
+## Per point: 
+## +1% melee speed; 
+## +0.5% melee crit chance
+@export var Strength: int = 10
 
-## Per point |
-## +1% locking/hacking chance
+## Per point: 
+## +2% maximum stamina; 
+## +2% BP Damage resistance
+@export var Body: int = 10
+
+## Per point: 
+## +1% locking/hacking chance; 
+## +1% to dialogue checks to recall or know information
 @export var Mind: int = 10
 
-## Per point |
-## +2% discount at vendors
-## 1% to dialogue checks
+## Per point: 
+## +2% discount at vendors; 
+## +1% to dialogue checks to pursuade, intimidate, or lie. 
 @export var Charisma: int = 10
 
-## PRIVATE | 
+## PRIVATE |  
 ## Per point: 
 ## +0.2% to most random rolls
 @export var Luck: int = 10
 
-## PRIVATE |
+## PRIVATE: 
 ##A dictionary of crimes that's tracked per character. 
 ##This has various influence to varying degrees depending on 
 ##Severity, amount, etc.
 @export var Crimes: Array = []
 
-## NPC ONLY | 
+## NPC ONLY:  
 ## Represents the NPCs opinion of the Player Character
 @export var Reputation: int = 0
 
-## NPC ONLY |
+## NPC ONLY: 
 ## Represents a mercenary's loyalty to the cause
 @export var Loyalty: int = 0
 
 ## PRIVATE |
-## NPC ONLY |
+## NPC ONLY: 
 ## The liklihood for an NPC to flee instead of initiating combat 
 @export var Cowardice: int = 0
 

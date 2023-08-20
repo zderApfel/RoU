@@ -1,4 +1,4 @@
-# Rage of the Urbanites - The ACAB FPS
+# Rage of the Urbanites
 
 It is 2054.
 
@@ -12,24 +12,6 @@ The police forces, as expected, got worse as a result, with police brutality pra
 
 You play as a disillusioned anarchist who recently lost their closest friend to a murder by one of these emboldened police officers. Through events I don't want to spoil, you decide to start a militia of their own and bring the power back to the people. 
 
-# Raids [CONFIDENTIAL]
-
-## Tutorial Raid 
-
-* Protag Lock
-* An optional (and skippable) mission that you can do at the beginning. This raid entails escaping jail after being arrested during a protest
-
-## Retribution
-
-* *"Get your revenge. Take down the Chief of Police and anybody who tries to stop you"*
-
-## The Showdown 
-
-* Protag Lock
-* *"This is it. All your work is now finally going to pay off. Take that waste down"*
-* You will be raiding the Presidental Palace and taking down Royland DerSantos
-* This raid has high-tier enemies that can easily cut down the ill-prepared
-
 # Difficulty [CONFIDENTIAL]
 
 ## Casual
@@ -37,8 +19,7 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 *"An easier experience, but still challenging"*
 
 * Main character respawns
-* "Tired" and "Poisoned" effects are disabled
-* Health regenerates to 30% over time
+* HP regenerates over time
 * Extra starting attribute points
 
 ## Intermediate
@@ -46,7 +27,7 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 *"A good challenge for those familiar with FPSs"*
 
 * Main character respawns
-* Health regnerates to 10% over time
+* HP regnerates to 50% over time
 * Melee attacks require stamina
 
 ## Hardcore
@@ -55,8 +36,8 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 
 * Main character death means GAME OVER and save file deletion
 * Some raids now must be completed within a certain time frame, with consequences for failure
-* Health doesn't regenerate
-* You regain stamina and BP at a slower rate the less health you have
+* HP doesn't regenerate
+* You regain stamina and BP at a slower rate the less HP you have
 
 ## Starter Classes
 
@@ -68,9 +49,9 @@ At character creation you have a choice to make regarding your starting stats an
 
 **-Attributes-**
 
-* Strength = 14
 * Shooting = 15
-* Health = 13
+* Strength = 14
+* Body = 13
 * Mind = 11
 * Charisma = 8
 * Luck = 5
@@ -90,9 +71,9 @@ At character creation you have a choice to make regarding your starting stats an
 
 **-Attributes-**
 
-* Strength = 12
 * Shooting = 13
-* Health = 15
+* Strength = 12
+* Body = 15
 * Mind = 13
 * Charisma = 6
 * Luck = 8
@@ -110,9 +91,9 @@ At character creation you have a choice to make regarding your starting stats an
 
 **-Attributes-**
 
-* Strength = 15
 * Shooting = 9
-* Health = 14
+* Strength = 15
+* Body = 14
 * Mind = 8
 * Charisma = 10
 * Luck = 11
@@ -123,15 +104,35 @@ At character creation you have a choice to make regarding your starting stats an
 * Baseball Bat
 * +100% Bonus starting money
 
-### Con Artist
+### Professor
 
-*Your scams and exploits would make Ponzi blush. Your skills in deception could prove very useful*
+*The halls of academia have been tainted by fascist lies. Never forgive them for that*
 
 **-Attributes-**
 
+* Shooting = 4
 * Strength = 10
+* Body = 9
+* Mind = 17
+* Charisma = 10
+* Luck = 11
+
+**-Equipment-**
+
+* .44 Western + 30 extra rounds
+* Kitchen Knife
+* -50% Bonus starting money
+
+
+### Con Artist
+
+*Your scams and exploits would make Ponzi blush. Skills in deception and manipulation could prove very useful*
+
+**-Attributes-**
+
 * Shooting = 7
-* Health = 11
+* Strength = 10
+* Body = 11
 * Mind = 13
 * Charisma = 15
 * Luck = 12
@@ -149,9 +150,9 @@ At character creation you have a choice to make regarding your starting stats an
 
 **-Attributes-**
 
-* Strength = 16
 * Shooting = 11
-* Health = 15
+* Strength = 16
+* Body = 15
 * Mind = 6
 * Charisma = 3
 * Luck = 10
@@ -169,9 +170,9 @@ At character creation you have a choice to make regarding your starting stats an
 
 **-Attributes-**
 
-* Strength = 6
 * Shooting = 3
-* Health = 8
+* Strength = 6
+* Body = 8
 * Mind = 8
 * Charisma = 2
 * Luck = 16
@@ -203,7 +204,7 @@ HP/BP/AP Damage
 
 * The HP/BP/AP damage done before any resistances
 
-Damage Types
+Damage Type
 
 * Bludgeon, Pierce, Slash, Poison, Shock, Fire, Explosive, Impulse, Frost
 * Used for handling resistances/immunities
@@ -224,7 +225,7 @@ Parry Strength
 
 Crit Chance
 
-* CRT = BASE + [LUCK](#luck-confidential) - 10 * 0.2 + [(MELEE - 10) * 0.5]
+* CRT = BASE + [LUCK](#luck-confidential) - 10 * 0.2 + [(STRENGTH - 10) * 0.5]
 * Critical hits multiply the damage by the weapon's crit modifier
 
 Crit Modifier
@@ -276,29 +277,29 @@ During exploration or a raid, you can either play as yourself, or you can play a
 
 * Hit Points (HP) - Represents your health. When it's at zero, you die
 
-* Stamina - Depletes when sprinting, jumping, or melee attacking. Regenerates automatically at a speed dependent on Health stat. In hardcore mode, the regeneration rate is reduced with the amount of HP missing
+* Stamina - Depletes when sprinting, jumping, or melee attacking. Regenerates automatically. In hardcore mode, the regeneration rate is reduced with the amount of HP missing
 
-* Balance Points (BP) - Represents your mental balance. BP reduces from getting damaged. If this reaches zero, you are rendered helpless for a time. The amount of time helpless scales with ones [Health](#health) and [Mind](#mind)
+* Balance Points (BP) - Represents your mental balance. BP reduces from getting damaged. If this reaches zero, you are rendered helpless for a time. The amount of time helpless scales with ones [Body](#Body) and [Mind](#mind)
 
-* Armor Points (AP) - Represents the health of any worn armor. Armor health is depleted by a large amount when pierced by a bullet. If a bullet is deflected, damage is minimal.
+* Armor Points (AP) - Represents the Body of any worn armor. Armor Body is depleted by a large amount when pierced by a bullet. If a bullet is deflected, damage is minimal.
 
 ### Attributes
 
 Attributes are listed on a scale from 10 to 20, with 10 being represented as "average" and the baseline for stat increases/decreases. Every point under 10 is a -1 to the stat increases, while every point above 10 is a +1 to stat increases
 
-#### Melee
-
-* +0.5 melee damage
-* +0.5% melee crit chance
-
 #### Shooting
 
-* -2% recoil
+* -1% recoil
 * +0.5% reload speed
 
-#### Health
+#### Strength
 
-* +2% stamina recharge speed
+* +1% melee speed
+* +0.5% melee crit chance
+
+#### Body
+
+* +2% maximum stamina
 * +2% BP damage resistance
 
 #### Mind
@@ -321,22 +322,6 @@ In addition, there's a few additional attributes that apply only to NPCs
 * Loyalty: Represents a mercenary's loyalty to the cause
 * Cowardice [CONFIDENTIAL]: The liklihood that the NPC will flee from combat when damaged or threatened. *HINT: This decreases significantly when an NPC is armed.*
 
-### Legendary Attributes [CONFIDENTIAL]
-
-For any attribute that's at level 20, you can continue training that attribute with a 1% chance (No luck scaling) to gain a legendary attribute. Only one legendary attribute can be acquired per character, and cannot be removed.
-
-* Hand-to-Hand Expert (Melee) - All attacks can be parried
-
-* Terra Shooter (Shooting) - 20% chance not to consume ammo for MOST guns
-
-* Untappable Reserves (Health) - Infinite Stamina
-
-* Cracked Egg (Mind) - You gain the ability to double jump
-
-* Silver Tongue (Charisma) - All social checks automatically succeed
-
-(Luck does not have a legendary attribute, as it is hidden and cannot be trained)
-
 ### Passive Activites
 
 During an exploration phase where they're not doing anything, you can select a passive activity for a merc to do:
@@ -345,11 +330,11 @@ During an exploration phase where they're not doing anything, you can select a p
 
 * Training - Target Practice (to increase Shooting; costs an amount of money to spend on ammunition)
 
-* Training - Weightlifting (to increase Health)
+* Training - Weightlifting (to increase Body)
 
 * Training - Cardio (to increase Mind)
 
-* Leisure - Club Life (to increase Charisma; chance to decrease Health)
+* Leisure - Club Life (to increase Charisma; chance to decrease Body)
 
 * Leisure - Casino (chance to win or lose money; scales with Charisma)
 
@@ -371,12 +356,12 @@ Master Thief:
 Martial Artist: 
 
 * Active: Your fists attack 50% faster and do 100% more damage
-* Requires: Mind 16, Strength 16, Health 14
+* Requires: Mind 16, Strength 16, Body 14
 
 Heavyweight:
 
 * Active: You resist 50% of BP damage BEFORE all other resistances
-* Requires: Strength 16, Health 14
+* Requires: Strength 16, Body 14
 
 Packrat:
 
@@ -430,9 +415,9 @@ Affronts are:
 
 ## Buffs/Debuffs
 
-### Tired
+### Exhausted
 
-Happens after 8 in game hours. Increases with intensity over time. Can be suppressed with drugs, but Tired V will kill you if not addressed. Reduces Stamina regen
+Happens after 8 in game hours. Increases with intensity over time. Can be suppressed with drugs, but Exhausted V will kill you if not addressed. Reduces Stamina regen
 
 ### Poisoning
 
@@ -466,15 +451,17 @@ What happens after getting knocked out also depends on who got the last hit in, 
 
 ### Detained
 
-When detained, a mercenary is in police custody. Mercenaries stay in this state for a certain amount of time depending on the wanted level you had before 
+When detained, a mercenary is in police custody. Mercenaries stay in this state for a certain amount of time depending on the wanted level you had before and can end in the following after a time:
 
-[TBD]
+* Bail Out - With wanted levels between 1-2 they will be released after a time with all their possessions and a portion of your faction's money deducted
+* Imprisoned - With wanted levels between 3-5 they will be imprisoned for the rest of the game, or if broken out. (See, [jailbreaks](#jailbreaks))
+* Snitch - If their loyalty is low enough, they will snitch, which means a number of other mercenaries may be given the "Outlaw" status for the zone they were arrested in permanently. Mercenaries who snitch are effectively removed from the game as if they died
 
 ## Item Quality
 
-Quality is tied directed to cost in shops, chance to spawn in loot areas, and signified but a color around it in the inventory. Quality is NOT a signifier of how strong/good the item is.
+Quality is tied directed to cost in shops, chance to spawn in loot areas, and signified but a color around it in the inventory. Quality is NOT automatically a signifier of how strong/good the item is.
 
-* Common [1] | Light grey | Most mundane items and common melee weapons are in this category
+* Common [1] | Light grey | Most mundane items, common melee weapons, and low-quality firearms are in this category
 
 * Uncommon [2] | Light green | Civilian firearms and unique melee weapons are in this category
 
@@ -482,7 +469,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Epic [4] | Purple | Military-issue items fit into this category
 
-* Legendary [5] | Yellow | Incredibly unique items are in this category, like easter egg items. Usually these can only be found in specific item pools
+* Legendary [5] | Yellow | Incredibly unique items are in this category, such as easter egg items. Usually these can only be found in very specific item pools
 
 ## Item List
 
@@ -494,16 +481,16 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Phantom-9 | [3] 9mm LE
 * ARM-.22 | [2] | .22 LR - Looks like a less advanced and smaller Mjolnir
+* ARM-5.56 | [3] | 5.56 NATO - Looks like a less advanced Mjolnir
 * **AKM** | [3] | 7.62 SOV
 * **AK-74** | [3] | 5.45 RU
-* AK-48 | [4] | 5.45 RU - Moderninzed version of an AK
-* Mjolnir-5.56 | [4] | 5.56 NATO - Like an M4A1 but slightly different
-* ARM-5.56 | [4] | 5.56 NATO - Looks like a less advanced Mjolnir
+* AK-48 | [3] | 5.45 RU - Moderninzed version of an AK
+* Mjolnir-5.56 | [3] | 5.56 NATO - Like an M4A1 but slightly different
 * SCAR-L | [4] | 5.56 NATO
 * AKS-74U | [4] | 5.45 RU
 * Mini-Mall | [4] | 5.56 NATO - A shorter Mjolnir with less range and more recoil
 * Mjol-Mutant | [5] | 7.62 SOV - A mix of a Mjolnir and the AKM
-* DrAKo | [5] | 7.62 SOVIET
+* DrAKo | [5] | 7.62 SOV
 * Honey Badger | [5] | .300 Blackout
 * MPL | [5] | .300 Blackout - A prototype assault rifle based on the Sig Sauer MCX
 
@@ -518,7 +505,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 ### Sniper Rifles
 
-* Mosin | [2] | 7.62 RIMMED
+* Mosin | [1] | 7.62 RIMMED
 * M6 Survivor | [2] | .22 LR - Based on the M4 Survival rifle
 * Woodsman-43 | [2] | .30-06 - Modernized hunting rifle
 * SVM | [4] | 7.62 RIMMED - Moderninzed SVD
@@ -527,7 +514,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 ### Shotguns
 
 * DB Shotgun | [1]
-* Wordington-970 | [1]
+* Wordington-48 | [1]
 * R870 | [2]
 * SPAS | [3]
 * M3020 | [3] | Based on the M1014
@@ -549,13 +536,14 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 ### Pistols
 
+* Sawed Off | [1] | 12 guage
 * .44 Western | [2] | .44 Magnum
 * Mk3 Pistol | [2] | .22 LR
 * M19 | [2] | 9mm LE | Modernized M9
 * G84 | [2] | 9mm LE - Modernized Glock
 * M49 | [2] | .45acp - Modernized M1911
-* KH45 | [2] | .45acp - Renamed HK .45
-* Ytho-44 | [2] | .44 Magnum - Standard magnum revolver with some rail systems
+* KH45 | [3] | .45acp - Renamed HK .45
+* Ytho-44 | [3] | .44 Magnum - Standard magnum revolver with some rail systems
 * FiveSeveN | [3] | Five Seven
 * Deagle | [4] | .50 AE
 * M1911 | [5] | .45acp
@@ -572,10 +560,12 @@ Unique firearms don't fit the other categories and typically have their own uniq
 * Paintball Gun | [1] | .68 PB - Decent BP damage but miniscule HP damage
 * Composite Bow | [2] | Arrow - Arrows have a chance to slow enemies
 * Crossbow | [2] | Arrow - More range and velocity than a composite bow
-* Riot Shotgun | [3] | 12g Pepperball - Doesn't inflict HP damage
+* Riot Shotgun | [3] | 12g Pepperball - Doesn't inflict much HP damage
 * Taser | [3] | Shock Cartridge - Small amount of HP damage, extremely large amount of BP damage
 * Frostcore Repeater | [4] | 11mm NITRO - Bullets slow enemies
 * Musket | [5] | .80 LEAD - The classic
+* Flintlock | [5] | .80 LEAD - A handheld classic
+* Blunderbuss | [5] | Scrap Metal - A shotgun that shoots...anything really
 
 ### OneHandMelee
 
@@ -585,6 +575,8 @@ Unique firearms don't fit the other categories and typically have their own uniq
     - Works as a tool in some instances
 * Machete | [2]
 * Tonfa | [3]
+    - Illegal
+* Shock Tonfa | [4]
     - Illegal
 * Bayonet | [4]
 * Masterful Sword | [5]
@@ -603,7 +595,7 @@ Unique firearms don't fit the other categories and typically have their own uniq
 
 * Police Scanner [1] - *Alerts you to incoming police presence*
     - Illegal
-* Sling Shround [1] - *Weapons stored on your sling are concealed, at the cost of 100% increased weapon switch speed for the sling weapon*
+* Sling Shroud [1] - *Weapons stored on your sling are concealed, at the cost of 100% increased weapon switch speed for the sling weapon*
 * Drill [1] - *Can be used to open various things, or break locks...loudly*
 * Codejammer [2] - *Can be used to bypass electronic locks. Can be used 3 times*
     - Chance to unlock: 20% * [0.5 * [(Mind-10) + (Luck-10)]]
@@ -641,24 +633,32 @@ Unique firearms don't fit the other categories and typically have their own uniq
 
 #### Stims
 
+Stims are this world's version of "potions", offering temporary benefits with some downsides as well. Stims last until the end of the raid, or until another stim is used.
+
+* Kong Wild - Strength is set to 20; Mind and Charisma is set to 3
+* The Pissed Golem - Resist 50% of all BP damage before all other resistances; your Charisma and Mind are reduced to 3
+* Hawkeye Brew - Shooting skill is 20; stamina regeneration slowed by 50%
+* Eye Opener - The negative effects of [exhaustion](#exhaustion) do not affect you, but you can still die from being exhausted
+* Life of the Party - Charisma and Mind is set to 20; BP regeneration slowed by 100%
+
 ### Ammo
 
 #### Ammo Variants
 
-Not all variants are available for every caliber. When loot is generated, the type is FMJ by default and then has a chance to be changed to another type depending on its loot pool
+Not all variants are available for every caliber. When loot is generated, the type is FMJ by default and then has a chance to be changed to another type depending on its loot pool. Shops offer all ammo sub-types at all times, except Armor Piercing/Flechette
 
 * Full Metal Jacket (FMJ) - Standard cartridge with decent damage across the board. Considered the "default"
-* Hollow Point (HP) - High BP and HP damage but low AP damage
+* Hollow Point (HP) - Higher BP and HP damage but low AP damage
 * Full Metal Jacket with Enhanced Penetration (FMJ +p) - Full Metal Jacket rounds with slightly higher AP damage but slightly lower HP damage
 * Tracer (T) - Guarantees a green tracer for your bullet. Can help with shot placement. Also has slightly increased HP damage
-* Armor Piercing (AP) - Expensive cartridge with very high BP damage but lower HP damage
+* Armor Piercing (AP) - Expensive cartridge with very high AP damage but lower HP damage
 
 There's also a few variants exclusive to shotgun ammo:
 
-* Buckshot (Red) - Standard shotgun ammunition
+* Buckshot (Red) - Standard shotgun ammunition, high HP and BP damage but struggles with armor
 * HP Slug (Green) - A singular projectile with very high HP damage, but barely scratches armor
 * Steel Slug (Yellow) - A singular projectile with higher AP damage but lower HP damage
-* Flechette (White) - Similar to buckshot, but with higher AP damage and less accuracy than buckshot
+* Flechette (White) - Similar to buckshot, but with higher AP damage more spread than buckshot
 
 
 #### Ammo Stats [CONFIDENTIAL]
