@@ -39,11 +39,39 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 * HP doesn't regenerate
 * You regain stamina and BP at a slower rate the less HP you have
 
-## Starter Classes
+## Modifiers
+
+### Melee Only
+
+* Guns and ammunition are removed from all item pools
+* Enemies use melee weapons instead of firearms
+* Throwables are still available
+* Recommended for players who want a less intense experience
+
+### DOOM Mode (?)
+
+* No reloading! All guns have a classic ammo system
+* No aiming down sights (except with scopes)
+
+# Factions
+
+## Various Police
+
+Almost every zone has some sort of police presence. Police try to find and detain/kill you when you have a wanted level. You also may find them patrolling streets
+
+### Possible Inventory:
+
+* Holster: G84
+* Sling*: MP5 (CQB), R870 (CQB), Mjolnir-5.56, Remwoo-25 (Sharpshooter)
+* Other: Taser, ammunition for gun they have
+
+*Cops with sling weapons usually don't appear without a 3+ wanted level
+
+# Starter Classes
 
 At character creation you have a choice to make regarding your starting stats and equipment
 
-### Veteran
+## Veteran
 
 *You're a veteran who valiently fought against the coup of 2035. Your combat skills are still fresh through your rigorous training for a day like this. This is your time to shine*
 
@@ -65,7 +93,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Bayonet
 * Lvl. 2 Armor
 
-### Hunter
+## Hunter
 
 *Leaving the hustle and corruption of the city, you turned to nature to sustain yourself. Not much to eat nowadays but you manage*
 
@@ -85,7 +113,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Machete
 * -25% starting money
 
-### Athlete
+## Athlete
 
 *Your body is a carefully oiled machine. You've outran the cops before, but now they don't feel like running*
 
@@ -104,7 +132,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Baseball Bat
 * +100% Bonus starting money
 
-### Professor
+## Professor
 
 *The halls of academia have been tainted by fascist lies. Never forgive them for that*
 
@@ -124,7 +152,7 @@ At character creation you have a choice to make regarding your starting stats an
 * -50% Bonus starting money
 
 
-### Con Artist
+## Con Artist
 
 *Your scams and exploits would make Ponzi blush. Skills in deception and manipulation could prove very useful*
 
@@ -144,7 +172,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Lvl. 1 Armor
 * +50% starting money
 
-### Brute
+## Brute
 
 *Doctors could never figure out what made you so strong and sturdy, use this to your advantage*
 
@@ -164,7 +192,7 @@ At character creation you have a choice to make regarding your starting stats an
 * Crowbar
 * Brass Knuckles
 
-### Larper
+## Larper
 
 *You have the anger, you have the drive, and you have the spirit...but that's about all*
 
@@ -172,7 +200,7 @@ At character creation you have a choice to make regarding your starting stats an
 
 * Shooting = 3
 * Strength = 6
-* Body = 8
+* Body = 5
 * Mind = 8
 * Charisma = 2
 * Luck = 16
@@ -181,20 +209,6 @@ At character creation you have a choice to make regarding your starting stats an
 
 * Katana
 * -75% less starting money
-
-## Modifiers
-
-### Melee Only
-
-* Guns and ammunition are removed from all item pools
-* Enemies use melee weapons instead of firearms
-* Throwables are still available
-* Recommended for players who want a less intense experience
-
-### DOOM Mode (?)
-
-* No reloading! All guns have a classic ammo system
-* No aiming down sights (except with scopes)
 
 # Mechanics
 
@@ -219,7 +233,8 @@ Block Strength
 
 Parry Strength
 
-* When parrying a melee attack, if the parryer's weapon's parry strength is weaker than the attacker's, then the parry fails, acting as a blocked attack regardless of timing (this will be indicated by its own sound effect, as well as a different one )
+* To parry, you must initiate a block just as an attack is about to hit you
+* If the parryer's weapon's parry strength is weaker than the attacker's, then the parry fails, acting as a blocked attack regardless of timing
 * Equal parry strengths favor the parryer
 * If the attack's parry power is higher by a factor of three, then the parryer loses significant BP
 
@@ -230,6 +245,28 @@ Crit Chance
 
 Crit Modifier
 * Per weapon
+
+### Armor
+
+#### Armor Levels
+
+Each set of armor has an armor level. As a rule of thumb, armor is guaranteed to block ~3 rounds of ammo of equal pen rating
+
+Levels:
+
+* TBD
+
+#### Absorbtion
+
+Armor has an "absorbtion" rating which signifies the armor's resistance to being damaged
+
+#### Penetration Chance
+
+Penetration chance follows this formula:
+
+Pen% = 100 + (absorbtion) - percentage_ap_missing
+
+Pen% CAN go over 100.
 
 ### Firearm Exclusive
 
@@ -243,7 +280,7 @@ Headshot
 * Headshots do 2x damage with all ammunition
 * Ammo with the "MelonPopper" trait will make a head explode in one shot, instantly killing
 
-## garBLOXD
+# garBLOXD
 
 garBLOXD is the hacked version of the Freedomnet operating system, which has its own hacked servers to bypass national surveillance
 
@@ -253,27 +290,23 @@ There's several applications you can go to on the garBLOXD network for various t
 
 All online networks are simulated with new content loading every 8 in-game hours
 
-### The Hub
+## The Hub
 
 A forum for people to post their thoughts. You cannot post or comment, but what people post can offer insight into the world including helpful hints
 
 [CONFIDENTAL] If I can figure out how to make it online, I will do it
 
-### P0yntea Dr3amz
+## P0yntea Dr3amz
 
 A drug network. Purchase stims
 
-### The Dig Blick Emporium
+## The Dig Blick Emporium
 
 Network for guns as well as 3D print schematics
 
-## Mercenaries
+# Mercenaries
 
-### Activating a Merc
-
-During exploration or a raid, you can either play as yourself, or you can play as one of your mercenaries.
-
-### Stats
+## Stats
 
 * Hit Points (HP) - Represents your health. When it's at zero, you die
 
@@ -283,36 +316,36 @@ During exploration or a raid, you can either play as yourself, or you can play a
 
 * Armor Points (AP) - Represents the Body of any worn armor. Armor Body is depleted by a large amount when pierced by a bullet. If a bullet is deflected, damage is minimal.
 
-### Attributes
+## Attributes
 
 Attributes are listed on a scale from 10 to 20, with 10 being represented as "average" and the baseline for stat increases/decreases. Every point under 10 is a -1 to the stat increases, while every point above 10 is a +1 to stat increases
 
-#### Shooting
+### Shooting
 
 * -1% recoil
 * +0.5% reload speed
 
-#### Strength
+### Strength
 
 * +1% melee speed
 * +0.5% melee crit chance
 
-#### Body
+### Body
 
 * +2% maximum stamina
 * +2% BP damage resistance
 
-#### Mind
+### Mind
 
 * +1% chance to hack/lockpick
 * +1% to dialogue checks to recall or know information
 
-#### Charisma
+### Charisma
 
 * +2% discount at vendors
 * +1% to dialogue checks to pursuade, intimidate, or lie. 
 
-#### Luck [CONFIDENTIAL]
+### Luck [CONFIDENTIAL]
 
 * 0.2% added to MOST random rolls
 
@@ -322,7 +355,7 @@ In addition, there's a few additional attributes that apply only to NPCs
 * Loyalty: Represents a mercenary's loyalty to the cause
 * Cowardice [CONFIDENTIAL]: The liklihood that the NPC will flee from combat when damaged or threatened. *HINT: This decreases significantly when an NPC is armed.*
 
-### Passive Activites
+## Passive Activites
 
 During an exploration phase where they're not doing anything, you can select a passive activity for a merc to do:
 
@@ -344,7 +377,7 @@ During an exploration phase where they're not doing anything, you can select a p
 
 * Crime - Burglary (chance to steal loot, with risk of detainment or death; scales with Mind/Shooting)
 
-### Specializations
+## Specializations
 
 Rarely, the merc you hired on is particularly good at a certain set of skills. These skills give then extra abilities in the field. These specializations can also be trained, and there's no limit to how many you can have
 
@@ -385,7 +418,7 @@ Smooth Criminal:
 * Active: Speech checks are double-rolled
 * Requires: Charisma 16, Mind 14
 
-## Crime, Security, and Chaos
+# Crime, Security, and Chaos
 
 **Crime** is any action considered illegal in the Republic of America (For a list of crimes possible to do in the game, check the following sections)
 
@@ -397,15 +430,15 @@ When your wanted level is above 0, police-type enemies will converge on the area
 
 [CONFIDENTIAL] **Chaos** happens when, after a time of security being at its maximum, the area splits up into factions and it becomes essentially a war zone. Businesses are closed, and a large majority of civilians are hostile. This state is irreversable for the area. Wanted level doesn't exist in a Chaos area
 
-### Misdemeanors
+## Misdemeanors
 
 Misdemeanors are minor crimes that only increase [wanted level](#wanted_level) to 1. Law enforcement will call backup after a time if they fail to catch you during a chase, at which will increase your wanted level to 2 points.
 
-### Felonies
+## Felonies
 
 Felonies are major crimes that increase the wanted level to 3-5 points. Law enforcement will call for backup if some of them die, increasing the wanted level up until the max level. Avoiding capture from a felony gives you the [outlaw](#outlaw) debuff for a time
 
-### Affront
+## Affront
 
 Any crime against the State is automatically classified as an affront, these automatically give your character a permanent outlaw debuff
 
@@ -413,29 +446,29 @@ Affronts are:
 
 * Murder of a law enforcement officer, military personnel, public official, or prison guard. Claims of self defense are not accepted (LEO/MIL/POF/DOC Murder)
 
-## Buffs/Debuffs
+# Buffs/Debuffs
 
-### Exhausted
+## Exhausted
 
 Happens after 8 in game hours. Increases with intensity over time. Can be suppressed with drugs, but Exhausted V will kill you if not addressed. Reduces Stamina regen
 
-### Poisoning
+## Poisoning
 
 Poisoning can cause various effects, and lasts until you rest or complete a raid
 
-### Outlaw
+## Outlaw
 
 [TDB]
 
-## Mercenary States
+# Mercenary States
 
 You can get into various states depending on many possible factors. These can be both positive and negative
 
-### MIA
+## MIA
 
 A placeholder state for when your mercenary's gone unconscious mid-raid. You'll find out what state they're in the following day. In some cases, MIA leads to the character having been mugged (stripped of all carried items) and making their way home the following day.
 
-### Unconscious
+## Unconscious
 
 Happens when your mercenary's BP reaches zero and they are knocked unconscious
 
@@ -449,7 +482,7 @@ What happens after getting knocked out also depends on who got the last hit in, 
 
 * Hostile - Character is killed
 
-### Detained
+## Detained
 
 When detained, a mercenary is in police custody. Mercenaries stay in this state for a certain amount of time depending on the wanted level you had before and can end in the following after a time:
 
@@ -457,9 +490,9 @@ When detained, a mercenary is in police custody. Mercenaries stay in this state 
 * Imprisoned - With wanted levels between 3-5 they will be imprisoned for the rest of the game, or if broken out. (See, [jailbreaks](#jailbreaks))
 * Snitch - If their loyalty is low enough, they will snitch, which means a number of other mercenaries may be given the "Outlaw" status for the zone they were arrested in permanently. Mercenaries who snitch are effectively removed from the game as if they died
 
-## Item Quality
+# Item Quality
 
-Quality is tied directed to cost in shops, chance to spawn in loot areas, and signified but a color around it in the inventory. Quality is NOT automatically a signifier of how strong/good the item is.
+Quality is tied directly to cost in shops, chance to spawn in loot areas, and signified but a color around it in the inventory. Quality is NOT automatically a signifier of how strong/good the item is.
 
 * Common [1] | Light grey | Most mundane items, common melee weapons, and low-quality firearms are in this category
 
@@ -471,13 +504,13 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 
 * Legendary [5] | Yellow | Incredibly unique items are in this category, such as easter egg items. Usually these can only be found in very specific item pools
 
-## Item List
+# Item List
 
-### Generic
+## Generic
 
 * **Dingdong** | N/A - *This is just a placeholder item*
 
-### Assault Rifles
+## Assault Rifles
 
 * Phantom-9 | [3] 9mm LE
 * ARM-.22 | [2] | .22 LR - Looks like a less advanced and smaller Mjolnir
@@ -494,7 +527,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Honey Badger | [5] | .300 Blackout
 * MPL | [5] | .300 Blackout - A prototype assault rifle based on the Sig Sauer MCX
 
-### Battle Rifles
+## Battle Rifles
 
 * SKS | [2] | 7.62 SOVIET
 * M14 | [2] | 7.62 NATO
@@ -503,15 +536,16 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * FAL | [4] | 7.62 NATO
 * M1 Garand | [5] | .30-06
 
-### Sniper Rifles
+## Sniper Rifles
 
 * Mosin | [1] | 7.62 RIMMED
 * M6 Survivor | [2] | .22 LR - Based on the M4 Survival rifle
 * Woodsman-43 | [2] | .30-06 - Modernized hunting rifle
+* Remwoo-25 | [3] | .30-06 - Police-issue sniper rifle
 * SVM | [4] | 7.62 RIMMED - Moderninzed SVD
 * AWP | [4] | 7.62 NATO
 
-### Shotguns
+## Shotguns
 
 * DB Shotgun | [1]
 * Wordington-48 | [1]
@@ -522,7 +556,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Striker | [5]
 * L1887A | [5] | Lever-action shotgun as seen in Terminator
 
-### Submachine Guns
+## Submachine Guns
 
 * Uzi | [2] | 9mm LE
 * A180 | [3] | .22 LR - Based on the American-180 prison-piggie SMG
@@ -534,7 +568,7 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Thompson | [5] | .45acp
 
 
-### Pistols
+## Pistols
 
 * Sawed Off | [1] | 12 guage
 * .44 Western | [2] | .44 Magnum
@@ -548,26 +582,27 @@ Quality is tied directed to cost in shops, chance to spawn in loot areas, and si
 * Deagle | [4] | .50 AE
 * M1911 | [5] | .45acp
 
-### Machine Pistols
+## Machine Pistols
 
 * MAC10 | [2] | 9mm LE
 * GA94 | [3] | 9mm LE - Automatic glock
 
-### Unique
+## Unique
 
 Unique firearms don't fit the other categories and typically have their own unique ammo types
 
 * Paintball Gun | [1] | .68 PB - Decent BP damage but miniscule HP damage
-* Composite Bow | [2] | Arrow - Arrows have a chance to slow enemies
+* Recurve Bow | [1] | Arrow - Arrows have a chance to slow enemies
+* Composite Bow | [2] | Arrow - Faster arrow velocity than composite bow
 * Crossbow | [2] | Arrow - More range and velocity than a composite bow
 * Riot Shotgun | [3] | 12g Pepperball - Doesn't inflict much HP damage
 * Taser | [3] | Shock Cartridge - Small amount of HP damage, extremely large amount of BP damage
-* Frostcore Repeater | [4] | 11mm NITRO - Bullets slow enemies
+* Frostcore Repeater | [4] | 11mm NITROG - Bullets slow enemies
 * Musket | [5] | .80 LEAD - The classic
 * Flintlock | [5] | .80 LEAD - A handheld classic
 * Blunderbuss | [5] | Scrap Metal - A shotgun that shoots...anything really
 
-### OneHandMelee
+## OneHandMelee
 
 * Kitchen Knife | [1]
 * Screwdriver | [1]
@@ -581,7 +616,7 @@ Unique firearms don't fit the other categories and typically have their own uniq
 * Bayonet | [4]
 * Masterful Sword | [5]
 
-### TwoHandMelee
+## TwoHandMelee
 
 * Shovel | [1]
 * Baseball Bat | [2]
@@ -591,7 +626,7 @@ Unique firearms don't fit the other categories and typically have their own uniq
 * Hammer and Sickle | [4]
 * Katana | [5]
 
-### Tools
+## Tools
 
 * Police Scanner [1] - *Alerts you to incoming police presence*
     - Illegal
@@ -612,9 +647,9 @@ Unique firearms don't fit the other categories and typically have their own uniq
 
 ----------------------------------
 
-### Consumables
+## Consumables
 
-#### Throwables
+### Throwables
 
 * Rotten Egg [1]
     - Chance to poison enemy hit with it
@@ -631,7 +666,7 @@ Unique firearms don't fit the other categories and typically have their own uniq
     - Illegal
 
 
-#### Stims
+### Stims
 
 Stims are this world's version of "potions", offering temporary benefits with some downsides as well. Stims last until the end of the raid, or until another stim is used.
 
@@ -641,9 +676,9 @@ Stims are this world's version of "potions", offering temporary benefits with so
 * Eye Opener - The negative effects of [exhaustion](#exhaustion) do not affect you, but you can still die from being exhausted
 * Life of the Party - Charisma and Mind is set to 20; BP regeneration slowed by 100%
 
-### Ammo
+## Ammo
 
-#### Ammo Variants
+### Ammo Variants
 
 Not all variants are available for every caliber. When loot is generated, the type is FMJ by default and then has a chance to be changed to another type depending on its loot pool. Shops offer all ammo sub-types at all times, except Armor Piercing/Flechette
 
@@ -661,13 +696,9 @@ There's also a few variants exclusive to shotgun ammo:
 * Flechette (White) - Similar to buckshot, but with higher AP damage more spread than buckshot
 
 
-#### Ammo Stats [CONFIDENTIAL]
+### Ammo Stats [CONFIDENTIAL]
 
-TBD
-
-#### Intermediate
-
-##### 7.62 NATO
+#### 7.62 SOVIET
 
 Traits:
 
@@ -681,7 +712,7 @@ Variants:
 * FMJ
 * T
 
-##### 5.45 RU
+#### 5.45 RU
 
 Traits:
 
@@ -697,7 +728,7 @@ Variants:
 * T
 * AP
 
-##### 5.56 NATO
+#### 5.56 NATO
 
 Traits:
 
@@ -714,30 +745,6 @@ Variants:
 
 ### Armor
 
-#### Mechanics
-
-##### Armor Levels
-
-Each set of armor has an armor level. As a rule of thumb, armor is guaranteed to block ~3 rounds of ammo of equal pen rating
-
-Levels:
-
-* TBD
-
-##### Absorbtion
-
-Armor has an "absorbtion" rating which signifies the armor's resistance to being damaged
-
-##### Penetration Chance
-
-Penetration chance follows this formula:
-
-Pen% = 100 + (absorbtion) - percentage_ap_missing
-
-Pen% CAN go over 100.
-
 ### Headgear
-
-
 
 ### Backpacks
