@@ -1,12 +1,8 @@
 class_name Item extends Node3D
 
+@export_category("Technical")
 ## In-game name of the item
 @export var display_name: String
-
-## The three damage values that this item does when attacking
-## Leave this zero for non-offensive items
-## In order: Health Points, Balance Points, Armor Points
-@export var damage: Array = [0.0, 0.0, 0.0]
 
 ## The Item's Type
 @export_enum("Generic", "Melee Weapon", "Firearm", "Bullet", "Tool", "Armor", "Helmet", "Backpack") var type: int
@@ -14,13 +10,13 @@ class_name Item extends Node3D
 ## The item's rarity for loot pools
 @export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
 
-## How many of this item there are in the given instance
+## Not implemented
 @export var amount: int = 1
 
-## How many you can stack together, restricts the amount value
+## Not implemented
 @export var max_stack: int = 1
 
-## A value that represents the space the item takes up in inventory
+## Not implemented
 @export var bulk: float = 1
 
 ## How many hands this weapon requires (used for looting algorithms)
@@ -37,6 +33,26 @@ class_name Item extends Node3D
 
 ## Where the weapon's first person viewmodel should be positioned
 @export var first_person_position: Vector3
+
+@export_category("Offensive")
+## The three damage values that this item does when attacking
+## Leave this zero for non-offensive items
+## In order: Health Points, Balance Points, Armor Points
+@export var damage: Array = [0.0, 0.0, 0.0]
+
+## The damage type of the item when used as a melee weapon
+## Defaults to bludgeon
+@export_enum("Bludgeon", "Pierce", "Slash", "Poison", "Shock", "Fire", "Explosive", "Frost") var damage_type: int = 0
+
+## The strength of the weapon's block-parry.
+## In a block-parry contest, the higher block-parry wins.
+## A lost parry results in severe BP loss and a small amount of HP loss.
+## A lost block results in mild BP and HP loss.
+## A tie favors the blocker.
+@export var block_parry_level: int
+
+@export var crit_chance: float
+@export var crit_modifier: float
 
 func _physics_process(delta):
 	if self.is_held: primary_action(delta)
@@ -61,7 +77,7 @@ func when_held(x: bool):
 			
 		$CollisionShape3D.disabled = true
 		to_idle()
-		self.freeze = true
+		if "freeze" in self: self.freeze = true
 		self.is_lootable = false
 		self.is_held = true
 	else:
@@ -69,7 +85,7 @@ func when_held(x: bool):
 		$left_arm.visible = false
 		$CollisionShape3D.disabled = false
 		$AnimationPlayer.play("RESET")
-		self.freeze = false
+		if "freeze" in self: self.freeze = false
 		self.is_lootable = true
 		self.is_held = false
 

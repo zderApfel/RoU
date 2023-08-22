@@ -2,9 +2,6 @@ class_name Bullet extends Item
 
 @export var description: String
 
-## The item's damage type (if applicable)
-@export_enum("Pierce", "Shock", "Frost", "Impulse") var damage_type: int
-
 ## If the bullet is flying
 @export var is_flying: bool = false
 

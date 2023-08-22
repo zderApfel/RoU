@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://yp3kbmhj4ipg"]
 
-[ext_resource type="Script" path="res://classes/items/scripts/MeleeWeapon.gd" id="1_1w1mt"]
+[ext_resource type="Script" path="res://classes/items/scripts/Item.gd" id="1_x2p7y"]
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_vjey0"]
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_gs4co"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_70cc1"]
@@ -70,8 +70,10 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bdk0"]
 size = Vector3(2.545, 1, 0.435)
 
-[node name="item" type="RigidBody3D"]
-script = ExtResource("1_1w1mt")
+[node name="item" type="Node3D"]
+script = ExtResource("1_x2p7y")
+display_name = "Fists"
+type = 1
 first_person_position = Vector3(-0.04, -0.6, -0.23)
 
 [node name="right_arm" type="Node3D" parent="."]

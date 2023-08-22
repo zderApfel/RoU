@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv5nh28lap3cc"]
+[gd_scene load_steps=2 format=3 uid="uid://cgie4nfeiy7ii"]
 
-[ext_resource type="Script" path="res://classes/items/scripts/MeleeWeapon.gd" id="1_ob4am"]
+[sub_resource type="GDScript" id="GDScript_kjgk2"]
+script/source = "''''''
+class_name MeleeWeapon extends Item
+
+func _ready():
+	pass
+
+func _process(_delta):
+	pass
+
+func primary_action(triangle):
+	if Input.is_action_just_pressed(\"primary_action\"):
+		print(\"Primary Action\")
+
+func secondary_action(triangle):
+	if Input.is_action_just_pressed(\"secondary_action\"):
+		print(\"Secondary Action\")
+
+"
 
 [node name="MeleeWeapon" type="Node3D"]
-script = ExtResource("1_ob4am")
-is_holdable = true
+script = SubResource("GDScript_kjgk2")
