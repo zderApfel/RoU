@@ -1,19 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg0xgg8w11m6g"]
+[gd_scene load_steps=2 format=3 uid="uid://cg0xgg8w11m6g"]
 
-[ext_resource type="Script" path="res://classes/technical/Hitbox.gd" id="1_mdsas"]
+[ext_resource type="Script" path="res://classes/technical/scripts/Hitbox.gd" id="1_mdsas"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_d8bov"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cmcuh"]
-
-[node name="Hitbox" type="RigidBody3D"]
-continuous_cd = true
+[node name="Hitbox" type="Area3D"]
+collision_layer = 256
+collision_mask = 256
 script = ExtResource("1_mdsas")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.09, 0, 0, 0, 1.09, 0, 0, 0, 1.09, 0, 0, 0)
-mesh = SubResource("BoxMesh_d8bov")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.09, 0, 0, 0, 1.09, 0, 0, 0, 1.09, 0, 0, 0)
-shape = SubResource("BoxShape3D_cmcuh")

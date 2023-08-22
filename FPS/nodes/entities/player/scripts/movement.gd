@@ -16,6 +16,7 @@ const BOB_FREQ = 2.2
 @onready var speed = jog_speed
 @onready var gravity = 12
 @onready var t_bob = 0.0
+@onready var held_item = $pivot/Camera3D/hold_slot
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -68,13 +69,12 @@ func _headbob(time) -> Vector3:
 	return pos
 	
 func headbob_controller(x):
-	var z = $pivot/Camera3D/hold_slot
-	
 	t_bob += x * velocity.length() * float(is_on_floor())
 	if velocity.y > 0: t_bob += x * velocity.length() * 0.25
-	if z != null:
-		z.transform.origin = _headbob(t_bob)
 	
+	if held_item != null:
+		held_item.transform.origin = _headbob(t_bob)
+		
 func sprint():
 	if Input.is_action_pressed("sprint"):
 		speed = sprint_speed

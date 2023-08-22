@@ -38,13 +38,9 @@ func fly(triangle):
 
 	
 func impact(body):
-	if "vitals" in body:
-		body.vitals.hurt(damage)
-		print("Struck a human")
-		self.queue_free()
-	else: 
-		print("Struck an inanimate object")
-		self.queue_free()
+	self.queue_free()
+	if "accepting_pain" in body and body.accepting_pain == true:
+		body.struck(damage)
 
 func _on_body_entered(body):
 	impact(body)

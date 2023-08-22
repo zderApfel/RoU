@@ -610,8 +610,8 @@ is_automatic = true
 ammo = "uid://csqf6jqtmwwpb"
 recoil = 5.0
 max_ammo = 31
-current_ammo = 31
-muzzle_velocity = 240.0
+current_ammo = 2
+muzzle_velocity = 400.0
 display_name = "AKM"
 type = 2
 rarity = 3
@@ -689,8 +689,9 @@ libraries = {
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 2.23517e-08, 4.47035e-08, 1.49012e-08, 2.98023e-08, -1, -7.45058e-09, 1, 0, 0.163023, 0.247635, -2.01577)
 target_position = Vector3(0, -10, 0)
-collision_mask = 262
+collision_mask = 256
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="muzzle" type="Marker3D" parent="RayCast3D"]
 transform = Transform3D(1, 9.77024e-16, 0, 0, -4.37114e-08, 1, -2.22044e-16, -1, -4.37114e-08, 1.93715e-07, -8.88867, -2.68221e-07)

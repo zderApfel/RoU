@@ -32,12 +32,12 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 
 ## Hardcore
 
-*"The developer-intended way to play. Punishingly difficult to those unfamiilar with the game's mechanics"*
+*"The developer-intended way to play. Punishingly difficult to those unfamiilar with the game"*
 
 * Main character death means GAME OVER and save file deletion
 * Some raids now must be completed within a certain time frame, with consequences for failure
 * HP doesn't regenerate
-* You regain stamina and BP at a slower rate the less HP you have
+* You regain stamina at a slower rate the less HP you have
 
 ## Modifiers
 
@@ -54,6 +54,15 @@ You play as a disillusioned anarchist who recently lost their closest friend to 
 * No aiming down sights (except with scopes)
 
 # Factions
+
+## Citizens
+
+These are default NPCs found in the world and residents of the RoU
+There's several different types of NPCs that can be found in the world, here referred to by their technical names:
+
+### Wanderers
+
+These are basic NPCs that wander around the area. They don't have any role and usually are not armed.
 
 ## Various Police
 

@@ -8,12 +8,6 @@ class_name Item extends Node3D
 ## In order: Health Points, Balance Points, Armor Points
 @export var damage: Array = [0.0, 0.0, 0.0]
 
-## If the item is lootable
-@export var is_lootable: bool = true
-
-## If this is false, you will incite frightened/hostile response from most people when held
-@export var legal: bool = true
-
 ## The Item's Type
 @export_enum("Generic", "Melee Weapon", "Firearm", "Bullet", "Tool", "Armor", "Helmet", "Backpack") var type: int
 
@@ -32,11 +26,17 @@ class_name Item extends Node3D
 ## How many hands this weapon requires (used for looting algorithms)
 @export_enum("1", "2") var hands: int
 
-## Where the weapon's first person viewmodel should be positioned
-@export var first_person_position: Vector3
-
 ## DO NOT EDIT
 @export var is_held: bool = false
+
+## If the item is lootable
+@export var is_lootable: bool = true
+
+## If this is false, you will incite frightened/hostile response from most people when held
+@export var legal: bool = true
+
+## Where the weapon's first person viewmodel should be positioned
+@export var first_person_position: Vector3
 
 func _physics_process(delta):
 	if self.is_held: primary_action(delta)

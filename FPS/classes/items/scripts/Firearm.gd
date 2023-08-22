@@ -55,6 +55,7 @@ func reload() -> void:
 			to_idle()
 			
 func shoot() -> void:
+	current_ammo -= 1
 	bullet = load(ammo).instantiate()
 	bullet = bullet.duplicate()
 	
@@ -69,6 +70,3 @@ func shoot() -> void:
 		bullet.is_lootable = false
 		bullet.muzzle_velocity = muzzle_velocity
 		bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
-		print(bullet.damage)
-
-		current_ammo -= 1
