@@ -592,7 +592,6 @@ collision_layer = 30
 collision_mask = 30
 script = ExtResource("1_q173y")
 current_ammo = 31
-is_holdable = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 

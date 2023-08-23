@@ -229,7 +229,7 @@ HP/BP/AP Damage
 
 Damage Type
 
-* Bludgeon, Pierce, Slash, Poison, Shock, Fire, Explosive, Impulse, Frost
+* Bludgeon, Pierce, Slash, Poison, Shock, Fire, Explosive, Frost
 * Used for handling resistances/immunities
 
 ### Melee Exclusive
@@ -360,9 +360,18 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 In addition, there's a few additional attributes that apply only to NPCs
 
-* Reputation: Represents the NPCs opinion of the player character
-* Loyalty: Represents a mercenary's loyalty to the cause
-* Cowardice [CONFIDENTIAL]: The liklihood that the NPC will flee from combat when damaged or threatened. *HINT: This decreases significantly when an NPC is armed.*
+### Reputation
+
+*  Represents the NPCs opinion of the player character
+
+### Loyalty
+
+* Represents a mercenary's loyalty to the cause
+* Replaces reputation if hired
+
+### Cowardice [CONFIDENTIAL]
+* The liklihood that the NPC will flee from combat when damaged or threatened
+* *HINT: This decreases significantly when an NPC is armed.*
 
 ## Passive Activites
 
@@ -386,9 +395,9 @@ During an exploration phase where they're not doing anything, you can select a p
 
 * Crime - Burglary (chance to steal loot, with risk of detainment or death; scales with Mind/Shooting)
 
-## Specializations
+## Skills
 
-Rarely, the merc you hired on is particularly good at a certain set of skills. These skills give then extra abilities in the field. These specializations can also be trained, and there's no limit to how many you can have
+Mercenaries sometimes come packaged with their own set of skills that offer minor benefits to certain actions
 
 Master Thief:
 

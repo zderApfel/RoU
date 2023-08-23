@@ -24,15 +24,12 @@ class_name Firearm extends Item
 @onready var bullet: Bullet
 @onready var muzzle = $RayCast3D/muzzle
 
-func ready():
-	pass
-
 func _physics_process(delta):
 	current_ammo = clamp(current_ammo,0,max_ammo)
 	if is_held: 
 		self.primary_action(delta)
-	if is_held: self.secondary_action(delta)
-	if is_held: self.reload()
+		self.secondary_action(delta)
+		self.reload()
 
 func primary_action(triangle) -> void:
 	if Input.is_action_just_pressed("primary_action") and current_ammo > 0:

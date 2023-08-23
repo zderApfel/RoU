@@ -10,14 +10,14 @@ class_name Item extends Node3D
 ## The item's rarity for loot pools
 @export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
 
-## Not implemented
+## Not implemented yet
 @export var amount: int = 1
 
-## Not implemented
+## Not implemented yet
 @export var max_stack: int = 1
 
-## Not implemented
-@export var bulk: float = 1
+## An animation step counter
+@export var animation_step: int = 0
 
 ## How many hands this weapon requires (used for looting algorithms)
 @export_enum("1", "2") var hands: int
@@ -30,6 +30,9 @@ class_name Item extends Node3D
 
 ## If this is false, you will incite frightened/hostile response from most people when held
 @export var legal: bool = true
+
+## Blocks inputs when enabled
+@export var block_inputs: bool = false
 
 ## Where the weapon's first person viewmodel should be positioned
 @export var first_person_position: Vector3
@@ -54,9 +57,14 @@ class_name Item extends Node3D
 @export var crit_chance: float
 @export var crit_modifier: float
 
+func _ready():
+	if is_held: to_idle()
+	block_inputs = false
+
 func _physics_process(delta):
-	if self.is_held: primary_action(delta)
-	if self.is_held: secondary_action(delta)
+	if self.is_held: 
+		primary_action(delta)
+		secondary_action(delta)
 
 
 func primary_action(triangle):
@@ -100,3 +108,4 @@ func reposition():
 
 func to_idle():
 	$AnimationPlayer.play("idle")
+	animation_step = 0
