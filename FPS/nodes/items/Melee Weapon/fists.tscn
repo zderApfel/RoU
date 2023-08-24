@@ -429,7 +429,7 @@ surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="right_meleebox" parent="right_arm" instance=ExtResource("5_jauwc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0086472, 0.767239, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0086472, 0.986348, 0)
 
 [node name="CollisionShape3D" parent="right_arm/right_meleebox" index="0"]
 shape = SubResource("BoxShape3D_vct4e")
@@ -447,11 +447,10 @@ surface_material_override/0 = ExtResource("3_gs4co")
 surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_meleebox" parent="left_arm" instance=ExtResource("5_jauwc")]
-transform = Transform3D(1, 0, 0, -1.49012e-08, 1, -4.47035e-08, 2.98023e-08, 7.45058e-09, 1, 0.00392139, 0.760763, 1.19209e-07)
+transform = Transform3D(1, 1.49012e-08, 0, 1.49012e-08, 1, -5.96046e-08, 4.47035e-08, 0, 1, 0.00392142, 0.961959, 1.19209e-07)
 monitoring = true
 
 [node name="CollisionShape3D" parent="left_arm/left_meleebox" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_yn1j5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

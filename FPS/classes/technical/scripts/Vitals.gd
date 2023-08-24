@@ -15,6 +15,3 @@ func help_or_hurt(hp, bp) -> void:
 	Balance = clamp(Balance - bp, 0, 100)
 	
 	print(str(Health, " ", Balance))
-	
-	
-	

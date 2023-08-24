@@ -13,6 +13,8 @@ class_name Item extends Node3D
 ## Not implemented yet
 @export var amount: int = 1
 
+@export var bulk: int = 1
+
 ## Not implemented yet
 @export var max_stack: int = 1
 

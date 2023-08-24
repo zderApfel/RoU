@@ -52,9 +52,9 @@ func loot_action(item_to_loot) -> void:
 	print("Attempting to loot "+item_to_loot.display_name)
 	
 	match item_to_loot.type:
-		1: # Melee Weapon
+		"Melee Weapon": # Melee Weapon
 			pass
-		2: # Firearm
+		"Firearm": # Firearm
 			store_to(sling, item_to_loot)
 		_:
 			store_to(pockets, item_to_loot)

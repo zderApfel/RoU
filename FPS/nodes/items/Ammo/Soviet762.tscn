@@ -4,17 +4,16 @@
 
 [node name="Bullet" instance=ExtResource("1_orqf0")]
 collision_layer = 262
-description = null
 is_flying = null
 melonpopper = null
 display_name = "7.62 Soviet"
+type = "Bullet"
 rarity = null
-max_stack = null
 bulk = 0.02
+max_stack = null
 hands = null
 is_held = null
 is_lootable = null
 legal = null
 first_person_position = null
 damage = [45.0, 0.0, 0.0]
-damage_type = 1

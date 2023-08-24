@@ -601,7 +601,7 @@ _data = {
 }
 
 [node name="item" type="RigidBody3D"]
-transform = Transform3D(0.995353, 0.0962913, 0, -0.0962913, 0.995353, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 14
 collision_mask = 14
 mass = 3.0
@@ -614,13 +614,12 @@ max_ammo = 31
 current_ammo = 31
 muzzle_velocity = 400.0
 display_name = "AKM"
-type = 2
-rarity = 3
+type = "Firearm"
 hands = 1
 first_person_position = Vector3(0.335, -0.4, -0.485)
 
 [node name="main_body" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.750001, 1.72562e-08, -1.90131e-06, 0, 0.749969, 0.00680669, 1.90139e-06, 0.0068067, -0.749968, 0.127186, 0.00679888, -1.09997)
+transform = Transform3D(-0.750001, 0, -1.90138e-06, 0, 0.75, 0, 1.90139e-06, 0, -0.749999, 0.127186, 0, -1.11426)
 mesh = ExtResource("2_svnv3")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_gked0")
@@ -646,7 +645,7 @@ mesh = ExtResource("6_jhuq6")
 skeleton = NodePath("")
 
 [node name="magazine" type="MeshInstance3D" parent="main_body"]
-transform = Transform3D(1, 1.37802e-09, 2.5201e-11, -1.37819e-09, 0.999958, 0.00912357, -1.26275e-11, -0.00912357, 0.999958, -0.0939827, -0.426727, -0.503454)
+transform = Transform3D(1, 2.01948e-28, 2.84217e-14, 0, 1, -7.10543e-15, -2.84217e-14, 7.10543e-15, 1, -0.0939827, -0.426727, -0.503454)
 mesh = ExtResource("8_lfm7s")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_gked0")
@@ -656,7 +655,7 @@ transform = Transform3D(1, 1.12152e-13, 2.38419e-07, 1.05471e-13, 1, -1.61559e-2
 shape = SubResource("BoxShape3D_sdnx8")
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(-1, -2.41592e-06, -9.33531e-07, -2.16813e-08, 0.36823, -0.929731, 2.58992e-06, -0.929731, -0.36823, 0.183841, -0.526096, 0.537114)
+transform = Transform3D(-1, -2.3652e-06, -9.12658e-07, 0, 0.359997, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
 visible = false
 
 [node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]
@@ -668,7 +667,7 @@ surface_material_override/0 = ExtResource("10_6304o")
 surface_material_override/1 = ExtResource("11_drghn")
 
 [node name="left_arm" type="Node3D" parent="."]
-transform = Transform3D(-0.891787, 0.416474, -0.176821, 0.387044, 0.499788, -0.77486, -0.234336, -0.759447, -0.606898, -0.281103, -0.604726, -0.426869)
+transform = Transform3D(-0.891798, 0.416468, -0.176781, 0.384925, 0.493076, -0.780197, -0.237761, -0.763825, -0.600033, -0.281103, -0.605588, -0.435742)
 visible = false
 
 [node name="arm" parent="left_arm" instance=ExtResource("9_y5chg")]

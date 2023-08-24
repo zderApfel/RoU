@@ -8,10 +8,13 @@ class_name Hitbox extends Area3D
 
 @export var vitals: Vitals
 
+@onready var hp_damage: float
+@onready var bp_damage: float
+
 
 func struck(damage, damage_type: String = "Bludgeoning") -> void:
-	var hp_damage = damage[0]*hp_mod
-	var bp_damage = damage[1]*bp_mod
+	hp_damage = damage[0]*hp_mod
+	bp_damage = damage[1]*bp_mod
 	
 	vitals.help_or_hurt(hp_damage, bp_damage)
 

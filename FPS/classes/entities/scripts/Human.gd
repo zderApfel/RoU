@@ -15,25 +15,15 @@ class_name Human extends CharacterBody3D
 func _ready():
 	pass
 
-func _process(delta):
+func _physics_process(delta):
 	if vitals.Health <= 0:
 		die()
-	if vitals.Balance <= 0:
-		knockout()
 
 func die():
 	skeleton.physical_bones_start_simulation()
 	collision.disabled = false
 	await get_tree().create_timer(5).timeout
-	skeleton.physical_bones_stop_simulation() #To make it respawn
-	#self.queue_free() #To make it disappear
+	self.queue_free()
 	
 func knockout():
-	if vitals.Health > 0: 
-		await get_tree().create_timer(3).timeout
-		vitals.Balance = 30
-	
-func respawn():
-	vitals.Health = 100
-	vitals.Balance = 100
-	skeleton.physical_bones_stop_simulation()
+	pass
