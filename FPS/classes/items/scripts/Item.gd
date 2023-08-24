@@ -5,10 +5,10 @@ class_name Item extends Node3D
 @export var display_name: String
 
 ## The Item's Type
-@export_enum("Generic", "Melee Weapon", "Firearm", "Bullet", "Tool", "Armor", "Helmet", "Backpack") var type: int
+@export_enum("Generic", "Melee Weapon", "Firearm", "Bullet", "Tool", "Armor", "Helmet", "Backpack") var type: String = "Generic"
 
 ## The item's rarity for loot pools
-@export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: int
+@export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: String = "N/A"
 
 ## Not implemented yet
 @export var amount: int = 1
@@ -45,7 +45,7 @@ class_name Item extends Node3D
 
 ## The damage type of the item when used as a melee weapon
 ## Defaults to bludgeon
-@export_enum("Bludgeon", "Pierce", "Slash", "Poison", "Shock", "Fire", "Explosive", "Frost") var damage_type: int = 0
+@export_enum("Bludgeon", "Pierce", "Slash", "Poison", "Shock", "Fire", "Explosive", "Frost") var damage_type: String = "Bludgeon"
 
 ## The strength of the weapon's block-parry.
 ## In a block-parry contest, the higher block-parry wins.
@@ -54,7 +54,11 @@ class_name Item extends Node3D
 ## A tie favors the blocker.
 @export var block_parry_level: int
 
+## Chance to land a critical hit
+## Is a range from 0 to 1
 @export var crit_chance: float
+
+## What to multiply the damage by
 @export var crit_modifier: float
 
 func _ready():
@@ -109,3 +113,7 @@ func reposition():
 func to_idle():
 	$AnimationPlayer.play("idle")
 	animation_step = 0
+
+func melee_strike(hitbox, weapon_damage, weapon_damage_type: String = "Bludgeon"):
+	hitbox.struck(weapon_damage, weapon_damage_type)
+	

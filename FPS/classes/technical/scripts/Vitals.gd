@@ -10,11 +10,11 @@ func _process(delta):
 
 '''-----------------------------------------'''
 
-func hurt(by) -> void:
-	Health -= by[0]
-	Balance -= by[1]
+func help_or_hurt(hp, bp) -> void:
+	Health = clamp(Health - hp, 0, 100)
+	Balance = clamp(Balance - bp, 0, 100)
 	
-	print(Health)
+	print(str(Health, " ", Balance))
 	
 	
 	

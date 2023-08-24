@@ -14,6 +14,7 @@ class_name Attributes extends Node
 ## Per point: 
 ## +2% maximum stamina; 
 ## +2% BP Damage resistance
+## +10% faster recovery from knockouts
 @export var Body: int = 10
 
 ## Per point: 

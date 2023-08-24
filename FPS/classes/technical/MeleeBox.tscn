@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://5rhedeyt16o6"]
+[gd_scene load_steps=2 format=3 uid="uid://5rhedeyt16o6"]
+
+[ext_resource type="Script" path="res://classes/technical/scripts/MeleeBox.gd" id="1_x4n6c"]
 
 [node name="MeleeBox" type="Area3D"]
+collision_layer = 256
+collision_mask = 256
+monitoring = false
+script = ExtResource("1_x4n6c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

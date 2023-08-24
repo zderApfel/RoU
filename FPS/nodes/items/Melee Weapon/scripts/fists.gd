@@ -10,7 +10,7 @@ func _physics_process(delta):
 
 func primary_action(_triangle):
 	var animation: String
-	if Input.is_action_just_pressed("primary_action"):
+	if Input.is_action_pressed("primary_action"):
 		match animation_step:
 			0:	
 				animation = "weak_combo_1"
