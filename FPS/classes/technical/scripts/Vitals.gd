@@ -13,5 +13,3 @@ func _process(delta):
 func help_or_hurt(hp, bp) -> void:
 	Health = clamp(Health - hp, 0, 100)
 	Balance = clamp(Balance - bp, 0, 100)
-	
-	print(str(Health, " ", Balance))

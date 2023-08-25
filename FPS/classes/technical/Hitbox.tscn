@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://classes/technical/scripts/Hitbox.gd" id="1_mdsas"]
 
 [node name="Hitbox" type="Area3D"]
-collision_layer = 256
-collision_mask = 256
+collision_layer = 768
+collision_mask = 768
 script = ExtResource("1_mdsas")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

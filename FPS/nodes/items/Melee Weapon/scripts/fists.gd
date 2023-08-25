@@ -9,18 +9,21 @@ func _physics_process(delta):
 		self.secondary_action(delta)
 
 func primary_action(_triangle):
-	var animation: String
 	if Input.is_action_pressed("primary_action"):
-		match animation_step:
-			0:	
-				animation = "weak_combo_1"
-			1:
-				animation = "weak_combo_2"
-			2:
-				animation = "weak_combo_3"
+		attack_animation()
 
-		animation_step+=1
-		$AnimationPlayer.play("RESET")
-		$AnimationPlayer.play(animation)
-		await $AnimationPlayer.animation_finished
-		to_idle()
+func attack_animation():
+	var animation: String
+	match animation_step:
+		0:	
+			animation = "weak_combo_1"
+		1:
+			animation = "weak_combo_2"
+		2:
+			animation = "weak_combo_3"
+
+	animation_step+=1
+	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.play(animation)
+	await $AnimationPlayer.animation_finished
+	to_idle()

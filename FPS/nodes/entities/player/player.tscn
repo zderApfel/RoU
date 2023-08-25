@@ -39,6 +39,7 @@ script = ExtResource("2_sing5")
 [node name="PlayerInventory" parent="." instance=ExtResource("5_rvqnw")]
 
 [node name="Attributes" parent="." instance=ExtResource("6_3wp4f")]
+Strength = 12
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.280118, 0)

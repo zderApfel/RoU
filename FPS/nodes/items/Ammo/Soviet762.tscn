@@ -16,4 +16,5 @@ is_held = null
 is_lootable = null
 legal = null
 first_person_position = null
+strike_impulse = Vector3(0, 0, 1)
 damage = [45.0, 5.0, 0.0]

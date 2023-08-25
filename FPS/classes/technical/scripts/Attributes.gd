@@ -7,7 +7,8 @@ class_name Attributes extends Node
 @export var Shooting: int = 10
 
 ## Per point: 
-## +1% melee speed; 
+## +1% melee speed;
+## +1% melee BP damage; [Implemented]
 ## +0.5% melee crit chance
 @export var Strength: int = 10
 

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_vjey0"]
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_gs4co"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_70cc1"]
-[ext_resource type="PackedScene" uid="uid://5rhedeyt16o6" path="res://classes/technical/MeleeBox.tscn" id="5_jauwc"]
+[ext_resource type="PackedScene" path="res://classes/technical/MeleeBox.tscn" id="5_jauwc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vct4e"]
 size = Vector3(0.295369, 0.254332, 0.270525)
@@ -413,7 +413,8 @@ display_name = "Fists"
 type = "Melee Weapon"
 animation_step = 1
 first_person_position = Vector3(-0.04, -0.6, -0.23)
-damage = [3, 10, 0]
+strike_impulse = Vector3(0, 0, -2)
+damage = [2, 10, 0]
 crit_chance = 0.01
 crit_modifier = 1.0
 

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_hgnth"]
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_ntyua"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_au0w0"]
-[ext_resource type="PackedScene" uid="uid://5rhedeyt16o6" path="res://classes/technical/MeleeBox.tscn" id="5_ejebd"]
+[ext_resource type="PackedScene" path="res://classes/technical/MeleeBox.tscn" id="5_ejebd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yn1j5"]
 size = Vector3(0.295369, 0.254332, 0.270525)

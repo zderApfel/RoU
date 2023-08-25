@@ -39,6 +39,10 @@ class_name Item extends Node3D
 ## Where the weapon's first person viewmodel should be positioned
 @export var first_person_position: Vector3
 
+## For when the item is used to damage an enemy, 
+## this is the strength of the force applied
+@export var strike_impulse: Vector3
+
 @export_category("Offensive")
 ## The three damage values that this item does when attacking
 ## Leave this zero for non-offensive items
@@ -116,6 +120,11 @@ func to_idle():
 	$AnimationPlayer.play("idle")
 	animation_step = 0
 
-func melee_strike(hitbox, weapon_damage, weapon_damage_type: String = "Bludgeon"):
-	hitbox.struck(weapon_damage, weapon_damage_type)
+func melee_strike(hitbox, strength_modifier: int = 0, weapon_strike_from: Vector3 = Vector3.ZERO):
+	var modified_damage: Array = [damage[0], damage[1], damage[2]]
+
+	modified_damage[1] = modified_damage[1]*(1 + .02*(strength_modifier))
+	hitbox.struck(type, modified_damage, damage_type, strike_impulse, weapon_strike_from)
 	
+	print(modified_damage[1])
+	print(strike_impulse)
