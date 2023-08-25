@@ -137,6 +137,7 @@ reload={
 3d_physics/layer_4="ENTITIES"
 3d_physics/layer_5="BONES"
 3d_physics/layer_9="WEAPONS"
+3d_physics/layer_10="MELEE_WEAPONS"
 
 [physics]
 

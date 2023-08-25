@@ -601,7 +601,6 @@ _data = {
 }
 
 [node name="item" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 14
 collision_mask = 14
 mass = 3.0
@@ -655,7 +654,7 @@ transform = Transform3D(1, 1.12152e-13, 2.38419e-07, 1.05471e-13, 1, -1.61559e-2
 shape = SubResource("BoxShape3D_sdnx8")
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(-1, -2.3652e-06, -9.12658e-07, 0, 0.359997, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
+transform = Transform3D(-1, -2.3652e-06, -9.12659e-07, 0, 0.359997, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
 visible = false
 
 [node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]

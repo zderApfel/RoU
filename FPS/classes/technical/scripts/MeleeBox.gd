@@ -24,3 +24,4 @@ func _on_area_entered(area) -> void:
 	if "accepting_pain" in area and area.accepting_pain and weapon != null:
 		await set_deferred("monitoring", false)
 		weapon.melee_strike(area, weapon.damage, weapon.damage_type)
+	
