@@ -10,7 +10,6 @@ class_name Human extends CharacterBody3D
 
 @onready var skeleton = $human_01/Armature/Skeleton3D
 @onready var collision = $collision
-@onready var melee_hitbox = $melee_hitbox/CollisionShape3D
 @onready var vitals = $Vitals
 
 

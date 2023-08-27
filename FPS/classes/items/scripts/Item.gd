@@ -125,6 +125,4 @@ func melee_strike(hitbox, strength_modifier: int = 0, weapon_strike_from: Vector
 
 	modified_damage[1] = modified_damage[1]*(1 + .02*(strength_modifier))
 	hitbox.struck(type, modified_damage, damage_type, strike_impulse, weapon_strike_from)
-	
-	print(modified_damage[1])
-	print(strike_impulse)
+
