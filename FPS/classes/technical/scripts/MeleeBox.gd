@@ -21,7 +21,8 @@ func _process(delta) -> void:
 
 func _on_area_entered(area):
 	var strength_modifier = player_attributes.return_modifier(player_attributes.Strength)
+	var luck_modifier = player_attributes.return_modifier(player_attributes.Luck)
 	
 	if "accepting_pain" in area and area.accepting_pain and weapon != null:
 		await set_deferred("monitoring", false)
-		weapon.melee_strike(area, strength_modifier, get_global_transform().origin)
+		weapon.melee_strike(area, strength_modifier, luck_modifier)

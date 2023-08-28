@@ -61,7 +61,7 @@ class_name Item extends Node3D
 @export var block_parry_level: int
 
 ## Chance to land a critical hit
-## Is a range from 0 to 1
+## Is a range from 1 to 100
 @export var crit_chance: float
 
 ## What to multiply the damage by
@@ -122,11 +122,18 @@ func to_idle():
 	$AnimationPlayer.play("idle")
 	animation_step = 0
 
-func melee_strike(hitbox, strength_modifier: int = 0, weapon_strike_from: Vector3 = Vector3.ZERO):
+func melee_strike(hitbox, strength_modifier: float = 0, luck_modifier: float = 0):
 	var modified_damage: Array = [damage[0], damage[1], damage[2]]
+	var crit: bool = RNG.d100(crit_chance, strength_modifier*0.5, luck_modifier*0.2)
+	
+	if crit:
+		print("CRIT!")
+		modified_damage[0] = modified_damage[0]*crit_modifier
+		modified_damage[1] = modified_damage[1]*crit_modifier
+		modified_damage[2] = modified_damage[2]*crit_modifier
 
 	modified_damage[1] = modified_damage[1]*(1 + .02*(strength_modifier))
-	hitbox.struck(type, modified_damage, damage_type, strike_impulse, weapon_strike_from)
+	hitbox.struck(type, modified_damage, damage_type)
 
 func get_melee_speed() -> float:
 	var ynot = player_attributes.return_modifier(player_attributes.Strength) * .02

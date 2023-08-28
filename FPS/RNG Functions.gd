@@ -8,7 +8,7 @@ static func coinflip() -> bool:
 	else:
 		return true
 
-static func d100(chance: float = 50.0, primary_mod: float = 0.0, secondary_mod: float = 0.0) -> bool:
+static func d100(chance, primary_mod: float = 0.0, secondary_mod: float = 0.0) -> bool:
 	var x = randf_range(0,100)
 	
 	var final_chance = chance + primary_mod + secondary_mod
