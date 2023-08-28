@@ -7,19 +7,19 @@ class_name Attributes extends Node
 @export var Shooting: int = 10
 
 ## Per point: 
-## +1% melee speed;
+## +2% melee speed; [Implemented]
 ## +1% melee BP damage; [Implemented]
 ## +0.5% melee crit chance
 @export var Strength: int = 10
 
 ## Per point: 
-## +2% maximum stamina; 
+## -2% reduced stamina usage; 
 ## +2% BP Damage resistance
 ## +10% faster recovery from knockouts
 @export var Body: int = 10
 
 ## Per point: 
-## +1% locking/hacking chance; 
+## +1% lockpickinging/hacking chance; 
 ## +1% to dialogue checks to recall or know information
 @export var Mind: int = 10
 

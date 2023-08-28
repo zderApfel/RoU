@@ -1,4 +1,4 @@
-class_name Fists extends Item
+class_name MeleeWeapon extends Item
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +15,6 @@ func primary_action(_triangle):
 func attack_animation():
 	var animation: String
 	var speed: float = get_melee_speed()
-	
 	match animation_step:
 		0:	
 			animation = "weak_combo_1"
@@ -28,5 +27,4 @@ func attack_animation():
 	$AnimationPlayer.play("RESET")
 	$AnimationPlayer.play(animation, -1, speed)
 	await $AnimationPlayer.animation_finished
-	block_inputs = false
 	to_idle()

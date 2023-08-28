@@ -96,7 +96,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_apok5"]
@@ -211,10 +211,10 @@ tracks/4/path = NodePath(".:block_inputs")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.301),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false, true, false]
+"values": [true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -288,10 +288,10 @@ tracks/4/path = NodePath(".:block_inputs")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.45, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.301),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false, true, false]
+"values": [true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -365,10 +365,10 @@ tracks/4/path = NodePath(".:block_inputs")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -449,7 +449,6 @@ surface_material_override/1 = ExtResource("4_70cc1")
 
 [node name="left_meleebox" parent="left_arm" instance=ExtResource("5_jauwc")]
 transform = Transform3D(1, 1.49012e-08, 0, 1.49012e-08, 1, -5.96046e-08, 4.47035e-08, 0, 1, 0.00392142, 0.961959, 1.19209e-07)
-monitoring = true
 
 [node name="CollisionShape3D" parent="left_arm/left_meleebox" index="0"]
 shape = SubResource("BoxShape3D_yn1j5")

@@ -17,9 +17,7 @@ crit_modifier = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 
-[node name="animations" type="AnimationPlayer" parent="."]
-
-[node name="tree" type="AnimationTree" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="right_arm" type="Node3D" parent="."]
 
