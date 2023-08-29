@@ -610,7 +610,7 @@ Quality is tied directly to cost in shops, chance to spawn in loot areas, and si
 Unique firearms don't fit the other categories and typically have their own unique ammo types
 
 * Paintball Gun | [1] | .68 PB - Decent BP damage but miniscule HP damage
-* Recurve Bow | [1] | Arrow - Arrows have a chance to slow enemies
+* Recurve Bow | [1] | Arrow - Arrows are totally silent and hit hard. However they are completely ineffective against hard armors
 * Composite Bow | [2] | Arrow - Faster arrow velocity than composite bow
 * Crossbow | [2] | Arrow - More range and velocity than a composite bow
 * Riot Shotgun | [3] | 12g Pepperball - Doesn't inflict much HP damage
@@ -627,6 +627,7 @@ Unique firearms don't fit the other categories and typically have their own uniq
 * Crowbar | [1]
     - Works as a tool in some instances
 * Machete | [2]
+* Fencer's Foil | [2]
 * Tonfa | [3]
     - Illegal
 * Shock Tonfa | [4]
@@ -637,11 +638,14 @@ Unique firearms don't fit the other categories and typically have their own uniq
 ## TwoHandMelee
 
 * Shovel | [1]
+* Steel Drum Shield | [1]
 * Baseball Bat | [2]
 * Sledgehammer | [2]
+* Riot Shield | [2]
 * Brass Knuckles | [3]
     - Illegal
 * Hammer and Sickle | [4]
+* Ballistic Shield | [4]
 * Katana | [5]
 
 ## Tools

@@ -6,7 +6,7 @@ at strange times in the animation. The code will disable the box
 autoamatically after a strike happens as well
 '''
 
-class_name MeleeBox extends Area3D
+class_name MeleeBox extends RayCast3D
 
 @onready var player_attributes = get_tree().get_root().get_node("Game/Player/Attributes")
 @onready var weapon = get_tree().get_root().get_node("Game/Player/pivot/Camera3D/hold_slot/item")
@@ -17,12 +17,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
-	pass
+	if is_colliding():
+		strike(get_collider())
+		set_deferred("enabled", false)
 
-func _on_area_entered(area):
+func strike(area):
 	var strength_modifier = player_attributes.return_modifier(player_attributes.Strength)
 	var luck_modifier = player_attributes.return_modifier(player_attributes.Luck)
-	
+
 	if "accepting_pain" in area and area.accepting_pain and weapon != null:
-		await set_deferred("monitoring", false)
 		weapon.melee_strike(area, strength_modifier, luck_modifier)

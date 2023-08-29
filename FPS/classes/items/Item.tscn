@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://emk6bv77dgli"]
+[gd_scene load_steps=6 format=3 uid="uid://emk6bv77dgli"]
 
 [ext_resource type="Script" path="res://classes/items/scripts/Item.gd" id="1_ne6jp"]
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_hgnth"]
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_ntyua"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_au0w0"]
 [ext_resource type="PackedScene" uid="uid://5rhedeyt16o6" path="res://classes/technical/MeleeBox.tscn" id="5_ejebd"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yn1j5"]
-size = Vector3(0.295369, 0.254332, 0.270525)
 
 [node name="Item" type="RigidBody3D"]
 collision_layer = 30
@@ -20,6 +17,7 @@ crit_modifier = 1.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="right_arm" type="Node3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.489221, 0, 0)
 
 [node name="arm" parent="right_arm" instance=ExtResource("2_hgnth")]
 
@@ -30,13 +28,10 @@ surface_material_override/0 = ExtResource("3_ntyua")
 surface_material_override/1 = ExtResource("4_au0w0")
 
 [node name="right_meleebox" parent="right_arm" instance=ExtResource("5_ejebd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000761271, 0.874081, -0.0232766)
-
-[node name="CollisionShape3D" parent="right_arm/right_meleebox" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109481, 0)
-shape = SubResource("BoxShape3D_yn1j5")
+transform = Transform3D(-10, 1.50996e-07, 0, -1.50996e-06, -1, 0, 0, 0, 10, 0, -0.0943077, 0)
 
 [node name="left_arm" type="Node3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.518692, 0, 0)
 
 [node name="arm" parent="left_arm" instance=ExtResource("2_hgnth")]
 
@@ -48,11 +43,7 @@ surface_material_override/0 = ExtResource("3_ntyua")
 surface_material_override/1 = ExtResource("4_au0w0")
 
 [node name="left_meleebox" parent="left_arm" instance=ExtResource("5_ejebd")]
-transform = Transform3D(1, -5.73695e-07, -2.5332e-07, 0, 1, 1.19209e-07, 1.49012e-08, 1.19209e-07, 1, 0.009, 0.781362, -0.071)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="left_arm/left_meleebox"]
-transform = Transform3D(1, -2.66454e-14, 0, 0, 1, 0, 0, 0, 1, 1.20141e-07, 0.20633, -2.23517e-08)
-shape = SubResource("BoxShape3D_yn1j5")
+transform = Transform3D(-10, 1.50996e-07, 0, -1.50996e-06, -1, 0, 0, 0, 10, 0.009, -0.0850891, -0.071)
 
 [editable path="right_arm/arm"]
 [editable path="right_arm/right_meleebox"]
