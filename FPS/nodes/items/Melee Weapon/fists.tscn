@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://yp3kbmhj4ipg"]
 
-[ext_resource type="Script" path="res://nodes/items/Melee Weapon/scripts/fists.gd" id="1_kthf3"]
+[ext_resource type="Script" path="res://classes/items/scripts/Item.gd" id="1_fivw0"]
 [ext_resource type="PackedScene" uid="uid://bh1sb00wmj044" path="res://assets/entities/arm.gltf" id="2_vjey0"]
 [ext_resource type="Material" uid="uid://dpp750ow5d2hn" path="res://assets/shader_materials/skin/tone_1.tres" id="3_gs4co"]
 [ext_resource type="Material" uid="uid://brnabpegesaeg" path="res://assets/shader_materials/cloth/cloth_green.tres" id="4_70cc1"]
@@ -402,13 +402,12 @@ _data = {
 size = Vector3(2.545, 1, 0.435)
 
 [node name="item" type="Node3D"]
-script = ExtResource("1_kthf3")
+script = ExtResource("1_fivw0")
 display_name = "Fists"
-type = "Melee Weapon"
-animation_step = 1
+item_type = "MeleeWeapon"
+hands = 1
 first_person_position = Vector3(-0.04, -0.6, -0.23)
-strike_impulse = Vector3(0, 0, -2)
-damage = [2, 10, 0]
+damage = [2.0, 10.0, 0.0]
 crit_chance = 2.0
 crit_modifier = 1.25
 

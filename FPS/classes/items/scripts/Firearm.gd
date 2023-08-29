@@ -22,17 +22,21 @@ class_name Firearm extends Item
 @export var muzzle_velocity: float = 0.0
 
 @onready var bullet: Bullet
-@onready var muzzle = $RayCast3D/muzzle
+## Where the bullet comes out of the gun when the raycast doesn't hit
+@onready var muzzle = $main_body/RayCast3D/muzzle
+@onready var hitscan = $main_body/RayCast3D
+
 
 func _physics_process(delta):
 	current_ammo = clamp(current_ammo,0,max_ammo)
 	if is_held: 
 		self.primary_action(delta)
 		self.secondary_action(delta)
+		self.melee_action()
 		self.reload()
 
 func primary_action(triangle) -> void:
-	if Input.is_action_just_pressed("primary_action") and current_ammo > 0:
+	if Input.is_action_just_pressed("primary_action") and current_ammo > 0 and block_inputs == false:
 		shoot()
 
 func secondary_action(triangle) -> void:
@@ -52,6 +56,7 @@ func reload() -> void:
 			to_idle()
 			
 func shoot() -> void:
+	$AnimationPlayer.stop()
 	current_ammo -= 1
 	bullet = load(ammo).instantiate()
 	bullet = bullet.duplicate()
@@ -60,7 +65,7 @@ func shoot() -> void:
 	$AnimationPlayer.play("shoot")
 		
 	Helpers.get_world(self).add_child(bullet)
-	if $RayCast3D.is_colliding(): bullet.impact($RayCast3D.get_collider())
+	if hitscan.is_colliding(): bullet.impact(hitscan.get_collider())
 	else:
 		bullet.transform = muzzle.global_transform
 		bullet.is_flying = true

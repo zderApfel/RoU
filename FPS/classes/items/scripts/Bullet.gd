@@ -37,7 +37,7 @@ func fly(triangle):
 func impact(body):
 	self.queue_free()
 	if "accepting_pain" in body and body.accepting_pain == true:
-		body.struck(type, damage, damage_type)
+		body.struck(damage, damage_type)
 
 func _on_body_entered(body):
 	impact(body)

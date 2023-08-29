@@ -742,9 +742,9 @@ muzzle_velocity = 400.0
 display_name = "AKM"
 item_type = "Firearm"
 rarity = "Rare"
-animation_step = 1
 hands = 1
 first_person_position = Vector3(0.335, -0.4, -0.485)
+animation_step = 1
 damage = [7.0, 24.0, 0.0]
 crit_chance = 1.0
 crit_modifier = 1.25
@@ -791,15 +791,16 @@ collide_with_areas = true
 [node name="muzzle" type="Marker3D" parent="main_body/RayCast3D"]
 transform = Transform3D(1, 9.77024e-16, 0, 0, -4.37114e-08, 1, -2.22044e-16, -1, -4.37114e-08, 1.93715e-07, -8.88867, -2.68221e-07)
 
-[node name="MeleeBox" parent="main_body" instance=ExtResource("12_cj4v6")]
+[node name="MeleeBox" parent="main_body" node_paths=PackedStringArray("weapon") instance=ExtResource("12_cj4v6")]
 transform = Transform3D(1.20887e-12, 3.3405e-06, -12, 12, -5.46376e-08, 3.97364e-08, -4.76838e-07, -1.33334, -2.91507e-05, -0.051298, 0.0836776, -0.242199)
+weapon = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 1.12152e-13, 2.38419e-07, 1.05471e-13, 1, -1.61559e-27, -2.38419e-07, -9.80465e-21, 1, 0.160855, -0.136959, -0.728701)
 shape = SubResource("BoxShape3D_sdnx8")
 
 [node name="right_arm" type="Node3D" parent="."]
-transform = Transform3D(-0.999999, -2.3652e-06, -9.12659e-07, 0, 0.359998, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
+transform = Transform3D(-1, -2.3652e-06, -9.12659e-07, 0, 0.359997, -0.93295, 2.53518e-06, -0.93295, -0.359997, 0.183841, -0.518436, 0.527565)
 visible = false
 
 [node name="arm" parent="right_arm" instance=ExtResource("9_y5chg")]

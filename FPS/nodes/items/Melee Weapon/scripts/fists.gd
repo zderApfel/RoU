@@ -1,32 +1,10 @@
 class_name Fists extends Item
 
-
-# Called when the node enters the scene tree for the first time.
-
 func _physics_process(delta):
 	if is_held and !block_inputs: 
 		self.primary_action(delta)
 		self.secondary_action(delta)
 
 func primary_action(_triangle):
-	if Input.is_action_pressed("primary_action"):
+	if Input.is_action_pressed("primary_action") or Input.is_action_pressed("melee_attack"):
 		attack_animation()
-
-func attack_animation():
-	var animation: String
-	var speed: float = get_melee_speed()
-	
-	match animation_step:
-		0:	
-			animation = "weak_combo_1"
-		1:
-			animation = "weak_combo_2"
-		2:
-			animation = "weak_combo_3"
-
-	animation_step+=1
-	$AnimationPlayer.play("RESET")
-	$AnimationPlayer.play(animation, -1, speed)
-	await $AnimationPlayer.animation_finished
-	block_inputs = false
-	to_idle()

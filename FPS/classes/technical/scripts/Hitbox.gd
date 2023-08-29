@@ -14,18 +14,13 @@ class_name Hitbox extends Area3D
 func _physics_process(delta):
 	pass
 
-func struck(weapon_type, damage, damage_type: String = "Bludgeoning") -> void:
+func struck(damage, damage_type: String = "Bludgeoning") -> void:
 
 	var hp_damage: float
 	var bp_damage: float
 
-
-	if weapon_type == "Melee Weapon":
-		hp_damage = damage[0]*.75
-		bp_damage = damage[1]*1.25
-	else:
-		hp_damage = damage[0]*hp_mod
-		bp_damage = damage[1]*bp_mod
+	hp_damage = damage[0]*hp_mod
+	bp_damage = damage[1]*bp_mod
 	
 	vitals.help_or_hurt(hp_damage, bp_damage)
 

@@ -5,7 +5,7 @@ class_name Item extends Node3D
 @export var display_name: String
 
 ## The Item's Type
-@export_enum("Generic", "Melee Weapon", "Firearm", "Bullet", "Tool", "Armor", "Helmet", "Backpack") var type: String = "Generic"
+@export_enum("Generic", "MeleeWeapon", "Firearm", "Bullet", "Tool", "Armor", "Helmet", "Backpack") var item_type: String = "Generic"
 
 ## The item's rarity for loot pools
 @export_enum("N/A","Common","Uncommon","Rare","Epic","Legendary") var rarity: String = "N/A"
@@ -15,11 +15,11 @@ class_name Item extends Node3D
 
 @export var bulk: int = 1
 
-## Not implemented yet
-@export var max_stack: int = 1
-
 ## An animation step counter
 @export var animation_step: int = 0
+
+## Not implemented yet
+@export var max_stack: int = 1
 
 ## How many hands this weapon requires (used for looting algorithms)
 @export_enum("1", "2") var hands: int
@@ -38,10 +38,6 @@ class_name Item extends Node3D
 
 ## Where the weapon's first person viewmodel should be positioned
 @export var first_person_position: Vector3
-
-## For when the item is used to damage an enemy, 
-## this is the strength of the force applied
-@export var strike_impulse: Vector3
 
 @export_category("Offensive")
 ## The three damage values that this item does when attacking
@@ -77,17 +73,22 @@ func _physics_process(delta):
 	if self.is_held: 
 		primary_action(delta)
 		secondary_action(delta)
+		melee_action()
 
 
-func primary_action(triangle):
-	if Input.is_action_just_pressed("primary_action"):
-		pass
+func primary_action(triangle) -> void:
+	if item_type == "MeleeWeapon" and Input.is_action_pressed("primary_action") and !block_inputs:
+		attack_animation()
 
-func secondary_action(triangle):
+func secondary_action(triangle) -> void:
 	if Input.is_action_just_pressed("secondary_action"):
 		print("Secondary Action")
+		
+func melee_action() -> void:
+	if Input.is_action_pressed("melee_attack") and !block_inputs:
+		attack_animation()
 
-func when_held(x: bool):
+func when_held(x: bool)  -> void:
 	if x == true:
 		if self.hands == 0:
 			$right_arm.visible = true
@@ -119,10 +120,33 @@ func reposition():
 	self.scale = Vector3(0.75, 0.75, 0.75)
 
 func to_idle():
-	$AnimationPlayer.play("idle")
 	animation_step = 0
+	if $AnimationPlayer.speed_scale < 0: $AnimationPlayer.speed_scale = $AnimationPlayer.speed_scale * -1
+	$AnimationPlayer.play("idle")
 
-func melee_strike(hitbox, strength_modifier: float = 0, luck_modifier: float = 0):
+func attack_animation() -> void:
+	var animation: String
+	var speed: float = get_melee_speed()
+	
+	match animation_step:
+		0:	
+			animation = "weak_combo_1"
+		1:
+			animation = "weak_combo_2"
+		2:
+			animation = "weak_combo_3"
+
+	animation_step+=1
+	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.play(animation, -1, speed)
+	await $AnimationPlayer.animation_finished
+	block_inputs = false
+	to_idle()
+
+func melee_strike(hitbox):
+	var strength_modifier = player_attributes.return_modifier(player_attributes.Strength)
+	var luck_modifier = player_attributes.return_modifier(player_attributes.Luck)
+
 	var modified_damage: Array = [damage[0], damage[1], damage[2]]
 	var crit: bool = RNG.d100(crit_chance, strength_modifier*0.5, luck_modifier*0.2)
 	
@@ -133,7 +157,7 @@ func melee_strike(hitbox, strength_modifier: float = 0, luck_modifier: float = 0
 		modified_damage[2] = modified_damage[2]*crit_modifier
 
 	modified_damage[1] = modified_damage[1]*(1 + .02*(strength_modifier))
-	hitbox.struck(type, modified_damage, damage_type)
+	hitbox.struck(modified_damage, damage_type)
 
 func get_melee_speed() -> float:
 	var ynot = player_attributes.return_modifier(player_attributes.Strength) * .02
