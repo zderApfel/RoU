@@ -63,7 +63,9 @@ class_name Item extends Node3D
 ## What to multiply the damage by
 @export var crit_modifier: float
 
-@onready var player_attributes = get_tree().get_root().get_node("Game/Player/Attributes")
+@onready var player = get_tree().get_root().get_node("Game/Player")
+@onready var player_attributes = player.get_node("Attributes")
+
 
 func _ready():
 	if is_held: to_idle()
@@ -127,7 +129,7 @@ func to_idle():
 func attack_animation() -> void:
 	var animation: String
 	var speed: float = get_melee_speed()
-	
+	player.crippled = true
 	match animation_step:
 		0:	
 			animation = "weak_combo_1"
@@ -137,9 +139,11 @@ func attack_animation() -> void:
 			animation = "weak_combo_3"
 
 	animation_step+=1
+	
 	$AnimationPlayer.play("RESET")
 	$AnimationPlayer.play(animation, -1, speed)
 	await $AnimationPlayer.animation_finished
+	player.crippled = false
 	block_inputs = false
 	to_idle()
 

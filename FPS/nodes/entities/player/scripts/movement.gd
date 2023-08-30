@@ -5,6 +5,10 @@ const SENSITIVITY = 0.01
 const BOB_AMP = 0.06
 const BOB_FREQ = 2.2
 
+## When enabled, movement speed is crippled down to 
+## half of your current speed and blocks sprinting
+@export var crippled: bool = false
+
 @onready var vitals = $Vitals
 @onready var inventory = $PlayerInventory
 @onready var camera = $pivot/Camera3D
@@ -28,6 +32,11 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(75))
 
 func _physics_process(delta):
+	if crippled:
+		speed = jog_speed * 0.5
+	elif !crippled and !Input.is_action_pressed("sprint"):
+		speed = jog_speed
+	
 	jog_speed = 6
 	sprint_speed = jog_speed*1.25
 	crouch_speed = jog_speed*0.5
