@@ -14,10 +14,10 @@ const BOB_FREQ = 2.2
 @onready var camera = $pivot/Camera3D
 @onready var head = $pivot
 
-@onready var jog_speed = 6
-@onready var sprint_speed
-@onready var crouch_speed
-@onready var speed = jog_speed
+@onready var jog_speed: float = 6
+@onready var sprint_speed: float
+@onready var crouch_speed: float
+@onready var speed: float = jog_speed
 @onready var gravity = 12
 @onready var t_bob = 0.0
 @onready var held_item = $pivot/Camera3D/hold_slot
@@ -33,9 +33,9 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	if crippled:
-		speed = jog_speed * 0.5
+		speed = lerp(speed, jog_speed * 0.25, 5*delta)
 	elif !crippled and !Input.is_action_pressed("sprint"):
-		speed = jog_speed
+		speed = lerp(speed, jog_speed, 10*delta)
 	
 	jog_speed = 6
 	sprint_speed = jog_speed*1.25
