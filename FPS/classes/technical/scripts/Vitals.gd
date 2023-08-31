@@ -17,9 +17,6 @@ func _process(_delta):
 func help_or_hurt(hp, bp) -> void:
 	
 	var bp_resistance = 1 + (self_attributes.return_modifier(Body) * .02)
-	print(bp / bp_resistance)
 	
 	Health = clamp(Health - hp, 0, 100)
 	Balance = clamp(Balance - (bp / bp_resistance), 0, 100)
-	
-	print(Balance)
