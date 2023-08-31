@@ -336,13 +336,15 @@ Attributes are listed on a scale from 10 to 20, with 10 being represented as "av
 
 ### Strength
 
-* +1% melee speed
+* +2% melee speed
+* +1% melee BP damage
 * +0.5% melee crit chance
 
 ### Body
 
-* +2% maximum stamina
-* +2% BP damage resistance
+* *-2% reduced stamina usage
+* +2% BP Damage resistance
+* +2% faster recovery from knockdowns
 
 ### Mind
 

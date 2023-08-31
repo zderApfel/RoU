@@ -33,9 +33,9 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	if crippled:
-		speed = lerp(speed, jog_speed * 0.25, 5*delta)
+		speed = lerp(speed, jog_speed * 0.25, 8*delta)
 	elif !crippled and !Input.is_action_pressed("sprint"):
-		speed = lerp(speed, jog_speed, 10*delta)
+		speed = lerp(speed, jog_speed, 8*delta)
 	
 	jog_speed = 6
 	sprint_speed = jog_speed*1.25

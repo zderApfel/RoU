@@ -2,8 +2,7 @@ class_name Human extends CharacterBody3D
 
 @export var Name: String
 
-@export_enum("Civilian", "Police") var faction: int
-@export_enum("Idle") var ai_state: int
+@export_enum("Civilian", "Police") var faction: String
 
 @export var dead: bool
 @export var knocked_out: bool
@@ -23,12 +22,6 @@ func _physics_process(delta):
 	
 	if dead:
 		die()
-		
-		
-	#if vitals.Balance <= 0 and not dead:
-		#knocked_out = true
-	#if knocked_out:
-	#	knockout()
 
 func die():
 	collision.disabled = true

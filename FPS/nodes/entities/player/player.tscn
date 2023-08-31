@@ -34,7 +34,8 @@ script = ExtResource("2_sing5")
 
 [node name="HUD" parent="." instance=ExtResource("3_clte5")]
 
-[node name="Vitals" parent="." instance=ExtResource("4_k51w5")]
+[node name="Vitals" parent="." node_paths=PackedStringArray("self_attributes") instance=ExtResource("4_k51w5")]
+self_attributes = NodePath("../Attributes")
 
 [node name="PlayerInventory" parent="." instance=ExtResource("5_rvqnw")]
 
