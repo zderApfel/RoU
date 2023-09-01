@@ -32,9 +32,9 @@ func fly(triangle):
 
 	await get_tree().create_timer(5).timeout
 	self.queue_free()
-
 	
 func impact(body):
+	print(body.name)
 	self.queue_free()
 	if "accepting_pain" in body and body.accepting_pain == true:
 		body.struck(damage, damage_type)

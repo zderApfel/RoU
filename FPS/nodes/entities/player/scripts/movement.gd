@@ -1,7 +1,6 @@
 class_name Player extends CharacterBody3D
 
 const JUMP_VELOCITY = 4 
-const SENSITIVITY = 0.01
 const BOB_AMP = 0.06
 const BOB_FREQ = 2.2
 
@@ -21,6 +20,7 @@ const BOB_FREQ = 2.2
 @onready var gravity = 12
 @onready var t_bob = 0.0
 @onready var held_item = $pivot/Camera3D/hold_slot
+@onready var SENSITIVITY = 0.01
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -69,7 +69,7 @@ func ground_movement(x):
 		velocity.z = lerp(velocity.z, direction.z * speed, x * 0.5)
 
 	move_and_slide()
-	sprint()
+	sprint(x)
 	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -81,11 +81,19 @@ func headbob_controller(x):
 	t_bob += x * velocity.length() * float(is_on_floor())
 	if velocity.y > 0: t_bob += x * velocity.length() * 0.25
 	
-	if held_item != null:
+	if held_item != null and !Input.is_action_pressed("secondary_action"):
 		held_item.transform.origin = _headbob(t_bob)
+		speed = lerp(speed, jog_speed, 8*x)
+		SENSITIVITY = 0.01
+	
+	else:
+		held_item.transform.origin = Vector3.ZERO
+		speed = lerp(speed, jog_speed * 0.25, 8*x)
+		SENSITIVITY = 0.002
 		
-func sprint():
+func sprint(x):
 	if Input.is_action_pressed("sprint"):
 		speed = sprint_speed
+		
 	elif Input.is_action_just_released("sprint"):
 		speed = jog_speed

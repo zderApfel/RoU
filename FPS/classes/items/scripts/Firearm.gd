@@ -21,6 +21,8 @@ class_name Firearm extends Item
 ## Speed of the bullet after coming out of the gun
 @export var muzzle_velocity: float = 0.0
 
+@export var aim_down_sights_position: Vector3
+
 @onready var bullet: Bullet
 ## Where the bullet comes out of the gun when the raycast doesn't hit
 @onready var muzzle = $main_body/RayCast3D/muzzle
@@ -40,11 +42,18 @@ func primary_action(triangle) -> void:
 		shoot()
 
 func secondary_action(triangle) -> void:
-	if Input.is_action_just_pressed("secondary_action"):
-		print("Secondary Action")
+	if Input.is_action_pressed("secondary_action"):
+		position = position.lerp(aim_down_sights_position, 12 * triangle)
+		if Input.is_action_pressed("sprint"):
+			$AnimationPlayer.speed_scale = lerp($AnimationPlayer.speed_scale, 0.25, 6 * triangle)
+		else:
+			$AnimationPlayer.speed_scale = lerp($AnimationPlayer.speed_scale, 1.0, 6 * triangle)
+	else:
+		position = position.lerp(first_person_position, 12 * triangle)
+		$AnimationPlayer.speed_scale = lerp($AnimationPlayer.speed_scale, 1.0, 6 * triangle)
 
 func reload() -> void:
-	if Input.is_action_just_pressed("reload") and current_ammo != max_ammo:
+	if Input.is_action_just_pressed("reload") and current_ammo != max_ammo and !Input.is_action_pressed("secondary_action"):
 		print("Reloading weapon...")
 		if current_ammo == 0:
 			$AnimationPlayer.play("reload_empty")
@@ -61,9 +70,6 @@ func shoot() -> void:
 	bullet = load(ammo).instantiate()
 	bullet = bullet.duplicate()
 	
-	$AnimationPlayer.play("RESET")
-	$AnimationPlayer.play("shoot")
-		
 	Helpers.get_world(self).add_child(bullet)
 	if hitscan.is_colliding(): bullet.impact(hitscan.get_collider())
 	else:
@@ -72,3 +78,9 @@ func shoot() -> void:
 		bullet.is_lootable = false
 		bullet.muzzle_velocity = muzzle_velocity
 		bullet.velocity = -bullet.transform.basis.z * muzzle_velocity
+
+	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.speed_scale = 1.0
+	$AnimationPlayer.play("shoot")
+
+
