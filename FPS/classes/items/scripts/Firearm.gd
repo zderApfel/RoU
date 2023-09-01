@@ -44,13 +44,11 @@ func primary_action(triangle) -> void:
 func secondary_action(triangle) -> void:
 	if Input.is_action_pressed("secondary_action"):
 		position = position.lerp(aim_down_sights_position, 12 * triangle)
-		if Input.is_action_pressed("sprint"):
-			$AnimationPlayer.speed_scale = lerp($AnimationPlayer.speed_scale, 0.25, 6 * triangle)
-		else:
-			$AnimationPlayer.speed_scale = lerp($AnimationPlayer.speed_scale, 1.0, 6 * triangle)
+		var animation_position: float = 0.0
+				
+			
 	else:
 		position = position.lerp(first_person_position, 12 * triangle)
-		$AnimationPlayer.speed_scale = lerp($AnimationPlayer.speed_scale, 1.0, 6 * triangle)
 
 func reload() -> void:
 	if Input.is_action_just_pressed("reload") and current_ammo != max_ammo and !Input.is_action_pressed("secondary_action"):
@@ -72,6 +70,7 @@ func shoot() -> void:
 	
 	Helpers.get_world(self).add_child(bullet)
 	if hitscan.is_colliding(): bullet.impact(hitscan.get_collider())
+	
 	else:
 		bullet.transform = muzzle.global_transform
 		bullet.is_flying = true
