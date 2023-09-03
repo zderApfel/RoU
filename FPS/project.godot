@@ -145,6 +145,7 @@ melee_attack={
 3d_physics/layer_9="BULLETS"
 3d_physics/layer_10="MELEE_WEAPONS"
 3d_physics/layer_11="ENEMY_MELEE"
+3d_physics/layer_12="ENEMY_BULLETS"
 
 [physics]
 

@@ -1,5 +1,7 @@
 class_name Inventory extends Node
 
+## The owner of the inventory
+@export var inventory_owner: CharacterBody3D
 ## Maximum bulk for pockets
 @export var pockets_max_bulk: float = 8.0 #+ PACK_RAT_BONUS
 ## Current bulk used up in pockets
@@ -91,6 +93,9 @@ func switch_item(parent, new_child):
 		parent = Helpers.familicide(parent)
 		
 		new_child.item.when_held(true)
+		
+		if new_child.item.item_type == "Firearm": inventory_owner.holding_gun = true
+		elif new_child.item.item_type != "Firearm": inventory_owner.holding_gun = false
 		
 		parent.add_child(new_child.item)
 		new_child.item.reposition()

@@ -37,10 +37,6 @@ func _physics_process(delta):
 		self.melee_action()
 		self.reload()
 
-func primary_action(triangle) -> void:
-	if Input.is_action_just_pressed("primary_action") and current_ammo > 0 and block_inputs == false:
-		shoot()
-
 func secondary_action(triangle) -> void:
 	if Input.is_action_pressed("secondary_action"):
 		position = position.lerp(aim_down_sights_position, 12 * triangle)

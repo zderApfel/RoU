@@ -3,6 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://cfn8l4rjcbss2" path="res://classes/items/Bullet.tscn" id="1_orqf0"]
 
 [node name="Bullet" instance=ExtResource("1_orqf0")]
-collision_layer = 262
 display_name = "7.62 Soviet"
 damage = [45.0, 5.0, 0.0]

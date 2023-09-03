@@ -24,6 +24,7 @@ func recoil(item, camera, triangle):
 
 func _on_gun_shoots(item, x_value, camera, triangle):
 	if item.current_ammo > 0:
+		item.shoot()
 		if x_value < 1.308997 and x_value > -1.396263:
 			$Camera3D.rotation.x = x_value
 			await get_tree().create_timer(.01).timeout

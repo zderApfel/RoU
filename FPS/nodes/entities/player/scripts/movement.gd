@@ -8,6 +8,9 @@ const BOB_FREQ = 2.2
 ## half of your current speed and blocks sprinting
 @export var crippled: bool = false
 
+## Whether the player is holding a gun
+@export var holding_gun: bool = false
+
 @onready var vitals = $Vitals
 @onready var inventory = $PlayerInventory
 @onready var camera = $pivot/Camera3D
@@ -81,15 +84,15 @@ func headbob_controller(x):
 	t_bob += x * velocity.length() * float(is_on_floor())
 	if velocity.y > 0: t_bob += x * velocity.length() * 0.25
 	
-	if held_item != null and !Input.is_action_pressed("secondary_action"):
-		held_item.transform.origin = _headbob(t_bob)
-		speed = lerp(speed, jog_speed, 8*x)
-		SENSITIVITY = 0.01
-	
-	else:
-		held_item.transform.origin = Vector3.ZERO
-		speed = lerp(speed, jog_speed * 0.25, 8*x)
-		SENSITIVITY = 0.002
+	if held_item != null:
+		if holding_gun == true and Input.is_action_pressed("secondary_action"):
+			held_item.transform.origin = Vector3.ZERO
+			speed = lerp(speed, jog_speed * 0.25, 8*x)
+			SENSITIVITY = 0.002
+		else:
+			held_item.transform.origin = _headbob(t_bob)
+			speed = lerp(speed, jog_speed, 8*x)
+			SENSITIVITY = 0.01
 		
 func sprint(x):
 	if Input.is_action_pressed("sprint"):
