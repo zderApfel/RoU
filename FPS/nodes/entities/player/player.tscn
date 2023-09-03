@@ -12,8 +12,8 @@
 height = 2.54015
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 798
-collision_mask = 782
+collision_layer = 1310
+collision_mask = 1294
 script = ExtResource("2_3qh8f")
 
 [node name="pivot" type="Node3D" parent="."]
